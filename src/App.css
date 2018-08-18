@@ -1,0 +1,55 @@
+#root, body, html {
+  height: 100%;
+}
+
+.background {
+  background-image: url('/fabrice-villard-584622-unsplash.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title {
+  position: absolute;
+  top: 60vh;
+  left: 35%;
+  transform: translate(-50%, 0);
+  font-family: serif;
+  font-size: 24px;
+  background-color: #222;
+  color: #fff;
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.main-links {
+  position: absolute;
+  left: 35%;
+  transform: translate(-50%, 0);
+  width: 200px;
+  top: 60vh;
+  margin-top: 50px;
+  display:flex;
+  justify-content: space-around;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}  
+
+.main-link {
+  cursor: pointer;
+  padding: 3px;
+  color: #222;
+}
+
+.main-link:hover {
+  background-color: #ccc;
+}
+
+.main-icon {
+  vertical-align: text-top;
+}
