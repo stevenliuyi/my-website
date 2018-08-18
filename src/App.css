@@ -30,10 +30,13 @@
   transform: translate(-50%, 0);
   width: 200px;
   top: 60vh;
-  margin-top: 50px;
+  margin-top: 45px;
   display:flex;
   justify-content: space-around;
   font-size: 14px;
+  opacity: 0;
+  -webkit-transition: opacity .5s ease-in, margin-top .5s ease-in;
+  transition: opacity .5s ease-in, margin-top .5s ease-in;
 }
 
 a {

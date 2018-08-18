@@ -6,10 +6,28 @@ import 'babel-polyfill'
 import { TiPencil, TiCode } from 'react-icons/ti'
 
 class App extends Component {
+  state = {
+    linkShown: false
+  }
+
+  componentDidUpdate({ linkShown}) {
+    if (!linkShown && this.state.linkShown) {
+            let elem = document.querySelector('.main-links')
+            elem.style.opacity = 1
+            elem.style.marginTop = '50px'
+
+    }
+  }
+
   render() {
     return (
       <div className="background">
-        <Typist className="title" startDelay={1500} avgTypingDelay={100}>
+        <Typist
+          className="title"
+          startDelay={1200}
+          avgTypingDelay={100}
+          onCharacterTyped={() => {if (!this.state.linkShown) this.setState({ linkShown: true })}}
+        >
           <span>hi, I'm Yi Liu</span>
           <Typist.Backspace count={6} delay={1000} />
           <span>Steven.</span>
