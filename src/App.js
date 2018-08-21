@@ -6,7 +6,6 @@ import 'babel-polyfill'
 import ScrollAnim from 'rc-scroll-anim'
 import QueueAnim from 'rc-queue-anim'
 import TweenOne from 'rc-tween-one'
-import Animate from 'rc-animate'
 import { TiPencil, TiCode } from 'react-icons/ti'
 
 const Link = ScrollAnim.Link
@@ -41,7 +40,7 @@ class App extends Component {
       nav.style.position = 'fixed'
       nav.style.top = 0
     } else {
-      nav.style.position = 'static'
+      nav.style.position = 'absolute'
       nav.style.top = 'auto'
     }
   }
@@ -102,7 +101,7 @@ class App extends Component {
             <div key='1' className="underline" />
           </QueueAnim>
           <TweenOne key='1' style={{ opacity: 0, transform: 'rotateY(90deg)'}} animation={{ opacity: 1, rotateY: 0 ,  duration:1000, ease: 'easeInQuart' }}>
-            <img className="logo" src="/icons/android-chrome-192x192.png" height={100} width={100} />
+            <img className="logo" src="/icons/android-chrome-192x192.png" height={100} width={100} alt="logo" />
           </TweenOne>
           <QueueAnim type="left" key='2' className="about-text" duration={1000} interval={200} delay={[1000,0]} leaveReverse={true}>
             <div key='0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum est id diam ullamcorper cursus. Aenean pharetra dolor eget lorem scelerisque, quis blandit justo finibus. Aliquam a pulvinar nisl. Proin blandit velit sed ipsum pellentesque, ut feugiat enim volutpat. Curabitur turpis lectus, aliquet vitae ante a, facilisis consequat quam. </div>
@@ -125,7 +124,7 @@ class App extends Component {
           </QueueAnim>
         </ScrollOverPack>
         <ScrollOverPack id="contact-page" className="contact-page" playScale={0.1}>
-          <QueueAnim type="left" key='0' duration={1000} interval={200} delay={[0,1000]} leaveReverse={true}>
+          <QueueAnim type="left" key='0' duration={1000} interval={200} leaveReverse={true}>
             <div key='0' className="section-title white">THANKS</div>
             <div key='1' className="underline white" />
           </QueueAnim>
