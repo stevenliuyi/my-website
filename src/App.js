@@ -142,10 +142,10 @@ class App extends Component {
             <div key='2'>Etiam non tortor diam. Aliquam et tempus velit. Nam interdum nunc nec tortor gravida egestas. Curabitur porttitor sodales ante ut ullamcorper.</div>
           </QueueAnim>
           <TweenOne key='3' className="number-cards" style={{ opacity: 0, transform: 'translateY(50px)'}} animation={{ opacity: 1, translateY: 0, duration: 1000, delay: 2000 }}>
-            <NumberCard description="number of Wikipedia articles I created" number="20,000" />
-            <NumberCard description="my Erdos number" number="6" />
-            <NumberCard description="number of U.S. states I've been to" number="23" />
-            <NumberCard description="my favorite number" number="42" />
+            <NumberCard description="number of Wikipedia articles I created" number="20,000" detail="These articles have been viewed 15 million times since 2015." />
+            <NumberCard description="my Erdős number" number="6" detail={<div><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Erdős_number">Erdős number</a> is one's collabration distance to mathematican Paul Erdös.</div>} />
+            <NumberCard description="number of U.S. states I've been to" number="23" detail="... and Washington, D.C.!" />
+            <NumberCard description="my favorite number" number="42" detail={<div>Because it's <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy#Answer_to_the_Ultimate_Question_of_Life,_the_Universe,_and_Everything_(42)">the Answer to the Ultimate  Question of Life, the Universe, and Everything</a>!</div>}/>
           </TweenOne>
         </ScrollOverPack>
         <ScrollOverPack id="project-page" className="project-page" playScale={0.4}>
@@ -164,7 +164,7 @@ class App extends Component {
               <CardBody
                 onMouseEnter={ this.expandCard }
                 onMouseLeave={ this.collapseCard }
-                onClick={e => {
+                onTouchStart={e => {
                   if (this.state.cardExpanded)
                     this.collapseCard(e)
                   else
@@ -175,8 +175,8 @@ class App extends Component {
                   style={{opacity: 0, transform: 'translateX(-50px)'}}
                   animation={{opacity: 1, x: 0, duration: 1000, ease: 'easeOutQuart', delay: 500}}
                 >
-                  <CardTitle onMouseEnter={e => e.stopPropagation()}>{`Project ${i+1}`}</CardTitle>
-                  <CardText onMouseEnter={e => e.stopPropagation()}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</CardText>
+                  <CardTitle>{`Project ${i+1}`}</CardTitle>
+                  <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</CardText>
                 </TweenOne>
               </CardBody>
             </Card>
