@@ -4,14 +4,18 @@
 }
 
 .background {
-  background-image: url('/fabrice-villard-584622-unsplash.jpg');
   height: 100vh;
+  width: 100%;
+}
+
+.background-image {
+  position: absolute;
+  height: 100%;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .title {
   position: absolute;
   top: 60vh;

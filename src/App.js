@@ -11,6 +11,7 @@ import { IoIosArrowDown } from 'react-icons/io'
 import { Card, CardBody, CardImg, CardTitle, CardText } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import scrollToComponent from 'react-scroll-to-component'
+import ProgressiveImage from 'react-progressive-image-loading'
 
 const Link = ScrollAnim.Link
 const Element = ScrollAnim.Element
@@ -82,6 +83,11 @@ class App extends Component {
     return (
       <div>
         <Element className="background">
+          <ProgressiveImage
+            preview="/images/fabrice-villard-584622-unsplash-small.jpg"
+            src="/images/fabrice-villard-584622-unsplash.jpg"
+            render={(src, style) => <div className="background-image" style={Object.assign(style, { backgroundImage: `url(${src})`})} />}
+          />
           <Typist
             className="title"
             startDelay={1200}
