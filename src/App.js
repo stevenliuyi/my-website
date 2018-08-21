@@ -75,7 +75,7 @@ class App extends Component {
   collapseCard = e => {
     if (!this.state.projectsLoaded) return
     const img = e.currentTarget.parentElement.querySelector('img')
-    if (img != null) img.style.maxHeight = '1000px'
+    if (img != null) img.style.maxHeight = '200px'
     this.setState({ cardExpanded: false })
   }
 
@@ -167,8 +167,8 @@ class App extends Component {
                   style={{opacity: 0, transform: 'translateX(-50px)'}}
                   animation={{opacity: 1, x: 0, duration: 1000, ease: 'easeOutQuart', delay: 500}}
                 >
-                  <CardTitle>{`Project ${i+1}`}</CardTitle>
-                  <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</CardText>
+                  <CardTitle onMouseEnter={e => e.stopPropagation()}>{`Project ${i+1}`}</CardTitle>
+                  <CardText onMouseEnter={e => e.stopPropagation()}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</CardText>
                 </TweenOne>
               </CardBody>
             </Card>
