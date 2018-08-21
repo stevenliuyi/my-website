@@ -5,6 +5,10 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "bootstrap": "3",
+    "rc-animate": "^2.4.4",
+    "rc-queue-anim": "^1.6.5",
+    "rc-scroll-anim": "^2.5.5",
+    "rc-tween-one": "^2.2.3",
     "react": "^16.4.2",
     "react-bootstrap": "0.32.1",
     "react-dom": "^16.4.2",
