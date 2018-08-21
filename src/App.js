@@ -13,6 +13,7 @@ import { Card, CardBody, CardImg, CardTitle, CardText } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import scrollToComponent from 'react-scroll-to-component'
 import ProgressiveImage from 'react-progressive-image-loading'
+import NumberCard from './NumberCard'
 
 const Link = ScrollAnim.Link
 const Element = ScrollAnim.Element
@@ -135,11 +136,17 @@ class App extends Component {
           <TweenOne key='1' style={{ opacity: 0, transform: 'rotateY(90deg)'}} animation={{ opacity: 1, rotateY: 0 ,  duration:1000, ease: 'easeInQuart' }}>
             <img className="logo" src="/icons/android-chrome-192x192.png" height={100} width={100} alt="logo" />
           </TweenOne>
-          <QueueAnim type="left" key='2' className="about-text" duration={1000} interval={200} delay={[1000,0]} leaveReverse={true}>
+          <QueueAnim animConfig={{opacity:[1,0], translateX: [0, -100]}} key='2' className="about-text" duration={1000} interval={200} delay={[1000,0]} leaveReverse={true}>
             <div key='0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum est id diam ullamcorper cursus. Aenean pharetra dolor eget lorem scelerisque, quis blandit justo finibus. Aliquam a pulvinar nisl. Proin blandit velit sed ipsum pellentesque, ut feugiat enim volutpat. Curabitur turpis lectus, aliquet vitae ante a, facilisis consequat quam. </div>
             <div key='1'>Nulla a egestas nibh. Suspendisse hendrerit magna sed odio dignissim blandit. Morbi pharetra mi non ullamcorper semper. Vestibulum mattis, est eget condimentum blandit, est eros tristique diam, sit amet mattis tellus enim quis augue. Sed sed justo tempus, auctor neque et, placerat nulla. Ut euismod fringilla diam nec varius.</div>
             <div key='2'>Etiam non tortor diam. Aliquam et tempus velit. Nam interdum nunc nec tortor gravida egestas. Curabitur porttitor sodales ante ut ullamcorper.</div>
           </QueueAnim>
+          <TweenOne key='3' className="number-cards" style={{ opacity: 0, transform: 'translateY(50px)'}} animation={{ opacity: 1, translateY: 0, duration: 1000, delay: 2000 }}>
+            <NumberCard description="number of Wikipedia articles I created" number="20,000" />
+            <NumberCard description="my Erdos number" number="6" />
+            <NumberCard description="number of U.S. states I've been to" number="23" />
+            <NumberCard description="my favorite number" number="42" />
+          </TweenOne>
         </ScrollOverPack>
         <ScrollOverPack id="project-page" className="project-page" playScale={0.4}>
           <QueueAnim type="left" key='0' duration={1000} interval={200} delay={[0,1000]} leaveReverse={true}>

@@ -185,12 +185,27 @@ a {
   margin: 0 auto;
 }
 
+.number-cards,
 .projects {
   margin: 0 auto;
   display: flex;
   justify-content: center;
   width: 80%;
   flex-wrap: wrap;
+}
+
+.number-card {
+  margin: 40px 20px 20px 20px;
+  width: 250px;
+  height: 200px;
+}
+
+.number {
+  font-size: 48px;
+}
+
+.number-desc {
+  height: 80px;
 }
 
 .project-card {
