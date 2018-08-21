@@ -128,14 +128,18 @@ a {
 .about-page,
 .project-page {
   width: 100%;
-  min-height: 100vh;
   text-align: center;
   padding-top: 100px;
   padding-bottom: 30px;
 }
 
+.about-page {
+  min-height: 100vh;
+}
+
 .project-page {
   background-color: #eee;
+  min-height: calc(100vh + 30px);
 }
 
 .contact-page {
@@ -198,4 +202,49 @@ a {
 
 .project-card > img {
   transition: max-height .5s ease;
+}
+
+.scroll-to-top {
+  position: absolute;
+  background-color: #555;
+  border: 2px solid #eee;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eee;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.scroll-to-top:hover {
+  background-color: #222;
+}
+
+.scroll-to-top:hover > .scroll-arrow {
+  animation: scroll-arrow-anim 1s normal ease;
+}
+
+@keyframes scroll-arrow-anim {
+  0%,100% {
+    transform: translate(0%,0%);
+    opacity: 1;
+  }
+  49% {
+    transform: translate(0%, -125%);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(0%, -125%);
+    opacity: 0;
+  }
+  51% {
+    transform: translate(0%, 125%);
+    opacity: 0;
+  }
 }

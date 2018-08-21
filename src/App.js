@@ -8,6 +8,7 @@ import QueueAnim from 'rc-queue-anim'
 import TweenOne from 'rc-tween-one'
 import { TiPencil, TiCode } from 'react-icons/ti'
 import { IoIosArrowDown } from 'react-icons/io'
+import { FaAngleDoubleUp } from 'react-icons/fa'
 import { Card, CardBody, CardImg, CardTitle, CardText } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import scrollToComponent from 'react-scroll-to-component'
@@ -82,7 +83,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Element className="background">
+        <Element className="background" ref={ el => this.top = el }>
           <ProgressiveImage
             preview="/images/fabrice-villard-584622-unsplash-small.jpg"
             src="/images/fabrice-villard-584622-unsplash.jpg"
@@ -176,6 +177,9 @@ class App extends Component {
           }
           </QueueAnim>
         </ScrollOverPack>
+        <div className="scroll-to-top" onClick={() => scrollToComponent(this.top, { align: 'top', duration: 500 })}>
+          <div className="scroll-arrow"><FaAngleDoubleUp size={24} /></div>
+        </div>
         <ScrollOverPack id="contact-page" className="contact-page" playScale={0.1}>
           <QueueAnim type="left" key='0' duration={1000} interval={200} leaveReverse={true}>
             <div key='0' className="section-title" style={{color: '#fff'}}>THANKS</div>
