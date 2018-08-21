@@ -7,8 +7,10 @@ import ScrollAnim from 'rc-scroll-anim'
 import QueueAnim from 'rc-queue-anim'
 import TweenOne from 'rc-tween-one'
 import { TiPencil, TiCode } from 'react-icons/ti'
+import { IoIosArrowDown } from 'react-icons/io'
 import { Card, CardBody, CardImg, CardTitle, CardText } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css'
+import scrollToComponent from 'react-scroll-to-component'
 
 const Link = ScrollAnim.Link
 const Element = ScrollAnim.Element
@@ -88,6 +90,11 @@ class App extends Component {
               </span>
             </a>
           </div>
+          <div className="arrow-down" onClick={() => 
+            scrollToComponent(this.aboutPage)
+          }>
+            <IoIosArrowDown size={24} />
+          </div>
         </Element>
         <div className="nav">
           <div className="nav-wrap">
@@ -97,7 +104,7 @@ class App extends Component {
             <div ref="bar" className="nav-bar" />
           </div>
         </div>
-        <ScrollOverPack id="about-page" className="about-page" playScale={0.4}>
+        <ScrollOverPack ref={el => this.aboutPage = el} id="about-page" className="about-page" playScale={0.4}>
           <QueueAnim type="left" key='0' duration={1000} interval={200} leaveReverse={true}>
             <div key='0' className="section-title">ABOUT</div>
             <div key='1' className="underline" />
