@@ -114,6 +114,9 @@ class App extends Component {
               </span>
             </a>
           </div>
+          <div className="more-text" onClick={() => 
+            scrollToComponent(this.aboutPage)
+          }>more</div>
           <div className="arrow-down" onClick={() => 
             scrollToComponent(this.aboutPage)
           }>
