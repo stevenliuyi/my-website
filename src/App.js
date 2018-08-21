@@ -20,7 +20,9 @@ const EventListener = ScrollAnim.Event
 class App extends Component {
 
   state = {
-    linkShown: false
+    linkShown: false,
+    cardExpanded: false,
+    projectsLoaded: false
   }
 
   componentDidUpdate({ linkShown}) {
@@ -60,6 +62,20 @@ class App extends Component {
     }
     const bar = this.refs.bar;
     bar.style.left = `${this.dom.getBoundingClientRect().left}px`;
+  }
+
+  expandCard = e => {
+    if (!this.state.projectsLoaded) return
+    const img = e.currentTarget.parentElement.querySelector('img')
+    if (img != null) img.style.maxHeight = '0px'
+    this.setState({ cardExpanded: true })
+  }
+
+  collapseCard = e => {
+    if (!this.state.projectsLoaded) return
+    const img = e.currentTarget.parentElement.querySelector('img')
+    if (img != null) img.style.maxHeight = '1000px'
+    this.setState({ cardExpanded: false })
   }
 
   render() {
@@ -123,18 +139,22 @@ class App extends Component {
             <div key='0' className="section-title">PROJECTS</div>
             <div key='1' className="underline" />
           </QueueAnim>
-          <QueueAnim type="bottom" key='1' className="projects" duration={2000} interval={0} delay={[1000, 0]}>
+          <QueueAnim type="bottom" key='1' className="projects" duration={2000} interval={0} delay={[1000, 0]}
+           onEnd={({ key, type }) => {
+             this.setState({ projectsLoaded: type === 'enter' ? true : false })
+           }}
+          >
           { [...Array(6).keys()].map(i => (
             <Card key={i} className="project-card">
               <CardImg top width="100%" src="images/demo.jpg" />
               <CardBody
-                onMouseEnter={ e => {
-                  const img = e.currentTarget.parentElement.querySelector('img')
-                  if (img != null) img.style.maxHeight = '0px'
-                }}
-                onMouseLeave={ e => {
-                  const img = e.currentTarget.parentElement.querySelector('img')
-                  if (img != null) img.style.maxHeight = '1000px'
+                onMouseEnter={ this.expandCard }
+                onMouseLeave={ this.collapseCard }
+                onClick={e => {
+                  if (this.state.cardExpanded)
+                    this.collapseCard(e)
+                  else
+                    this.expandCard(e)
                 }}
               >
                 <TweenOne
