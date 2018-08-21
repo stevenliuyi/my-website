@@ -7,6 +7,8 @@ import ScrollAnim from 'rc-scroll-anim'
 import QueueAnim from 'rc-queue-anim'
 import TweenOne from 'rc-tween-one'
 import { TiPencil, TiCode } from 'react-icons/ti'
+import { Card, CardBody, CardImg, CardTitle, CardText } from 'reactstrap'
+import 'bootstrap/dist/css/bootstrap.css'
 
 const Link = ScrollAnim.Link
 const Element = ScrollAnim.Element
@@ -114,19 +116,37 @@ class App extends Component {
             <div key='0' className="section-title">PROJECTS</div>
             <div key='1' className="underline" />
           </QueueAnim>
-          <QueueAnim animConfig={{rotateX:[0,90]}} key='1' className="projects" duration={2000} interval={0} delay={[1000, 0]}>
-            <div key="0" className="project-card">PROJECT 1</div>
-            <div key="1" className="project-card">PROJECT 2</div>
-            <div key="2" className="project-card">PROJECT 3</div>
-            <div key="3" className="project-card">PROJECT 4</div>
-            <div key="4" className="project-card">PROJECT 5</div>
-            <div key="5" className="project-card">PROJECT 6</div>
+          <QueueAnim type="bottom" key='1' className="projects" duration={2000} interval={0} delay={[1000, 0]}>
+          { [...Array(6).keys()].map(i => (
+            <Card key={i} className="project-card">
+              <CardImg top width="100%" src="images/demo.jpg" />
+              <CardBody
+                onMouseEnter={ e => {
+                  const img = e.currentTarget.parentElement.querySelector('img')
+                  if (img != null) img.style.maxHeight = '0px'
+                }}
+                onMouseLeave={ e => {
+                  const img = e.currentTarget.parentElement.querySelector('img')
+                  if (img != null) img.style.maxHeight = '1000px'
+                }}
+              >
+                <TweenOne
+                  style={{opacity: 0, transform: 'translateX(-50px)'}}
+                  animation={{opacity: 1, x: 0, duration: 1000, ease: 'easeOutQuart', delay: 500}}
+                >
+                  <CardTitle>{`Project ${i+1}`}</CardTitle>
+                  <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</CardText>
+                </TweenOne>
+              </CardBody>
+            </Card>
+          ))
+          }
           </QueueAnim>
         </ScrollOverPack>
         <ScrollOverPack id="contact-page" className="contact-page" playScale={0.1}>
           <QueueAnim type="left" key='0' duration={1000} interval={200} leaveReverse={true}>
-            <div key='0' className="section-title white">THANKS</div>
-            <div key='1' className="underline white" />
+            <div key='0' className="section-title" style={{color: '#fff'}}>THANKS</div>
+            <div key='1' className="underline" style={{borderTopColor: '#fff'}} />
           </QueueAnim>
         </ScrollOverPack>
       </div>
