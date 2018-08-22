@@ -1521,7 +1521,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.3, classnames@^2.2.5:
+classnames@^2.2.3, classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
 
@@ -5757,7 +5757,15 @@ rc-scroll-anim@^2.5.5:
     rc-tween-one "^2.1.0"
     tween-functions "1.x"
 
-rc-tween-one@^2.0.3, rc-tween-one@^2.1.0, rc-tween-one@^2.2.3:
+rc-texty@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/rc-texty/-/rc-texty-0.1.1.tgz#e543a589be8eb1e78ffa3588a04b021a2454f27b"
+  dependencies:
+    babel-runtime "6.x"
+    classnames "^2.2.6"
+    rc-tween-one "^2.2.0"
+
+rc-tween-one@^2.0.3, rc-tween-one@^2.1.0, rc-tween-one@^2.2.0, rc-tween-one@^2.2.3:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/rc-tween-one/-/rc-tween-one-2.2.3.tgz#cc1aca1453dd0589dd666fe00816459dad9c16bb"
   dependencies:
