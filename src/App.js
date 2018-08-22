@@ -115,15 +115,15 @@ class App extends Component {
             </a>
           </div>
           <div className="more-text" onClick={() => 
-            scrollToComponent(this.aboutPage)
+            scrollToComponent(this.nav, { align: 'top' })
           }>more</div>
           <div className="arrow-down" onClick={() => 
-            scrollToComponent(this.aboutPage)
+            scrollToComponent(this.nav, { align: 'top' })
           }>
             <IoIosArrowDown size={24} />
           </div>
         </Element>
-        <div className="nav">
+        <div className="nav" ref={el => this.nav = el}>
           <div className="nav-wrap">
             <Link className="nav-list" to="about-page" onFocus={this.onFocus}>About</Link>
             <Link className="nav-list" to="project-page" onFocus={this.onFocus}>Projects</Link>
