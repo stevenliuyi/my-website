@@ -147,7 +147,7 @@ class App extends Component {
           <TweenOne key='3' className="number-cards" style={{ opacity: 0, transform: 'translateY(50px)'}} animation={{ opacity: 1, translateY: 0, duration: 1000, delay: 2000 }}>
             <NumberCard description="number of Wikipedia articles I created" number="20,000" detail="These articles have been viewed 15 million times since 2015." />
             <NumberCard description="my Erdős number" number="6" detail={<div><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Erdős_number">Erdős number</a> is one's collabration distance to mathematican Paul Erdös.</div>} />
-            <NumberCard description="number of U.S. states I've been to" number="23" detail="... and Washington, D.C.!" />
+            <NumberCard description="number of U.S. states I've set foot on" number="23" detail="... and Washington, D.C.!" />
             <NumberCard description="my favorite number" number="42" detail={<div>Because it's <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy#Answer_to_the_Ultimate_Question_of_Life,_the_Universe,_and_Everything_(42)">the Answer to the Ultimate  Question of Life, the Universe, and Everything</a>!</div>}/>
           </TweenOne>
         </ScrollOverPack>
