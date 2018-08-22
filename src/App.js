@@ -139,22 +139,22 @@ class App extends Component {
         </div>
         <ScrollOverPack ref={el => this.aboutPage = el} id="about-page" className="about-page" playScale={0.5} always={false}>
           <Texty key='0' type="left" mode="smooth" className="section-title" delay={500}>ABOUT</Texty>
-          <TweenOne key='1' className="underline" style={{ opacity: 0, transform: 'translateX(-50px)'}} animation={{ opacity: 1, translateX: 0, delay: 750, duration: 1000}} />
-          <TweenOne key='2' style={{ opacity: 0, transform: 'rotateY(90deg)'}} animation={{ opacity: 1, rotateY: 0 ,  duration:1000, ease: 'easeInQuart', delay: 500 }}>
-            <img className="logo" src="/icons/android-chrome-192x192.png" height={100} width={100} alt="logo" />
+          <TweenOne key='1' className="underline" animation={{ opacity: 1, translateX: 0, delay: 750, duration: 1000}} />
+          <TweenOne key='2' className="logo" animation={{ opacity: 1, rotateY: 0 ,  duration:1000, ease: 'easeInQuart', delay: 500 }}>
+            <img src="/icons/android-chrome-192x192.png" height={100} width={100} alt="logo" />
           </TweenOne>
           <div className="about-text">
-            <TweenOne key='0' style={{ opacity: 0, transform: 'translateX(-100px)'}} animation={{ opacity: 1, translateX: 0, delay: 1500, duration: 1000}}>
+            <TweenOne key='0' animation={{ opacity: 1, translateX: 0, delay: 1500, duration: 1000}}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum est id diam ullamcorper cursus. Aenean pharetra dolor eget lorem scelerisque, quis blandit justo finibus. Aliquam a pulvinar nisl. Proin blandit velit sed ipsum pellentesque, ut feugiat enim volutpat. Curabitur turpis lectus, aliquet vitae ante a, facilisis consequat quam. 
             </TweenOne>
-            <TweenOne key='1' style={{ opacity: 0, transform: 'translateX(-100px)'}} animation={{ opacity: 1, translateX: 0, delay: 1700, duration: 1000}}>
+            <TweenOne key='1' animation={{ opacity: 1, translateX: 0, delay: 1700, duration: 1000}}>
               Nulla a egestas nibh. Suspendisse hendrerit magna sed odio dignissim blandit. Morbi pharetra mi non ullamcorper semper. Vestibulum mattis, est eget condimentum blandit, est eros tristique diam, sit amet mattis tellus enim quis augue. Sed sed justo tempus, auctor neque et, placerat nulla. Ut euismod fringilla diam nec varius.
             </TweenOne>
-            <TweenOne key='2' style={{ opacity: 0, transform: 'translateX(-100px)'}} animation={{ opacity: 1, translateX: 0, delay: 1900, duration: 1000}}>
+            <TweenOne key='2' animation={{ opacity: 1, translateX: 0, delay: 1900, duration: 1000}}>
               Etiam non tortor diam. Aliquam et tempus velit. Nam interdum nunc nec tortor gravida egestas. Curabitur porttitor sodales ante ut ullamcorper.
             </TweenOne>
           </div>
-          <TweenOne key='3' className="number-cards" style={{ opacity: 0, transform: 'translateY(50px)'}} animation={{ opacity: 1, translateY: 0, duration: 1000, delay: 2500 }}>
+          <TweenOne key='3' className="number-cards" animation={{ opacity: 1, translateY: 0, duration: 1000, delay: 2500 }}>
             <NumberCard description="number of Wikipedia articles I created" number="20,000" detail="These articles have been viewed 15 million times since 2015." />
             <NumberCard description="my Erdős number" number="6" detail={<div><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Erdős_number">Erdős number</a> is one's collabration distance to mathematican Paul Erdös.</div>} />
             <NumberCard description="number of U.S. states I've set foot on" number="23" detail="... and Washington, D.C.!" />
@@ -163,32 +163,31 @@ class App extends Component {
         </ScrollOverPack>
         <ScrollOverPack id="project-page" className="project-page" playScale={0.5} always={false}>
           <Texty key='0' type="left" mode="smooth" className="section-title" delay={500}>PROJECTS</Texty>
-          <TweenOne key='1' className="underline" style={{ opacity: 0, transform: 'translateX(-50px)'}} animation={{ opacity: 1, translateX: 0, delay: 750, duration: 1000}} />
-          <TweenOne key='2' className="projects" style={{ opacity: 0, transform: 'translateY(100px)' }} animation={{ opacity: 1, translateY: 0, delay: 1500, duration: 2000, onComplete: (e) => {
+          <TweenOne key='1' className="underline" animation={{ opacity: 1, translateX: 0, delay: 750, duration: 1000}} />
+          <TweenOne key='2' className="projects"  animation={{ opacity: 1, translateY: 0, delay: 1500, duration: 2000, onComplete: (e) => {
              this.setState({ projectsLoaded: true })
            }}}
           >
           { [...Array(6).keys()].map(i => (
             <Card key={i} className="project-card">
               <CardImg top width="100%" src="images/demo.jpg" />
-              <CardBody
-                onMouseEnter={ this.expandCard }
-                onMouseLeave={ this.collapseCard }
-                onTouchStart={e => {
-                  if (this.state.cardExpanded)
-                    this.collapseCard(e)
-                  else
-                    this.expandCard(e)
-                }}
-              >
                 <TweenOne
-                  style={{opacity: 0, transform: 'translateX(-50px)'}}
+                  component={CardBody}
+                  componentProps={{
+                    onMouseEnter: this.expandCard,
+                    onMouseLeave: this.collapseCard,
+                    onTouchStart: e => {
+                      if (this.state.cardExpanded)
+                        this.collapseCard(e)
+                      else
+                        this.expandCard(e)
+                    }
+                  }}
                   animation={{opacity: 1, x: 0, duration: 1000, ease: 'easeOutQuart', delay: 1000}}
                 >
                   <CardTitle>{`Project ${i+1}`}</CardTitle>
                   <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</CardText>
                 </TweenOne>
-              </CardBody>
             </Card>
           ))
           }
@@ -198,8 +197,8 @@ class App extends Component {
           <div className="scroll-arrow"><FaAngleDoubleUp size={24} /></div>
         </div>
         <ScrollOverPack id="contact-page" className="contact-page" playScale={0.1} always={false}>
-          <Texty key='0' type="left" mode="smooth" className="section-title" delay={500} style={{color: '#fff'}}>THANKS</Texty>
-          <TweenOne key='1' className="underline" style={{ opacity: 0, transform: 'translateX(-50px)', borderTopColor: '#fff' }} animation={{ opacity: 1, translateX: 0, delay: 750, duration: 1000}} />
+          <Texty key='0' type="left" mode="smooth" className="section-title" delay={500}>THANKS</Texty>
+          <TweenOne key='1' className="underline" animation={{ opacity: 1, translateX: 0, delay: 750, duration: 1000}} />
         </ScrollOverPack>
       </div>
     );

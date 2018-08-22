@@ -167,6 +167,9 @@ a {
 .logo {
   height: 100px;
   width: 100px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: rotateY(90deg);
 }
 
 .about-text {
@@ -180,6 +183,8 @@ a {
 
 .about-text > div {
   padding: 10px;
+  opacity: 0;
+  transform: translateX(-100px);
 }
 
 .section-title {
@@ -190,6 +195,10 @@ a {
   color: #222;
 }
 
+.contact-page .section-title {
+  color: #fff;
+}
+
 .underline {
   padding-top: 5px;
   padding-bottom: 20px;
@@ -197,6 +206,12 @@ a {
   width: 60px;
   height: 5px;
   margin: 0 auto;
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.contact-page .underline {
+  border-top-color: #fff;
 }
 
 .number-cards,
@@ -206,6 +221,8 @@ a {
   justify-content: center;
   width: 80%;
   flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(100px);
 }
 
 .number-card {
@@ -270,6 +287,11 @@ a {
 
 .project-card > img {
   transition: max-height .5s ease;
+}
+
+.project-card .card-body {
+  opacity: 0;
+  transform: translateX(-50px);
 }
 
 .scroll-to-top {
