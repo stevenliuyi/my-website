@@ -164,10 +164,9 @@ class App extends Component {
         <ScrollOverPack id="project-page" className="project-page" playScale={0.5} always={false}>
           <Texty key='0' type="left" mode="smooth" className="section-title" delay={500}>PROJECTS</Texty>
           <TweenOne key='1' className="underline" style={{ opacity: 0, transform: 'translateX(-50px)'}} animation={{ opacity: 1, translateX: 0, delay: 750, duration: 1000}} />
-          <TweenOne key='2' className="projects" style={{ opacity: 0, transform: 'translateY(100px)' }} animation={{ opacity: 1, translateY: 0, delay: 1500, duration: 2000}}
-           onComplete={(e) => {
+          <TweenOne key='2' className="projects" style={{ opacity: 0, transform: 'translateY(100px)' }} animation={{ opacity: 1, translateY: 0, delay: 1500, duration: 2000, onComplete: (e) => {
              this.setState({ projectsLoaded: true })
-           }}
+           }}}
           >
           { [...Array(6).keys()].map(i => (
             <Card key={i} className="project-card">
