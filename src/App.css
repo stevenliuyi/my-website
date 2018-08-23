@@ -23,10 +23,10 @@
   transform: translate(-50%, 0);
   font-family: serif;
   font-size: 24px;
+  font-weight: bold;
   background-color: #222;
   color: #fff;
   padding: 5px 10px 5px 10px;
-  font-weight: bold;
   white-space: nowrap;
 }
 
@@ -198,7 +198,8 @@ a {
   height: 50px;
   font-size: 32px;
   margin: 0px auto 0px auto;
-  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   color: #222;
 }
 
@@ -241,10 +242,14 @@ a {
 
 .number {
   font-size: 48px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
 }
 
 .number-desc {
   height: 80px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
 }
 
 .number-card-front {
@@ -299,6 +304,10 @@ a {
 .project-card .card-body {
   opacity: 0;
   transform: translateX(-50px);
+}
+
+.project-card-title {
+  font-family: 'Oswald';
 }
 
 .skill-chart-wrap {
@@ -365,7 +374,8 @@ a {
   padding: 2px;
   margin: 5px;
   width: 250px;
-  font-size: 14px;
+  font-size: 16px;
+  font-family: 'Oswald', sans-serif;
   color: #555;
   cursor: pointer;
 }
@@ -379,7 +389,7 @@ a {
 
 .skill-category-active,
 .skill-category:hover {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .skill-category-bracket {

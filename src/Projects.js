@@ -53,7 +53,7 @@ class Projects extends Component {
                 }}
                 animation={{opacity: 1, x: 0, duration: 1000, ease: 'easeOutQuart', delay: this.props.delay + 500}}
               >
-                <CardTitle>{`Project ${i+1}`}</CardTitle>
+                <CardTitle className="project-card-title">{`Project ${i+1}`}</CardTitle>
                 <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</CardText>
               </TweenOne>
           </Card>
