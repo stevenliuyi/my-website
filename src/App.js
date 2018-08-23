@@ -69,13 +69,13 @@ class App extends Component {
             <div ref="bar" className="nav-bar" />
           </div>
         </div>
-        <About ref={el => this.aboutPage = el} {...this.props} />
-        <Skills {...this.props} />
-        <Projects {...this.props} />
+        <About ref={el => this.aboutPage = el} {...this.state} />
+        <Skills {...this.state} />
+        <Projects {...this.state} />
         <div className="scroll-to-top" onClick={() => scrollToComponent(this.top, { align: 'top', duration: 500 })}>
           <div className="scroll-arrow"><FaAngleDoubleUp size={24} /></div>
         </div>
-        <Footer {...this.props} />
+        <Footer {...this.state} />
       </div>
     );
   }
