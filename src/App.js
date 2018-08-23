@@ -7,6 +7,7 @@ import { FaAngleDoubleUp } from 'react-icons/fa'
 import scrollToComponent from 'react-scroll-to-component'
 import Front from './Front'
 import About from './About'
+import Skills from './Skills'
 import Projects from './Projects'
 import Footer from './Footer'
 
@@ -58,12 +59,14 @@ class App extends Component {
         <div className="nav" ref={el => this.nav = el}>
           <div className="nav-wrap">
             <Link className="nav-list" to="about-page" onFocus={this.onFocus}>About</Link>
+            <Link className="nav-list" to="skill-page" onFocus={this.onFocus}>Skills</Link>
             <Link className="nav-list" to="project-page" onFocus={this.onFocus}>Projects</Link>
             <Link className="nav-list" to="contact-page" onFocus={this.onFocus}>Contact</Link>
             <div ref="bar" className="nav-bar" />
           </div>
         </div>
         <About ref={el => this.aboutPage = el} />
+        <Skills />
         <Projects />
         <div className="scroll-to-top" onClick={() => scrollToComponent(this.top, { align: 'top', duration: 500 })}>
           <div className="scroll-arrow"><FaAngleDoubleUp size={24} /></div>

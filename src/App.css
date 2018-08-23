@@ -140,6 +140,7 @@ a {
 }
 
 .about-page,
+.skill-page,
 .project-page {
   width: 100%;
   text-align: center;
@@ -147,12 +148,17 @@ a {
   padding-bottom: 30px;
 }
 
-.about-page {
+.about-page,
+.skill-page {
   min-height: 100vh;
 }
 
-.project-page {
+.skill-page {
   background-color: #eee;
+  position: absolute;
+}
+
+.project-page {
   min-height: calc(100vh + 30px);
 }
 
@@ -294,6 +300,18 @@ a {
   transform: translateX(-50px);
 }
 
+.skills-wrap {
+  width: 80%;
+  height: 500px;
+  margin: 0;
+}
+
+.skills {
+  width: 60%;
+  height: 100%;
+  margin: 0;
+}
+
 .scroll-to-top {
   position: absolute;
   background-color: #555;
@@ -337,4 +355,27 @@ a {
     transform: translate(0%, 125%);
     opacity: 0;
   }
+}
+
+.skill-name-background {
+  fill: #ccc;
+}
+
+.skill-name {
+  text-anchor: middle;
+  font-size: 14px;
+}
+
+.skill-bar {
+  fill: #0d8aba;
+}
+
+.skill-chart-wrap {
+  position: absolute;
+  margin: 100px 50px 0px 50px;
+}
+
+.skill-value {
+  alignment-baseline: middle;
+  font-size: 14px;
 }
