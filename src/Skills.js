@@ -132,7 +132,7 @@ const data = {
   ]
 }
 
-const updateD3Node = (data, width, height) => { 
+const updateD3Node = (data, width, height, delay=0) => { 
 
   const marginV = 10
   const marginH = 50
@@ -177,7 +177,7 @@ const updateD3Node = (data, width, height) => {
     .on("mouseenter", handleMouseEnter)
     .transition()
     .duration(interval)
-    .delay((d, i) => 1000 + interval*i)
+    .delay((d, i) => delay + 500 + interval*i)
     .attr('width', d => (d.value > 0 ? 100 : 0))
 
   bars.append('rect')
@@ -189,7 +189,7 @@ const updateD3Node = (data, width, height) => {
     .on("mouseenter", handleMouseEnter)
     .transition()
     .duration(interval*5)
-    .delay((d, i) => 1000 + interval*(1+i))
+    .delay((d, i) => delay + 500 + interval*(1+i))
     .attr('width', d => x(d.value))
 
   bars.append('rect')
@@ -201,7 +201,7 @@ const updateD3Node = (data, width, height) => {
     .on("mouseenter", handleMouseEnter)
     .transition()
     .duration(interval*5)
-    .delay((d, i) => 1000 + interval*(6+i))
+    .delay((d, i) => delay + 500 + interval*(6+i))
     .attr('width', d => (!d.skill.startsWith('placeholder') ? width-100-x(d.value) : 0))
 
   bars.append('text')
@@ -212,7 +212,7 @@ const updateD3Node = (data, width, height) => {
     .style('opacity', 0)
     .transition()
     .duration(interval*2)
-    .delay((d, i) => 1000 + interval*i)
+    .delay((d, i) => delay + 500 + interval*i)
     .style('opacity', 1)
 
   function handleMouseEnter(d, i) {
@@ -248,9 +248,9 @@ class Skills extends Component {
             {
               Object.keys(data).map( (category, i) => (
                 <div>
-                  <TweenOne paused={this.state.paused} style={{opacity: 0, transform: 'translateY(100px)'}} animation={{opacity:1, translateY: 0, delay: 1000 + i*100}}
+                  <TweenOne paused={this.state.paused} style={{opacity: 0, transform: 'translateY(100px)'}} animation={{opacity:1, translateY: 0, delay: this.props.delay + 500 + i*100}}
                     onClick={() => {
-                      updateD3Node(data[category], width, 400)
+                      updateD3Node(data[category], width, 400, this.props.delay)
                       this.setState({ activeCategory: category })
                     }}>
                     <div className={`skill-category ${this.state.activeCategory === category ? 'skill-category-active': ''}`}>
@@ -266,18 +266,18 @@ class Skills extends Component {
               ))
             }          
           </div> 
-          <TweenOne paused={this.state.paused} className="skill-logo" animation={{ opacity:1, rotateY: 0, delay: 1000, duration: 1000 }}>
+          <TweenOne paused={this.state.paused} className="skill-logo" animation={{ opacity:1, rotateY: 0, delay: this.props.delay + 500, duration: 1000 }}>
             <img src="icons/safari-pinned-tab.svg" width={60} height={60} alt="skill logo" />
           </TweenOne>
           <div><svg id="skill-chart" width={width} height={400} /></div>
         </div>
         <ScrollOverPack id="skill-page" playScale={0.5} always={false}
          onChange={({mode, id}) => { if (mode === 'enter') {
-           updateD3Node(data.Languages, width, 400)
+           updateD3Node(data.Languages, width, 400, this.props.delay)
            this.setState({ paused: false })
          }}}>
-          <Texty key='0' type="left" mode="smooth" className="section-title" delay={500}>COMPUTER SKILLS</Texty>
-          <TweenOne key='1' className="underline" animation={{ opacity: 1, translateX: 0, delay: 750, duration: 1000}} />
+          <Texty key='0' type="left" mode="smooth" className="section-title" delay={this.props.delay}>COMPUTER SKILLS</Texty>
+          <TweenOne key='1' className="underline" animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 250, duration: 1000}} />
         </ScrollOverPack>
       </div>
     );

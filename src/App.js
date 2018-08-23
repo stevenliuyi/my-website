@@ -16,6 +16,10 @@ const EventListener = ScrollAnim.Event
 
 class App extends Component {
 
+  state = {
+    delay: 250
+  }
+
   componentDidMount() {
     EventListener.addEventListener('resize.userResize', this.barAnimate.bind(this))
     window.addEventListener('scroll', this.handleScroll);
@@ -65,13 +69,13 @@ class App extends Component {
             <div ref="bar" className="nav-bar" />
           </div>
         </div>
-        <About ref={el => this.aboutPage = el} />
-        <Skills />
-        <Projects />
+        <About ref={el => this.aboutPage = el} {...this.props} />
+        <Skills {...this.props} />
+        <Projects {...this.props} />
         <div className="scroll-to-top" onClick={() => scrollToComponent(this.top, { align: 'top', duration: 500 })}>
           <div className="scroll-arrow"><FaAngleDoubleUp size={24} /></div>
         </div>
-        <Footer />
+        <Footer {...this.props} />
       </div>
     );
   }
