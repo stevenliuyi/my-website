@@ -11,15 +11,16 @@ import * as d3 from 'd3'
 // 1.0 - Expert
 const data = {
   'Languages': [
-    { skill: 'Python', value: 0.75 },
-    { skill: 'C/C++', value: 0.5 },
-    { skill: 'R', value: 0.65 },
+    { skill: 'Python', value: 0.75, logo: 'python.svg' },
+    { skill: 'C/C++', value: 0.5, logo: 'c++.png' },
+    { skill: 'R', value: 0.65, logo: 'R.svg' },
     { skill: 'Fortran', value: 0.8 },
-    { skill: 'Matlab', value: 0.65 },
-    { skill: 'Java', value: 0.3 },
-    { skill: 'JS (ES6)', value: 0.75 },
-    { skill: 'Perl', value: 0.25 },
-    { skill: 'Swift', value: 0.25 }
+    { skill: 'MATLAB', value: 0.65, logo: 'Matlab.png' },
+    { skill: 'Java', value: 0.25, logo: 'Java.svg' },
+    { skill: 'JS (ES6)', value: 0.75, logo: 'Javascript.png' },
+    { skill: 'Perl', value: 0.25, logo: 'Perl.png' },
+    { skill: 'Swift', value: 0.3 },
+    { skill: 'Wolfram', value: 0.75 }
   ],
   'Web Development': [
     { skill: 'CSS', value: 0.65 },
@@ -30,7 +31,8 @@ const data = {
     { skill: 'Jinja2', value: 0.3 },
     { skill: 'jQuery', value: 0.5 },
     { skill: 'd3.js', value: 0.5 },
-    { skill: 'placeholder9', value: 0 }
+    { skill: 'placeholder9', value: 0 },
+    { skill: 'placeholder10', value: 0 },
   ],
   'Databases': [
     { skill: 'MySQL', value: 0.5 },
@@ -41,7 +43,8 @@ const data = {
     { skill: 'placeholder6', value: 0 },
     { skill: 'placeholder7', value: 0 },
     { skill: 'placeholder8', value: 0 },
-    { skill: 'placeholder9', value: 0 }
+    { skill: 'placeholder9', value: 0 },
+    { skill: 'placeholder10', value: 0 }
   ],
   'CI/CD': [
     { skill: 'Git', value: 0.75 },
@@ -52,7 +55,8 @@ const data = {
     { skill: 'placeholder6', value: 0 },
     { skill: 'placeholder7', value: 0 },
     { skill: 'placeholder8', value: 0 },
-    { skill: 'placeholder9', value: 0 }
+    { skill: 'placeholder9', value: 0 },
+    { skill: 'placeholder10', value: 0 }
   ],
   'Data Mining': [
     { skill: 'R', value: 0.65 },
@@ -63,7 +67,8 @@ const data = {
     { skill: 'placeholder6', value: 0 },
     { skill: 'placeholder7', value: 0 },
     { skill: 'placeholder8', value: 0 },
-    { skill: 'placeholder9', value: 0 }
+    { skill: 'placeholder9', value: 0 },
+    { skill: 'placeholder10', value: 0 }
   ],
   'Parallel Programming': [
     { skill: 'MPI', value: 0.75 },
@@ -74,10 +79,11 @@ const data = {
     { skill: 'placeholder6', value: 0 },
     { skill: 'placeholder7', value: 0 },
     { skill: 'placeholder8', value: 0 },
-    { skill: 'placeholder9', value: 0 }
+    { skill: 'placeholder9', value: 0 },
+    { skill: 'placeholder10', value: 0 }
   ],
   'Math/Engineering Softwares': [
-    { skill: 'Matlab', value: 0.65 },
+    { skill: 'MATLAB', value: 0.65 },
     { skill: 'Mathematica', value: 0.75 },
     { skill: 'Maple', value: 0.35 },
     { skill: 'Fluent', value: 0.65 },
@@ -85,21 +91,23 @@ const data = {
     { skill: 'AutoCAD', value: 0.5 },
     { skill: 'CATIA', value: 0.6 },
     { skill: 'placeholder8', value: 0 },
-    { skill: 'placeholder9', value: 0 }
+    { skill: 'placeholder9', value: 0 },
+    { skill: 'placeholder10', value: 0 }
   ],
   'Markup Languages': [
     { skill: 'HTML', value: 0.75 },
-    { skill: 'LaTeX', value: 0.75 },
+    { skill: 'LaTeX', value: 0.8 },
     { skill: 'XML', value: 0.5 },
     { skill: 'JSON', value: 0.6 },
     { skill: 'YAML', value: 0.4 },
     { skill: 'placeholder6', value: 0 },
     { skill: 'placeholder7', value: 0 },
     { skill: 'placeholder8', value: 0 },
-    { skill: 'placeholder9', value: 0 }
+    { skill: 'placeholder9', value: 0 },
+    { skill: 'placeholder10', value: 0 }
   ],
   'Design': [
-    { skill: 'Photoshop', value: 0.75 },
+    { skill: 'Photoshop', value: 0.8 },
     { skill: 'Illustrator', value: 0.4 },
     { skill: 'InDesign', value: 0.25 },
     { skill: 'After Effects', value: 0.25 },
@@ -107,7 +115,8 @@ const data = {
     { skill: 'placeholder6', value: 0 },
     { skill: 'placeholder7', value: 0 },
     { skill: 'placeholder8', value: 0 },
-    { skill: 'placeholder9', value: 0 }
+    { skill: 'placeholder9', value: 0 },
+    { skill: 'placeholder10', value: 0 }
   ],
   'Miscellaneous': [
     { skill: 'Vim', value: 0.65 },
@@ -118,17 +127,19 @@ const data = {
     { skill: 'placeholder6', value: 0 },
     { skill: 'placeholder7', value: 0 },
     { skill: 'placeholder8', value: 0 },
+    { skill: 'placeholder10', value: 0 },
     { skill: 'placeholder9', value: 0 }
   ]
 }
 
 const updateD3Node = (data, width, height) => { 
 
-  const margin = 10
+  const marginV = 10
+  const marginH = 50
   const interval = 100
 
-  width -= 2 * margin
-  height -= 2 * margin
+  width -= 2 * marginH
+  height -= 2 * marginV
 
   let svg = d3.select('#skill-chart')
   svg.selectAll('*')
@@ -141,7 +152,7 @@ const updateD3Node = (data, width, height) => {
     .append('g')
     .attr('width', width)
     .attr('height', height)
-    .attr('transform', `translate(${margin}, ${margin})`)
+    .attr('transform', `translate(${marginH}, ${marginV})`)
 
   const x = d3.scaleLinear()
     .range([0, width-100])
@@ -163,6 +174,7 @@ const updateD3Node = (data, width, height) => {
     .attr('height', y.bandwidth())
     .attr('x', 0)
     .attr('width', 0)
+    .on("mouseenter", handleMouseEnter)
     .transition()
     .duration(interval)
     .delay((d, i) => 1000 + interval*i)
@@ -174,10 +186,23 @@ const updateD3Node = (data, width, height) => {
     .attr('height', y.bandwidth())
     .attr('x', 100)
     .attr('width', 0)
+    .on("mouseenter", handleMouseEnter)
     .transition()
     .duration(interval*5)
     .delay((d, i) => 1000 + interval*(1+i))
     .attr('width', d => x(d.value))
+
+  bars.append('rect')
+    .attr('class', 'skill-bar-empty')
+    .attr('y', d => y(d.skill))
+    .attr('height', y.bandwidth())
+    .attr('x', d => 100 + x(d.value))
+    .attr('width', 0)
+    .on("mouseenter", handleMouseEnter)
+    .transition()
+    .duration(interval*5)
+    .delay((d, i) => 1000 + interval*(6+i))
+    .attr('width', d => (!d.skill.startsWith('placeholder') ? width-100-x(d.value) : 0))
 
   bars.append('text')
     .attr('class', 'skill-name')
@@ -189,6 +214,19 @@ const updateD3Node = (data, width, height) => {
     .duration(interval*2)
     .delay((d, i) => 1000 + interval*i)
     .style('opacity', 1)
+
+  function handleMouseEnter(d, i) {
+    let img = d3.select('.skill-logo > img')
+    img
+      .transition()
+      .style('transform', 'scaleX(1)')
+      .duration(500)
+      .style('transform', 'scaleX(0)')
+      .transition()
+      .duration(500)
+      .style('transform', 'scaleX(1)')
+      .attr('src', d.logo != null ? `images/${d.logo}` : 'icons/safari-pinned-tab.svg')
+  }
 }
 
 const ScrollOverPack = ScrollAnim.OverPack
@@ -197,32 +235,45 @@ class Skills extends Component {
 
   state = {
     paused: true,
-    activeCategory: 'Languages'
+    activeCategory: 'Languages',
   }
 
   render() {
+    const width = Math.max(window.innerWidth*.8 - 450, 300)
+
     return (
       <div style={{position: 'relative'}} id="skill-page" className="skill-page">
         <div className="skill-chart-wrap">
-
-        <div className="skill-categories">
+          <div className="skill-categories">
             {
               Object.keys(data).map( (category, i) => (
-                <TweenOne className={`skill-category ${this.state.activeCategory === category ? 'skill-category-active': ''}`} paused={this.state.paused} style={{opacity: 0, transform: 'translateY(100px)'}} animation={{opacity:1, translateY: 0, delay: 1000 + i*100}}
-                  onClick={() => {
-                    updateD3Node(data[category], 500, 300)
-                    this.setState({ activeCategory: category })
-                  }}>
-                  { category }
-                </TweenOne>
+                <div>
+                  <TweenOne paused={this.state.paused} style={{opacity: 0, transform: 'translateY(100px)'}} animation={{opacity:1, translateY: 0, delay: 1000 + i*100}}
+                    onClick={() => {
+                      updateD3Node(data[category], width, 400)
+                      this.setState({ activeCategory: category })
+                    }}>
+                    <div className={`skill-category ${this.state.activeCategory === category ? 'skill-category-active': ''}`}>
+                      <span className="skill-category-bracket">{'<'}</span>
+                      { category }
+                      <span className="skill-category-bracket">{'/>'}</span>
+                    </div>
+                    { i !== Object.keys(data).length - 1 &&
+                      <div className="skill-category-line" /> 
+                    }
+                  </TweenOne>
+                </div>
               ))
             }          
-          </div>
-          <svg id="skill-chart" width={500} height={300} />
+          </div> 
+          <TweenOne paused={this.state.paused} className="skill-logo" animation={{ opacity:1, rotateY: 0, delay: 1000, duration: 1000 }}>
+            <img src="icons/safari-pinned-tab.svg" width={60} height={60} alt="skill logo" />
+          </TweenOne>
+          <div><svg id="skill-chart" width={width} height={400} /></div>
         </div>
         <ScrollOverPack id="skill-page" playScale={0.5} always={false}
          onChange={({mode, id}) => { if (mode === 'enter') {
-           updateD3Node(data.Languages, 500, 300)
+           updateD3Node(data.Languages, width, 400)
            this.setState({ paused: false })
          }}}>
           <Texty key='0' type="left" mode="smooth" className="section-title" delay={500}>COMPUTER SKILLS</Texty>
