@@ -14,7 +14,7 @@ const data = {
     { skill: 'Python', value: 0.75, logo: 'python.svg' },
     { skill: 'C/C++', value: 0.5, logo: 'c++.png' },
     { skill: 'R', value: 0.65, logo: 'r.svg' },
-    { skill: 'Fortran', value: 0.8 },
+    { skill: 'Fortran', value: 0.8, logo: 'fortran.svg' },
     { skill: 'MATLAB', value: 0.65, logo: 'matlab.png' },
     { skill: 'Java', value: 0.25, logo: 'java.svg' },
     { skill: 'JS (ES6)', value: 0.75, logo: 'javascript.png' },
@@ -23,21 +23,21 @@ const data = {
     { skill: 'Wolfram', value: 0.75, logo: 'wolfram.png' }
   ],
   'Web Development': [
-    { skill: 'CSS', value: 0.65 },
-    { skill: 'HTML5', value: 0.4 },
+    { skill: 'CSS', value: 0.65, logo: 'css3.png' },
+    { skill: 'HTML5', value: 0.4, logo: 'html5.png' },
     { skill: 'React', value: 0.65, logo: 'react.svg' },
     { skill: 'JS (ES6)', value: 0.75, logo: 'javascript.png' },
-    { skill: 'Node.js', value: 0.25 },
-    { skill: 'Jinja2', value: 0.3 },
+    { skill: 'Node.js', value: 0.25, logo: 'nodejs.svg' },
+    { skill: 'Jinja2', value: 0.3, logo: 'jinja.png' },
     { skill: 'jQuery', value: 0.5, logo: 'jquery.svg' },
     { skill: 'd3.js', value: 0.5, logo: 'd3.svg' },
     { skill: 'placeholder9', value: 0 },
     { skill: 'placeholder10', value: 0 },
   ],
   'Databases': [
-    { skill: 'MySQL', value: 0.5 },
+    { skill: 'MySQL', value: 0.5, logo: 'mysql.png' },
     { skill: 'MongoDB', value: 0.3, logo: 'mongodb.png' },
-    { skill: 'SQLite', value: 0.5 },
+    { skill: 'SQLite', value: 0.5, logo: 'sqlite.svg' },
     { skill: 'placeholder4', value: 0 },
     { skill: 'placeholder5', value: 0 },
     { skill: 'placeholder6', value: 0 },
@@ -49,9 +49,9 @@ const data = {
   'CI/CD': [
     { skill: 'Git', value: 0.75, logo: 'git.svg' },
     { skill: 'AWS', value: 0.4, logo: 'aws.svg' },
-    { skill: 'Google Cloud', value: 0.4 },
-    { skill: 'Travis CI', value: 0.65 },
-    { skill: 'Heroku', value: 0.5 },
+    { skill: 'Google Cloud', value: 0.4, logo: 'gcloud.svg' },
+    { skill: 'Travis CI', value: 0.65, logo: 'travis.svg' },
+    { skill: 'Heroku', value: 0.5, logo: 'heroku.png' },
     { skill: 'placeholder6', value: 0 },
     { skill: 'placeholder7', value: 0 },
     { skill: 'placeholder8', value: 0 },
@@ -60,9 +60,9 @@ const data = {
   ],
   'Data Mining': [
     { skill: 'R', value: 0.65, logo: 'r.svg' },
-    { skill: 'scikit-learn', value: 0.5 },
+    { skill: 'scikit-learn', value: 0.5, logo: 'scikit.png' },
     { skill: 'Tensorflow', value: 0.5, logo: 'tensorflow.svg' },
-    { skill: 'Pytorch', value: 0.3 },
+    { skill: 'Pytorch', value: 0.3, logo: 'pytorch.svg' },
     { skill: 'placeholder5', value: 0 },
     { skill: 'placeholder6', value: 0 },
     { skill: 'placeholder7', value: 0 },
@@ -71,7 +71,7 @@ const data = {
     { skill: 'placeholder10', value: 0 }
   ],
   'Parallel Programming': [
-    { skill: 'MPI', value: 0.75 },
+    { skill: 'MPI', value: 0.75, logo: 'mpi.png' },
     { skill: 'OpenMP', value: 0.5 },
     { skill: 'OpenCL', value: 0.5 },
     { skill: 'HTCondor', value: 0.75 },
@@ -83,7 +83,7 @@ const data = {
     { skill: 'placeholder10', value: 0 }
   ],
   'Math/Engineering Softwares': [
-    { skill: 'MATLAB', value: 0.65 },
+    { skill: 'MATLAB', value: 0.65, logo: 'matlab.png' },
     { skill: 'Mathematica', value: 0.75 },
     { skill: 'Maple', value: 0.35 },
     { skill: 'Fluent', value: 0.65 },
@@ -95,7 +95,7 @@ const data = {
     { skill: 'placeholder10', value: 0 }
   ],
   'Markup Languages': [
-    { skill: 'HTML', value: 0.75 },
+    { skill: 'HTML', value: 0.75, logo: 'html5.png' },
     { skill: 'LaTeX', value: 0.8 },
     { skill: 'XML', value: 0.5 },
     { skill: 'JSON', value: 0.6 },
