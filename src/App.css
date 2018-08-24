@@ -438,6 +438,10 @@ a {
   -webkit-filter: contrast(0%) brightness(0%) invert(100%);
 }
 
+.skill-logo > img {
+  object-fit: contain;
+}
+
 @media (max-width: 500px) {
   .skill-logo {
     display: none;
