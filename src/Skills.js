@@ -220,12 +220,14 @@ const updateD3Node = (data, width, height, delay=0) => {
     img
       .transition()
       .style('transform', 'scaleX(1)')
-      .duration(500)
+      .duration(300)
       .style('transform', 'scaleX(0)')
       .transition()
-      .duration(500)
-      .style('transform', 'scaleX(1)')
+      .duration(300)
       .attr('src', d.logo != null ? `images/${d.logo}` : 'icons/safari-pinned-tab.svg')
+      .transition()
+      .duration(300)
+      .style('transform', 'scaleX(1)')
   }
 }
 

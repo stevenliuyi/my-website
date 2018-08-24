@@ -434,8 +434,8 @@ a {
   height: 60px;
   opacity: 0;
   transform: rotateY(90deg);
-  filter: contrast(0%) brightness(50%) invert(100%);
-  -webkit-filter: contrast(0%) brightness(0%) invert(100%);
+  filter: contrast(0%) brightness(50%) invert(100%) drop-shadow(0 0 1px #aaa);
+  -webkit-filter: contrast(0%) brightness(0%) invert(100%) drop-shadow(0 0 1px #aaa);
 }
 
 .skill-logo > img {
