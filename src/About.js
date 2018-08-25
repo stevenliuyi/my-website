@@ -3,6 +3,7 @@ import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import NumberCard from './NumberCard'
+import { FaGoogle, FaGithub, FaEnvelope, FaWikipediaW, FaGlobe } from 'react-icons/fa'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -16,15 +17,24 @@ class About extends Component {
         <TweenOne key='2' className="logo" animation={{ opacity: 1, rotateY: 0 ,  duration:1000, ease: 'easeInQuart', delay: this.props.delay }}>
           <img src="/icons/android-chrome-192x192.png" height={100} width={100} alt="logo" />
         </TweenOne>
-        <div className="about-text">
-          <TweenOne key='0' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1000, duration: 1000}}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum est id diam ullamcorper cursus. Aenean pharetra dolor eget lorem scelerisque, quis blandit justo finibus. Aliquam a pulvinar nisl. Proin blandit velit sed ipsum pellentesque, ut feugiat enim volutpat. Curabitur turpis lectus, aliquet vitae ante a, facilisis consequat quam. 
-          </TweenOne>
-          <TweenOne key='1' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1200, duration: 1000}}>
-            Nulla a egestas nibh. Suspendisse hendrerit magna sed odio dignissim blandit. Morbi pharetra mi non ullamcorper semper. Vestibulum mattis, est eget condimentum blandit, est eros tristique diam, sit amet mattis tellus enim quis augue. Sed sed justo tempus, auctor neque et, placerat nulla. Ut euismod fringilla diam nec varius.
-          </TweenOne>
-          <TweenOne key='2' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1400, duration: 1000}}>
-            Etiam non tortor diam. Aliquam et tempus velit. Nam interdum nunc nec tortor gravida egestas. Curabitur porttitor sodales ante ut ullamcorper.
+        <div className="about-wrap">
+          <div className="about-text">
+            <TweenOne key='0' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1000, duration: 1000}}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum est id diam ullamcorper cursus. Aenean pharetra dolor eget lorem scelerisque, quis blandit justo finibus. Aliquam a pulvinar nisl. Proin blandit velit sed ipsum pellentesque, ut feugiat enim volutpat. Curabitur turpis lectus, aliquet vitae ante a, facilisis consequat quam. 
+            </TweenOne>
+            <TweenOne key='1' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1200, duration: 1000}}>
+              Nulla a egestas nibh. Suspendisse hendrerit magna sed odio dignissim blandit. Morbi pharetra mi non ullamcorper semper. Vestibulum mattis, est eget condimentum blandit, est eros tristique diam, sit amet mattis tellus enim quis augue. Sed sed justo tempus, auctor neque et, placerat nulla. Ut euismod fringilla diam nec varius.
+            </TweenOne>
+            <TweenOne key='2' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1400, duration: 1000}}>
+              Etiam non tortor diam. Aliquam et tempus velit. Nam interdum nunc nec tortor gravida egestas. Curabitur porttitor sodales ante ut ullamcorper.
+            </TweenOne>
+          </div>
+          <TweenOne className="about-links" animation={{ opacity: 1, translateY: 0, delay: this.props.delay + 1200, duration: 1000}}>
+            <div className="about-link" onClick={() => window.open('mailto:yliu27@nd.edu', '_self')}><FaEnvelope size={14} /><span className="about-link-text">E-mail</span></div>
+            <div className="about-link" onClick={() => window.open('https://github.com/stevenliuyi', '_blank')}><FaGithub size={14} /><span className="about-link-text">Github</span></div>
+            <div className="about-link" onClick={() => window.open('https://scholar.google.com/citations?hl=en&user=4Bu3RO0AAAAJ', '_blank')}><FaGoogle size={14} /><span className="about-link-text">Google Scholar</span></div>
+            <div className="about-link" onClick={() => window.open('https://zh.wikipedia.org/wiki/User:Stevenliuyi')}><FaWikipediaW size={14} /><span className="about-link-text">Wikipedia</span></div>
+            <div className="about-link" onClick={() => window.open('https://www.zhihu.com/people/stevenliuyi')}><FaGlobe size={14} /><span className="about-link-text">Zhihu</span></div>
           </TweenOne>
         </div>
         <TweenOne key='3' className="number-cards" animation={{ opacity: 1, translateY: 0, duration: 1000, delay: this.props.delay + 2000 }}>
