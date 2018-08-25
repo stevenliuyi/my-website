@@ -8,6 +8,7 @@ import scrollToComponent from 'react-scroll-to-component'
 import Front from './Front'
 import About from './About'
 import Skills from './Skills'
+import Research from './Research'
 import Projects from './Projects'
 import Footer from './Footer'
 
@@ -64,13 +65,14 @@ class App extends Component {
           <div className="nav-wrap">
             <Link className="nav-list" to="about-page" onFocus={this.onFocus}>About</Link>
             <Link className="nav-list" to="skill-page" onFocus={this.onFocus}>Skills</Link>
+            <Link className="nav-list" to="research-page" onFocus={this.onFocus}>Research</Link>
             <Link className="nav-list" to="project-page" onFocus={this.onFocus}>Projects</Link>
-            <Link className="nav-list" to="contact-page" onFocus={this.onFocus}>Contact</Link>
             <div ref="bar" className="nav-bar" />
           </div>
         </div>
         <About ref={el => this.aboutPage = el} {...this.state} />
         <Skills {...this.state} />
+        <Research {...this.state} />
         <Projects {...this.state} />
         <div className="scroll-to-top" onClick={() => scrollToComponent(this.top, { align: 'top', duration: 500 })}>
           <div className="scroll-arrow"><FaAngleDoubleUp size={24} /></div>
