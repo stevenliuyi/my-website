@@ -72,9 +72,9 @@ const data = {
   ],
   'Parallel Programming': [
     { skill: 'MPI', value: 0.75, logo: 'mpi.png' },
-    { skill: 'OpenMP', value: 0.5 },
-    { skill: 'OpenCL', value: 0.5 },
-    { skill: 'HTCondor', value: 0.75 },
+    { skill: 'OpenMP', value: 0.5, logo: 'openmp.png' },
+    { skill: 'OpenCL', value: 0.5, logo: 'opencl.png' },
+    { skill: 'HTCondor', value: 0.75, logo: 'htcondor.png' },
     { skill: 'placeholder5', value: 0 },
     { skill: 'placeholder6', value: 0 },
     { skill: 'placeholder7', value: 0 },
@@ -84,22 +84,22 @@ const data = {
   ],
   'Math/Engineering Softwares': [
     { skill: 'MATLAB', value: 0.65, logo: 'matlab.png' },
-    { skill: 'Mathematica', value: 0.75 },
-    { skill: 'Maple', value: 0.35 },
-    { skill: 'Fluent', value: 0.65 },
-    { skill: 'STAR-CCM+', value: 0.5 },
-    { skill: 'AutoCAD', value: 0.5 },
-    { skill: 'CATIA', value: 0.6 },
+    { skill: 'Mathematica', value: 0.75, logo: 'mathematica.png'},
+    { skill: 'Maple', value: 0.35, logo: 'maple.png' },
+    { skill: 'Fluent', value: 0.65, logo: 'fluent.png' },
+    { skill: 'STAR-CCM+', value: 0.5, logo: 'starccm.png' },
+    { skill: 'AutoCAD', value: 0.5, logo: 'autocad.png' },
+    { skill: 'CATIA', value: 0.6, logo: 'catia.svg' },
     { skill: 'placeholder8', value: 0 },
     { skill: 'placeholder9', value: 0 },
     { skill: 'placeholder10', value: 0 }
   ],
   'Markup Languages': [
     { skill: 'HTML', value: 0.75, logo: 'html5.png' },
-    { skill: 'LaTeX', value: 0.8 },
+    { skill: 'LaTeX', value: 0.8, logo: 'latex.svg' },
     { skill: 'XML', value: 0.5 },
-    { skill: 'JSON', value: 0.6 },
-    { skill: 'YAML', value: 0.4 },
+    { skill: 'JSON', value: 0.6, logo: 'json.svg' },
+    { skill: 'YAML', value: 0.4, logo: 'yaml.png' },
     { skill: 'placeholder6', value: 0 },
     { skill: 'placeholder7', value: 0 },
     { skill: 'placeholder8', value: 0 },
@@ -107,11 +107,11 @@ const data = {
     { skill: 'placeholder10', value: 0 }
   ],
   'Design': [
-    { skill: 'Photoshop', value: 0.8 },
-    { skill: 'Illustrator', value: 0.4 },
-    { skill: 'InDesign', value: 0.25 },
-    { skill: 'After Effects', value: 0.25 },
-    { skill: '3DMax', value: 0.25 },
+    { skill: 'Photoshop', value: 0.8, logo: 'ps.png' },
+    { skill: 'Illustrator', value: 0.4, logo: 'ai.png' },
+    { skill: 'InDesign', value: 0.25, logo: 'id.png' },
+    { skill: 'After Effects', value: 0.25, logo: 'ae.png' },
+    { skill: '3ds Max', value: 0.25, logo: '3dsmax.png' },
     { skill: 'placeholder6', value: 0 },
     { skill: 'placeholder7', value: 0 },
     { skill: 'placeholder8', value: 0 },
@@ -119,11 +119,11 @@ const data = {
     { skill: 'placeholder10', value: 0 }
   ],
   'Miscellaneous': [
-    { skill: 'Vim', value: 0.65 },
-    { skill: 'MediaWiki', value: 0.6 },
-    { skill: 'VBA', value: 0.6 },
+    { skill: 'Vim', value: 0.65, logo: 'vim.svg' },
+    { skill: 'MediaWiki', value: 0.6, logo: 'mediawiki.svg' },
+    { skill: 'VBA', value: 0.6, logo: 'vba.png' },
     { skill: 'Doxygen', value: 0.5 },
-    { skill: 'Jupyter', value: 0.75 },
+    { skill: 'Jupyter', value: 0.75, logo: 'jupyter.svg' },
     { skill: 'placeholder6', value: 0 },
     { skill: 'placeholder7', value: 0 },
     { skill: 'placeholder8', value: 0 },
@@ -175,6 +175,7 @@ const updateD3Node = (data, width, height, delay=0) => {
     .attr('x', 0)
     .attr('width', 0)
     .on("mouseenter", handleMouseEnter)
+    .on("mouseleave", handleMouseLeave)
     .transition()
     .duration(interval)
     .delay((d, i) => delay + 500 + interval*i)
@@ -182,11 +183,13 @@ const updateD3Node = (data, width, height, delay=0) => {
 
   bars.append('rect')
     .attr('class', 'skill-bar')
+    .attr('id', (d, i) => `skill-bar${i}`)
     .attr('y', d => y(d.skill))
     .attr('height', y.bandwidth())
     .attr('x', 100)
     .attr('width', 0)
     .on("mouseenter", handleMouseEnter)
+    .on("mouseleave", handleMouseLeave)
     .transition()
     .duration(interval*5)
     .delay((d, i) => delay + 500 + interval*(1+i))
@@ -199,6 +202,7 @@ const updateD3Node = (data, width, height, delay=0) => {
     .attr('x', d => 100 + x(d.value))
     .attr('width', 0)
     .on("mouseenter", handleMouseEnter)
+    .on("mouseleave", handleMouseLeave)
     .transition()
     .duration(interval*5)
     .delay((d, i) => delay + 500 + interval*(6+i))
@@ -206,10 +210,13 @@ const updateD3Node = (data, width, height, delay=0) => {
 
   bars.append('text')
     .attr('class', 'skill-name')
+    .attr('id', (d, i) => `skill-name${i}`)
     .attr('y', d => y(d.skill) + y.bandwidth() / 2)
     .attr('x', d => 50)
     .text(d => (!d.skill.startsWith('placeholder') ? d.skill : ''))
     .style('opacity', 0)
+    .on("mouseenter", handleMouseEnter)
+    .on("mouseleave", handleMouseLeave)
     .transition()
     .duration(interval*2)
     .delay((d, i) => delay + 500 + interval*i)
@@ -228,6 +235,20 @@ const updateD3Node = (data, width, height, delay=0) => {
       .transition()
       .duration(300)
       .style('transform', 'scaleX(1)')
+
+    d3.select(`#skill-name${i}`)
+      .attr('font-weight', 'bold')
+
+    d3.select(`#skill-bar${i}`)
+      .style('fill', '#10adea')
+  }
+
+  function handleMouseLeave(d, i) {
+    d3.select(`#skill-name${i}`)
+      .attr('font-weight', 'normal')
+
+    d3.select(`#skill-bar${i}`)
+      .style('fill', '#0d8aba')
   }
 }
 
