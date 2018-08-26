@@ -510,6 +510,25 @@ a {
   }
 }
 
+.keywords-wrap {
+  width: 80%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin: 0px auto 10px auto;
+}
+
+.keywords-title {
+  font-weight: bold;
+  transform: translateX(-100px);
+}
+
+.keywords-title,
+.keyword {
+  margin: 0 5px 0 5px;
+  opacity: 0;
+}
+
 .researches {
   width: 80%;
   margin: 0 auto;
