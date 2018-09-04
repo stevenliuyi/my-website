@@ -245,7 +245,7 @@ const updateD3Node = (data, width, height, delay=0) => {
 
   function handleMouseLeave(d, i) {
     d3.select(`#skill-name${i}`)
-      .attr('font-weight', 'normal')
+      .attr('font-weight', '300')
 
     d3.select(`#skill-bar${i}`)
       .style('fill', '#0d8aba')
