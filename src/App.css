@@ -516,6 +516,7 @@ a {
   justify-content: center; 
   align-items: center;
   margin: 0px auto 10px auto;
+  flex-wrap: wrap;
 }
 
 .keywords-title {
@@ -529,20 +530,30 @@ a {
   opacity: 0;
 }
 
+.keyword {
+  border-radius: 999px !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
 .researches {
   width: 80%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .research {
   width: 100%;
   min-height: 20vw;
-  height: 200px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   opacity: 0;
   transform: translateX(100px);
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .research-image-wrap {
@@ -575,4 +586,7 @@ a {
   font-size: 14px;
 }
 
-
+.research-button {
+  margin-top: 3px;
+  border-radius: 999px !important;
+}
