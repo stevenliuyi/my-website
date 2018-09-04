@@ -11,6 +11,66 @@ class Front extends Component {
     linkShown: false
   }
 
+  // reference: https://codepen.io/tmrDevelops/pen/PPgjwz
+  snowy() {
+    const canvas = document.getElementById('snow')
+    const ctx = canvas.getContext('2d')
+    const width = canvas.width = window.innerWidth
+    const height = canvas.height = window.innerHeight
+
+    let snow, arr = []
+    const num = 100, tsc = 1, sp = .2
+    const sc = 1.3, mv = 20, min = 1
+  
+    // initialization
+    for (let i = 0; i < num; ++i) {
+      snow = new flake()
+      snow.y = Math.random() * (height + 50)
+      snow.x = Math.random() * width
+      snow.t = Math.random() * (Math.PI * 2)
+      snow.sz = (100 / (10 + (Math.random() * 100))) * sc
+      snow.sp = (Math.pow(snow.sz * .8, 2) * .15) * sp
+      snow.sp = snow.sp < min ? min : snow.sp
+      arr.push(snow)
+    }
+    // start animation
+    go()
+
+    function go() {
+      window.requestAnimationFrame(go)
+      ctx.clearRect(0, 0, width, height)
+
+      for (let i = 0; i < arr.length; ++i) {
+        let f = arr[i]
+        f.t += .05
+        f.t = f.t >= Math.PI * 2 ? 0 : f.t
+        f.y += f.sp
+        f.x += Math.sin(f.t * tsc) * (f.sz * .3) * Math.random()
+        if (f.y > height + 50) f.y = -10 - Math.random() * mv
+        if (f.x > width + mv) f.x = - mv
+        if (f.x < - mv) f.x = width + mv
+        f.draw()
+      }
+    }
+
+    function flake() {
+       this.draw = function() {
+         this.g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.sz)
+         this.g.addColorStop(0, 'hsla(255,255%,255%,1)')
+         this.g.addColorStop(1, 'hsla(255,255%,255%,0)')
+         ctx.moveTo(this.x, this.y)
+         ctx.fillStyle = this.g
+         ctx.beginPath()
+         ctx.arc(this.x, this.y, this.sz, 0, Math.PI * 2, true)
+         ctx.fill()
+       }
+    }
+  }
+
+  componentDidMount() {
+    this.snowy()
+  }
+
   componentDidUpdate({ linkShown}) {
     if (!linkShown && this.state.linkShown) {
       ['main-links', 'more-text', 'arrow-down'].forEach(showClass => {
@@ -29,6 +89,7 @@ class Front extends Component {
   render() {
     return (
       <div className="background">
+        <canvas id="snow"></canvas>
         <ProgressiveImage
           preview="/images/fabrice-villard-584622-unsplash-small.jpg"
           src="/images/fabrice-villard-584622-unsplash.jpg"
