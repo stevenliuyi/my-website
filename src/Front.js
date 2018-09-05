@@ -33,23 +33,39 @@ class Front extends Component {
       snow.sp = snow.sp < min ? min : snow.sp
       arr.push(snow)
     }
+
+    // intialize timer
+    const fps = 24
+    const fpsInterval = 1000 / fps
+    let then = Date.now(), now, elapsed
+
     // start animation
-    go()
+    animate()
 
-    function go() {
-      window.requestAnimationFrame(go)
-      ctx.clearRect(0, 0, width, height)
+    function animate() {
+      window.requestAnimationFrame(animate)
 
-      for (let i = 0; i < arr.length; ++i) {
-        let f = arr[i]
-        f.t += .05
-        f.t = f.t >= Math.PI * 2 ? 0 : f.t
-        f.y += f.sp
-        f.x += Math.sin(f.t * tsc) * (f.sz * .3) * Math.random()
-        if (f.y > height + 50) f.y = -10 - Math.random() * mv
-        if (f.x > width + mv) f.x = - mv
-        if (f.x < - mv) f.x = width + mv
-        f.draw()
+      // calculate elapsed time
+      now = Date.now()
+      elapsed = now - then
+
+      // only draw when enough time has elapsed
+      if (elapsed > fpsInterval) {
+        then = now - (elapsed % fpsInterval)
+
+        ctx.clearRect(0, 0, width, height)
+
+        for (let i = 0; i < arr.length; ++i) {
+          let f = arr[i]
+          f.t += .05
+          f.t = f.t >= Math.PI * 2 ? 0 : f.t
+          f.y += f.sp
+          f.x += Math.sin(f.t * tsc) * (f.sz * .3) * Math.random()
+          if (f.y > height + 50) f.y = -10 - Math.random() * mv
+          if (f.x > width + mv) f.x = - mv
+          if (f.x < - mv) f.x = width + mv
+          f.draw()
+        }
       }
     }
 
