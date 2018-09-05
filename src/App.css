@@ -254,22 +254,17 @@ a {
 }
 
 .about-link {
-  padding-left: 15px;
-  width: 150px;
+  padding: 5px;
   text-align: left;
   display: flex;
   align-items: center;
   color: #555;
   cursor: pointer;
-  border-left: 1px solid #555;
 }
 
 .about-link:hover {
   background-color: #ccc;
-}
-
-.about-link-text {
-  padding-left: 7px;
+  color: #fff;
 }
 
 .section-title {
@@ -629,4 +624,8 @@ a {
 
 .at {
   padding: 2px;
+}
+
+.tooltip {
+  transition: opacity .5s;
 }

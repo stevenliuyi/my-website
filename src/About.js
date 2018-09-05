@@ -3,15 +3,32 @@ import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import NumberCard from './NumberCard'
-import { FaGoogle, FaGithub, FaEnvelope, FaWikipediaW, FaGlobe } from 'react-icons/fa'
+import { FaGoogle, FaGithub, FaAt, FaWikipediaW, FaGlobe } from 'react-icons/fa'
+import { Tooltip } from 'reactstrap'
 import textEnter from './textEnter'
 import 'rc-texty/assets/index.css'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
 class About extends Component {
+  state = {
+    tooltipOpen: {
+      email: false,
+      github: false,
+      googleScholar: false,
+      wikipedia: false,
+      zhihu: false
+    }
+  }
+
+  tooltipToggle = (link) => {
+    let tooltipOpen = this.state.tooltipOpen
+    tooltipOpen[link] = !tooltipOpen[link]
+    this.setState({ tooltipOpen })
+  }
 
   render() {
+    const iconSize = 30
     return (
       <ScrollOverPack id="about-page" className="about-page" playScale={0.5} always={false}>
         <Texty key='0' enter={textEnter} className="section-title" delay={this.props.delay}>ABOUT</Texty>
@@ -32,11 +49,16 @@ class About extends Component {
             </TweenOne>
           </div>
           <TweenOne className="about-links" animation={{ opacity: 1, translateY: 0, delay: this.props.delay + 1200, duration: 1000}}>
-            <div className="about-link" onClick={() => window.open('mailto:yliu27@nd.edu', '_self')}><FaEnvelope size={14} /><span className="about-link-text">E-mail</span></div>
-            <div className="about-link" onClick={() => window.open('https://github.com/stevenliuyi', '_blank')}><FaGithub size={14} /><span className="about-link-text">Github</span></div>
-            <div className="about-link" onClick={() => window.open('https://scholar.google.com/citations?hl=en&user=4Bu3RO0AAAAJ', '_blank')}><FaGoogle size={14} /><span className="about-link-text">Google Scholar</span></div>
-            <div className="about-link" onClick={() => window.open('https://zh.wikipedia.org/wiki/User:Stevenliuyi')}><FaWikipediaW size={14} /><span className="about-link-text">Wikipedia</span></div>
-            <div className="about-link" onClick={() => window.open('https://www.zhihu.com/people/stevenliuyi')}><FaGlobe size={14} /><span className="about-link-text">Zhihu</span></div>
+            <div id="email-icon" className="about-link" onClick={() => window.open('mailto:me@yliu.io', '_self')}><FaAt size={iconSize} /></div>
+            <div id="github-icon" className="about-link" onClick={() => window.open('https://github.com/stevenliuyi', '_blank')}><FaGithub size={iconSize} /></div>
+            <div id="googleScholar-icon" className="about-link" onClick={() => window.open('https://scholar.google.com/citations?hl=en&user=4Bu3RO0AAAAJ', '_blank')}><FaGoogle size={iconSize} /></div>
+            <div id="wikipedia-icon" className="about-link" onClick={() => window.open('https://zh.wikipedia.org/wiki/User:Stevenliuyi')}><FaWikipediaW size={iconSize} /></div>
+            <div id="zhihu-icon" className="about-link" onClick={() => window.open('https://www.zhihu.com/people/stevenliuyi')}><FaGlobe size={iconSize} /></div>
+            <Tooltip placement="auto" target="email-icon" isOpen={this.state.tooltipOpen.email} toggle={() => this.tooltipToggle('email')} delay={100}>Email</Tooltip>
+            <Tooltip placement="auto" target="github-icon" isOpen={this.state.tooltipOpen.github} toggle={() => this.tooltipToggle('github')} delay={100}>Github</Tooltip>
+            <Tooltip placement="auto" target="googleScholar-icon" isOpen={this.state.tooltipOpen.googleScholar} toggle={() => this.tooltipToggle('googleScholar')} delay={100}>Google Scholar</Tooltip>
+            <Tooltip placement="auto" target="wikipedia-icon" isOpen={this.state.tooltipOpen.wikipedia} toggle={() => this.tooltipToggle('wikipedia')} delay={100}>Wikipedia</Tooltip>
+            <Tooltip placement="auto" target="zhihu-icon" isOpen={this.state.tooltipOpen.zhihu} toggle={() => this.tooltipToggle('zhihu')} delay={100}>Zhihu</Tooltip>
           </TweenOne>
         </div>
         <TweenOne key='3' className="number-cards" animation={{ opacity: 1, translateY: 0, duration: 1000, delay: this.props.delay + 2000 }}>
