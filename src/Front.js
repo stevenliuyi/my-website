@@ -15,8 +15,13 @@ class Front extends Component {
   snowy() {
     const canvas = document.getElementById('snow')
     const ctx = canvas.getContext('2d')
-    const width = canvas.width = window.innerWidth
-    const height = canvas.height = window.innerHeight
+    let width = canvas.width = window.innerWidth
+    let height = canvas.height = window.innerHeight
+
+    window.addEventListener('resize', () => {
+      canvas.width = width = window.innerWidth
+      canvas.height = height = window.innerHeight
+    }, false)
 
     let snow, arr = []
     const num = 100, tsc = 1, sp = .2
