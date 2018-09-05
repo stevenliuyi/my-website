@@ -38,7 +38,7 @@ const data = {
     { skill: 'MySQL', value: 0.5, logo: 'mysql.png' },
     { skill: 'MongoDB', value: 0.3, logo: 'mongodb.png' },
     { skill: 'SQLite', value: 0.5, logo: 'sqlite.svg' },
-    { skill: 'placeholder4', value: 0 },
+    { skill: 'SPARQL', value: 0.8, logo: 'sparql.svg' },
     { skill: 'placeholder5', value: 0 },
     { skill: 'placeholder6', value: 0 },
     { skill: 'placeholder7', value: 0 },
