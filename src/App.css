@@ -192,6 +192,7 @@ a {
   height: 60vh;
   background-color: #222;
   text-align: center;
+  position: relative;
 }
 
 .logo {
@@ -431,6 +432,7 @@ a {
   color: #eee;
   overflow: hidden;
   cursor: pointer;
+  z-index: 10;
 }
 
 .scroll-to-top:hover {
@@ -645,4 +647,22 @@ a {
 
 .tooltip {
   transition: opacity .5s;
+}
+
+.footer-logo {
+  background-image: url(/icons/mstile-150x150.png);
+  height: 250px;
+  width: 250px;
+  margin: 0 auto -80px auto;
+  background-size: cover;
+  opacity: 0;
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
+}
+
+.footer {
+  position: absolute;
+  color: #fff;
+  bottom: 50px;
+  right: 50px;
 }
