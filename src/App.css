@@ -610,3 +610,23 @@ a {
   margin-top: 3px;
   border-radius: 999px !important;
 }
+
+.contact-email {
+  opacity: 0;
+  transform: translateY(50px);
+  font-size: 25px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 200;
+}
+
+.contact-email > a {
+  color: #fff;
+}
+
+.contact-email > a:hover {
+  color: #ccc;
+}
+
+.at {
+  padding: 2px;
+}
