@@ -3,10 +3,16 @@
   background-color: #fff;
 }
 
+.background-empty {
+  height: 100vh;
+  width: 100%;
+  visibility: hidden;
+}
+
 .background {
   height: 100vh;
   width: 100%;
-  position: relative;
+  position: fixed;
 }
 
 #snow {
