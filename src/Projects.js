@@ -3,6 +3,8 @@ import { Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap'
 import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
+import textEnter from './textEnter'
+import 'rc-texty/assets/index.css'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -30,7 +32,7 @@ class Projects extends Component {
   render() {
     return (
       <ScrollOverPack id="project-page" className="project-page" playScale={0.5} always={false}>
-        <Texty key='0' type="left" mode="smooth" className="section-title" delay={this.props.delay}>PROJECTS</Texty>
+        <Texty key='0' enter={textEnter} className="section-title" delay={this.props.delay}>PROJECTS</Texty>
         <TweenOne key='1' className="underline" animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 250, duration: 1000}} />
         <TweenOne key='2' className="projects"  animation={{ opacity: 1, translateY: 0, delay: this.props.delay + 1000, duration: 2000, onComplete: (e) => {
            this.setState({ projectsLoaded: true })
