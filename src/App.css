@@ -248,8 +248,7 @@ a {
 
   .about-link {
     width: auto !important;
-    border-left: none !important;
-    padding-left: 0px;
+    padding: 0px;
   }
 }
 
@@ -260,11 +259,29 @@ a {
   align-items: center;
   color: #555;
   cursor: pointer;
+  height: 40px;
+  width: 40px;
 }
 
 .about-link:hover {
   background-color: #ccc;
   color: #fff;
+}
+
+.circle-icon {
+  border-radius: 999px;
+  background-color: #555;
+  color: #fff;
+  width: 29px;
+  height: 29px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-link:hover .circle-icon {
+  background-color: #fff;
+  color: #ccc;
 }
 
 .section-title {

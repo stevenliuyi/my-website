@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ProgressiveImage from 'react-progressive-image-loading'
 import Typist from 'react-typist'
 import 'react-typist/dist/Typist.css'
-import { TiPencil, TiCode } from 'react-icons/ti'
+import { TiCode } from 'react-icons/ti'
 import { IoIosArrowDown } from 'react-icons/io'
 
 class Front extends Component {
@@ -135,12 +135,6 @@ class Front extends Component {
             <span>Steven.</span>
           </Typist>
           <div className="main-links">
-            <a href="https://blog.yliu.io">
-              <span className="main-link">
-                <TiPencil size={14} className="main-icon"/>
-                <span className="main-link-text">blog</span>
-              </span>
-            </a>
             <a href="https://github.com/stevenliuyi">
               <span className="main-link">
                 <TiCode size={14} className="main-icon" />

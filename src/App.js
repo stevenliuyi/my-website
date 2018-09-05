@@ -11,6 +11,7 @@ import Skills from './Skills'
 import Research from './Research'
 import Projects from './Projects'
 import Footer from './Footer'
+import './iconfont.css'
 
 const Link = ScrollAnim.Link
 const EventListener = ScrollAnim.Event
