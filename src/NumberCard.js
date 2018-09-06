@@ -24,7 +24,7 @@ class NumberCard extends Component {
         <TweenOne animation={{opacity: 0, scaleY: 0}} paused={this.state.paused} reverse={this.state.reverse} className="number-card-front">
           <Card body>
             <CardText className="number-desc">{ this.props.description }</CardText>
-            <div className="number">{ this.props.number }</div>
+            <div className="number noselect">{ this.props.number }</div>
           </Card>
         </TweenOne>
         <TweenOne animation={{opacity: 1, scaleY: 1}} paused={this.state.paused} reverse={this.state.reverse} className="number-card-back">

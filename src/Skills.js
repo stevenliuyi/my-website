@@ -210,7 +210,7 @@ const updateD3Node = (data, width, height, delay=0) => {
     .attr('width', d => (!d.skill.startsWith('placeholder') ? width-100-x(d.value) : 0))
 
   bars.append('text')
-    .attr('class', 'skill-name')
+    .attr('class', 'skill-name noselect')
     .attr('id', (d, i) => `skill-name${i}`)
     .attr('y', d => y(d.skill) + y.bandwidth() / 2)
     .attr('x', d => 50)
@@ -277,7 +277,7 @@ class Skills extends Component {
                       updateD3Node(data[category], width, 400, this.props.delay)
                       this.setState({ activeCategory: category })
                     }}>
-                    <div className={`skill-category ${this.state.activeCategory === category ? 'skill-category-active': ''}`}>
+                    <div className={`skill-category noselect ${this.state.activeCategory === category ? 'skill-category-active': ''}`}>
                       <span className="skill-category-bracket">{'<'}</span>
                       { category }
                       <span className="skill-category-bracket">{'/>'}</span>
@@ -292,7 +292,7 @@ class Skills extends Component {
           </div> 
           {/* hide on mobile devices to avoid display issue */}
           { !isMobile &&
-            <TweenOne paused={this.state.paused} className="skill-logo" animation={{ opacity:1, rotateY: 0, delay: this.props.delay + 500, duration: 1000 }}>
+            <TweenOne paused={this.state.paused} className="skill-logo noselect" animation={{ opacity:1, rotateY: 0, delay: this.props.delay + 500, duration: 1000 }}>
               <img src="icons/safari-pinned-tab.svg" width={60} height={60} alt="skill logo" />
             </TweenOne>
           }
@@ -303,7 +303,7 @@ class Skills extends Component {
            updateD3Node(data.Languages, width, 400, this.props.delay)
            this.setState({ paused: false })
          }}}>
-          <Texty key='0' className="section-title" delay={this.props.delay}>COMPUTER SKILLS</Texty>
+          <Texty key='0' className="section-title noselect" delay={this.props.delay}>COMPUTER SKILLS</Texty>
           <TweenOne key='1' className="underline" animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 250, duration: 1000}} />
         </ScrollOverPack>
       </div>

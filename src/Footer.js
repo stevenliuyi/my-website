@@ -22,7 +22,7 @@ class Footer extends Component {
     return (
       <ScrollOverPack id="contact-page" className="contact-page" playScale={0.1} always={false}>
         <div className="footer-background" />
-        <Texty key='0' className="section-title" delay={this.props.delay}>GET IN TOUCH</Texty>
+        <Texty key='0' className="section-title noselect" delay={this.props.delay}>GET IN TOUCH</Texty>
         <TweenOne key='1' className="underline" animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 250, duration: 1000}} />
         <a href="mailto:me@yliu.io">
           <Texty key='3' className="contact-email" enter={textEnter} delay={this.props.delay + 500} interval={100}>me@yliu.io</Texty>
@@ -37,7 +37,7 @@ class Footer extends Component {
               </Tooltip>
             </TweenOne>
           </div>
-          <div className="footer-right">
+          <div className="footer-right noselect">
             <Texty key='0' type="right" mode="smooth" delay={this.props.delay+500}>
               { leftText }
             </Texty>

@@ -3,6 +3,14 @@
   background-color: #fff;
 }
 
+.noselect {
+  user-select: none;
+}
+
+::selection {
+  background: #ccc;
+}
+
 .background-empty {
   height: 100vh;
   width: 100%;
@@ -364,7 +372,7 @@ a {
 
 .number-card-back a {
   color: #fff;
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .number-card-back a:hover {
@@ -609,6 +617,13 @@ a {
   height: 100%;
   object-fit: cover;
   border-radius: 10vw;
+  filter: grayscale(.15);
+  transition: filter .5s;
+}
+
+.research:hover .research-image {
+  filter: grayscale(0);
+  transition: filter .5s;
 }
 
 .research-text {

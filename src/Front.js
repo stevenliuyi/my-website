@@ -133,7 +133,7 @@ class Front extends Component {
             render={(src, style) => <div className="background-image" style={Object.assign(style, { backgroundImage: `url(${src})`})} />}
           />
           <Typist
-            className="title"
+            className="title noselect"
             startDelay={1200}
             avgTypingDelay={100}
             onCharacterTyped={() => {if (!this.state.linkShown) this.setState({ linkShown: true })}}
@@ -142,7 +142,7 @@ class Front extends Component {
             <Typist.Backspace count={6} delay={1000} />
             <span>Steven.</span>
           </Typist>
-          <div className="main-links">
+          <div className="main-links noselect">
             <a href="https://github.com/stevenliuyi">
               <span className="main-link">
                 <TiCode size={14} className="main-icon" />
@@ -150,7 +150,7 @@ class Front extends Component {
               </span>
             </a>
           </div>
-          <div className="more-text" onClick={this.props.scrollToNav}>more</div>
+          <div className="more-text noselect" onClick={this.props.scrollToNav}>more</div>
           <div className="arrow-down" onClick={this.props.scrollToNav}>
             <IoIosArrowDown size={24} />
           </div>

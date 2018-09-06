@@ -78,7 +78,7 @@ class App extends Component {
           if (!this.state.linkShown) this.setState({ linkShown: true })
         }} />
         <div className="nav" ref={el => this.nav = el}>
-          <div className="nav-wrap">
+          <div className="nav-wrap noselect">
             <Link className="nav-list" to="about-page" onFocus={this.onFocus}>About</Link>
             <Link className="nav-list" to="skill-page" onFocus={this.onFocus}>Skills</Link>
             <Link className="nav-list" to="research-page" onFocus={this.onFocus}>Research</Link>
