@@ -19,16 +19,25 @@ const EventListener = ScrollAnim.Event
 class App extends Component {
 
   state = {
-    delay: 150
+    delay: 150,
+    width: 0
+  }
+
+  setWidth = () => {
+    this.setState({ width: document.documentElement.clientWidth })
   }
 
   componentDidMount() {
     EventListener.addEventListener('resize.userResize', this.barAnimate.bind(this))
     window.addEventListener('scroll', this.handleScroll);
+
+    this.setWidth()
+    EventListener.addEventListener('resize', this.setWidth)
   }
 
   handleScroll() {
     let nav = document.querySelector('.nav')
+    if (nav == null) return
     let el = document.scrollingElement || document.documentElement
     if (el.scrollTop > window.innerHeight) {
       nav.style.position = 'fixed'
@@ -57,6 +66,12 @@ class App extends Component {
   }
 
   render() {
+    const radiusSVG = (
+      <svg width={this.state.width*.5} height="27">
+        <path d={`M ${25/Math.sqrt(2)} ${25/Math.sqrt(2)+2} C ${25*Math.sqrt(2)} 2, ${25*Math.sqrt(2)} 2, ${25/Math.sqrt(2)+25*Math.sqrt(2)} 2 H 1500 V 0 H 0 V 27 A 25 25 0 0 0 ${25/Math.sqrt(2)} ${25/Math.sqrt(2)+2}`} fill="#eee" />
+      </svg>
+    )
+
     return (
       <div>
         <Front ref={ el => this.top = el } scrollToNav={this.scrollToNav} onTyped={() => {
@@ -78,6 +93,9 @@ class App extends Component {
         <div className="scroll-to-top" onClick={() => scrollToComponent(this.top, { align: 'top', duration: 500 })}>
           <div className="scroll-arrow"><FaAngleDoubleUp size={24} /></div>
         </div>
+        <div className="scroll-to-top-radius-left">{ radiusSVG }</div>
+        <div className="scroll-to-top-radius-right">{ radiusSVG }</div>
+        <div className="scroll-to-top-radius" />
         <Footer {...this.state} />
       </div>
     );

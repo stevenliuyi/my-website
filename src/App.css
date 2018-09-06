@@ -179,7 +179,7 @@ a {
 .contact-page {
   padding-top: 100px;
   width: 100%;
-  height: 60vh;
+  height: 400px;
   background-color: #222;
   text-align: center;
   position: relative;
@@ -408,8 +408,8 @@ a {
 
 .scroll-to-top {
   position: absolute;
-  background-color: #555;
-  border: 2px solid #eee;
+  background-color: #ccc;
+  border: 4px solid #eee;
   margin: 0 auto;
   width: 50px;
   height: 50px;
@@ -419,14 +419,14 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #eee;
+  color: #555;
   overflow: hidden;
   cursor: pointer;
-  z-index: 10;
+  z-index: 11;
 }
 
 .scroll-to-top:hover {
-  background-color: #222;
+  background-color: #aaa;
 }
 
 .scroll-to-top:hover > .scroll-arrow {
@@ -450,6 +450,22 @@ a {
     transform: translate(0%, 125%);
     opacity: 0;
   }
+}
+
+.scroll-to-top-radius-left {
+  position: absolute;
+  margin: 0 auto;
+  z-index: 10;
+  left: 50%;
+  transform: translateY(-2px) scale(-1,1);
+  transform-origin: 0 0;
+}
+.scroll-to-top-radius-right {
+  position: absolute;
+  margin: 0 auto;
+  z-index: 10;
+  left: 50%;
+  transform: translateY(-2px);
 }
 
 .skill-category {
@@ -649,14 +665,51 @@ a:hover > .contact-email {
 
 .footer {
   position: absolute;
-  color: #fff;
-  bottom: 50px;
+  bottom: 30px;
+  left: 50px;
   right: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-icon {
+  margin-right: 10px;
+  cursor: pointer;
+  color: #666;
+}
+
+.footer-icon a {
+  color: #666 !important;
+}
+
+.footer-icon:hover,
+.footer-icon a:hover {
+  color: #999 !important;
+}
+
+.wechat-tooltip {
+  background-color: #fff !important;
+  border-radius: 20px !important;
+  width: 150px !important;
+  height: 150px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wechat-tooltip-arrow::before {
+  border-top-color: #fff !important;
+}
+
+.footer-right {
+  color: #fff;
   font-size: 12px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
+  text-shadow: 0 0 3px #000;
 }
 
 .heart {
@@ -668,7 +721,22 @@ a:hover > .contact-email {
   transition: transform .5s;
 }
 
-.footer:hover .heart {
+.footer-right:hover .heart {
   transform: scale(1.3) translateY(-1px) !important;
   transition: transform .5s;
+}
+
+.footer-background {
+  background-image: url(/images/ricardo-gomez-angel-298363-unsplash-small.jpg);
+  position: absolute;
+  height: 250px;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0px;
+  bottom: 0;
+  left: 0;
+  background-blend-mode: lighten;
+  background-color: #222;
+  background-position: center bottom;
 }

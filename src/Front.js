@@ -96,12 +96,14 @@ class Front extends Component {
     const ratio = 1
     const maxBlur = 20
     window.onscroll = (e) => {
-      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+      const scrollTop = document.documentElement.scrollTop || document.scrollingElement.scrollTop
       const opacity = scrollTop > ratio * window.innerHeight ? 0 : 1 - scrollTop / window.innerHeight / ratio
       const blur = scrollTop > ratio * window.innerHeight ? maxBlur : scrollTop / window.innerHeight / ratio * maxBlur
-      document.querySelector('.background').style.opacity =  opacity
-      document.querySelector('.background').style.filter =  `blur(${blur}px)`
-      document.querySelector('.background').style.WebkitFilter =  `blur(${blur}px)`
+      const background = document.querySelector('.background')
+      if (background == null) return
+      background.style.opacity =  opacity
+      background.style.filter =  `blur(${blur}px)`
+      background.style.WebkitFilter =  `blur(${blur}px)`
     }
   }
 
