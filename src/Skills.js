@@ -3,6 +3,7 @@ import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import * as d3 from 'd3'
+import { isMobile } from 'react-device-detect'
 
 // 0 - Novice
 // 0.25 - Advanced Beginner
@@ -289,9 +290,12 @@ class Skills extends Component {
               ))
             }          
           </div> 
-          <TweenOne paused={this.state.paused} className="skill-logo" animation={{ opacity:1, rotateY: 0, delay: this.props.delay + 500, duration: 1000 }}>
-            <img src="icons/safari-pinned-tab.svg" width={60} height={60} alt="skill logo" />
-          </TweenOne>
+          {/* hide on mobile devices to avoid display issue */}
+          { !isMobile &&
+            <TweenOne paused={this.state.paused} className="skill-logo" animation={{ opacity:1, rotateY: 0, delay: this.props.delay + 500, duration: 1000 }}>
+              <img src="icons/safari-pinned-tab.svg" width={60} height={60} alt="skill logo" />
+            </TweenOne>
+          }
           <div><svg id="skill-chart" width={width} height={400} /></div>
         </div>
         <ScrollOverPack id="skill-page" playScale={0.5} always={false}

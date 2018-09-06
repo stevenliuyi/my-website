@@ -200,7 +200,7 @@ a {
   width: 100px;
   margin: 0 auto;
   opacity: 0;
-  transform: rotateY(90deg);
+  transform: scale(0);
 }
 
 .about-wrap {
