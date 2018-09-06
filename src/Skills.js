@@ -3,8 +3,6 @@ import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import * as d3 from 'd3'
-import textEnter from './textEnter'
-import 'rc-texty/assets/index.css'
 
 // 0 - Novice
 // 0.25 - Advanced Beginner
@@ -301,7 +299,7 @@ class Skills extends Component {
            updateD3Node(data.Languages, width, 400, this.props.delay)
            this.setState({ paused: false })
          }}}>
-          <Texty key='0' enter={textEnter} className="section-title" delay={this.props.delay}>COMPUTER SKILLS</Texty>
+          <Texty key='0' className="section-title" delay={this.props.delay}>COMPUTER SKILLS</Texty>
           <TweenOne key='1' className="underline" animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 250, duration: 1000}} />
         </ScrollOverPack>
       </div>

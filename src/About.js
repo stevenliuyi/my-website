@@ -6,8 +6,6 @@ import NumberCard from './NumberCard'
 import { TiPencil } from 'react-icons/ti'
 import { FaGoogle, FaGithub, FaAt, FaWikipediaW } from 'react-icons/fa'
 import { Tooltip } from 'reactstrap'
-import textEnter from './textEnter'
-import 'rc-texty/assets/index.css'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -47,7 +45,7 @@ class About extends Component {
     const iconSize = 30
     return (
       <ScrollOverPack id="about-page" className="about-page" playScale={0.5} always={false}>
-        <Texty key='0' enter={textEnter} className="section-title" delay={this.props.delay}>ABOUT</Texty>
+        <Texty key='0' className="section-title" delay={this.props.delay}>ABOUT</Texty>
         <TweenOne key='1' className="underline" animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 250, duration: 1000}} />
         <TweenOne key='2' className="logo" animation={{ opacity: 1, rotateY: 0 ,  duration:1000, ease: 'easeInQuart', delay: this.props.delay }}>
           <img src="/icons/android-chrome-192x192.png" height={100} width={100} alt="logo" />

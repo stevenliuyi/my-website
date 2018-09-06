@@ -3,8 +3,6 @@ import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import { Badge, Button } from 'reactstrap'
-import textEnter from './textEnter'
-import 'rc-texty/assets/index.css'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -13,7 +11,7 @@ class Research extends Component {
   render() {
     return (
       <ScrollOverPack id="research-page" className="research-page" playScale={0.5} always={false}>
-        <Texty key='0' enter={textEnter} className="section-title" delay={this.props.delay}>RESEARCH</Texty>
+        <Texty key='0' className="section-title" delay={this.props.delay}>RESEARCH</Texty>
         <TweenOne key='1' className="underline" animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 250, duration: 1000}} />
         <div className="keywords-wrap">
           <TweenOne key='0' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 500}} className="keywords-title">KEYWORDS</TweenOne>
