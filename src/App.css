@@ -11,6 +11,11 @@
   background: #ccc;
 }
 
+.strong {
+  font-family: Lato;
+  font-weight: 700;
+}
+
 .background-empty {
   height: 100vh;
   width: 100%;

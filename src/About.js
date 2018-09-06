@@ -53,7 +53,7 @@ class About extends Component {
         <div className="about-wrap">
           <div className="about-text">
             <TweenOne key='0' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1000, duration: 1000, ease:'easeOutBack'}}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum est id diam ullamcorper cursus. Aenean pharetra dolor eget lorem scelerisque, quis blandit justo finibus. Aliquam a pulvinar nisl. Proin blandit velit sed ipsum pellentesque, ut feugiat enim volutpat. Curabitur turpis lectus, aliquet vitae ante a, facilisis consequat quam. 
+              Hello! My name is <span className="strong">Yi Liu</span>, and I go by <span className="strong">Steven</span>. Originally from Shanghai, China, I'm a Ph.D. student in Aerospace and Mechanical Engineering at the University of Notre Dame. Aenean pharetra dolor eget lorem scelerisque, quis blandit justo finibus. Aliquam a pulvinar nisl. Proin blandit velit sed ipsum pellentesque, ut feugiat enim volutpat. Curabitur turpis lectus, aliquet vitae ante a, facilisis consequat quam. 
             </TweenOne>
             <TweenOne key='1' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1200, duration: 1000, ease:'easeOutBack'}}>
               Nulla a egestas nibh. Suspendisse hendrerit magna sed odio dignissim blandit. Morbi pharetra mi non ullamcorper semper. Vestibulum mattis, est eget condimentum blandit, est eros tristique diam, sit amet mattis tellus enim quis augue. Sed sed justo tempus, auctor neque et, placerat nulla. Ut euismod fringilla diam nec varius.
@@ -74,7 +74,7 @@ class About extends Component {
             <Tooltip placement={this.state.placement} target="googleScholar-icon" isOpen={this.state.tooltipOpen.googleScholar} toggle={() => this.tooltipToggle('googleScholar')} delay={100}>Google Scholar</Tooltip>
             <Tooltip placement={this.state.placement} target="wikipedia-icon" isOpen={this.state.tooltipOpen.wikipedia} toggle={() => this.tooltipToggle('wikipedia')} delay={100}>Wikipedia</Tooltip>
             <Tooltip placement={this.state.placement} target="zhihu-icon" isOpen={this.state.tooltipOpen.zhihu} toggle={() => this.tooltipToggle('zhihu')} delay={100}>Zhihu</Tooltip>
-            <Tooltip placement={this.state.placement} target="blog-icon" isOpen={this.state.tooltipOpen.blog} toggle={() => this.tooltipToggle('blog')} delay={100}>Blog (in Mandarin)</Tooltip>
+            <Tooltip placement={this.state.placement} target="blog-icon" isOpen={this.state.tooltipOpen.blog} toggle={() => this.tooltipToggle('blog')} delay={100}>Blog</Tooltip>
           </TweenOne>
         </div>
         <TweenOne key='3' className="number-cards" animation={{ opacity: 1, translateY: 0, duration: 1000, delay: this.props.delay + 2000 }}>
