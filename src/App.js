@@ -5,6 +5,7 @@ import ScrollAnim from 'rc-scroll-anim'
 import 'bootstrap/dist/css/bootstrap.css'
 import { FaAngleDoubleUp } from 'react-icons/fa'
 import scrollToComponent from 'react-scroll-to-component'
+import { isMobile } from 'react-device-detect'
 import Front from './Front'
 import About from './About'
 import Skills from './Skills'
@@ -12,6 +13,7 @@ import Research from './Research'
 import Projects from './Projects'
 import Footer from './Footer'
 import './iconfont.css'
+import { setVhs } from './utils.js'
 
 const Link = ScrollAnim.Link
 const EventListener = ScrollAnim.Event
@@ -33,6 +35,12 @@ class App extends Component {
 
     this.setWidth()
     EventListener.addEventListener('resize', this.setWidth)
+
+    // set vh-related styles on mobile devices
+    if (isMobile) {
+      setVhs()
+      window.addEventListener('deviceorientation', setVhs)
+    } 
   }
 
   handleScroll() {

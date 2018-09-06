@@ -263,7 +263,7 @@ class Skills extends Component {
   }
 
   render() {
-    const width = Math.max(window.innerWidth*.8 - 450, 300)
+    const width = Math.max(window.innerWidth*.8 - 450, 400)
 
     return (
       <div style={{position: 'relative'}} id="skill-page" className="skill-page">

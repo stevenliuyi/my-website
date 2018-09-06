@@ -53,7 +53,7 @@ class About extends Component {
         <div className="about-wrap">
           <div className="about-text">
             <TweenOne key='0' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1000, duration: 1000, ease:'easeOutBack'}}>
-              Hello! My name is <span className="strong">Yi Liu</span>, and I go by <span className="strong">Steven</span>. Originally from Shanghai, China, I'm a Ph.D. student in Aerospace and Mechanical Engineering at the University of Notre Dame. Aenean pharetra dolor eget lorem scelerisque, quis blandit justo finibus. Aliquam a pulvinar nisl. Proin blandit velit sed ipsum pellentesque, ut feugiat enim volutpat. Curabitur turpis lectus, aliquet vitae ante a, facilisis consequat quam. 
+              Hello! My name is <span className="strong">Yi Liu</span>, but I also go by <span className="strong">Steven</span>. Originally from Shanghai, China, I'm a Ph.D. student in Aerospace and Mechanical Engineering at the University of Notre Dame. Aenean pharetra dolor eget lorem scelerisque, quis blandit justo finibus. Aliquam a pulvinar nisl. Proin blandit velit sed ipsum pellentesque, ut feugiat enim volutpat. Curabitur turpis lectus, aliquet vitae ante a, facilisis consequat quam. 
             </TweenOne>
             <TweenOne key='1' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1200, duration: 1000, ease:'easeOutBack'}}>
               Nulla a egestas nibh. Suspendisse hendrerit magna sed odio dignissim blandit. Morbi pharetra mi non ullamcorper semper. Vestibulum mattis, est eget condimentum blandit, est eros tristique diam, sit amet mattis tellus enim quis augue. Sed sed justo tempus, auctor neque et, placerat nulla. Ut euismod fringilla diam nec varius.
