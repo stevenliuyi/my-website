@@ -91,11 +91,15 @@ class Front extends Component {
   componentDidMount() {
     this.snowy()
 
-    const ratio = 0.5
+    const ratio = 1
+    const maxBlur = 20
     window.onscroll = (e) => {
       const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
       const opacity = scrollTop > ratio * window.innerHeight ? 0 : 1 - scrollTop / window.innerHeight / ratio
+      const blur = scrollTop > ratio * window.innerHeight ? maxBlur : scrollTop / window.innerHeight / ratio * maxBlur
       document.querySelector('.background').style.opacity =  opacity
+      document.querySelector('.background').style.filter =  `blur(${blur}px)`
+      document.querySelector('.background').style.WebkitFilter =  `blur(${blur}px)`
     }
   }
 
