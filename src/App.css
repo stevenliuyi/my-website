@@ -626,19 +626,17 @@ a {
 }
 
 .contact-email {
-  opacity: 0;
-  transform: translateY(50px);
   font-size: 25px;
   font-family: 'Exo 2', sans-serif;
   font-weight: 200;
 }
 
-.contact-email > a {
-  color: #fff;
+a > .contact-email {
+  color: #fff !important;
 }
 
-.contact-email > a:hover {
-  color: #ccc;
+a:hover > .contact-email {
+  color: #ccc !important;
 }
 
 .at {

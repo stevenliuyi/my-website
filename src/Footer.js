@@ -4,6 +4,7 @@ import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import 'rc-texty/assets/index.css'
 import { TiHeart } from 'react-icons/ti'
+import textEnter from './textEnter'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -33,7 +34,7 @@ class Footer extends Component {
 
   render() {
     const leftText = "© 2018 | Handcrafted with"
-    const rightText = "by Yi Liu"
+    const rightText = "by YI LIU"
     return (
       <ScrollOverPack id="contact-page" className="contact-page" playScale={0.1} always={false}>
         <Texty key='0' className="section-title" delay={this.props.delay}>GET IN TOUCH</Texty>
@@ -41,7 +42,9 @@ class Footer extends Component {
         { window.innerHeight > 750 &&
           <TweenOne key='2' className="footer-logo" animation={{ opacity: 1, rotate: 0, delay: this.props.delay + 500, duration: 1000 }}></TweenOne>
         }
-        <TweenOne key='3' className="contact-email" animation={{ opacity: 1, translateY: 0, delay: this.props.delay + 500, duration: 1000}}><a href="mailto:me@yliu.io">me<span className="at">@</span>yliu.io</a></TweenOne>
+        <a href="mailto:me@yliu.io">
+          <Texty key='3' className="contact-email" enter={textEnter} delay={this.props.delay + 500} duration={1000}>me@yliu.io</Texty>
+        </a>
         <div className="footer">
           <Texty key='0' className="footer-left" type="right" mode="smooth" delay={this.props.delay+500}>
             { leftText }

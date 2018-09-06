@@ -52,13 +52,13 @@ class About extends Component {
         </TweenOne>
         <div className="about-wrap">
           <div className="about-text">
-            <TweenOne key='0' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1000, duration: 1000}}>
+            <TweenOne key='0' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1000, duration: 1000, ease:'easeOutBack'}}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum est id diam ullamcorper cursus. Aenean pharetra dolor eget lorem scelerisque, quis blandit justo finibus. Aliquam a pulvinar nisl. Proin blandit velit sed ipsum pellentesque, ut feugiat enim volutpat. Curabitur turpis lectus, aliquet vitae ante a, facilisis consequat quam. 
             </TweenOne>
-            <TweenOne key='1' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1200, duration: 1000}}>
+            <TweenOne key='1' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1200, duration: 1000, ease:'easeOutBack'}}>
               Nulla a egestas nibh. Suspendisse hendrerit magna sed odio dignissim blandit. Morbi pharetra mi non ullamcorper semper. Vestibulum mattis, est eget condimentum blandit, est eros tristique diam, sit amet mattis tellus enim quis augue. Sed sed justo tempus, auctor neque et, placerat nulla. Ut euismod fringilla diam nec varius.
             </TweenOne>
-            <TweenOne key='2' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1400, duration: 1000}}>
+            <TweenOne key='2' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1400, duration: 1000, ease:'easeOutBack'}}>
               Etiam non tortor diam. Aliquam et tempus velit. Nam interdum nunc nec tortor gravida egestas. Curabitur porttitor sodales ante ut ullamcorper.
             </TweenOne>
           </div>
