@@ -13,6 +13,7 @@
     "rc-tween-one": "^2.2.3",
     "react": "^16.4.2",
     "react-bootstrap": "0.32.1",
+    "react-device-detect": "^1.5.9",
     "react-dom": "^16.4.2",
     "react-icons": "^3.0.5",
     "react-progressive-image-loading": "^3.0.3",

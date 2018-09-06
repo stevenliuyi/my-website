@@ -19,7 +19,7 @@ const EventListener = ScrollAnim.Event
 class App extends Component {
 
   state = {
-    delay: 250
+    delay: 150
   }
 
   componentDidMount() {

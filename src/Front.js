@@ -4,6 +4,7 @@ import Typist from 'react-typist'
 import 'react-typist/dist/Typist.css'
 import { TiCode } from 'react-icons/ti'
 import { IoIosArrowDown } from 'react-icons/io'
+import { isMobileOnly } from 'react-device-detect'
 
 class Front extends Component {
 
@@ -89,7 +90,8 @@ class Front extends Component {
   }
 
   componentDidMount() {
-    this.snowy()
+    // no animation on cell phones due to performance issue
+    if (!isMobileOnly) this.snowy()
 
     const ratio = 1
     const maxBlur = 20
