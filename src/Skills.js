@@ -271,7 +271,7 @@ class Skills extends Component {
           <div className="skill-categories">
             {
               Object.keys(data).map( (category, i) => (
-                <div>
+                <div key={`skill-category-${i}`}>
                   <TweenOne paused={this.state.paused} style={{opacity: 0, transform: 'translateY(100px)'}} animation={{opacity:1, translateY: 0, delay: this.props.delay + 500 + i*100}}
                     onClick={() => {
                       updateD3Node(data[category], width, 400, this.props.delay)

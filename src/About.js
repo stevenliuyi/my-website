@@ -104,9 +104,9 @@ class About extends Component {
         </div>
         <TweenOne key='3' className="number-cards" animation={{ opacity: 1, translateY: 0, duration: 1000, delay: this.props.delay + 2000 }}>
           <NumberCard description="number of Wikipedia articles I created" number="20,000" detail="These articles have been viewed 15 million times since 2015." />
-          <NumberCard description="my Erdős number" number="6" detail={<div><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Erdős_number">Erdős number</a> is one's collabration distance to mathematican Paul Erdös.</div>} />
+          <NumberCard description="my Erdős number" number="6" detail={<span><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Erdős_number">Erdős number</a> is one's collabration distance to mathematican Paul Erdös.</span>} />
           <NumberCard description="number of U.S. states I've set foot on" number="23" detail="... and Washington, D.C.!" />
-          <NumberCard description="my favorite number" number="42" detail={<div>Because it's <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy#Answer_to_the_Ultimate_Question_of_Life,_the_Universe,_and_Everything_(42)">the Answer to the Ultimate  Question of Life, the Universe, and Everything</a>!</div>}/>
+          <NumberCard description="my favorite number" number="42" detail={<span>Because it's <a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy#Answer_to_the_Ultimate_Question_of_Life,_the_Universe,_and_Everything_(42)">the Answer to the Ultimate  Question of Life, the Universe, and Everything</a>!</span>}/>
         </TweenOne>
       </ScrollOverPack>
     );
