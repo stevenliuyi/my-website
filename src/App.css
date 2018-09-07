@@ -205,7 +205,12 @@ a {
   width: 100px;
   margin: 0 auto;
   opacity: 0;
-  transform: scale(0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  transform-origin: 50% 50%;
 }
 
 .about-wrap {
@@ -667,17 +672,6 @@ a:hover > .contact-email {
 
 .tooltip {
   transition: opacity .5s;
-}
-
-.footer-logo {
-  background-image: url(/icons/mstile-150x150.png);
-  height: 250px;
-  width: 250px;
-  margin: 0 auto -80px auto;
-  background-size: cover;
-  opacity: 0;
-  transform: rotate(90deg);
-  transform-origin: 50% 50%;
 }
 
 .footer {

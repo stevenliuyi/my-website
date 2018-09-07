@@ -6,6 +6,8 @@ import NumberCard from './NumberCard'
 import { TiPencil } from 'react-icons/ti'
 import { FaGoogle, FaGithub, FaAt, FaWikipediaW } from 'react-icons/fa'
 import { Tooltip } from 'reactstrap'
+import { isMobile } from 'react-device-detect'
+import Logo from './Logo'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -19,7 +21,8 @@ class About extends Component {
       zhihu: false,
       blog: false
     },
-    placement: 'right'
+    placement: 'right',
+    logoLoaded: false
   }
 
   tooltipToggle = (link) => {
@@ -32,13 +35,29 @@ class About extends Component {
     this.setState({ placement: window.innerWidth > 964 ? 'right': 'bottom' })
   }
 
+  handleScroll = (e) => {
+    const logo = document.querySelector('.logo')
+    if (logo == null) return
+
+    const scrollTop = document.documentElement.scrollTop || document.scrollingElement.scrollTop
+    const offset = document.querySelector('.about-page').offsetTop - scrollTop
+    if (!isMobile) logo.style.transform = `rotate(${offset}deg)`
+    if (!this.state.logoLoaded) {
+      const opacity = Math.min(1 - offset / window.innerHeight, 1)
+      logo.style.opacity = opacity
+      if (opacity === 1) this.setState({ logoLoaded: true })
+    }
+  }
+
   componentDidMount() {
     this.updateTooltipPlacement()
     window.addEventListener('resize', this.updateTooltipPlacement)
+    window.addEventListener('scroll', this.handleScroll)
   }
 
   componentWillUnMount() {
     window.removeEventListener('resize', this.updateTooltipPlacement)
+    window.removeEventListener('scroll', this.handleScroll)
   }
 
   render() {
@@ -47,9 +66,15 @@ class About extends Component {
       <ScrollOverPack id="about-page" className="about-page" playScale={0.5} always={false}>
         <Texty key='0' className="section-title noselect" delay={this.props.delay}>ABOUT</Texty>
         <TweenOne key='1' className="underline" animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 250, duration: 1000}} />
-        <TweenOne key='2' className="logo noselect" animation={{ opacity: 1, scale: 1 ,  duration:1000, ease: 'easeOutBack', delay: this.props.delay }}>
-          <img src="/icons/android-chrome-192x192.png" height={100} width={100} alt="logo" />
-        </TweenOne>
+        {/* no rotation on mobile devices due to performance issue */}
+        { !isMobile ?
+          <div className="logo noselect">
+            <Logo radius={40} colors={['#0d8aba', '#222']} />
+          </div> :
+          <TweenOne key='2' className="logo noselect" animation={{ opacity: 0, scale: 0, type: 'from', delay: this.props.delay + 750, duration: 1000}}>
+            <Logo radius={40} colors={['#0d8aba', '#222']} />
+          </TweenOne>
+        }
         <div className="about-wrap">
           <div className="about-text">
             <TweenOne key='0' animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 1000, duration: 1000, ease:'easeOutBack'}}>

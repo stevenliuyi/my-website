@@ -89,13 +89,9 @@ class Front extends Component {
     }
   }
 
-  componentDidMount() {
-    // no animation on cell phones due to performance issue
-    if (!isMobileOnly) this.snowy()
-
-    const ratio = 1
-    const maxBlur = 20
-    window.onscroll = (e) => {
+  handleScroll = (e) => {
+      const ratio = 1
+      const maxBlur = 20
       const scrollTop = document.documentElement.scrollTop || document.scrollingElement.scrollTop
       const opacity = scrollTop > ratio * window.innerHeight ? 0 : 1 - scrollTop / window.innerHeight / ratio
       const blur = scrollTop > ratio * window.innerHeight ? maxBlur : scrollTop / window.innerHeight / ratio * maxBlur
@@ -104,7 +100,17 @@ class Front extends Component {
       background.style.opacity =  opacity
       background.style.filter =  `blur(${blur}px)`
       background.style.WebkitFilter =  `blur(${blur}px)`
-    }
+  }
+
+  componentDidMount() {
+    // no animation on cell phones due to performance issue
+    if (!isMobileOnly) this.snowy()
+
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  componentWillUnMount() {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 
   componentDidUpdate({ linkShown}) {
