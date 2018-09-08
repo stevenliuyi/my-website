@@ -22,7 +22,8 @@ class About extends Component {
       blog: false
     },
     placement: 'right',
-    logoLoaded: false
+    logoLoaded: false,
+    logoRotation: 0
   }
 
   tooltipToggle = (link) => {
@@ -49,15 +50,25 @@ class About extends Component {
     }
   }
 
+  rotateLogo = () => {
+    const logo = document.querySelector('.logo-mobile')
+    if (logo == null) return
+    logo.style.transition = 'transform ease 2s'
+    logo.style.transform = `rotate(${this.state.logoRotation+180}deg)`
+    this.setState({ logoRotation: this.state.logoRotation+180 })
+  }
+
   componentDidMount() {
     this.updateTooltipPlacement()
     window.addEventListener('resize', this.updateTooltipPlacement)
     window.addEventListener('scroll', this.handleScroll)
+    if (isMobile && document.querySelector('.logo-mobile') != null) document.querySelector('.logo-mobile').addEventListener('touchstart', this.rotateLogo)
   }
 
   componentWillUnMount() {
     window.removeEventListener('resize', this.updateTooltipPlacement)
     window.removeEventListener('scroll', this.handleScroll)
+    if (isMobile && document.querySelector('.logo-mobile') != null) document.querySelector('.logo-mobile').removeEventListener('touchstart', this.rotateLogo)
   }
 
   render() {
@@ -71,7 +82,7 @@ class About extends Component {
           <div className="logo noselect">
             <Logo radius={40} colors={['#0d8aba', '#222']} />
           </div> :
-          <TweenOne key='2' className="logo noselect" animation={{ opacity: 0, scale: 0, type: 'from', delay: this.props.delay + 750, duration: 1000}}>
+          <TweenOne key='2' className="logo noselect logo-mobile" animation={{ opacity: 0, scale: 0, type: 'from', delay: this.props.delay + 750, duration: 1000, ease: 'easeOutBack' }}>
             <Logo radius={40} colors={['#0d8aba', '#222']} />
           </TweenOne>
         }
