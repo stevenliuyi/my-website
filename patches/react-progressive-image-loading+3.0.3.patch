@@ -1,0 +1,41 @@
+patch-package
+--- a/node_modules/react-progressive-image-loading/build/index.d.ts
++++ b/node_modules/react-progressive-image-loading/build/index.d.ts
+@@ -7,6 +7,7 @@ export interface ProgressiveImageProps {
+     transitionTime?: number;
+     timingFunction?: string;
+     initialBlur?: number;
++    onLoaded?: any;
+ }
+ export interface ProgressiveImageState {
+     src: string;
+@@ -17,6 +18,7 @@ export declare class ProgressiveImage extends React.Component<ProgressiveImagePr
+         transitionTime: number;
+         timingFunction: string;
+         initialBlur: number;
++        onLoaded: any;
+     };
+     componentWillMount(): void;
+     render(): JSX.Element;
+--- a/node_modules/react-progressive-image-loading/build/index.js
++++ b/node_modules/react-progressive-image-loading/build/index.js
+@@ -22,7 +22,8 @@ var ProgressiveImage = (function (_super) {
+         var initialBlur = this.props.initialBlur;
+         this.setState({ src: preview, blur: initialBlur });
+         this.fetch(src)
+-            .then(function (srcDataURI) { return _this.setState({ src: srcDataURI, blur: 0 }); });
++            .then(function (srcDataURI) { return _this.setState({ src: srcDataURI, blur: 0 }); })
++            .then(this.props.onLoaded);
+     };
+     ProgressiveImage.prototype.render = function () {
+         var src = this.state.src;
+@@ -49,7 +50,8 @@ var ProgressiveImage = (function (_super) {
+ ProgressiveImage.defaultProps = {
+     transitionTime: 500,
+     timingFunction: "ease",
+-    initialBlur: 10
++    initialBlur: 10,
++    onLoaded: function() { return; }
+ };
+ exports.ProgressiveImage = ProgressiveImage;
+ exports.default = ProgressiveImage;

@@ -9,7 +9,8 @@ import { isMobileOnly } from 'react-device-detect'
 class Front extends Component {
 
   state = {
-    linkShown: false
+    linkShown: false,
+    backgroundLoaded: false
   }
 
   // reference: https://codepen.io/tmrDevelops/pen/PPgjwz
@@ -137,25 +138,30 @@ class Front extends Component {
             preview="/images/fabrice-villard-584622-unsplash-small.jpg"
             src="/images/fabrice-villard-584622-unsplash.jpg"
             render={(src, style) => <div className="background-image" style={Object.assign(style, { backgroundImage: `url(${src})`})} />}
+            onLoaded={() => this.setState({ backgroundLoaded: true })}
           />
-          <Typist
-            className="title noselect"
-            startDelay={1200}
-            avgTypingDelay={100}
-            onCharacterTyped={() => {if (!this.state.linkShown) this.setState({ linkShown: true })}}
-          >
-            <span>hi, I'm Yi Liu</span>
-            <Typist.Backspace count={6} delay={1000} />
-            <span>Steven.</span>
-          </Typist>
-          <div className="main-links noselect">
-            <a href="https://github.com/stevenliuyi">
-              <span className="main-link">
-                <TiCode size={14} className="main-icon" />
-                <span className="main-link-text">github</span>
-              </span>
-            </a>
-          </div>
+          { this.state.backgroundLoaded &&
+            <div>
+              <Typist
+                className="title noselect"
+                startDelay={1200}
+                avgTypingDelay={100}
+                onCharacterTyped={() => {if (!this.state.linkShown) this.setState({ linkShown: true })}}
+              >
+                <span>hi, I'm Yi Liu</span>
+                <Typist.Backspace count={6} delay={1000} />
+                <span>Steven.</span>
+              </Typist>
+              <div className="main-links noselect">
+                <a href="https://github.com/stevenliuyi">
+                  <span className="main-link">
+                    <TiCode size={14} className="main-icon" />
+                    <span className="main-link-text">github</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          }
           <div className="more-text noselect" onClick={this.props.scrollToNav}>more</div>
           <div className="arrow-down" onClick={this.props.scrollToNav}>
             <IoIosArrowDown size={24} />
