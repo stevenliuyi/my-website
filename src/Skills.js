@@ -262,6 +262,22 @@ class Skills extends Component {
     activeCategory: 'Languages',
   }
 
+  onResize = () => {
+    const width = Math.max(window.innerWidth*.8 - 450, 400)
+    clearTimeout(window.resizedFinished)
+    window.resizedFinished = setTimeout(() => {
+      updateD3Node(data[this.state.activeCategory], width, 400)
+    }, 250)
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.onResize)
+  }
+
+  componentWillUnMount() {
+    window.removeEventListener('resize', this.onResize)
+  }
+
   render() {
     const width = Math.max(window.innerWidth*.8 - 450, 400)
 
