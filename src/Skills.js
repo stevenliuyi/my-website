@@ -260,18 +260,27 @@ class Skills extends Component {
   state = {
     paused: true,
     activeCategory: 'Languages',
+    width: 0
   }
 
   onResize = () => {
+    // only update chart after the initial animation is performed
+    if (this.state.paused) return
+
+    // only update if width is changed
     const width = Math.max(window.innerWidth*.8 - 450, 400)
+    if (width === this.state.width) return
+    
     clearTimeout(window.resizedFinished)
     window.resizedFinished = setTimeout(() => {
       updateD3Node(data[this.state.activeCategory], width, 400)
+      this.setState({ width })
     }, 250)
   }
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize)
+    this.setState({ width: Math.max(window.innerWidth*.8 - 450, 400)})
   }
 
   componentWillUnMount() {
@@ -279,7 +288,6 @@ class Skills extends Component {
   }
 
   render() {
-    const width = Math.max(window.innerWidth*.8 - 450, 400)
 
     return (
       <div style={{position: 'relative'}} id="skill-page" className="skill-page">
@@ -290,7 +298,7 @@ class Skills extends Component {
                 <div key={`skill-category-${i}`}>
                   <TweenOne paused={this.state.paused} style={{opacity: 0, transform: 'translateY(100px)'}} animation={{opacity:1, translateY: 0, delay: this.props.delay + 500 + i*100}}
                     onClick={() => {
-                      updateD3Node(data[category], width, 400, this.props.delay)
+                      updateD3Node(data[category], this.state.width, 400, this.props.delay)
                       this.setState({ activeCategory: category })
                     }}>
                     <div className={`skill-category noselect ${this.state.activeCategory === category ? 'skill-category-active': ''}`}>
@@ -312,11 +320,11 @@ class Skills extends Component {
               <img src="icons/safari-pinned-tab.svg" width={60} height={60} alt="skill logo" />
             </TweenOne>
           }
-          <div><svg id="skill-chart" width={width} height={400} /></div>
+          <div><svg id="skill-chart" width={this.state.width} height={400} /></div>
         </div>
         <ScrollOverPack id="skill-page" playScale={0.5} always={false}
          onChange={({mode, id}) => { if (mode === 'enter') {
-           updateD3Node(data.Languages, width, 400, this.props.delay)
+           updateD3Node(data.Languages, this.state.width, 400, this.props.delay)
            this.setState({ paused: false })
          }}}>
           <Texty key='0' className="section-title noselect" delay={this.props.delay}>COMPUTER SKILLS</Texty>
