@@ -177,20 +177,23 @@ a {
 
 .about-page,
 .research-page,
-.more-page {
+.project-page {
   min-height: 100vh;
+}
+
+.more-page {
+  min-height: calc(100vh + 30px);
+}
+
+.skill-page,
+.project-page {
+  background-color: #eee;
 }
 
 .skill-page {
   height: 100vh;
   min-height: 800px;
-  background-color: #eee;
   position: absolute;
-}
-
-.project-page {
-  min-height: calc(100vh + 30px);
-  background-color: #eee;
 }
 
 .contact-page {
