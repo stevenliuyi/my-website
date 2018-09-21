@@ -11,6 +11,7 @@ import About from './About'
 import Skills from './Skills'
 import Research from './Research'
 import Projects from './Projects'
+import More from './More'
 import Footer from './Footer'
 import './iconfont.css'
 import { setVhs } from './utils.js'
@@ -76,7 +77,7 @@ class App extends Component {
   render() {
     const radiusSVG = (
       <svg width={this.state.width*.5} height="27">
-        <path d={`M ${25/Math.sqrt(2)} ${25/Math.sqrt(2)+2} C ${25*Math.sqrt(2)} 2, ${25*Math.sqrt(2)} 2, ${25/Math.sqrt(2)+25*Math.sqrt(2)} 2 H 1500 V 0 H 0 V 27 A 25 25 0 0 0 ${25/Math.sqrt(2)} ${25/Math.sqrt(2)+2}`} fill="#eee" />
+        <path d={`M ${25/Math.sqrt(2)} ${25/Math.sqrt(2)+2} C ${25*Math.sqrt(2)} 2, ${25*Math.sqrt(2)} 2, ${25/Math.sqrt(2)+25*Math.sqrt(2)} 2 H 1500 V 0 H 0 V 27 A 25 25 0 0 0 ${25/Math.sqrt(2)} ${25/Math.sqrt(2)+2}`} fill="#fff" />
       </svg>
     )
 
@@ -91,6 +92,7 @@ class App extends Component {
             <Link className="nav-list" to="skill-page" onFocus={this.onFocus}>Skills</Link>
             <Link className="nav-list" to="research-page" onFocus={this.onFocus}>Research</Link>
             <Link className="nav-list" to="project-page" onFocus={this.onFocus}>Projects</Link>
+            <Link className="nav-list" to="more-page" onFocus={this.onFocus}>More</Link>
             <div ref="bar" className="nav-bar" />
           </div>
         </div>
@@ -98,6 +100,7 @@ class App extends Component {
         <Skills {...this.state} />
         <Research {...this.state} />
         <Projects {...this.state} />
+        <More {...this.state} />
         <div className="scroll-to-top" onClick={() => scrollToComponent(this.top, { align: 'top', duration: 500 })}>
           <div className="scroll-arrow"><FaAngleDoubleUp size={24} /></div>
         </div>
