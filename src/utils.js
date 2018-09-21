@@ -9,6 +9,6 @@ export const setVhs = () => {
   if (background != null) background.style.height = `${vh}px`
   if (backgroundEmpty != null) backgroundEmpty.style.height = `${vh}px`
   if (backgroundImage != null) backgroundImage.style.height = `${vh}px`
-  if (title != null) title.style.top = `${vh * .6}px`
-  if (mainLinks != null) mainLinks.style.top = `${vh * .6}px`
+  if (title != null) title.style.top = `${vh * 0.6}px`
+  if (mainLinks != null) mainLinks.style.top = `${vh * 0.6}px`
 }

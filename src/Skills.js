@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
@@ -11,7 +11,7 @@ import { isMobile } from 'react-device-detect'
 // 0.75 - Proficient
 // 1.0 - Expert
 const data = {
-  'Languages': [
+  Languages: [
     { skill: 'Python', value: 0.75, logo: 'python.svg' },
     { skill: 'C/C++', value: 0.5, logo: 'c++.png' },
     { skill: 'R', value: 0.65, logo: 'r.svg' },
@@ -33,9 +33,9 @@ const data = {
     { skill: 'jQuery', value: 0.5, logo: 'jquery.svg' },
     { skill: 'd3.js', value: 0.5, logo: 'd3.svg' },
     { skill: 'placeholder9', value: 0 },
-    { skill: 'placeholder10', value: 0 },
+    { skill: 'placeholder10', value: 0 }
   ],
-  'Databases': [
+  Databases: [
     { skill: 'MySQL', value: 0.5, logo: 'mysql.png' },
     { skill: 'MongoDB', value: 0.3, logo: 'mongodb.png' },
     { skill: 'SQLite', value: 0.5, logo: 'sqlite.svg' },
@@ -85,7 +85,7 @@ const data = {
   ],
   'Math/Engineering Softwares': [
     { skill: 'MATLAB', value: 0.65, logo: 'matlab.png' },
-    { skill: 'Mathematica', value: 0.75, logo: 'mathematica.png'},
+    { skill: 'Mathematica', value: 0.75, logo: 'mathematica.png' },
     { skill: 'Maple', value: 0.35, logo: 'maple.png' },
     { skill: 'Fluent', value: 0.65, logo: 'fluent.png' },
     { skill: 'STAR-CCM+', value: 0.5, logo: 'starccm.png' },
@@ -107,7 +107,7 @@ const data = {
     { skill: 'placeholder9', value: 0 },
     { skill: 'placeholder10', value: 0 }
   ],
-  'Design': [
+  Design: [
     { skill: 'Photoshop', value: 0.8, logo: 'ps.png' },
     { skill: 'Illustrator', value: 0.4, logo: 'ai.png' },
     { skill: 'InDesign', value: 0.25, logo: 'id.png' },
@@ -119,7 +119,7 @@ const data = {
     { skill: 'placeholder9', value: 0 },
     { skill: 'placeholder10', value: 0 }
   ],
-  'Miscellaneous': [
+  Miscellaneous: [
     { skill: 'Vim', value: 0.65, logo: 'vim.svg' },
     { skill: 'MediaWiki', value: 0.6, logo: 'mediawiki.svg' },
     { skill: 'VBA', value: 0.6, logo: 'vba.png' },
@@ -133,8 +133,7 @@ const data = {
   ]
 }
 
-const updateD3Node = (data, width, height, delay=0) => { 
-
+const updateD3Node = (data, width, height, delay = 0) => {
   const marginV = 10
   const marginH = 50
   const interval = 100
@@ -143,7 +142,8 @@ const updateD3Node = (data, width, height, delay=0) => {
   height -= 2 * marginV
 
   let svg = d3.select('#skill-chart')
-  svg.selectAll('*')
+  svg
+    .selectAll('*')
     .transition()
     .duration(1000)
     .style('opacity', 0)
@@ -155,72 +155,82 @@ const updateD3Node = (data, width, height, delay=0) => {
     .attr('height', height)
     .attr('transform', `translate(${marginH}, ${marginV})`)
 
-  const x = d3.scaleLinear()
-    .range([0, width-100])
+  const x = d3
+    .scaleLinear()
+    .range([0, width - 100])
     .domain([0, 1])
 
-  const y = d3.scaleBand()
+  const y = d3
+    .scaleBand()
     .range([0, height])
     .domain(data.map(d => d.skill))
     .paddingInner(0.2)
 
-  let bars = svg.selectAll('.bar')
+  let bars = svg
+    .selectAll('.bar')
     .data(data)
     .enter()
     .append('g')
 
-  bars.append('rect')
+  bars
+    .append('rect')
     .attr('class', 'skill-name-background')
     .attr('y', d => y(d.skill))
     .attr('height', y.bandwidth())
     .attr('x', 0)
     .attr('width', 0)
-    .on("mouseenter", handleMouseEnter)
-    .on("mouseleave", handleMouseLeave)
+    .on('mouseenter', handleMouseEnter)
+    .on('mouseleave', handleMouseLeave)
     .transition()
     .duration(interval)
-    .delay((d, i) => delay + 500 + interval*i)
+    .delay((d, i) => delay + 500 + interval * i)
     .attr('width', d => (d.value > 0 ? 100 : 0))
 
-  bars.append('rect')
+  bars
+    .append('rect')
     .attr('class', 'skill-bar')
     .attr('id', (d, i) => `skill-bar${i}`)
     .attr('y', d => y(d.skill))
     .attr('height', y.bandwidth())
     .attr('x', 100)
     .attr('width', 0)
-    .on("mouseenter", handleMouseEnter)
-    .on("mouseleave", handleMouseLeave)
+    .on('mouseenter', handleMouseEnter)
+    .on('mouseleave', handleMouseLeave)
     .transition()
-    .duration(interval*5)
-    .delay((d, i) => delay + 500 + interval*(1+i))
+    .duration(interval * 5)
+    .delay((d, i) => delay + 500 + interval * (1 + i))
     .attr('width', d => x(d.value))
 
-  bars.append('rect')
+  bars
+    .append('rect')
     .attr('class', 'skill-bar-empty')
     .attr('y', d => y(d.skill))
     .attr('height', y.bandwidth())
     .attr('x', d => 100 + x(d.value))
     .attr('width', 0)
-    .on("mouseenter", handleMouseEnter)
-    .on("mouseleave", handleMouseLeave)
+    .on('mouseenter', handleMouseEnter)
+    .on('mouseleave', handleMouseLeave)
     .transition()
-    .duration(interval*5)
-    .delay((d, i) => delay + 500 + interval*(6+i))
-    .attr('width', d => (!d.skill.startsWith('placeholder') ? width-100-x(d.value) : 0))
+    .duration(interval * 5)
+    .delay((d, i) => delay + 500 + interval * (6 + i))
+    .attr(
+      'width',
+      d => (!d.skill.startsWith('placeholder') ? width - 100 - x(d.value) : 0)
+    )
 
-  bars.append('text')
+  bars
+    .append('text')
     .attr('class', 'skill-name noselect')
     .attr('id', (d, i) => `skill-name${i}`)
     .attr('y', d => y(d.skill) + y.bandwidth() / 2)
     .attr('x', d => 50)
     .text(d => (!d.skill.startsWith('placeholder') ? d.skill : ''))
     .style('opacity', 0)
-    .on("mouseenter", handleMouseEnter)
-    .on("mouseleave", handleMouseLeave)
+    .on('mouseenter', handleMouseEnter)
+    .on('mouseleave', handleMouseLeave)
     .transition()
-    .duration(interval*2)
-    .delay((d, i) => delay + 500 + interval*i)
+    .duration(interval * 2)
+    .delay((d, i) => delay + 500 + interval * i)
     .style('opacity', 1)
 
   function handleMouseEnter(d, i) {
@@ -232,31 +242,29 @@ const updateD3Node = (data, width, height, delay=0) => {
       .style('transform', 'scaleX(0)')
       .transition()
       .duration(300)
-      .attr('src', d.logo != null ? `images/${d.logo}` : 'icons/safari-pinned-tab.svg')
+      .attr(
+        'src',
+        d.logo != null ? `images/${d.logo}` : 'icons/safari-pinned-tab.svg'
+      )
       .transition()
       .duration(300)
       .style('transform', 'scaleX(1)')
 
-    d3.select(`#skill-name${i}`)
-      .attr('font-weight', 'bold')
+    d3.select(`#skill-name${i}`).attr('font-weight', 'bold')
 
-    d3.select(`#skill-bar${i}`)
-      .style('fill', '#10adea')
+    d3.select(`#skill-bar${i}`).style('fill', '#10adea')
   }
 
   function handleMouseLeave(d, i) {
-    d3.select(`#skill-name${i}`)
-      .attr('font-weight', '300')
+    d3.select(`#skill-name${i}`).attr('font-weight', '300')
 
-    d3.select(`#skill-bar${i}`)
-      .style('fill', '#0d8aba')
+    d3.select(`#skill-bar${i}`).style('fill', '#0d8aba')
   }
 }
 
 const ScrollOverPack = ScrollAnim.OverPack
 
 class Skills extends Component {
-
   state = {
     paused: true,
     activeCategory: 'Languages',
@@ -268,9 +276,9 @@ class Skills extends Component {
     if (this.state.paused) return
 
     // only update if width is changed
-    const width = Math.max(window.innerWidth*.8 - 450, 400)
+    const width = Math.max(window.innerWidth * 0.8 - 450, 400)
     if (width === this.state.width) return
-    
+
     clearTimeout(window.resizedFinished)
     window.resizedFinished = setTimeout(() => {
       updateD3Node(data[this.state.activeCategory], width, 400)
@@ -280,7 +288,7 @@ class Skills extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize)
-    this.setState({ width: Math.max(window.innerWidth*.8 - 450, 400)})
+    this.setState({ width: Math.max(window.innerWidth * 0.8 - 450, 400) })
   }
 
   componentWillUnMount() {
@@ -288,51 +296,113 @@ class Skills extends Component {
   }
 
   render() {
-
     return (
-      <div style={{position: 'relative'}} id="skill-page" className="skill-page">
+      <div
+        style={{ position: 'relative' }}
+        id="skill-page"
+        className="skill-page"
+      >
         <div className="skill-chart-wrap">
           <div className="skill-categories">
-            {
-              Object.keys(data).map( (category, i) => (
-                <div key={`skill-category-${i}`}>
-                  <TweenOne paused={this.state.paused} style={{opacity: 0, transform: 'translateY(100px)'}} animation={{opacity:1, translateY: 0, delay: this.props.delay + 500 + i*100}}
-                    onClick={() => {
-                      updateD3Node(data[category], this.state.width, 400, this.props.delay)
-                      this.setState({ activeCategory: category })
-                    }}>
-                    <div className={`skill-category noselect ${this.state.activeCategory === category ? 'skill-category-active': ''}`}>
-                      <span className="skill-category-bracket">{'<'}</span>
-                      { category }
-                      <span className="skill-category-bracket">{'/>'}</span>
-                    </div>
-                    { i !== Object.keys(data).length - 1 &&
-                      <div className="skill-category-line" /> 
-                    }
-                  </TweenOne>
-                </div>
-              ))
-            }          
-          </div> 
+            {Object.keys(data).map((category, i) => (
+              <div key={`skill-category-${i}`}>
+                <TweenOne
+                  paused={this.state.paused}
+                  style={{ opacity: 0, transform: 'translateY(100px)' }}
+                  animation={{
+                    opacity: 1,
+                    translateY: 0,
+                    delay: this.props.delay + 500 + i * 100
+                  }}
+                  onClick={() => {
+                    updateD3Node(
+                      data[category],
+                      this.state.width,
+                      400,
+                      this.props.delay
+                    )
+                    this.setState({ activeCategory: category })
+                  }}
+                >
+                  <div
+                    className={`skill-category noselect ${
+                      this.state.activeCategory === category
+                        ? 'skill-category-active'
+                        : ''
+                    }`}
+                  >
+                    <span className="skill-category-bracket">{'<'}</span>
+                    {category}
+                    <span className="skill-category-bracket">{'/>'}</span>
+                  </div>
+                  {i !== Object.keys(data).length - 1 && (
+                    <div className="skill-category-line" />
+                  )}
+                </TweenOne>
+              </div>
+            ))}
+          </div>
           {/* hide on mobile devices to avoid display issue */}
-          { !isMobile &&
-            <TweenOne paused={this.state.paused} className="skill-logo noselect" animation={{ opacity:1, rotateY: 0, delay: this.props.delay + 500, duration: 1000 }}>
-              <img src="icons/safari-pinned-tab.svg" width={60} height={60} alt="skill logo" />
+          {!isMobile && (
+            <TweenOne
+              paused={this.state.paused}
+              className="skill-logo noselect"
+              animation={{
+                opacity: 1,
+                rotateY: 0,
+                delay: this.props.delay + 500,
+                duration: 1000
+              }}
+            >
+              <img
+                src="icons/safari-pinned-tab.svg"
+                width={60}
+                height={60}
+                alt="skill logo"
+              />
             </TweenOne>
-          }
-          <div><svg id="skill-chart" width={this.state.width} height={400} /></div>
+          )}
+          <div>
+            <svg id="skill-chart" width={this.state.width} height={400} />
+          </div>
         </div>
-        <ScrollOverPack id="skill-page" playScale={0.5} always={false}
-         onChange={({mode, id}) => { if (mode === 'enter') {
-           updateD3Node(data.Languages, this.state.width, 400, this.props.delay)
-           this.setState({ paused: false })
-         }}}>
-          <Texty key='0' className="section-title noselect" delay={this.props.delay}>COMPUTER SKILLS</Texty>
-          <TweenOne key='1' className="underline" animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 250, duration: 1000}} />
+        <ScrollOverPack
+          id="skill-page"
+          playScale={0.5}
+          always={false}
+          onChange={({ mode, id }) => {
+            if (mode === 'enter') {
+              updateD3Node(
+                data.Languages,
+                this.state.width,
+                400,
+                this.props.delay
+              )
+              this.setState({ paused: false })
+            }
+          }}
+        >
+          <Texty
+            key="0"
+            className="section-title noselect"
+            delay={this.props.delay}
+          >
+            COMPUTER SKILLS
+          </Texty>
+          <TweenOne
+            key="1"
+            className="underline"
+            animation={{
+              opacity: 1,
+              translateX: 0,
+              delay: this.props.delay + 250,
+              duration: 1000
+            }}
+          />
         </ScrollOverPack>
       </div>
-    );
+    )
   }
 }
 
-export default Skills;
+export default Skills

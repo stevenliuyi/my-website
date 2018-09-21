@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import 'babel-polyfill'
 import ScrollAnim from 'rc-scroll-anim'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -20,7 +20,6 @@ const Link = ScrollAnim.Link
 const EventListener = ScrollAnim.Event
 
 class App extends Component {
-
   state = {
     delay: 150,
     width: 0
@@ -31,8 +30,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    EventListener.addEventListener('resize.userResize', this.barAnimate.bind(this))
-    window.addEventListener('scroll', this.handleScroll);
+    EventListener.addEventListener(
+      'resize.userResize',
+      this.barAnimate.bind(this)
+    )
+    window.addEventListener('scroll', this.handleScroll)
 
     this.setWidth()
     EventListener.addEventListener('resize', this.setWidth)
@@ -41,7 +43,7 @@ class App extends Component {
     if (isMobile) {
       setVhs()
       window.addEventListener('deviceorientation', setVhs)
-    } 
+    }
   }
 
   handleScroll() {
@@ -57,17 +59,17 @@ class App extends Component {
     }
   }
 
-  onFocus = (e) => {
+  onFocus = e => {
     this.dom = e.target
     this.barAnimate()
   }
 
   barAnimate = () => {
     if (!this.dom) {
-      return;
+      return
     }
-    const bar = this.refs.bar;
-    bar.style.left = `${this.dom.getBoundingClientRect().left}px`;
+    const bar = this.refs.bar
+    bar.style.left = `${this.dom.getBoundingClientRect().left}px`
   }
 
   scrollToNav = () => {
@@ -76,41 +78,72 @@ class App extends Component {
 
   render() {
     const radiusSVG = (
-      <svg width={this.state.width*.5} height="27">
-        <path d={`M ${25/Math.sqrt(2)} ${25/Math.sqrt(2)+2} C ${25*Math.sqrt(2)} 2, ${25*Math.sqrt(2)} 2, ${25/Math.sqrt(2)+25*Math.sqrt(2)} 2 H 1500 V 0 H 0 V 27 A 25 25 0 0 0 ${25/Math.sqrt(2)} ${25/Math.sqrt(2)+2}`} fill="#fff" />
+      <svg width={this.state.width * 0.5} height="27">
+        <path
+          d={`M ${25 / Math.sqrt(2)} ${25 / Math.sqrt(2) + 2} C ${25 *
+            Math.sqrt(2)} 2, ${25 * Math.sqrt(2)} 2, ${25 / Math.sqrt(2) +
+            25 * Math.sqrt(2)} 2 H 1500 V 0 H 0 V 27 A 25 25 0 0 0 ${25 /
+            Math.sqrt(2)} ${25 / Math.sqrt(2) + 2}`}
+          fill="#fff"
+        />
       </svg>
     )
 
     return (
       <div>
-        <Front ref={ el => this.top = el } scrollToNav={this.scrollToNav} onTyped={() => {
-          if (!this.state.linkShown) this.setState({ linkShown: true })
-        }} />
-        <div className="nav" ref={el => this.nav = el}>
+        <Front
+          ref={el => (this.top = el)}
+          scrollToNav={this.scrollToNav}
+          onTyped={() => {
+            if (!this.state.linkShown) this.setState({ linkShown: true })
+          }}
+        />
+        <div className="nav" ref={el => (this.nav = el)}>
           <div className="nav-wrap noselect">
-            <Link className="nav-list" to="about-page" onFocus={this.onFocus}>About</Link>
-            <Link className="nav-list" to="skill-page" onFocus={this.onFocus}>Skills</Link>
-            <Link className="nav-list" to="research-page" onFocus={this.onFocus}>Research</Link>
-            <Link className="nav-list" to="project-page" onFocus={this.onFocus}>Projects</Link>
-            <Link className="nav-list" to="more-page" onFocus={this.onFocus}>More</Link>
+            <Link className="nav-list" to="about-page" onFocus={this.onFocus}>
+              About
+            </Link>
+            <Link className="nav-list" to="skill-page" onFocus={this.onFocus}>
+              Skills
+            </Link>
+            <Link
+              className="nav-list"
+              to="research-page"
+              onFocus={this.onFocus}
+            >
+              Research
+            </Link>
+            <Link className="nav-list" to="project-page" onFocus={this.onFocus}>
+              Projects
+            </Link>
+            <Link className="nav-list" to="more-page" onFocus={this.onFocus}>
+              More
+            </Link>
             <div ref="bar" className="nav-bar" />
           </div>
         </div>
-        <About ref={el => this.aboutPage = el} {...this.state} />
+        <About ref={el => (this.aboutPage = el)} {...this.state} />
         <Skills {...this.state} />
         <Research {...this.state} />
         <Projects {...this.state} />
         <More {...this.state} />
-        <div className="scroll-to-top" onClick={() => scrollToComponent(this.top, { align: 'top', duration: 500 })}>
-          <div className="scroll-arrow"><FaAngleDoubleUp size={24} /></div>
+        <div
+          className="scroll-to-top"
+          onClick={() =>
+            scrollToComponent(this.top, { align: 'top', duration: 500 })
+          }
+        >
+          <div className="scroll-arrow">
+            <FaAngleDoubleUp size={24} />
+          </div>
         </div>
-        <div className="scroll-to-top-radius-left">{ radiusSVG }</div>
-        <div className="scroll-to-top-radius-right">{ radiusSVG }</div>
+        <div className="scroll-to-top-radius-left">{radiusSVG}</div>
+        <div className="scroll-to-top-radius-right">{radiusSVG}</div>
         <div className="scroll-to-top-radius" />
         <Footer {...this.state} />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
