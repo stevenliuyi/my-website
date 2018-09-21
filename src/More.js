@@ -14,8 +14,8 @@ class More extends Component {
         <Texty key='0' className="section-title noselect" delay={this.props.delay}>MORE</Texty>
         <TweenOne key='1' className="underline" animation={{ opacity: 1, translateX: 0, delay: this.props.delay + 250, duration: 1000}} />
         <div className="more-items">
-          <MoreItem title="Github" number="39" description="repositories" pic="markus-spiske-507983-unsplash-small.jpg" url="https://github.com/stevenliuyi" {...this.props} />
-          <MoreItem title="Blog" number="43" description="articles" pic="aaron-burden-64849-unsplash-small.jpg" url="https://blog.yliu.io" {...this.props} />
+          <MoreItem title="github" number="39" description="Repositories" pic="markus-spiske-507983-unsplash-small.jpg" url="https://github.com/stevenliuyi" {...this.props} />
+          <MoreItem title="blog" number="43" description="Articles" pic="aaron-burden-64849-unsplash-small.jpg" url="https://blog.yliu.io" {...this.props} />
         </div>
       </ScrollOverPack>
     );
