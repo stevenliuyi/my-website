@@ -684,6 +684,8 @@ a {
   stroke-dasharray: 785.3982px;
   stroke-dashoffset: 0px;
   stroke-linecap: square;
+  transform-origin: 50% 50%;
+  transform: rotate(-90deg);
 }
 
 .more-circle-back {
@@ -694,7 +696,7 @@ a {
   stroke-dashoffset: 785.3982px;
   stroke-linecap: square;
   transform-origin: 50% 50%;
-  transform: scale(1, -1);
+  transform: scale(1, -1) rotate(90deg);
 }
 
 .more-item:hover .more-circle {

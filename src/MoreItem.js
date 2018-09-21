@@ -6,10 +6,17 @@ TweenOne.plugins.push(SvgDrawPlugin)
 
 class MoreItem extends Component {
 
-  // open link until the animation is completed
+  // open link until the animation is completed on touch devices
   handleTouchEnd = (e) => {
     e.preventDefault()
-    setTimeout(() => window.open(this.props.url, 'blank_'), 1000)
+    this.circleElement.addEventListener('transitionend', this.openLink)
+  }
+
+  openLink = () => {
+    setTimeout(() => {
+      window.open(this.props.url, 'blank_')
+      this.circleElement.removeEventListener('transitionend', this.openLink)
+    }, 100)
   }
 
   render() {
@@ -18,7 +25,7 @@ class MoreItem extends Component {
         <svg width="260" height="260"
           className="more-circle-svg"
         >
-          <circle cx="130" cy="130" r="125" className="more-circle-back" />
+          <circle cx="130" cy="130" r="125" className="more-circle-back" ref={el => this.circleElement = el}/>
           <circle cx="130" cy="130" r="125" className="more-circle" />
           <TweenOne
             component="circle"
