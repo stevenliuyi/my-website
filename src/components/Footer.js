@@ -6,7 +6,7 @@ import 'rc-texty/assets/index.css'
 import { TiHeart } from 'react-icons/ti'
 import { FaFacebookF, FaWeixin } from 'react-icons/fa'
 import { Tooltip } from 'reactstrap'
-import textEnter from './textEnter'
+import textEnter from '../utils/textEnter'
 
 const ScrollOverPack = ScrollAnim.OverPack
 

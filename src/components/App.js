@@ -13,8 +13,8 @@ import Research from './Research'
 import Projects from './Projects'
 import More from './More'
 import Footer from './Footer'
-import './iconfont.css'
-import { setVhs } from './utils.js'
+import '../iconfont.css'
+import { setVhs } from '../utils/utils.js'
 
 const Link = ScrollAnim.Link
 const EventListener = ScrollAnim.Event
