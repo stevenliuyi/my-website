@@ -13,7 +13,7 @@ class MoreItem extends Component {
 
   openLink = () => {
     setTimeout(() => {
-      window.open(this.props.url, '_blank')
+      window.location.href = this.props.url
       this.circleElement.removeEventListener('transitionend', this.openLink)
     }, 100)
   }
