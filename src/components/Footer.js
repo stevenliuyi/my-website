@@ -66,7 +66,7 @@ class Footer extends Component {
               }}
               className="footer-icon"
             >
-              <a href="https://www.facebook.com/stevenliuyi" target="blank_">
+              <a href="https://www.facebook.com/stevenliuyi" target="_blank">
                 <FaFacebookF size={18} />
               </a>
             </TweenOne>

@@ -13,7 +13,7 @@ class MoreItem extends Component {
 
   openLink = () => {
     setTimeout(() => {
-      window.open(this.props.url, 'blank_')
+      window.open(this.props.url, '_blank')
       this.circleElement.removeEventListener('transitionend', this.openLink)
     }, 100)
   }
@@ -22,7 +22,7 @@ class MoreItem extends Component {
     return (
       <div
         className="more-item"
-        onMouseUp={() => window.open(this.props.url, 'blank_')}
+        onMouseUp={() => window.open(this.props.url, '_blank')}
         onTouchEnd={this.handleTouchEnd}
       >
         <svg width="260" height="260" className="more-circle-svg">

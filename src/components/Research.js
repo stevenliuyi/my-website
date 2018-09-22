@@ -109,7 +109,7 @@ class Research extends Component {
                 onClick={() => {
                   window.open(
                     'https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2017JC013390',
-                    'blank_'
+                    '_blank'
                   )
                 }}
               >
