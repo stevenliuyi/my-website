@@ -3,10 +3,19 @@ import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import MoreItem from './MoreItem'
+import { getBlogCount } from '../utils/utils'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
 class More extends Component {
+  state = {
+    blogCount: '40+'
+  }
+
+  componentDidMount() {
+    getBlogCount().then(blogCount => this.setState({ blogCount }))
+  }
+
   render() {
     return (
       <ScrollOverPack
@@ -43,7 +52,7 @@ class More extends Component {
           />
           <MoreItem
             title="blog"
-            number="43"
+            number={this.state.blogCount}
             description="Articles"
             pic="aaron-burden-64849-unsplash-small.jpg"
             url="https://blog.yliu.io"

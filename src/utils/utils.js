@@ -1,3 +1,4 @@
+// set vh-related css styles
 export const setVhs = () => {
   const vh = window.innerHeight
   const background = document.querySelector('.background')
@@ -12,3 +13,9 @@ export const setVhs = () => {
   if (title != null) title.style.top = `${vh * 0.6}px`
   if (mainLinks != null) mainLinks.style.top = `${vh * 0.6}px`
 }
+
+// get number of blog posts
+export const getBlogCount = () =>
+  fetch('https://cors-anywhere.herokuapp.com/https://blog.yliu.io/post-count')
+    .then(data => data.text())
+    .catch(err => 0)
