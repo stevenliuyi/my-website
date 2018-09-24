@@ -5,7 +5,9 @@ import { FiX } from 'react-icons/fi'
 import { FaAngleDoubleDown } from 'react-icons/fa'
 import scrollToComponent from 'react-scroll-to-component'
 import { Tooltip } from 'reactstrap'
+import { isMobile } from 'react-device-detect'
 import Logo from './Logo'
+import { setVhs } from '../utils/utils'
 
 class Page extends Component {
   state = {
@@ -74,12 +76,21 @@ class Page extends Component {
     }
   }
 
+  // set vh-related styles on mobile devices
+  setVhStyles = () => setVhs(false)
+
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
+    if (isMobile) {
+      this.setVhStyles()
+      window.addEventListener('deviceorientation', this.setVhStyles)
+    }
   }
 
   componentWillUnMount() {
     window.removeEventListener('scroll', this.handleScroll)
+    if (isMobile)
+      window.removeEventListener('deviceorientation', this.setVhStyles)
   }
 
   render() {

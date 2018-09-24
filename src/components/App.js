@@ -30,20 +30,28 @@ class App extends Component {
   }
 
   componentDidMount() {
-    EventListener.addEventListener(
-      'resize.userResize',
-      this.barAnimate.bind(this)
-    )
-    window.addEventListener('scroll', this.handleScroll)
+    // scroll to top
+    scrollToComponent(this.top, { align: 'top' })
 
+    EventListener.addEventListener('resize.userResize', this.barAnimate)
+
+    window.addEventListener('scroll', this.handleScroll)
     this.setWidth()
-    EventListener.addEventListener('resize', this.setWidth)
+    window.addEventListener('resize', this.setWidth)
 
     // set vh-related styles on mobile devices
     if (isMobile) {
       setVhs()
       window.addEventListener('deviceorientation', setVhs)
     }
+  }
+
+  componentWillUnMount() {
+    EventListener.removeEventListener('resize.userResize', this.barAnimate)
+
+    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('resize', this.setWidth)
+    if (isMobile) window.removeEventListener('deviceorientation', setVhs)
   }
 
   handleScroll() {
@@ -65,10 +73,9 @@ class App extends Component {
   }
 
   barAnimate = () => {
-    if (!this.dom) {
-      return
-    }
+    if (!this.dom) return
     const bar = this.refs.bar
+    if (!bar) return
     bar.style.left = `${this.dom.getBoundingClientRect().left}px`
   }
 
