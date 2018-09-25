@@ -226,6 +226,7 @@ const updateD3Node = (data, width, height, delay = 0) => {
     .attr('x', d => 50)
     .text(d => (!d.skill.startsWith('placeholder') ? d.skill : ''))
     .style('opacity', 0)
+    .style('pointer', 'default')
     .on('mouseenter', handleMouseEnter)
     .on('mouseleave', handleMouseLeave)
     .transition()
@@ -342,26 +343,24 @@ class Skills extends Component {
               </div>
             ))}
           </div>
-          {/* hide on mobile devices to avoid display issue */}
-          {!isMobile && (
-            <TweenOne
-              paused={this.state.paused}
-              className="skill-logo noselect"
-              animation={{
-                opacity: 1,
-                rotateY: 0,
-                delay: this.props.delay + 500,
-                duration: 1000
-              }}
-            >
-              <img
-                src="icons/safari-pinned-tab.svg"
-                width={60}
-                height={60}
-                alt="skill logo"
-              />
-            </TweenOne>
-          )}
+          <TweenOne
+            paused={this.state.paused}
+            className="skill-logo noselect"
+            animation={{
+              opacity: 1,
+              scale: 1,
+              delay: this.props.delay + 500,
+              duration: 1000,
+              ease: 'easeOutBack'
+            }}
+          >
+            <img
+              src="icons/safari-pinned-tab.svg"
+              width={60}
+              height={60}
+              alt="skill logo"
+            />
+          </TweenOne>
           <div>
             <svg id="skill-chart" width={this.state.width} height={400} />
           </div>
