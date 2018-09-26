@@ -1,0 +1,55 @@
+- name: Out of Control
+  author: Kevin Kelly
+  language: zh
+  image: out-of-control.jpg
+  time: 2013
+  douban: 5375620
+
+- name: Learn Python The Hard Way
+  author: Zed Shaw
+  language: en
+  image: learn-python-the-hard-way.jpg
+  time: 2013
+  douban: 5363753
+
+- name: Thinking, Fast and Slow
+  author: Daniel Kahneman
+  language: zh
+  image: thinking-fast-and-slow.jpg
+  time: 2013
+  douban: 10785583
+
+- name: "Alan Turing: The Enigma"
+  author: Andrew Hodges
+  language: zh
+  image: alan-turing-the-enigma.jpg
+  time: 2013
+  douban: 10522003
+
+- name: The General History of China
+  author: Lü Simian
+  language: zh
+  image: the-general-history-of-china.jpg
+  time: 2013
+  douban: 4767483
+
+- name: Historical Pieces of the Republic of China
+  author: Zhang Ming
+  language: zh
+  image: historical-pieces-of-the-republic-of-china.jpg
+  time: 2013
+  douban: 6829162
+
+- name: The Pleasure of Thinking
+  author: Wang Xiaobo
+  language: zh
+  image: the-pleasure-of-thinking.jpg
+  time: 2013
+  douban: 1418180
+
+- name: On China
+  author: Henry Kissinger
+  language: zh
+  image: on-china.jpg
+  time: 2013
+  douban: 19920715

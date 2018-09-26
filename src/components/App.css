@@ -1001,3 +1001,35 @@ a:hover > .contact-email {
   padding: 18px;
   transform-origin: 50% 50%;
 }
+
+.reading-list {
+  padding-top: 100px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.book {
+  padding: 20px;
+}
+
+.book > img {
+  border-radius: 10px;
+}
+
+.book:hover > img {
+  transform: rotate(5deg);
+  box-shadow: 5px -5px 20px rgba(0,0,0,.3);
+  transition: all .5s;
+}
+
+.book-title {
+  font-size: 14px;
+  margin-top: 15px;
+  width: 143px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -3,7 +3,6 @@ import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import * as d3 from 'd3'
-import { isMobile } from 'react-device-detect'
 
 // 0 - Novice
 // 0.25 - Advanced Beginner
