@@ -122,7 +122,10 @@ class Page extends Component {
               />
             )}
           />
-          <div className="cover-title noselect">
+          <div
+            className="cover-title noselect"
+            onClick={this.props.onTitleClick}
+          >
             <span>YI</span>
             <FiX size={this.state.fontSize} color="#0d8aba" />
             <span>{this.props.title}</span>

@@ -1,54 +1,97 @@
+- name: A History of Silicon Valley
+  authors:
+    - Arun Rao 
+    - Piero Scarruffi
+  language: zh
+  image: a-history-of-silicon-valley.jpg
+  tags:
+    - computer science
+    - history
+  time: 2015
+  douban: 25857804
+  quotes:
+    - 淘金热催生铁路业，而铁路带动运输业，运输业又带动港口业。港口业有两个伴生作用：港口催生了沿海城市，城市需要电力，输电需要高压电力线，这使该地区成为电力工程技术的领先者。港口需要无线电通信，这需要电子信息业的发展，从而催生了半导体产业，半导体产业又衍生出微处理器产业，从而产生了个人计算机，计算机又催生了软件业，软件业又得益于互联网，互联网巨头们创造了巨额财富之后，又投资于生物科技和绿色环保技术。简而言之，这就是旧金山湾区整个20世纪的历史。
+    - 对于硅谷所取得的伟大成就，应把功劳归于最大的风险投资者：政府。
+    - 硅谷所起的作用，是使这些技术 “迅速传播”。硅谷有着独特的、近乎魔鬼般的嗅觉，能迅速理解一项发明对于社会的可能的颠覆前景，并从中挣到大钱。熊彼特 (Schumpeter) 提出的 “创造性破坏” 变成了破坏性的创造。这就是人们谈起硅谷是创新工厂时的终极含义。
+    - 如果说哪个人可以被称为硅谷的缔造者，那当属弗雷德·特曼。
+    - 多里奥特还认为创业者比创意更重要，并在1949年的年度报告中开玩笑说：“一个平庸的想法在一个能干的人手中的价值，远远超过一个优秀的想法在一个平庸的人手中的价值。”
+    - 多里奥特的风险投资理念可以总结为如下几点。 ·最好的回报来自风险最高的、从零开始的公司; ·最好的公司是随着时间的推移稳步前进，依靠坚强的管理团队而建成的，不是一夜成功; ·专业技术是最好的投资领域，专利和技术诀窍给小企业带来了足以抗衡大公司的竞争力; ·最困难的事情是说服创业者寻求和接受外界的帮助，无论是用来促进销售、获得银行的信用额度，还是聘用合适的团队。
+    - 有关风险投资的悖论是：大多数投资都会失败，但总体而言，风险投资家都能赚到相当于投资资本2～4倍的钱。
+    - 风险投资基金结构通常为有限合伙制，其中的有限合伙人是机构投资者，普通合伙人是风险投资企业。后者作为投资顾问，对资金拥有完全的控制权。
+    - 王安开创了把硬件制造外包到远东的做法，因此，磁芯存储器可能是第一种受惠于远东的廉价劳动力而使价格迅速下降的计算机部件。
+    - 风险资本发端于政府行为。1958年通过的 《小企业投资法案》 被认为是受到专业管理的风险投资行业的开端。
+    - 恩格尔巴特深受本杰明·李·沃尔夫 (Benjamin Lee Whorf) 的语言相对论假设的影响。沃尔夫主张，一种语言的复杂性控制着讲这种语言的人所表达的思想的复杂性。与此相对应的是，恩格尔巴特认为现有技术的状态控制着人们操纵信息的能力。对信息控制得法，就能产生更多的创新和改进的新技术。
+    - 史蒂夫·乔布斯在1996年的一次演讲中曾说：“施乐本来可以拥有整个计算机产业……可以成为20世纪80年代的IBM……可以成为20世纪90年代的微软。”
+    - 托马斯·珀金斯认为，“投资银行家” 这一名称是误导性的。华尔街的这些银行并不做投资，也不提供基本的银行服务。它们只不过推销一只新上市的股票，就像巧舌如簧的推销员。
+    - 梅特卡夫也阐述了 “梅特卡夫定律”：“网络的价值随着其连接设备的数量呈指数级增长。” 这可以通俗地表述为：网络的价值随着其连接的人的数量呈指数级增长。
+    - 有人可能会说，个人电脑并不是某个个人的发明，也不是某个实验室或某家公司的发明，它是一个社会群体的发明。实际上，它的能量和10年前就扎根湾区的那个群体 (也就是那个反传统文化的群体——煽动宣传团体、嬉皮士公社、艺术社团等) 的能量没有多大的区别。在此之前，计算机技术的进步一直都是政府、高校和大公司资助的结果，下一步将由遍布全国的籍籍无名的发烧友们来推动。
+    - 因此，个人电脑产业的商业模式可以归纳为以下几种。<ul><li>以专有操作系统锁定用户 (IBM和苹果); ·照抄事实上的标准，并快速推到市场上 (康柏);</li><li>与Unix工作站进行竞争 (美国电报电话公司); ·照抄事实上的标准，按单定制，及时出货 (戴尔);</li><li>不仅生产台式PC，还生产便携式笔记本电脑 (东芝);</li><li>专注于一个跨平台的软件平台 (微软)。</li></ul>
+    - 合成生物学对于生物学的意义，就如机械工程对于物理学一样，它的目的是制造自然界本不存在的生物体系。
+    - 1985年，得州仪器副总裁、中国出生的张忠谋 (morris chang) 推动美国公司的半导体制造外包给中国台湾的公司。1987年，他自己创办了台湾积体电路制造股份有限公司 (TSMC，简称“台积电”)。由于劳动力廉价，中国台湾的公司得以大幅降低半导体生产的成本。
+    - 德国的经济模式鼓励逐步创新和长期规划(举例来说，这种思维模式在冶金产业方面确实很有用)。相反，美国的经济模式则鼓励实时的毁灭性创新。硅谷就是美国这种理念的最终体现。
+    - 媒体关注的是生物技术在制药业的应用 (红色生物技术) 和转基因食品 (绿色生物技术)。不过，生物技术还有第三处应用——利用可再生资源生产生物化学品、生物材料和生物燃料 (白色生物技术)。
+    - 追随 “免费服务” 模式的互联网初创公司间接地接受了这一观点：它们真正的产品是用户群。
+    - “免费经济” (Gift Economy) 是刘易斯·海德 (Lewis Hyde)在1985年创造的一个术语，1998年被理查德·巴布鲁克 (Richard Barbrook) 应用于网络经济; 在这种经济中，少数几个企业为千百万志愿的业余编辑提供了生产工具。这些工蚁族的免费劳动使得极少数的王者极其富有，同时也导致数百万中产阶级家庭失去收入。
+
 - name: Out of Control
-  author: Kevin Kelly
+  authors:
+    - Kevin Kelly
   language: zh
   image: out-of-control.jpg
   time: 2013
   douban: 5375620
 
 - name: Learn Python The Hard Way
-  author: Zed Shaw
+  authors:
+    - Zed Shaw
   language: en
   image: learn-python-the-hard-way.jpg
   time: 2013
   douban: 5363753
 
 - name: Thinking, Fast and Slow
-  author: Daniel Kahneman
+  authors:
+    - Daniel Kahneman
   language: zh
   image: thinking-fast-and-slow.jpg
   time: 2013
   douban: 10785583
 
 - name: "Alan Turing: The Enigma"
-  author: Andrew Hodges
+  authors:
+    - Andrew Hodges
   language: zh
   image: alan-turing-the-enigma.jpg
   time: 2013
   douban: 10522003
 
 - name: The General History of China
-  author: Lü Simian
+  authors:
+    - Lü Simian
   language: zh
   image: the-general-history-of-china.jpg
   time: 2013
   douban: 4767483
 
 - name: Historical Pieces of the Republic of China
-  author: Zhang Ming
+  authors:
+    - Zhang Ming
   language: zh
   image: historical-pieces-of-the-republic-of-china.jpg
   time: 2013
   douban: 6829162
 
 - name: The Pleasure of Thinking
-  author: Wang Xiaobo
+  authors:
+    - Wang Xiaobo
   language: zh
   image: the-pleasure-of-thinking.jpg
   time: 2013
   douban: 1418180
 
 - name: On China
-  author: Henry Kissinger
+  authors:
+    - Henry Kissinger
   language: zh
   image: on-china.jpg
   time: 2013

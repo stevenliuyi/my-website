@@ -970,6 +970,8 @@ a:hover > .contact-email {
   align-items: center;
   font-size: 36px;
   padding-top: 20px;
+  cursor: pointer;
+  z-index: 100;
 }
 
 .cover-title span {
@@ -998,8 +1000,11 @@ a:hover > .contact-email {
 .cover-logo {
   position: fixed;
   z-index: 10;
-  padding: 18px;
+  padding: 6px;
+  margin: 12px;
   transform-origin: 50% 50%;
+  background-color: #fff;
+  border-radius: 9999px;
 }
 
 .reading-list {
@@ -1012,6 +1017,7 @@ a:hover > .contact-email {
 
 .book {
   padding: 20px;
+  cursor: pointer;
 }
 
 .book > img {
@@ -1032,4 +1038,170 @@ a:hover > .contact-email {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.book-detail {
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.book-detail-img {
+  padding: 100px;
+  position: relative;
+}
+
+.book-detail-img > a {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 16px;
+  opacity: 0;
+  border: 2px solid #fff;
+  color: #fff !important;
+}
+
+.book-detail-img:hover > img {
+  filter: brightness(30%);
+  transition: all .5s;
+}
+
+.book-detail-img:hover > a {
+  opacity: 1;
+}
+
+.book-detail-img > a:hover {
+}
+
+.book-detail-info {
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-detail-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.book-detail-author {
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  display: inline-block;
+}
+
+.book-detail-tags {
+  margin-top: 20px;
+}
+
+.book-detail-tag {
+  background-color: #eee;
+  margin: 5px;
+  padding: 8px;
+  font-size: 12px;
+  border-radius: 9999px;
+}
+
+.book-quotes {
+  background-color: #555;
+  text-align: center;
+  min-height: 50vh;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.book-quotes-icon {
+  position: absolute;
+  background-color: #fff;
+  margin: -100px auto;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+  overflow: hidden;
+  z-index: 11;
+  transform: translate(-50%, -50%);
+  padding-top: 40px;
+  font-family: 'Playfair Display', serif;
+  font-size: 150px;
+  font-weight: bold;
+}
+
+.book-quotes .section-title {
+  color: #fff;
+}
+
+.book-quotes .underline {
+  border-top-color: #fff;
+}
+
+.book-quote {
+  width: 60%;
+  margin: 30px auto 30px auto;
+  color: #fff;
+  text-align: center;
+  padding: 30px;
+  line-height: 2;
+  font-family: Georgia, "Nimbus Roman No9 L", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "Source Han Serif CN", STSong, "AR PL New Sung", "AR PL SungtiL GB", NSimSun, SimSun, "TW\-Sung", "WenQuanYi Bitmap Song", "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", "AR PL UMing TW MBE", PMingLiU, MingLiU, serif;
+  font-weight: normal;
+  position: relative;
+}
+
+.book-quote:hover {
+  font-weight: bold;
+}
+
+.book-quote-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 20px;
+  border-top: solid 3px #fff;
+  border-left: solid 3px #fff;
+  border-bottom: solid 3px #fff;
+  opacity: 0;
+}
+
+.book-quote-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 20px;
+  border-top: solid 3px #fff;
+  border-right: solid 3px #fff;
+  border-bottom: solid 3px #fff;
+  opacity: 0;
+}
+
+.book-quote:hover .book-quote-left,
+.book-quote:hover .book-quote-right {
+  opacity: 1;
+  transition: opacity .2s;
+} 
+
+.book-quote ol,
+.book-quote ul {
+  text-align: left; 
 }

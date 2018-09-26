@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import Page from './Page'
 import Book from './Book'
+import BookDetail from './BookDetail'
 import readingList from '../data/read.yml'
 
 class Read extends Component {
   state = {
-    listWidth: 0
+    listWidth: 0,
+    currentIdx: -1
   }
 
   calcListWidth = () => {
@@ -27,6 +29,8 @@ class Read extends Component {
     window.removeEventListner('resize', this.calcListWidth)
   }
 
+  onSelectBook = idx => this.setState({ currentIdx: idx })
+
   render() {
     return (
       <Page
@@ -34,12 +38,23 @@ class Read extends Component {
         quote="It is what you read when you don't have to that determines what you will be when you can't help it."
         author="Oscar Wilde"
         backgroundFilename="olia-gozha-678463-unsplash"
+        onTitleClick={() => this.setState({ currentIdx: -1 })}
       >
-        <div className="reading-list" style={{ width: this.state.listWidth }}>
-          {readingList.map((book, idx) => (
-            <Book key={idx} {...book} />
-          ))}
-        </div>
+        {this.state.currentIdx === -1 && (
+          <div className="reading-list" style={{ width: this.state.listWidth }}>
+            {readingList.map((book, idx) => (
+              <Book
+                key={idx}
+                onSelectBook={this.onSelectBook}
+                idx={idx}
+                {...book}
+              />
+            ))}
+          </div>
+        )}
+        {this.state.currentIdx >= 0 && (
+          <BookDetail {...readingList[this.state.currentIdx]} />
+        )}
       </Page>
     )
   }

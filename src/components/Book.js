@@ -3,7 +3,10 @@ import React, { Component } from 'react'
 class Book extends Component {
   render() {
     return (
-      <div className="book">
+      <div
+        className="book"
+        onClick={() => this.props.onSelectBook(this.props.idx)}
+      >
         <img
           alt={this.props.name}
           src={`images/books/${this.props.image}`}
