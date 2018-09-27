@@ -9,6 +9,7 @@
     - history
   time: 2015
   douban: 25857804
+  goodreads: 12055118
   quotes:
     - 淘金热催生铁路业，而铁路带动运输业，运输业又带动港口业。港口业有两个伴生作用：港口催生了沿海城市，城市需要电力，输电需要高压电力线，这使该地区成为电力工程技术的领先者。港口需要无线电通信，这需要电子信息业的发展，从而催生了半导体产业，半导体产业又衍生出微处理器产业，从而产生了个人计算机，计算机又催生了软件业，软件业又得益于互联网，互联网巨头们创造了巨额财富之后，又投资于生物科技和绿色环保技术。简而言之，这就是旧金山湾区整个20世纪的历史。
     - 对于硅谷所取得的伟大成就，应把功劳归于最大的风险投资者：政府。
@@ -40,6 +41,8 @@
   image: out-of-control.jpg
   time: 2013
   douban: 5375620
+  goodreads: 243725
+  wikidata: Q7111520
   tags:
     - computer science
     - philosophy
@@ -51,6 +54,7 @@
   image: learn-python-the-hard-way.jpg
   time: 2013
   douban: 5363753
+  goodreads: 8341335
   tags:
     - computer science
 
@@ -61,6 +65,8 @@
   image: thinking-fast-and-slow.jpg
   time: 2013
   douban: 10785583
+  goodreads: 11468377
+  wikidata: Q983718
   tags:
     - psychology
     - economics
@@ -72,17 +78,20 @@
   image: alan-turing-the-enigma.jpg
   time: 2013
   douban: 10522003
+  goodreads: 150731
+  wikidata: Q34308373
   tags:
     - computer science
     - biography
 
-- name: The General History of China
+- name: General History of China
   authors:
     - Lü Simian
   language: zh
   image: the-general-history-of-china.jpg
   time: 2013
   douban: 4767483
+  goodreads: 18781287
   tags:
     - history
 
@@ -93,6 +102,7 @@
   image: historical-pieces-of-the-republic-of-china.jpg
   time: 2013
   douban: 6829162
+  goodreads: 18875419
   tags:
     - history
 
@@ -103,6 +113,7 @@
   image: the-pleasure-of-thinking.jpg
   time: 2013
   douban: 1418180
+  goodreads: 18871865
 
 - name: On China
   authors:
@@ -111,6 +122,7 @@
   image: on-china.jpg
   time: 2013
   douban: 19920715
+  goodreads: 9328314
   tags:
     - politics
 
@@ -121,6 +133,7 @@
   image: the-anthropological-lens.jpg
   time: 2013
   douban: 3825685
+  goodreads: 873565
   tags:
     - anthropology
 
@@ -131,6 +144,7 @@
   image: stories-of-the-romans-2.jpg
   time: 2013
   douban: 7064370
+  goodreads: 22549968
   tags:
     - history
 
@@ -141,6 +155,7 @@
   image: stories-of-the-romans-1.jpg
   time: 2013
   douban: 7055441
+  goodreads: 22309892
   tags:
     - history
 
@@ -151,6 +166,7 @@
   image: what-is-hedge-fund.jpg 
   time: 2013
   douban: 6435570
+  goodreads: 19386968
   tags:
     - finance
     - economics
@@ -172,16 +188,20 @@
   image: sandalwood-death.jpg
   time: 2013
   douban: 1043485
+  goodreads: 16087986
+  wikidata: Q3227457
   tags:
     - novel
 
-- name: Life and Death Are Wearing Me Out
+- name: Life and Death are Wearing Me Out
   authors:
     - Mo Yan
   language: zh
   image: life-and-death-are-wearing-me-out.jpg
   time: 2013
   douban: 1465007
+  goodreads: 1320279
+  wikidata: Q1757697
   tags:
     - novel
 
@@ -192,6 +212,7 @@
   image: these-years-of-taiwan.jpg
   time: 2013
   douban: 4113090
+  goodreads: 8025737
   tags:
     - history
 
@@ -202,6 +223,8 @@
   image: godel-escher-bach.jpg
   time: 2013
   douban: 1291204
+  goodreads: 24113
+  wikidata: Q831517
   tags:
     - computer science
     - maths
@@ -214,6 +237,7 @@
   image: why-evolution-is-true.jpg
   time: 2013
   douban: 4114172
+  goodreads: 4005310
   tags:
     - biology
 
@@ -224,6 +248,8 @@
   image: the-naked-ape.jpg
   time: 2013
   douban: 1024928
+  goodreads: 33297
+  wikidata: Q378423
   tags:
     - biology
     - anthropology
@@ -235,6 +261,7 @@
   image: the-us-constitutional-experience.jpg
   time: 2013
   douban: 1144185
+  goodreads: 28387186
   tags:
     - law
     - politics
@@ -246,6 +273,8 @@
   image: the-lucifer-effect.jpg
   time: 2013
   douban: 4071842
+  goodreads: 359194
+  wikidata: Q9251424
   tags:
     - psychology
 
@@ -256,6 +285,8 @@
   image: a-short-history-of-nearly-everything.jpg
   time: 2013
   douban: 1225983
+  goodreads: 21
+  wikidata: Q1306809
   tags:
     - science
     - history
@@ -267,6 +298,7 @@
   image: the-truth-of-food.jpg
   time: 2013
   douban: 4121562
+  goodreads: 18752176
   tags:
     - health
 
@@ -277,6 +309,8 @@
   image: utilitarianism.jpg
   time: 2013
   douban: 3072490
+  goodreads: 584637
+  wikidata: Q1197767
   tags:
     - philosophy
 
@@ -297,6 +331,7 @@
   image: the-riemann-hypothesis.jpg
   time: 2012
   douban: 11506872
+  goodreads: 2274879
   tags:
     - maths
 
@@ -307,6 +342,7 @@
   image: here-is-the-republic-of-china.jpg
   time: 2012
   douban: 11577064
+  goodreads: 18939464
   tags:
     - history
 
@@ -327,6 +363,8 @@
   image: death-on-the-nile.jpg
   time: 2012
   douban: 1818347
+  goodreads: 131359
+  wikidata: Q381756
   tags:
     - novel
 
@@ -337,6 +375,8 @@
   image: peril-at-end-house.jpg
   time: 2012
   douban: 1903152
+  goodreads: 16424
+  wikidata: Q957248
   tags:
     - novel
 
@@ -347,6 +387,7 @@
   image: the-legends-of-cardiae-surgery.jpg
   time: 2012
   douban: 10794070
+  goodreads: 19533904
   tags:
     - medicine
 
@@ -357,6 +398,7 @@
   image: make-no-law.jpg
   time: 2012
   douban: 6401128
+  goodreads: 27405
   tags:
     - law
     - politics
@@ -368,6 +410,7 @@
   image: health-rumor-killers.jpg
   time: 2012
   douban: 6729866
+  goodreads: 19188979
   tags:
     - health
 
@@ -378,6 +421,7 @@
   image: the-discovery-of-subatomic-particles.jpg
   time: 2012
   douban: 1954557
+  goodreads: 302031
   tags:
     - physics
 
@@ -388,6 +432,7 @@
   image: mockingjay.jpg
   time: 2012
   douban: 6265961
+  wikidata: Q40354
   tags:
     - novel
 
@@ -398,6 +443,8 @@
   image: catching-fire.jpg
   time: 2012
   douban: 6265961
+  goodreads: 7260188
+  wikidata: Q837140
   tags:
     - novel
 
@@ -408,5 +455,7 @@
   image: the-hunger-games.jpg
   time: 2012
   douban: 4164096
+  goodreads: 2767052
+  wikidata: Q11678
   tags:
     - novel

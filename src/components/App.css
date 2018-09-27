@@ -1049,13 +1049,6 @@ a:hover > .contact-email {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, .2);
 }
 
-.book-detail-img:hover > a {
-  opacity: 1;
-}
-
-.book-detail-img > a:hover {
-}
-
 .book-detail-info {
   max-width: 90vw;
   width: 600px;
@@ -1087,7 +1080,7 @@ a:hover > .contact-email {
 }
 
 .book-detail-tags {
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 .book-detail-tag {
@@ -1099,6 +1092,32 @@ a:hover > .contact-email {
   color: #999;
   font-weight: normal;
   white-space: nowrap;
+}
+
+.book-detail-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.book-detail-link {
+  margin: 5px;
+  background-color: #555;
+  border-radius: 5px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-detail-link:hover {
+  background-color: #999;
+  transition: all .5s;
+}
+
+.book-detail-link > a {
+  color: #fff !important;
 }
 
 .book-quotes {
