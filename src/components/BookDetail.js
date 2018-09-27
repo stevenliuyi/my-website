@@ -5,6 +5,7 @@ class BookDetail extends Component {
     return (
       <div>
         <div className="book-detail">
+          <div className="book-detail-background" />
           <div className="book-detail-img">
             <img
               alt={this.props.name}
