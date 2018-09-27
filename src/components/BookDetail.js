@@ -8,6 +8,7 @@ class BookDetail extends Component {
           <div className="book-detail-background" />
           <div className="book-detail-img">
             <img
+              className="noselect"
               alt={this.props.name}
               src={`images/books/${this.props.image}`}
               width={285}
@@ -30,8 +31,10 @@ class BookDetail extends Component {
             </div>
             <div className="book-detail-tags">
               {this.props.tags != null &&
-                this.props.tags.map(tag => (
-                  <span className="book-detail-tag">{tag}</span>
+                this.props.tags.map((tag, i) => (
+                  <span key={`tag-${i}`} className="book-detail-tag noselect">
+                    {tag}
+                  </span>
                 ))}
             </div>
           </div>
@@ -44,8 +47,8 @@ class BookDetail extends Component {
               className="underline"
               style={{ transform: 'translateX(0)', opacity: 1 }}
             />
-            {this.props.quotes.map(quote => (
-              <div className="book-quote">
+            {this.props.quotes.map((quote, i) => (
+              <div key={`quote-${i}`} className="book-quote">
                 <div dangerouslySetInnerHTML={{ __html: quote }} />
                 <div className="book-quote-left" />
                 <div className="book-quote-right" />

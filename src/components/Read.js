@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import scrollToComponent from 'react-scroll-to-component'
 import Page from './Page'
 import Book from './Book'
 import BookDetail from './BookDetail'
@@ -29,11 +30,19 @@ class Read extends Component {
     window.removeEventListner('resize', this.calcListWidth)
   }
 
-  onSelectBook = idx => this.setState({ currentIdx: idx })
+  onSelectBook = idx => {
+    this.setState({ currentIdx: idx })
+    scrollToComponent(this.page, {
+      align: 'top',
+      offset: window.innerHeight,
+      duration: 0
+    })
+  }
 
   render() {
     return (
       <Page
+        ref={el => (this.page = el)}
         title="READ"
         quote="It is what you read when you don't have to that determines what you will be when you can't help it."
         author="Oscar Wilde"

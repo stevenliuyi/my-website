@@ -8,6 +8,7 @@ class Book extends Component {
         onClick={() => this.props.onSelectBook(this.props.idx)}
       >
         <img
+          className="noselect"
           alt={this.props.name}
           src={`images/books/${this.props.image}`}
           width={143}

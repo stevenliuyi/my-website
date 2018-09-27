@@ -904,48 +904,6 @@ a:hover > .contact-email {
   background-position: center bottom;
 }
 
-/* for small screens */
-@media (max-width: 964px) {
-  .about-links {
-    width: 600px;
-    max-width: 80%;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .about-link {
-    width: auto !important;
-    padding: 5px;
-  }
-}
-
-@media (max-width: 500px) {
-  .nav-list {
-    font-size: 75%;
-  }
-}
-
-@media (max-width: 600px) {
-  .about-wrap {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 702px) {
-  .keywords-title {
-    flex-basis: 100%;
-  }
-}
-
-/* hack to maintain at least two items in the last row
- * except when every row has only one item */
-@media (max-width: 1303px) and (min-width: 982px ) {
-  .number-cards {
-    width: 60%;
-  }
-}
-
 .cover {
   height: 100vh;
   width: 100%;
@@ -1135,6 +1093,7 @@ a:hover > .contact-email {
   border-radius: 9999px;
   color: #999;
   font-weight: normal;
+  white-space: nowrap;
 }
 
 .book-quotes {
@@ -1225,3 +1184,73 @@ a:hover > .contact-email {
 .book-quote ul {
   text-align: left; 
 }
+
+/* for small screens */
+@media (max-width: 964px) {
+  .about-links {
+    width: 600px;
+    max-width: 80%;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .about-link {
+    width: auto !important;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-list {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-wrap {
+    max-width: 100%;
+  }
+
+  .book-detail-title {
+    font-size: 24px;
+  }
+
+  .book-quote {
+    width: 90%;
+  }
+
+  .book-detail-info {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 702px) {
+  .keywords-title {
+    flex-basis: 100%;
+  }
+}
+
+/* hack to maintain at least two items in the last row
+ * except when every row has only one item */
+@media (max-width: 1303px) and (min-width: 982px ) {
+  .number-cards {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .book-detail-info {
+    transform: translateY(0);
+    padding-top: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+  }  
+}
+
+@media (min-width: 600px) and (max-width: 1100px) {
+  .book-quote {
+    width: 80%;
+  }
+} 
