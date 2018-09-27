@@ -87,13 +87,14 @@ class BookDetail extends Component {
                 </div>
               )}
               {this.props.wikidata && (
-                <div id="wikidata" className="book-detail-link">
+                <div id="wikidata" className="book-detail-link noselect">
                   <a
                     href={`https://www.wikidata.org/wiki/${
                       this.props.wikidata
                     }`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    style={{ display: 'flex' }}
                   >
                     <img
                       alt="wikidata"

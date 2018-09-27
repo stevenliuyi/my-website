@@ -253,6 +253,7 @@
   tags:
     - biology
     - anthropology
+    - sociology
 
 - name: The U.S. Constitutional Experience
   authors:
@@ -459,3 +460,285 @@
   wikidata: Q11678
   tags:
     - novel
+
+- name: Genesis
+  authors:
+    - Feng Xiang
+  language: zh
+  image: genesis.jpg
+  time: 2012
+  douban: 1018714
+  tags:
+    - religion
+
+- name: The Alphabet's Story
+  authors:
+    - Zhou Youguang
+  language: zh
+  image: the-alphabet-story.jpg
+  time: 2012
+  douban: 4109546
+  tags:
+    - linguistics
+
+- name: Tolerance and Freedom
+  authors:
+    - Hu Shih
+  language: zh
+  image: tolerance-and-freedom.jpg
+  time: 2012
+  douban: 6558202
+  goodreads: 25787700
+  tags:
+    - philosophy
+    - culture
+
+- name: "Architecture: Form, Space & Order"
+  authors:
+    - Francis D.K. Ching
+  language: zh
+  image: architecture-form-space-and-order.jpg
+  time: 2012
+  douban: 1436276
+  goodreads: 70133
+  tags:
+    - architecture
+    - design
+
+- name: Biography of Zhou Zuoren
+  authors:
+    - Zhi An
+  language: zh
+  image: biography-of-zhou-zuoren.jpg
+  time: 2012
+  douban: 3399291
+  tags:
+    - biography
+
+- name: My Country and My People
+  authors:
+    - Lin Yutang
+  language: zh
+  image: my-country-and-my-people.jpg
+  time: 2012
+  douban: 1040865
+  goodreads: 1338084
+  wikidata: Q10919830
+  tags:
+    - culture
+
+- name: "China: A Macro History"
+  authors:
+    - Ray Huang
+  language: zh
+  image: china-a-macro-history.jpg
+  time: 2012
+  douban: 1015699
+  goodreads: 734666
+  wikidata: Q10874525
+  tags:
+    - history
+
+- name: A History of Modern Tibet (1913-1951)
+  authors:
+    - Melvyn C. Goldstein
+  language: zh
+  image: a-history-of-modern-tibet-1913-1951.jpg
+  time: 2012
+  douban: 1289849
+  goodreads: 815861
+  tags:
+    - history
+
+- name: 1587, A Year of No Significance
+  authors:
+    - Ray Huang
+  language: zh
+  image: 1587-a-year-of-no-significance.jpg
+  time: 2011
+  douban: 1858410
+  goodreads: 815857
+  wikidata: Q4550763
+  tags:
+    - history
+
+- name: The United States and China
+  authors:
+    - John King Fairbank
+  language: zh
+  image: the-united-states-and-china.jpg
+  time: 2011
+  douban: 1034847
+  goodreads: 1881861
+  tags:
+    - history
+
+- name: The Hollow
+  authors:
+    - Agatha Christie
+  language: zh
+  image: the-hollow.jpg
+  time: 2011
+  douban: 1920565
+  goodreads: 16303
+  wikidata: Q833775
+  tags:
+    - novel
+
+- name: Guns, Germs and Steel
+  authors:
+    - Jared Diamond
+  language: zh
+  image: guns-germs-and-steel.jpg
+  time: 2011
+  douban: 1813841
+  goodreads: 1842
+  wikidata: Q279022
+  tags:
+    - history
+    - anthropology
+    - sociology
+
+- name: "Steve Jobs: A Biography"
+  authors:
+    - Walter Isaacson
+  language: zh
+  image: steve-jobs.jpg
+  time: 2011
+  douban: 6798611
+  goodreads: 11084145
+  wikidata: Q625645
+  tags:
+    - biography
+
+- name: The Spirit of May Fourth
+  authors:
+    - Lin Xianzhi
+  language: zh
+  image: the-spirit-of-may-fourth.jpg
+  time: 2011
+  douban: 3065816
+  tags:
+    - history
+
+- name: The Shanghai Dialect
+  authors:
+    - Qian Nairong
+  language: zh
+  image: the-shanghai-dialect.jpg
+  time: 2011
+  douban: 2240085
+  tags:
+    - linguistics
+
+- name: The Human Zoo
+  authors:
+    - Desmond Morris
+  lanuage: zh
+  image: the-human-zoo.jpg
+  time: 2011
+  douban: 1043466
+  goodreads: 333063
+  wikidata: Q7740896
+  tags:
+    - biology
+    - anthropology
+    - sociology
+
+- name: A Concise Intellectual History of the Han Dynasty
+  authors:
+    - Gu Jiegang
+  language: zh
+  image: a-concise-intellectual-history-of-the-han-dynasty.jpg
+  time: 2011
+  douban: 3390593
+  tags:
+    - history
+
+- name: A Collection of Gu Jiegang's Classic Essays
+  authors:
+    - Gu Jiegang
+  language: zh
+  image: a-collection-of-gu-jiegangs-classic-essays.jpg
+  time: 2011
+  douban: 1393725
+  tags:
+    - history
+
+- name: The Last 70 Years of Qing Dynasty I
+  authors:
+    - Te-Kong Tong
+  language: zh
+  image: the-last-70-years-of-qing-dynasty-1.jpg
+  time: 2011
+  douban: 2160404
+  goodreads: 11442376
+  wikidata: Q11089532
+  tags:
+    - history
+
+- name: The Last 70 Years of Qing Dynasty II
+  authors:
+    - Te-Kong Tong
+  language: zh
+  image: the-last-70-years-of-qing-dynasty-2.jpg
+  time: 2011
+  douban: 2979768
+  goodreads: 24275943
+  tags:
+    - history
+
+- name: The Last 70 Years of Qing Dynasty III
+  authors:
+    - Te-Kong Tong
+  language: zh
+  image: the-last-70-years-of-qing-dynasty-3.jpg
+  time: 2011
+  douban: 3781492
+  goodreads: 24275978
+  tags:
+    - history
+
+- name: The Last 70 Years of Qing Dynasty IV
+  authors:
+    - Te-Kong Tong
+  language: zh
+  image: the-last-70-years-of-qing-dynasty-4.jpg
+  time: 2011
+  douban: 3781492
+  goodreads: 24276009
+  tags:
+    - history
+
+- name: The Last 70 Years of Qing Dynasty V
+  authors:
+    - Te-Kong Tong
+  language: zh
+  image: the-last-70-years-of-qing-dynasty-5.jpg
+  time: 2011
+  douban: 3628934
+  goodreads: 24276038
+  tags:
+    - history
+
+- name: An Introduction to Chinese Historiography
+  authors:
+    - Gu Jiegang
+  language: zh
+  image: an-introduction-to-chinese-historiography.jpg
+  time: 2011
+  douban: 1025576
+  goodreads: 2830357
+  tags:
+    - history
+
+- name: Chinese Classics
+  authors:
+    - Zhu Ziqing
+  language: zh
+  image: chinese-classics.jpg
+  time: 2011
+  douban: 1081402
+  goodreads: 18284264
+  tags:
+    - culture
