@@ -851,9 +851,17 @@ a:hover > .contact-email {
   color: #999 !important;
 }
 
-.wechat-tooltip {
+.footer-tooltip {
   background-color: #fff !important;
-  border-radius: 20px !important;
+  border-radius: 15px !important;
+  color: #222 !important;
+}
+
+.footer-tooltip-arrow::before {
+  border-top-color: #fff !important;
+}
+
+.wechat-tooltip {
   width: 150px !important;
   height: 150px !important;
   display: flex;
@@ -861,8 +869,19 @@ a:hover > .contact-email {
   align-items: center;
 }
 
-.wechat-tooltip-arrow::before {
-  border-top-color: #fff !important;
+.pgp-tooltip {
+  font-size: 12px !important;
+}
+
+.pgp-text {
+  font-family: monospace;
+  border-bottom: 1px dotted #222;
+  color: #222;
+}
+
+a .pgp-text:hover {
+  color: #999;
+  border-bottom: 1px dotted #999;
 }
 
 .footer-right {
