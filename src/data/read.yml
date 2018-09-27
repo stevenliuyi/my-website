@@ -40,6 +40,9 @@
   image: out-of-control.jpg
   time: 2013
   douban: 5375620
+  tags:
+    - computer science
+    - philosophy
 
 - name: Learn Python The Hard Way
   authors:
@@ -48,6 +51,8 @@
   image: learn-python-the-hard-way.jpg
   time: 2013
   douban: 5363753
+  tags:
+    - computer science
 
 - name: Thinking, Fast and Slow
   authors:
@@ -56,6 +61,9 @@
   image: thinking-fast-and-slow.jpg
   time: 2013
   douban: 10785583
+  tags:
+    - psychology
+    - economics
 
 - name: "Alan Turing: The Enigma"
   authors:
@@ -64,6 +72,9 @@
   image: alan-turing-the-enigma.jpg
   time: 2013
   douban: 10522003
+  tags:
+    - computer science
+    - biography
 
 - name: The General History of China
   authors:
@@ -72,6 +83,8 @@
   image: the-general-history-of-china.jpg
   time: 2013
   douban: 4767483
+  tags:
+    - history
 
 - name: Historical Pieces of the Republic of China
   authors:
@@ -80,6 +93,8 @@
   image: historical-pieces-of-the-republic-of-china.jpg
   time: 2013
   douban: 6829162
+  tags:
+    - history
 
 - name: The Pleasure of Thinking
   authors:
@@ -96,3 +111,302 @@
   image: on-china.jpg
   time: 2013
   douban: 19920715
+  tags:
+    - politics
+
+- name: The Anthropological Lens
+  authors:
+    - James Peacock
+  language: zh
+  image: the-anthropological-lens.jpg
+  time: 2013
+  douban: 3825685
+  tags:
+    - anthropology
+
+- name: Stories of the Romans 2
+  authors:
+    - Nanami Shiono
+  language: zh
+  image: stories-of-the-romans-2.jpg
+  time: 2013
+  douban: 7064370
+  tags:
+    - history
+
+- name: Stories of the Romans 1
+  authors:
+    - Nanami Shiono
+  language: zh
+  image: stories-of-the-romans-1.jpg
+  time: 2013
+  douban: 7055441
+  tags:
+    - history
+
+- name: What is Hedge Fund
+  authors:
+    - Huang Hui
+  language: zh
+  image: what-is-hedge-fund.jpg 
+  time: 2013
+  douban: 6435570
+  tags:
+    - finance
+    - economics
+
+- name: The Cambridge History of Chinese Kongfu Circle during the Yuan Dynasty
+  authors:
+    - Xin Yuanping
+  language: zh
+  image: the-cambridge-history-of-chinese-kongfu-circle-during-the-yuan-dynasty.jpg
+  time: 2013
+  douban: 11541374
+  tags:
+    - history
+
+- name: Sandalwood Death
+  authors:
+    - Mo Yan
+  language: zh
+  image: sandalwood-death.jpg
+  time: 2013
+  douban: 1043485
+  tags:
+    - novel
+
+- name: Life and Death Are Wearing Me Out
+  authors:
+    - Mo Yan
+  language: zh
+  image: life-and-death-are-wearing-me-out.jpg
+  time: 2013
+  douban: 1465007
+  tags:
+    - novel
+
+- name: These Years of Taiwan
+  authors:
+    - Liao Xinzhong
+  language: zh
+  image: these-years-of-taiwan.jpg
+  time: 2013
+  douban: 4113090
+  tags:
+    - history
+
+- name: Gödel, Escher, Bach
+  authors:
+    - Douglas Hofstadter
+  language: zh
+  image: godel-escher-bach.jpg
+  time: 2013
+  douban: 1291204
+  tags:
+    - computer science
+    - maths
+    - art
+
+- name: Why Evolution is True
+  authors:
+    - Jerry A. Coyne
+  language: zh
+  image: why-evolution-is-true.jpg
+  time: 2013
+  douban: 4114172
+  tags:
+    - biology
+
+- name: The Naked Ape
+  authors:
+    - Desmond Morris
+  lanuage: zh
+  image: the-naked-ape.jpg
+  time: 2013
+  douban: 1024928
+  tags:
+    - biology
+    - anthropology
+
+- name: The U.S. Constitutional Experience
+  authors:
+    - Ren Donglai
+  lanuage: zh
+  image: the-us-constitutional-experience.jpg
+  time: 2013
+  douban: 1144185
+  tags:
+    - law
+    - politics
+
+- name: The Lucifer Effect
+  authors:
+    - Philip Zimbardo
+  language: zh
+  image: the-lucifer-effect.jpg
+  time: 2013
+  douban: 4071842
+  tags:
+    - psychology
+
+- name: A Short History of Nearly Everything
+  authors:
+    - Bill Bryson
+  language: zh
+  image: a-short-history-of-nearly-everything.jpg
+  time: 2013
+  douban: 1225983
+  tags:
+    - science
+    - history
+
+- name: The Truth of Food
+  authors:
+    - Yun Wuxin
+  language: zh
+  image: the-truth-of-food.jpg
+  time: 2013
+  douban: 4121562
+  tags:
+    - health
+
+- name: Utilitarianism
+  authors:
+    - John Stuart Mill
+  language: zh
+  image: utilitarianism.jpg
+  time: 2013
+  douban: 3072490
+  tags:
+    - philosophy
+
+- name: "Lianda: A Chinese University in War and Revolution"
+  authors:
+    - John Israel
+  language: zh
+  image: lianda.jpg
+  time: 2012
+  douban: 10436418
+  tags:
+    - history
+
+- name: The Riemann Hypothesis
+  authors:
+    - Lu Changhai
+  language: zh
+  image: the-riemann-hypothesis.jpg
+  time: 2012
+  douban: 11506872
+  tags:
+    - maths
+
+- name: Here is the Republic of China
+  authors:
+    - Yang Zao
+  language: zh
+  image: here-is-the-republic-of-china.jpg
+  time: 2012
+  douban: 11577064
+  tags:
+    - history
+
+- name: "Democracy: A Set of Mechanism"
+  authors:
+    - Li Zixin
+  language: zh
+  image: democracy-a-set-of-mechanism.jpg
+  time: 2012
+  douban: 6004680
+  tags:
+    - politics
+
+- name: Death on the Nile
+  authors:
+    - Agatha Christie
+  language: zh
+  image: death-on-the-nile.jpg
+  time: 2012
+  douban: 1818347
+  tags:
+    - novel
+
+- name: Peril at End House
+  authors:
+    - Agatha Christie
+  language: zh
+  image: peril-at-end-house.jpg
+  time: 2012
+  douban: 1903152
+  tags:
+    - novel
+
+- name: The Legends of Cardiae Surgery
+  authors:
+    - Li Qingchen
+  language: zh
+  image: the-legends-of-cardiae-surgery.jpg
+  time: 2012
+  douban: 10794070
+  tags:
+    - medicine
+
+- name: "Make No Law: The Sullivan Case and the First Amendment"
+  authors:
+    - Anthony Lewis
+  language: zh
+  image: make-no-law.jpg
+  time: 2012
+  douban: 6401128
+  tags:
+    - law
+    - politics
+
+- name: Health Rumor Killers
+  authors:
+    - Bo Sanlang
+  language: zh
+  image: health-rumor-killers.jpg
+  time: 2012
+  douban: 6729866
+  tags:
+    - health
+
+- name: The Discovery of Subatomic Particles
+  authors:
+    - Steven Weinberg
+  language: zh
+  image: the-discovery-of-subatomic-particles.jpg
+  time: 2012
+  douban: 1954557
+  tags:
+    - physics
+
+- name: Mockingjay
+  authors:
+    - Suzanne Collins
+  language: zh
+  image: mockingjay.jpg
+  time: 2012
+  douban: 6265961
+  tags:
+    - novel
+
+- name: Catching Fire
+  authors:
+    - Suzanne Collins
+  language: zh
+  image: catching-fire.jpg
+  time: 2012
+  douban: 6265961
+  tags:
+    - novel
+
+- name: The Hunger Games
+  authors:
+    - Suzanne Collins
+  language: zh
+  image: the-hunger-games.jpg
+  time: 2012
+  douban: 4164096
+  tags:
+    - novel

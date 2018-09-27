@@ -1084,6 +1084,8 @@ a:hover > .contact-email {
 }
 
 .book-detail-info {
+  max-width: 90vw;
+  width: 600px;
   padding: 100px;
   display: flex;
   flex-direction: column;
@@ -1094,28 +1096,33 @@ a:hover > .contact-email {
 .book-detail-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 32px;
+  text-align: center;
 }
 
 .book-detail-author {
   margin-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
-  border-top: 1px solid #222;
-  border-bottom: 1px solid #222;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
   display: inline-block;
+  color: #999;
+  font-weight: normal;
 }
 
 .book-detail-tags {
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .book-detail-tag {
-  background-color: #eee;
+  background-color: #f5f5f5;
   margin: 5px;
   padding: 8px;
   font-size: 12px;
   border-radius: 9999px;
+  color: #999;
+  font-weight: normal;
 }
 
 .book-quotes {
@@ -1198,7 +1205,7 @@ a:hover > .contact-email {
 .book-quote:hover .book-quote-left,
 .book-quote:hover .book-quote-right {
   opacity: 1;
-  transition: opacity .2s;
+  transition: opacity .5s;
 } 
 
 .book-quote ol,
