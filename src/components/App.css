@@ -1036,7 +1036,7 @@ a .pgp-text:hover {
 }
 
 .book-detail-img {
-  padding: 100px;
+  padding: 100px 75px 100px 75px;
   position: relative;
 }
 
@@ -1071,7 +1071,7 @@ a .pgp-text:hover {
 .book-detail-info {
   max-width: 90vw;
   width: 600px;
-  padding: 100px;
+  padding: 100px 75px 100px 75px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1283,7 +1283,7 @@ a .pgp-text:hover {
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1035px) {
   .book-detail-info {
     transform: translateY(0);
     padding-top: 0;

@@ -742,3 +742,134 @@
   goodreads: 18284264
   tags:
     - culture
+
+- name: The Poverty of Historicism
+  authors:
+    - Karl Popper
+  language: zh
+  image: the-poverty-of-historicism.jpg
+  time: 2011
+  douban: 1000952
+  goodreads: 61553
+  wikidata: Q3283744
+  tags:
+    - philosophy
+    - history
+
+- name: Language and Culture
+  authors:
+    - Luo Changpei
+  language: zh
+  image: language-and-culture.jpg
+  time: 2011
+  douban: 1077502
+  goodreads: 41109947
+  tags:
+    - linguistics
+    - culture
+
+- name: "Essentials of Buddhism: Questions and Answers"
+  authors:
+    - Zhao Puchu
+  language: zh
+  image: essentials-of-buddhism.jpg
+  time: 2011
+  douban: 1038746
+  goodreads: 19129652
+  tags:
+    - religion
+
+- name: Second Foundation
+  authors:
+    - Issac Asimov
+  language: zh
+  image: second-foundation.jpg
+  time: 2011
+  douban: 1258489
+  goodreads: 29580
+  wikidata: Q853927
+  tags:
+    - novel
+
+- name: Foundation and Empire
+  authors:
+    - Issac Asimov
+  language: zh
+  image: foundation-and-empire.jpg
+  time: 2011
+  douban: 1258491
+  goodreads: 29581
+  wikidata: Q839800
+  tags:
+    - novel
+
+- name: Foundation
+  authors:
+    - Issac Asimov
+  language: zh
+  image: foundation.jpg
+  time: 2011
+  douban: 1258490
+  goodreads: 29579
+  wikidata: Q753894
+  tags:
+    - novel
+
+- name: On the Way to Truth
+  authors:
+    - Zhou Youguang
+  language: zh
+  image: on-the-way-to-truth.jpg
+  time: 2011
+  douban: 4149376
+  tags:
+    - culture
+    - history
+
+- name: Xuanzang's Pilgrimage to the West
+  authors:
+    - Qian Wenzhong
+  language: zh
+  image: xuanzangs-pilgrimage-to-the-west.jpg
+  time: 2011
+  douban: 3463998
+  tags:
+    - religion
+    - biography
+    - history
+
+- name: The Case of the Speluncean Explorers
+  authors:
+    - Peter Suber
+  language: zh
+  image: the-case-of-the-speluncean-explorers.jpg
+  time: 2011
+  douban: 3697494
+  goodreads: 474735
+  wikidata: Q855520
+  tags:
+    - law
+    - philosophy
+
+- name: "The Nine: Inside the Secret World of the Supreme Court"
+  authors:
+    - Jeffrey Toobin
+  language: zh
+  image: the-nine.jpg
+  time: 2011
+  douban: 4199363
+  goodreads: 280410
+  tags:
+    - law
+    - politics
+
+- name: Sexuality
+  authors:
+    - Véronique Mottier
+  language: en
+  image: sexuality.jpg
+  time: 2011
+  douban: 3148417
+  goodreads: 3306986
+  tags:
+    - sociology
