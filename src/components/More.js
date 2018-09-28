@@ -4,6 +4,7 @@ import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import MoreItem from './MoreItem'
 import { getBlogCount } from '../utils/utils'
+import readingListCount from '../data/read-count.yml'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -56,6 +57,14 @@ class More extends Component {
             description="Articles"
             pic="aaron-burden-64849-unsplash-small.jpg"
             url="https://blog.yliu.io"
+            {...this.props}
+          />
+          <MoreItem
+            title="reading list"
+            number={readingListCount.count}
+            description="Books"
+            pic="erol-ahmed-460283-unsplash-small.jpg"
+            link="/read"
             {...this.props}
           />
         </div>

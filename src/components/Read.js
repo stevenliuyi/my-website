@@ -22,6 +22,7 @@ class Read extends Component {
   }
 
   componentDidMount() {
+    scrollToComponent(this.page, { align: 'top', duration: 1 })
     this.calcListWidth()
     window.addEventListener('resize', this.calcListWidth)
   }
@@ -35,7 +36,7 @@ class Read extends Component {
     scrollToComponent(this.page, {
       align: 'top',
       offset: window.innerHeight,
-      duration: 0
+      duration: 1
     })
   }
 

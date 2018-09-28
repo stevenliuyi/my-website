@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TweenOne from 'rc-tween-one'
 import SvgDrawPlugin from 'rc-tween-one/lib/plugin/SvgDrawPlugin'
+import { withRouter } from 'react-router-dom'
 
 TweenOne.plugins.push(SvgDrawPlugin)
 
@@ -13,8 +14,12 @@ class MoreItem extends Component {
 
   openLink = () => {
     setTimeout(() => {
-      window.location.href = this.props.url
       this.circleElement.removeEventListener('transitionend', this.openLink)
+      if (this.props.url != null) {
+        window.location.href = this.props.url
+      } else {
+        this.props.history.push(this.props.link)
+      }
     }, 100)
   }
 
@@ -22,7 +27,11 @@ class MoreItem extends Component {
     return (
       <div
         className="more-item"
-        onMouseUp={() => window.open(this.props.url, '_blank')}
+        onMouseUp={() =>
+          this.props.url != null
+            ? window.open(this.props.url, '_blank')
+            : this.props.history.push(this.props.link)
+        }
         onTouchEnd={this.handleTouchEnd}
       >
         <svg width="260" height="260" className="more-circle-svg">
@@ -92,4 +101,4 @@ class MoreItem extends Component {
   }
 }
 
-export default MoreItem
+export default withRouter(MoreItem)
