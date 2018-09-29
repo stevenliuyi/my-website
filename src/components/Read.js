@@ -3,12 +3,12 @@ import scrollToComponent from 'react-scroll-to-component'
 import Page from './Page'
 import Book from './Book'
 import BookDetail from './BookDetail'
-import readingList from '../data/read.yml'
 
 class Read extends Component {
   state = {
     listWidth: 0,
-    currentIdx: -1
+    currentIdx: -1,
+    readingList: []
   }
 
   calcListWidth = () => {
@@ -22,6 +22,11 @@ class Read extends Component {
   }
 
   componentDidMount() {
+    // dynamically import reading list
+    import('../data/read.yml').then(data =>
+      this.setState({ readingList: data })
+    )
+
     scrollToComponent(this.page, { align: 'top', duration: 1 })
     this.calcListWidth()
     window.addEventListener('resize', this.calcListWidth)
@@ -52,7 +57,7 @@ class Read extends Component {
       >
         {this.state.currentIdx === -1 && (
           <div className="reading-list" style={{ width: this.state.listWidth }}>
-            {readingList.map((book, idx) => (
+            {this.state.readingList.map((book, idx) => (
               <Book
                 key={idx}
                 onSelectBook={this.onSelectBook}
@@ -63,7 +68,7 @@ class Read extends Component {
           </div>
         )}
         {this.state.currentIdx >= 0 && (
-          <BookDetail {...readingList[this.state.currentIdx]} />
+          <BookDetail {...this.state.readingList[this.state.currentIdx]} />
         )}
       </Page>
     )

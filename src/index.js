@@ -2,10 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './components/App'
-import Read from './components/Read'
+import asyncComponent from './components/AsyncComponent'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import registerServiceWorker from './registerServiceWorker'
+
+const Read = asyncComponent(() => import('./components/Read'))
 
 ReactDOM.render(
   <Router>
