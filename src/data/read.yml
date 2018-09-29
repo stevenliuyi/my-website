@@ -191,7 +191,7 @@
   goodreads: 16087986
   wikidata: Q3227457
   tags:
-    - novel
+    - fiction
 
 - name: Life and Death are Wearing Me Out
   authors:
@@ -203,7 +203,7 @@
   goodreads: 1320279
   wikidata: Q1757697
   tags:
-    - novel
+    - fiction
 
 - name: These Years of Taiwan
   authors:
@@ -367,7 +367,7 @@
   goodreads: 131359
   wikidata: Q381756
   tags:
-    - novel
+    - fiction
 
 - name: Peril at End House
   authors:
@@ -379,7 +379,7 @@
   goodreads: 16424
   wikidata: Q957248
   tags:
-    - novel
+    - fiction
 
 - name: The Legends of Cardiae Surgery
   authors:
@@ -435,7 +435,7 @@
   douban: 6265961
   wikidata: Q40354
   tags:
-    - novel
+    - fiction
 
 - name: Catching Fire
   authors:
@@ -447,7 +447,7 @@
   goodreads: 7260188
   wikidata: Q837140
   tags:
-    - novel
+    - fiction
 
 - name: The Hunger Games
   authors:
@@ -459,7 +459,7 @@
   goodreads: 2767052
   wikidata: Q11678
   tags:
-    - novel
+    - fiction
 
 - name: Genesis
   authors:
@@ -583,7 +583,7 @@
   goodreads: 16303
   wikidata: Q833775
   tags:
-    - novel
+    - fiction
 
 - name: Guns, Germs and Steel
   authors:
@@ -789,7 +789,7 @@
   goodreads: 29580
   wikidata: Q853927
   tags:
-    - novel
+    - fiction
 
 - name: Foundation and Empire
   authors:
@@ -801,7 +801,7 @@
   goodreads: 29581
   wikidata: Q839800
   tags:
-    - novel
+    - fiction
 
 - name: Foundation
   authors:
@@ -813,7 +813,7 @@
   goodreads: 29579
   wikidata: Q753894
   tags:
-    - novel
+    - fiction
 
 - name: On the Way to Truth
   authors:
@@ -873,3 +873,82 @@
   goodreads: 3306986
   tags:
     - sociology
+
+- name: Chinese
+  authors:
+    - Jerry Norman
+  language: zh
+  image: chinese.jpg
+  time: 2011
+  douban: 1048386
+  goodreads: 24818528
+  tags:
+    - linguistics
+
+- name: Animal Farm
+  authors:
+    - George Orwell
+  language: zh
+  image: animal-farm.jpg
+  time: 2011
+  douban: 4908879
+  goodreads: 7613
+  wikidata: Q1396889
+  tags:
+    - fiction
+
+- name: 1Q84 Book 3
+  authors:
+    - Haruki Murakami
+  language: zh
+  image: 1q84-3.jpg
+  time: 2011
+  douban: 5502995
+  goodreads: 7717482
+  wikidata: Q38091651
+  tags:
+    - fiction
+
+- name: Asimov on Science
+  authors:
+    - Issac Asimov
+  language: zh
+  image: asimov-on-science.jpg
+  time: 2011
+  douban: 3931106
+  goodreads: 3100807
+  tags:
+    - science
+
+- name: The Personal Reminiscences of Dr. Hu Shih
+  authors:
+    - Hu Shih
+    - Te-Kong Tong
+  language: zh
+  image: the-personal-reminiscences-of-dr-hu-shih.jpg
+  time: 2011
+  douban: 1418648
+  tags:
+    - biography
+
+- name: "The Cambridge History of China: Republican China 1912-1949, Part 2"
+  authors:
+    - John King Fairbank
+  language: zh
+  image: cambridge-history-of-china-republican-china-2.jpg
+  time: 2011
+  douban: 1477774
+  goodreads: 2085619
+  tags:
+    - history
+
+- name: "The Cambridge History of China: Republican China 1912-1949, Part 1"
+  authors:
+    - John King Fairbank
+  language: zh
+  image: cambridge-history-of-china-republican-china-1.jpg
+  time: 2011
+  douban: 1253538
+  goodreads: 955281
+  tags:
+    - history
