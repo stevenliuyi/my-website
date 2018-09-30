@@ -107,7 +107,11 @@ class App extends Component {
     )
 
     return (
-      <div>
+      <div
+        style={{
+          overflowX: 'hidden' // avoid horizontal scroll, which is especially annoying on mobile phones
+        }}
+      >
         <Front
           ref={el => (this.top = el)}
           scrollToNav={this.scrollToNav}
