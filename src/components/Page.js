@@ -6,6 +6,8 @@ import { FaAngleDoubleDown } from 'react-icons/fa'
 import scrollToComponent from 'react-scroll-to-component'
 import { Tooltip } from 'reactstrap'
 import { isMobile } from 'react-device-detect'
+import Texty from 'rc-texty'
+import TweenOne from 'rc-tween-one'
 import Logo from './Logo'
 import { setVhs } from '../utils/utils'
 
@@ -126,22 +128,72 @@ class Page extends Component {
             className="cover-title noselect"
             onClick={this.props.onTitleClick}
           >
-            <span>YI</span>
-            <FiX size={this.state.fontSize} color="#0d8aba" />
-            <span>{this.props.title}</span>
+            <Texty
+              component="span"
+              className="cover-title-text"
+              type="scaleBig"
+              mode="smooth"
+              delay={this.props.delay}
+            >
+              YI
+            </Texty>
+            <TweenOne
+              component="span"
+              className="cover-title-cross"
+              animation={{
+                opacity: 0,
+                scale: 2,
+                type: 'from',
+                delay: this.props.delay + 1000
+              }}
+            >
+              <FiX size={this.state.fontSize} color="#0d8aba" />
+            </TweenOne>
+            <Texty
+              component="span"
+              className="cover-title-text"
+              type="scaleBig"
+              mode="smooth"
+              delay={this.props.delay + 150}
+            >
+              {this.props.title}
+            </Texty>
           </div>
           <div className="cover-quote">
-            <div>{this.props.quote}</div>
-            <div className="cover-author">{`— ${this.props.author}`}</div>
+            <TweenOne
+              animation={{
+                opacity: 0,
+                translateY: 50,
+                type: 'from',
+                delay: this.props.delay + 500
+              }}
+            >
+              {this.props.quote}
+            </TweenOne>
+            <TweenOne
+              animation={{
+                opacity: 0,
+                translateY: 50,
+                type: 'from',
+                delay: this.props.delay + 750
+              }}
+              className="cover-author"
+            >{`— ${this.props.author}`}</TweenOne>
           </div>
-          <div
+          <TweenOne
+            animation={{
+              opacity: 0,
+              scale: 2,
+              type: 'from',
+              delay: this.props.delay + 1000
+            }}
             className="scroll-to-content"
             onClick={() => scrollToComponent(this.content, { align: 'top' })}
           >
             <div className="cover-scroll-arrow">
               <FaAngleDoubleDown size={24} />
             </div>
-          </div>
+          </TweenOne>
         </div>
         <div
           ref={el => (this.content = el)}

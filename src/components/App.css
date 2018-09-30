@@ -946,17 +946,21 @@ a .pgp-text:hover {
   display: flex;
   align-items: center;
   font-size: 36px;
-  padding-top: 20px;
+  margin-top: 20px;
   cursor: pointer;
   z-index: 100;
+  background-color: rgba(0,0,0,.1);
+  color: #222;
 }
 
-.cover-title span {
+.cover-title-cross {
+  display: flex;
+}
+
+.cover-title-text {
   padding-left: 10px;
   padding-right: 10px;
-  text-shadow: 0px 0px 5px #fff;
   font-family: 'Montserrat', sans-serif;
-  color: #222;
 }
 
 .cover-quote {

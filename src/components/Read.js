@@ -3,12 +3,17 @@ import scrollToComponent from 'react-scroll-to-component'
 import Page from './Page'
 import Book from './Book'
 import BookDetail from './BookDetail'
+import ScrollAnim from 'rc-scroll-anim'
+import TweenOne from 'rc-tween-one'
+
+const ScrollOverPack = ScrollAnim.OverPack
 
 class Read extends Component {
   state = {
     listWidth: 0,
     currentIdx: -1,
-    readingList: []
+    readingList: [],
+    delay: 150
   }
 
   calcListWidth = () => {
@@ -62,32 +67,47 @@ class Read extends Component {
 
   render() {
     return (
-      <Page
-        ref={el => (this.page = el)}
-        title="READ"
-        quote="It is what you read when you don't have to that determines what you will be when you can't help it."
-        author="Oscar Wilde"
-        backgroundFilename="olia-gozha-678463-unsplash"
-        onTitleClick={() => this.setState({ currentIdx: -1 })}
-        {...this.props}
-      >
-        {this.state.currentIdx === -1 && (
-          <div className="reading-list" style={{ width: this.state.listWidth }}>
-            {this.state.readingList.map((book, idx) => (
-              <Book
-                id={`book-${idx}`}
-                key={idx}
-                onSelectBook={this.onSelectBook}
-                idx={idx}
-                {...book}
-              />
-            ))}
-          </div>
-        )}
-        {this.state.currentIdx >= 0 && (
-          <BookDetail {...this.state.readingList[this.state.currentIdx]} />
-        )}
-      </Page>
+      <ScrollOverPack scale={0.5} always={false}>
+        <Page
+          ref={el => (this.page = el)}
+          title="READ"
+          quote="It is what you read when you don't have to that determines what you will be when you can't help it."
+          author="Oscar Wilde"
+          backgroundFilename="olia-gozha-678463-unsplash"
+          onTitleClick={() => this.setState({ currentIdx: -1 })}
+          delay={this.state.delay}
+          {...this.props}
+        >
+          {this.state.currentIdx === -1 && (
+            <TweenOne
+              className="reading-list"
+              style={{ width: this.state.listWidth }}
+              animation={{
+                opacity: 0,
+                type: 'from',
+                delay: this.state.delay,
+                duration: 1000
+              }}
+            >
+              {this.state.readingList.map((book, idx) => (
+                <Book
+                  id={`book-${idx}`}
+                  key={idx}
+                  onSelectBook={this.onSelectBook}
+                  idx={idx}
+                  {...book}
+                />
+              ))}
+            </TweenOne>
+          )}
+          {this.state.currentIdx >= 0 && (
+            <BookDetail
+              delay={this.state.delay}
+              {...this.state.readingList[this.state.currentIdx]}
+            />
+          )}
+        </Page>
+      </ScrollOverPack>
     )
   }
 }

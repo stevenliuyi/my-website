@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Tooltip } from 'reactstrap'
+import TweenOne from 'rc-tween-one'
 
 class BookDetail extends Component {
   state = {
@@ -16,12 +17,56 @@ class BookDetail extends Component {
     this.setState({ tooltips })
   }
 
+  handleScroll = e => {
+    const quotes = document.querySelector('.book-quotes')
+    const title = document.querySelector('.cover-title')
+    if (quotes == null || title == null) return
+
+    const scrollTop =
+      document.documentElement.scrollTop || document.scrollingElement.scrollTop
+    const position = quotes.offsetTop - scrollTop
+
+    if (position > 0) {
+      title.style.color = 'rgb(34, 34, 34)' // #222
+    } else if (position < -200) {
+      title.style.color = 'rgb(255, 255, 255)'
+    } else {
+      const c = 34 - (position / 200) * (255 - 34)
+      title.style.color = `rgb(${c}, ${c}, ${c})`
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+
+    const title = document.querySelector('.cover-title')
+    if (title != null) title.style.color = 'rgb(34, 34, 34)' // #222
+  }
+
   render() {
+    const linkAnimation = {
+      opacity: 0,
+      scale: 0,
+      type: 'from',
+      delay: this.props.delay + 300
+    }
+
     return (
       <div>
         <div className="book-detail">
           <div className="book-detail-background" />
-          <div className="book-detail-img">
+          <TweenOne
+            animation={{
+              translateY: 150,
+              type: 'from',
+              delay: this.props.delay
+            }}
+            className="book-detail-img"
+          >
             <img
               className="noselect"
               alt={this.props.name}
@@ -29,23 +74,53 @@ class BookDetail extends Component {
               width={285}
               height={399}
             />
-          </div>
+          </TweenOne>
           <div className="book-detail-info">
-            <div className="book-detail-title">{this.props.name}</div>
-            <div className="book-detail-author">
+            <TweenOne
+              animation={{
+                opacity: 0,
+                translateX: 150,
+                type: 'from',
+                delay: this.props.delay
+              }}
+              className="book-detail-title"
+            >
+              {this.props.name}
+            </TweenOne>
+            <TweenOne
+              animation={{
+                opacity: 0,
+                translateX: 150,
+                type: 'from',
+                delay: this.props.delay + 100
+              }}
+              className="book-detail-author"
+            >
               {this.props.authors.join(', ')}
-            </div>
-            <div className="book-detail-tags">
+            </TweenOne>
+            <TweenOne
+              animation={{
+                opacity: 0,
+                translateX: 150,
+                type: 'from',
+                delay: this.props.delay + 200
+              }}
+              className="book-detail-tags"
+            >
               {this.props.tags != null &&
                 this.props.tags.map((tag, i) => (
                   <span key={`tag-${i}`} className="book-detail-tag noselect">
                     {tag}
                   </span>
                 ))}
-            </div>
+            </TweenOne>
             <div className="book-detail-links">
               {this.props.douban && (
-                <div id="douban" className="book-detail-link">
+                <TweenOne
+                  animation={linkAnimation}
+                  id="douban"
+                  className="book-detail-link"
+                >
                   <a
                     href={`https://book.douban.com/subject/${
                       this.props.douban
@@ -63,10 +138,14 @@ class BookDetail extends Component {
                   >
                     Douban
                   </Tooltip>
-                </div>
+                </TweenOne>
               )}
               {this.props.goodreads && (
-                <div id="goodreads" className="book-detail-link">
+                <TweenOne
+                  animation={linkAnimation}
+                  id="goodreads"
+                  className="book-detail-link"
+                >
                   <a
                     href={`https://www.goodreads.com/book/show/${
                       this.props.goodreads
@@ -84,10 +163,14 @@ class BookDetail extends Component {
                   >
                     Goodreads
                   </Tooltip>
-                </div>
+                </TweenOne>
               )}
               {this.props.wikidata && (
-                <div id="wikidata" className="book-detail-link noselect">
+                <TweenOne
+                  animation={linkAnimation}
+                  id="wikidata"
+                  className="book-detail-link noselect"
+                >
                   <a
                     href={`https://www.wikidata.org/wiki/${
                       this.props.wikidata
@@ -111,7 +194,7 @@ class BookDetail extends Component {
                   >
                     Wikidata
                   </Tooltip>
-                </div>
+                </TweenOne>
               )}
             </div>
           </div>
