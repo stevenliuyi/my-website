@@ -32,8 +32,8 @@ class Read extends Component {
     window.addEventListener('resize', this.calcListWidth)
   }
 
-  componentWillUnMount() {
-    window.removeEventListner('resize', this.calcListWidth)
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.calcListWidth)
   }
 
   componentDidUpdate(prevProps, prevState) {

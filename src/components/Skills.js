@@ -291,7 +291,7 @@ class Skills extends Component {
     this.setState({ width: Math.max(window.innerWidth * 0.8 - 450, 400) })
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     window.removeEventListener('resize', this.onResize)
   }
 

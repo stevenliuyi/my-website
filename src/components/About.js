@@ -69,7 +69,7 @@ class About extends Component {
         .addEventListener('touchstart', this.rotateLogo)
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     window.removeEventListener('resize', this.updateTooltipPlacement)
     window.removeEventListener('scroll', this.handleScroll)
     if (isMobile && document.querySelector('.logo-mobile') != null)

@@ -134,7 +134,7 @@ class Front extends Component {
     window.addEventListener('scroll', this.handleScroll)
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
   }
 

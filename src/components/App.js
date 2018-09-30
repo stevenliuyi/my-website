@@ -56,7 +56,7 @@ class App extends Component {
     }
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     EventListener.removeEventListener('resize.userResize', this.barAnimate)
 
     window.removeEventListener('scroll', this.handleScroll)

@@ -87,7 +87,7 @@ class Page extends Component {
     }
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
     if (isMobile)
       window.removeEventListener('deviceorientation', this.setVhStyles)
