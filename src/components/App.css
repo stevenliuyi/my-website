@@ -961,6 +961,7 @@ a .pgp-text:hover {
   padding-left: 10px;
   padding-right: 10px;
   font-family: 'Montserrat', sans-serif;
+  white-space: nowrap;
 }
 
 .cover-quote {
@@ -1301,3 +1302,10 @@ a .pgp-text:hover {
     width: 80%;
   }
 } 
+
+@media (max-height: 600px) {
+  .cover-quote,
+  .cover-author {
+    display: none;
+  }
+}
