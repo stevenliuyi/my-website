@@ -64,7 +64,7 @@ class More extends Component {
             number={readingListCount.count}
             description="Books"
             pic="erol-ahmed-460283-unsplash-small.jpg"
-            link="/read"
+            link={{ pathname: '/read', backId: 'more-page' }}
             {...this.props}
           />
         </div>

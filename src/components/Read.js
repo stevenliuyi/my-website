@@ -36,6 +36,21 @@ class Read extends Component {
     window.removeEventListner('resize', this.calcListWidth)
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.currentIdx === -1 && prevState.currentIdx >= 0) {
+      const bookElem = document.getElementById(`book-${prevState.currentIdx}`)
+      if (bookElem != null) {
+        bookElem.scrollIntoView()
+      } else {
+        scrollToComponent(this.page, {
+          align: 'top',
+          duration: 1,
+          offset: window.innerHeight
+        })
+      }
+    }
+  }
+
   onSelectBook = idx => {
     this.setState({ currentIdx: idx })
     scrollToComponent(this.page, {
@@ -54,11 +69,13 @@ class Read extends Component {
         author="Oscar Wilde"
         backgroundFilename="olia-gozha-678463-unsplash"
         onTitleClick={() => this.setState({ currentIdx: -1 })}
+        {...this.props}
       >
         {this.state.currentIdx === -1 && (
           <div className="reading-list" style={{ width: this.state.listWidth }}>
             {this.state.readingList.map((book, idx) => (
               <Book
+                id={`book-${idx}`}
                 key={idx}
                 onSelectBook={this.onSelectBook}
                 idx={idx}

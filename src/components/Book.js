@@ -4,6 +4,7 @@ class Book extends Component {
   render() {
     return (
       <div
+        id={this.props.id}
         className="book"
         onClick={() => this.props.onSelectBook(this.props.idx)}
       >

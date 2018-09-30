@@ -30,8 +30,18 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // scroll to top
-    scrollToComponent(this.top, { align: 'top' })
+    // scroll to specific position
+    const backId = this.props.location.backId
+    if (backId != null) {
+      const backElem = document.getElementById(backId)
+      if (backElem != null) {
+        backElem.scrollIntoView()
+      } else {
+        scrollToComponent(this.top, { align: 'top' })
+      }
+    } else {
+      scrollToComponent(this.top, { align: 'top' })
+    }
 
     EventListener.addEventListener('resize.userResize', this.barAnimate)
 

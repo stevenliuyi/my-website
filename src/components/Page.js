@@ -98,7 +98,7 @@ class Page extends Component {
       <div>
         <div className="cover">
           <div id="cover-logo" className="cover-logo">
-            <Link to="/">
+            <Link to={{ pathname: '/', backId: this.props.location.backId }}>
               <Logo radius={12} colors={['#555', '#555']} />
             </Link>
           </div>
