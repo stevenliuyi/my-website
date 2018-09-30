@@ -73,6 +73,10 @@ class BookDetail extends Component {
               src={`images/books/${this.props.image}`}
               width={285}
               height={399}
+              onError={e => {
+                e.target.src =
+                  'https://imgplaceholder.com/285x399/f5f5f5/757575/ion-ios-book-outline?font-size=64'
+              }}
             />
           </TweenOne>
           <div className="book-detail-info">
