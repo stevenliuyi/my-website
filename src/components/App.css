@@ -141,12 +141,12 @@ a {
   max-width: 500px;
   margin: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .nav-list {
-  width: 100px;
-  max-width: 20vw;
+  padding-left: 20px;
+  padding-right: 20px;
   height: 100%;
   text-align: center;
   line-height: 50px;
@@ -154,9 +154,13 @@ a {
   color: #fff;
 }
 
+.nav-list:hover {
+  color: #ccc;
+}
+
+
 .nav-bar {
   width: 100px;
-  max-width: 20vw;
   position: absolute;
   top: 0px;
   left: -100px;
@@ -834,6 +838,7 @@ a:hover > .contact-email {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  white-space: nowrap;
 }
 
 .footer-icon {
@@ -1020,6 +1025,20 @@ a .pgp-text:hover {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.book-title-underline {
+  width: 100%;
+  height: 2px;
+  border-top: solid 1px #ccc;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.book:hover .book-title-underline {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .5s;
 }
 
 .book-detail {
@@ -1251,7 +1270,9 @@ a .pgp-text:hover {
 
 @media (max-width: 500px) {
   .nav-list {
-    font-size: 75%;
+    font-size: 80%;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
@@ -1285,6 +1306,13 @@ a .pgp-text:hover {
 @media (max-width: 1303px) and (min-width: 982px ) {
   .number-cards {
     width: 60%;
+  }
+}
+
+@media (max-width: 410px) {
+  .footer {
+    left: 20px;
+    right: 20px;
   }
 }
 

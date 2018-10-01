@@ -97,7 +97,7 @@ class Page extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{overflowX: 'hidden'}}>
         <div className="cover">
           <div id="cover-logo" className="cover-logo">
             <Link to={{ pathname: '/', backId: this.props.location.backId }}>
@@ -163,7 +163,7 @@ class Page extends Component {
             <TweenOne
               animation={{
                 opacity: 0,
-                translateY: 50,
+                translateY: 100,
                 type: 'from',
                 delay: this.props.delay + 500
               }}
@@ -173,7 +173,7 @@ class Page extends Component {
             <TweenOne
               animation={{
                 opacity: 0,
-                translateY: 50,
+                translateY: 100,
                 type: 'from',
                 delay: this.props.delay + 750
               }}
@@ -183,7 +183,7 @@ class Page extends Component {
           <TweenOne
             animation={{
               opacity: 0,
-              scale: 2,
+              translateY: 100,
               type: 'from',
               delay: this.props.delay + 1000
             }}

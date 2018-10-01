@@ -84,9 +84,9 @@ class App extends Component {
 
   barAnimate = () => {
     if (!this.dom) return
-    const bar = this.refs.bar
-    if (!bar) return
-    bar.style.left = `${this.dom.getBoundingClientRect().left}px`
+    const boundingBox = this.dom.getBoundingClientRect()
+    this.bar.style.left = `${boundingBox.left}px`
+    this.bar.style.width = `${boundingBox.width}px`
   }
 
   scrollToNav = () => {
@@ -140,7 +140,7 @@ class App extends Component {
             <Link className="nav-list" to="more-page" onFocus={this.onFocus}>
               More
             </Link>
-            <div ref="bar" className="nav-bar" />
+            <div ref={el=>this.bar=el} className="nav-bar" />
           </div>
         </div>
         <About ref={el => (this.aboutPage = el)} {...this.state} />
