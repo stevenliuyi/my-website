@@ -25,6 +25,6 @@ export const setVhs = (isHomepage = true) => {
 
 // get number of blog posts
 export const getBlogCount = () =>
-  fetch('https://cors-anywhere.herokuapp.com/https://blog.yliu.io/post-count')
+  fetch('https://blog.yliu.io/post-count')
     .then(data => data.text())
     .catch(err => 0)
