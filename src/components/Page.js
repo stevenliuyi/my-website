@@ -97,7 +97,7 @@ class Page extends Component {
 
   render() {
     return (
-      <div style={{overflowX: 'hidden'}}>
+      <div style={{ overflowX: 'hidden' }}>
         <div className="cover">
           <div id="cover-logo" className="cover-logo">
             <Link to={{ pathname: '/', backId: this.props.location.backId }}>

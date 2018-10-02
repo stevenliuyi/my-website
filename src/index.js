@@ -6,6 +6,7 @@ import asyncComponent from './components/AsyncComponent'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import registerServiceWorker from './registerServiceWorker'
+import 'react-app-polyfill/ie11'
 
 const Read = asyncComponent(() => import('./components/Read'))
 

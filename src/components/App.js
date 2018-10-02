@@ -140,7 +140,7 @@ class App extends Component {
             <Link className="nav-list" to="more-page" onFocus={this.onFocus}>
               More
             </Link>
-            <div ref={el=>this.bar=el} className="nav-bar" />
+            <div ref={el => (this.bar = el)} className="nav-bar" />
           </div>
         </div>
         <About ref={el => (this.aboutPage = el)} {...this.state} />

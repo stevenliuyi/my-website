@@ -28,9 +28,9 @@ class Read extends Component {
 
   componentDidMount() {
     // dynamically import reading list
-    import('../data/read.yml').then(data =>
-      this.setState({ readingList: data })
-    )
+    import('../data/read.yml')
+      .then(m => m.default)
+      .then(data => this.setState({ readingList: data }))
 
     scrollToComponent(this.page, { align: 'top', duration: 1 })
     this.calcListWidth()
