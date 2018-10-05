@@ -1,4 +1,5 @@
 - name: The Truth of Food III
+  original_name: 吃的真相3
   authors:
     - Yun Wuxin
   language: zh
@@ -20,6 +21,7 @@
     - 并且，土豆中的龙葵碱主要分布在皮层，食用的时候去皮的话，还能够去掉30％～80％。
 
 - name: The Truth of Food II
+  original_name: 吃的真相2
   authors:
     - Yun Wuxin
   language: zh
@@ -49,6 +51,7 @@
     - 像牛排这样的东西，越熟杂环胺的含量就越高。所以，从致癌物的角度来说，五分熟的牛排就比七分熟的要健康。
 
 - name: The Blind Watchmaker
+  original_name: 盲眼钟表匠
   authors:
     - Richard Dawkins
   language: zh
@@ -102,6 +105,7 @@
     - 单独的细胞转变成成年个体的过程，一向有壁垒分明的两种看法。它们的正式名称是先成论（preformationism）与突现论（epigenesis），但是它们的现代形式我会叫做蓝图（blueprint）理论与配方（recipe，或食谱）理论。
 
 - name: A History of Silicon Valley
+  original_name: 硅谷百年史
   authors:
     - Arun Rao 
     - Piero Scarruffi
@@ -138,6 +142,7 @@
     - “免费经济” (Gift Economy) 是刘易斯·海德 (Lewis Hyde)在1985年创造的一个术语，1998年被理查德·巴布鲁克 (Richard Barbrook) 应用于网络经济; 在这种经济中，少数几个企业为千百万志愿的业余编辑提供了生产工具。这些工蚁族的免费劳动使得极少数的王者极其富有，同时也导致数百万中产阶级家庭失去收入。
 
 - name: Modern Japan
+  original_name: 现代日本
   authors:
     - Christopher Goto-Jones
   language: zh
@@ -174,6 +179,7 @@
     - 事实上，当代日本社会与宗教之间存在复杂的关系；2005年的一份调查显示，80%的日本人遵守神道教的宗教仪式和礼节，同时有近70%的人认为自己是佛教徒。
 
 - name: Buddhism
+  original_name: 佛学概论
   authors:
     - Damien Keown
   language: zh
@@ -204,6 +210,7 @@
     - 历史学家阿诺得·汤恩比将佛教与西方的相遇形容为“21世纪最大的碰撞之一”。
 
 - name: History
+  original_name: 历史之源
   authors:
     - John H. Arnold
   language: zh
@@ -234,6 +241,7 @@
     - 然而，认为历史中存在单一的真实故事，这一观念仍然具有极大的吸引力，因而也具有极大的危险性。
 
 - name: Decisive Moments in History
+  original_name: 人类群星闪耀时
   authors:
     - Stefan Zweig
   language: zh
@@ -252,6 +260,7 @@
     - 托尔斯泰代表了俄罗斯文学的广度，陀思妥耶夫斯基则代表了俄罗斯文学的深度。
 
 - name: Out of Control
+  original_name: 失控
   authors:
     - Kevin Kelly
   language: zh
@@ -276,6 +285,7 @@
     - computer science
 
 - name: Thinking, Fast and Slow
+  original_name: 思考，快与慢
   authors:
     - Daniel Kahneman
   language: zh
@@ -289,6 +299,7 @@
     - economics
 
 - name: "Alan Turing: The Enigma"
+  original_name: 艾伦·图灵传
   authors:
     - Andrew Hodges
   language: zh
@@ -302,6 +313,7 @@
     - biography
 
 - name: General History of China
+  original_name: 中国通史
   authors:
     - Lü Simian
   language: zh
@@ -350,6 +362,7 @@
     - 古代贵族，妻以外发生性的关系的人有两种：一种是妻家带来的，谓之媵。一种是自己家里所固有的，谓之妾（后世媵之实消灭，故其名称亦消灭，但以妾为配偶以外发生性的关系之人之总称）。
 
 - name: Historical Pieces of the Republic of China
+  original_name: 民国的角落
   authors:
     - Zhang Ming
   language: zh
@@ -361,6 +374,7 @@
     - history
 
 - name: The Pleasure of Thinking
+  original_name: 思维的乐趣
   authors:
     - Wang Xiaobo
   language: zh
@@ -410,6 +424,7 @@
     - 维特根斯坦临终时说：告诉他们，我度过了美好的一生。
 
 - name: On China
+  original_name: 论中国
   authors:
     - Henry Kissinger
   language: zh
@@ -421,6 +436,7 @@
     - politics
 
 - name: The Anthropological Lens
+  original_name: 人类学透镜
   authors:
     - James Peacock
   language: zh
@@ -432,6 +448,7 @@
     - anthropology
 
 - name: Stories of the Romans 2
+  original_name: 罗马人的故事II
   authors:
     - Nanami Shiono
   language: zh
@@ -443,6 +460,7 @@
     - history
 
 - name: Stories of the Romans 1
+  original_name: 罗马人的故事I
   authors:
     - Nanami Shiono
   language: zh
@@ -453,7 +471,8 @@
   tags:
     - history
 
-- name: What is Hedge Fund
+- name: What is Hedge Fund?
+  original_name: 对冲基金到底是什么？
   authors:
     - Huang Hui
   language: zh
@@ -466,6 +485,7 @@
     - economics
 
 - name: The Cambridge History of Chinese Kongfu Circle during the Yuan Dynasty
+  original_name: 剑桥倚天屠龙史
   authors:
     - Xin Yuanping
   language: zh
@@ -476,6 +496,7 @@
     - history
 
 - name: Sandalwood Death
+  original_name: 檀香刑
   authors:
     - Mo Yan
   language: zh
@@ -488,6 +509,7 @@
     - fiction
 
 - name: Life and Death are Wearing Me Out
+  original_name: 生死疲劳
   authors:
     - Mo Yan
   language: zh
@@ -500,6 +522,7 @@
     - fiction
 
 - name: These Years of Taiwan
+  original_name: 我们台湾这些年
   authors:
     - Liao Xinzhong
   language: zh
@@ -511,6 +534,7 @@
     - history
 
 - name: Gödel, Escher, Bach
+  original_name: 哥德尔、艾舍尔、巴赫：集异璧之大成
   authors:
     - Douglas Hofstadter
   language: zh
@@ -525,6 +549,7 @@
     - art
 
 - name: Why Evolution is True
+  original_name: 为什么要相信达尔文
   authors:
     - Jerry A. Coyne
   language: zh
@@ -536,6 +561,7 @@
     - biology
 
 - name: The Naked Ape
+  original_name: 裸猿
   authors:
     - Desmond Morris
   lanuage: zh
@@ -550,6 +576,7 @@
     - sociology
 
 - name: The U.S. Constitutional Experience
+  original_name: 美国宪政历程
   authors:
     - Ren Donglai
   lanuage: zh
@@ -562,6 +589,7 @@
     - politics
 
 - name: The Lucifer Effect
+  original_name: 路西法效应
   authors:
     - Philip Zimbardo
   language: zh
@@ -574,6 +602,7 @@
     - psychology
 
 - name: A Short History of Nearly Everything
+  original_name: 万物简史
   authors:
     - Bill Bryson
   language: zh
@@ -587,6 +616,7 @@
     - history
 
 - name: The Truth of Food
+  original_name: 吃的真相
   authors:
     - Yun Wuxin
   language: zh
@@ -612,6 +642,7 @@
     - 有一种分子，有一个亲水的脑袋和一条疏水的尾巴。当油滴被分散到水中的时候，这样的分子就会跑到油和水的界面上，把疏水的尾巴插进油里，亲水的头伸到水里。这样，油和水不直接接触，界面能也就大大降低，从而使得油滴可以稳定地分散到水中。
 
 - name: Utilitarianism
+  original_name: 功利主义
   authors:
     - John Stuart Mill
   language: zh
@@ -624,6 +655,7 @@
     - philosophy
 
 - name: "Lianda: A Chinese University in War and Revolution"
+  original_name: 战争与革命中的西南联大
   authors:
     - John Israel
   language: zh
@@ -634,6 +666,7 @@
     - history
 
 - name: The Riemann Hypothesis
+  original_name: 黎曼猜想漫谈
   authors:
     - Lu Changhai
   language: zh
@@ -645,6 +678,7 @@
     - maths
 
 - name: Here is the Republic of China
+  original_name: 民国了
   authors:
     - Yang Zao
   language: zh
@@ -656,6 +690,7 @@
     - history
 
 - name: "Democracy: A Set of Mechanism"
+  original_name: 民主是个技术活儿
   authors:
     - Li Zixin
   language: zh
@@ -666,6 +701,7 @@
     - politics
 
 - name: Death on the Nile
+  original_name: 尼罗河上的惨案
   authors:
     - Agatha Christie
   language: zh
@@ -678,6 +714,7 @@
     - fiction
 
 - name: Peril at End House
+  original_name: 悬崖山庄奇案
   authors:
     - Agatha Christie
   language: zh
@@ -690,6 +727,7 @@
     - fiction
 
 - name: The Legends of Cardiae Surgery
+  original_name: 心外传奇
   authors:
     - Li Qingchen
   language: zh
@@ -701,6 +739,7 @@
     - medicine
 
 - name: "Make No Law: The Sullivan Case and the First Amendment"
+  original_name: 批评官员的尺度
   authors:
     - Anthony Lewis
   language: zh
@@ -713,6 +752,7 @@
     - politics
 
 - name: Health Rumor Killers
+  original_name: 健康流言终结者
   authors:
     - Bo Sanlang
   language: zh
@@ -724,6 +764,7 @@
     - health
 
 - name: The Discovery of Subatomic Particles
+  original_name: 亚原子粒子的发现
   authors:
     - Steven Weinberg
   language: zh
@@ -735,6 +776,7 @@
     - physics
 
 - name: Mockingjay
+  original_name: 嘲笑鸟
   authors:
     - Suzanne Collins
   language: zh
@@ -746,6 +788,7 @@
     - fiction
 
 - name: Catching Fire
+  original_name: 燃烧的女孩
   authors:
     - Suzanne Collins
   language: zh
@@ -758,6 +801,7 @@
     - fiction
 
 - name: The Hunger Games
+  original_name: 饥饿游戏
   authors:
     - Suzanne Collins
   language: zh
@@ -770,6 +814,7 @@
     - fiction
 
 - name: Genesis
+  original_name: 创世纪：传说与译注
   authors:
     - Feng Xiang
   language: zh
@@ -780,6 +825,7 @@
     - religion
 
 - name: The Alphabet's Story
+  original_name: 字母的故事
   authors:
     - Zhou Youguang
   language: zh
@@ -790,6 +836,7 @@
     - linguistics
 
 - name: Tolerance and Freedom
+  original_name: 容忍与自由
   authors:
     - Hu Shih
   language: zh
@@ -802,6 +849,7 @@
     - culture
 
 - name: "Architecture: Form, Space & Order"
+  original_name: 建筑：形式、空间与秩序
   authors:
     - Francis D.K. Ching
   language: zh
@@ -814,6 +862,7 @@
     - design
 
 - name: Biography of Zhou Zuoren
+  original_name: 周作人传
   authors:
     - Zhi An
   language: zh
@@ -824,6 +873,7 @@
     - biography
 
 - name: My Country and My People
+  original_name: 中国人
   authors:
     - Lin Yutang
   language: zh
@@ -836,6 +886,7 @@
     - culture
 
 - name: "China: A Macro History"
+  original_name: 中国大历史
   authors:
     - Ray Huang
   language: zh
@@ -848,6 +899,7 @@
     - history
 
 - name: A History of Modern Tibet (1913-1951)
+  original_name: 喇嘛王国的覆灭
   authors:
     - Melvyn C. Goldstein
   language: zh
@@ -859,6 +911,7 @@
     - history
 
 - name: 1587, A Year of No Significance
+  original_name: 万历十五年
   authors:
     - Ray Huang
   language: zh
@@ -871,6 +924,7 @@
     - history
 
 - name: The United States and China
+  original_name: 美国与中国
   authors:
     - John King Fairbank
   language: zh
@@ -882,6 +936,7 @@
     - history
 
 - name: The Hollow
+  original_name: 空谷幽魂
   authors:
     - Agatha Christie
   language: zh
@@ -894,6 +949,7 @@
     - fiction
 
 - name: Guns, Germs and Steel
+  original_name: 枪炮、病菌与钢铁
   authors:
     - Jared Diamond
   language: zh
@@ -908,6 +964,7 @@
     - sociology
 
 - name: "Steve Jobs: A Biography"
+  original_name: 史蒂夫·乔布斯传 
   authors:
     - Walter Isaacson
   language: zh
@@ -920,6 +977,7 @@
     - biography
 
 - name: The Spirit of May Fourth
+  original_name: 五四之魂
   authors:
     - Lin Xianzhi
   language: zh
@@ -930,6 +988,7 @@
     - history
 
 - name: The Shanghai Dialect
+  original_name: 上海方言
   authors:
     - Qian Nairong
   language: zh
@@ -940,6 +999,7 @@
     - linguistics
 
 - name: The Human Zoo
+  original_name: 人类动物园
   authors:
     - Desmond Morris
   lanuage: zh
@@ -954,6 +1014,7 @@
     - sociology
 
 - name: A Concise Intellectual History of the Han Dynasty
+  original_name: 汉代学术史略
   authors:
     - Gu Jiegang
   language: zh
@@ -964,6 +1025,7 @@
     - history
 
 - name: A Collection of Gu Jiegang's Classic Essays
+  original_name: 顾颉刚经典文存
   authors:
     - Gu Jiegang
   language: zh
@@ -974,6 +1036,7 @@
     - history
 
 - name: The Last 70 Years of Qing Dynasty I
+  original_name: 晚清七十年（一）
   authors:
     - Te-Kong Tong
   language: zh
@@ -986,6 +1049,7 @@
     - history
 
 - name: The Last 70 Years of Qing Dynasty II
+  original_name: 晚清七十年（二）
   authors:
     - Te-Kong Tong
   language: zh
@@ -997,6 +1061,7 @@
     - history
 
 - name: The Last 70 Years of Qing Dynasty III
+  original_name: 晚清七十年（三）
   authors:
     - Te-Kong Tong
   language: zh
@@ -1008,6 +1073,7 @@
     - history
 
 - name: The Last 70 Years of Qing Dynasty IV
+  original_name: 晚清七十年（四）
   authors:
     - Te-Kong Tong
   language: zh
@@ -1019,6 +1085,7 @@
     - history
 
 - name: The Last 70 Years of Qing Dynasty V
+  original_name: 晚清七十年（五）
   authors:
     - Te-Kong Tong
   language: zh
@@ -1030,6 +1097,7 @@
     - history
 
 - name: An Introduction to Chinese Historiography
+  original_name: 中国史学入门
   authors:
     - Gu Jiegang
   language: zh
@@ -1041,6 +1109,7 @@
     - history
 
 - name: Chinese Classics
+  original_name: 经典常谈
   authors:
     - Zhu Ziqing
   language: zh
@@ -1052,6 +1121,7 @@
     - culture
 
 - name: The Poverty of Historicism
+  original_name: 历史主义贫困论
   authors:
     - Karl Popper
   language: zh
@@ -1065,6 +1135,7 @@
     - history
 
 - name: Language and Culture
+  original_name: 语言与文化
   authors:
     - Luo Changpei
   language: zh
@@ -1077,6 +1148,7 @@
     - culture
 
 - name: "Essentials of Buddhism: Questions and Answers"
+  original_name: 佛教常识答问
   authors:
     - Zhao Puchu
   language: zh
@@ -1088,6 +1160,7 @@
     - religion
 
 - name: Second Foundation
+  original_name: 第二基地
   authors:
     - Issac Asimov
   language: zh
@@ -1100,6 +1173,7 @@
     - fiction
 
 - name: Foundation and Empire
+  original_name: 基地与帝国
   authors:
     - Issac Asimov
   language: zh
@@ -1112,6 +1186,7 @@
     - fiction
 
 - name: Foundation
+  original_name: 基地
   authors:
     - Issac Asimov
   language: zh
@@ -1124,6 +1199,7 @@
     - fiction
 
 - name: On the Way to Truth
+  original_name: 朝闻道集
   authors:
     - Zhou Youguang
   language: zh
@@ -1135,6 +1211,7 @@
     - history
 
 - name: Xuanzang's Pilgrimage to the West
+  original_name: 玄奘西游记
   authors:
     - Qian Wenzhong
   language: zh
@@ -1147,6 +1224,7 @@
     - history
 
 - name: The Case of the Speluncean Explorers
+  original_name: 洞穴奇案
   authors:
     - Peter Suber
   language: zh
@@ -1160,6 +1238,7 @@
     - philosophy
 
 - name: "The Nine: Inside the Secret World of the Supreme Court"
+  original_name: 九人：美国最高法院风云
   authors:
     - Jeffrey Toobin
   language: zh
@@ -1183,6 +1262,7 @@
     - sociology
 
 - name: Chinese
+  original_name: 汉语概说
   authors:
     - Jerry Norman
   language: zh
@@ -1194,6 +1274,7 @@
     - linguistics
 
 - name: Animal Farm
+  original_name: 动物农场
   authors:
     - George Orwell
   language: zh
@@ -1218,6 +1299,7 @@
     - fiction
 
 - name: Asimov on Science
+  original_name: 宇宙秘密
   authors:
     - Issac Asimov
   language: zh
@@ -1229,6 +1311,7 @@
     - science
 
 - name: The Personal Reminiscences of Dr. Hu Shih
+  original_name: 胡适口述自传
   authors:
     - Hu Shih
     - Te-Kong Tong
@@ -1240,6 +1323,7 @@
     - biography
 
 - name: "The Cambridge History of China: Republican China 1912-1949, Part 2"
+  original_name: 剑桥中华民国史下卷
   authors:
     - John King Fairbank
   language: zh
@@ -1251,6 +1335,7 @@
     - history
 
 - name: "The Cambridge History of China: Republican China 1912-1949, Part 1"
+  original_name: 剑桥中华民国史上卷
   authors:
     - John King Fairbank
   language: zh
@@ -1262,6 +1347,7 @@
     - history
 
 - name: Oral history of Zhang Xueliang
+  original_name: 张学良口述历史
   authors:
     - Zhang Xueliang
     - Te-Kong Tong
@@ -1275,6 +1361,7 @@
     - biography
 
 - name: Death's End
+  original_name: 三体III：死神永生
   authors:
     - Liu Cixin
   language: zh
@@ -1287,6 +1374,7 @@
     - fiction
 
 - name: The Dark Forest
+  original_name: 三体II：黑暗森林
   authors:
     - Liu Cixin
   language: zh
@@ -1299,6 +1387,7 @@
     - fiction
 
 - name: The Three-Body Problem
+  original_name: 三体
   authors:
     - Liu Cixin
   language: zh
@@ -1311,6 +1400,7 @@
     - fiction
 
 - name: The Rule of Yuan Shikai
+  original_name: 袁氏当国
   authors:
     - Te-Kong Tong
   language: zh
@@ -1322,6 +1412,7 @@
     - history
 
 - name: Seven Figures of the Ming Dynasty
+  original_name: 大明王朝的七张面孔
   authors:
     - Zhang Hongjie
   language: zh
@@ -1333,6 +1424,7 @@
     - history
 
 - name: Brave New World
+  original_name: 美丽新世界
   authors:
     - Aldous Huxley
   language: zh
@@ -1345,6 +1437,7 @@
     - fiction
 
 - name: The Unbearable Lightness of Being
+  original_name: 不能承受的生命之轻
   authors:
     - Milan Kundera
   language: zh
@@ -1357,6 +1450,7 @@
     - fiction
 
 - name: History of Quantum Physics
+  original_name: 量子物理史话
   authors:
     - Cao Tianyuan
   language: zh
@@ -1368,6 +1462,7 @@
     - physics
 
 - name: The New World of Mr Tompkins
+  original_name: 物理世界奇遇记
   authors:
     - George Gamow
   language: zh
@@ -1380,6 +1475,7 @@
     - physics
 
 - name: "1988: I Want to Talk with the World"
+  original_name: 1988：我想和这个世界谈谈
   authors:
     - Han Han
   language: zh
@@ -1391,6 +1487,7 @@
     - fiction
 
 - name: Groundwork of the Metaphysics of Morals
+  original_name: 道德形而上学原理
   authors:
     - Immanuel Kant
   language: zh
@@ -1403,6 +1500,7 @@
     - philosophy
 
 - name: The Logic of Finance
+  original_name: 金融的逻辑
   authors:
     - Chen Zhiwu
   language: zh
@@ -1415,6 +1513,7 @@
     - economics
 
 - name: What is the Thing Called Science?
+  original_name: 科学究竟是什么
   authors:
     - Alan F. Chalmers
   language: zh
@@ -1427,6 +1526,7 @@
     - science
 
 - name: The Lost Symbol
+  original_name: 失落的秘符
   authors:
     - Dan Brown
   language: zh
@@ -1451,6 +1551,7 @@
     - psychology
 
 - name: Essays on U.S. Supreme Court
+  original_name: 大法官说了算：美国司法观察笔记
   authors:
     - He Fan
   language: zh
@@ -1463,6 +1564,7 @@
     - politics
 
 - name: Memories of Hu Shih
+  original_name: 胡适杂忆
   authors:
     - Te-Kong Tong
   language: zh
@@ -1474,6 +1576,7 @@
     - biography
 
 - name: "Beyond Feelings: A Guide to Critical Thinking"
+  original_name: 超越感觉：批判性思考指南
   authors:
     - Vincent Ruggiero
   language: zh
@@ -1510,6 +1613,7 @@
     - fiction
 
 - name: Deception Point
+  original_name: 骗局
   authors:
     - Dan Brown
   language: zh
@@ -1522,6 +1626,7 @@
     - fiction
 
 - name: East Look West See
+  original_name: 东方文化西方语
   authors:
     - Zhai Hua
   language: zh
@@ -1532,6 +1637,7 @@
     - culture
 
 - name: On Liberty
+  original_name: 论自由
   authors:
     - John Stuart Mill
   language: zh
@@ -1544,6 +1650,7 @@
     - philosophy
 
 - name: When coloured sounds taste sweet
+  original_name: 当彩色的声音尝起来是甜的
   authors:
     - Songshuhui.net
   language: zh
@@ -1555,6 +1662,7 @@
     - science
 
 - name: The Red and the Black
+  original_name: 红与黑
   authors:
     - Stendhal
   language: zh
@@ -1567,6 +1675,7 @@
     - fiction
 
 - name: Wuthering Heights
+  original_name: 呼啸山庄
   authors:
     - Emily Brontë
   language: zh
@@ -1579,6 +1688,7 @@
     - fiction
 
 - name: The Catcher in the Rye
+  original_name: 麦田里的守望者
   authors:
     - J.D. Salinger
   language: zh
@@ -1591,6 +1701,7 @@
     - fiction
 
 - name: Befriend with Time
+  original_name: 把时间当作朋友
   authors:
     - Li Xiaolai
   language: zh
@@ -1600,6 +1711,7 @@
   goodreads: 8337694
 
 - name: Close-Up View of the America 4
+  original_name: 如彗星划过夜空：近距离看美国之四
   authors:
     - Lin Da
   language: zh
@@ -1612,6 +1724,7 @@
     - politics
 
 - name: Close-Up View of the America 3
+  original_name: 我也有一个梦想：近距离看美国之三
   authors:
     - Lin Da
   language: zh
@@ -1624,6 +1737,7 @@
     - politics
 
 - name: Close-Up View of the America 2
+  original_name: 总统是靠不住的：近距离看美国之二
   authors:
     - Lin Da
   language: zh
@@ -1636,6 +1750,7 @@
     - politics
 
 - name: Close-Up View of the America 1
+  original_name: 历史深处的忧虑：近距离看美国之一
   authors:
     - Lin Da
   language: zh
@@ -1648,6 +1763,7 @@
     - politics
 
 - name: Ninteen Eighty-Four
+  original_name: 一九八四
   authors:
     - George Orwell
   language: zh
@@ -1660,6 +1776,7 @@
     - fiction
 
 - name: Details of Democracy
+  original_name: 民主的细节
   authors:
     - Liu Yu
   language: zh
@@ -1672,6 +1789,7 @@
     - politics
 
 - name: The Chrysanthemum and the Sword
+  original_name: 菊与刀
   authors:
     - Ruth Benedict
   language: zh
@@ -1685,6 +1803,7 @@
     - anthropology
 
 - name: Norwegian Wood
+  original_name: 挪威的森林
   authors:
     - Haruki Murakami
   language: zh
@@ -1697,6 +1816,7 @@
     - fiction
 
 - name: The Clash of Civilizations and the Remarking of World Order
+  original_name: 文明的冲突 与世界秩序的重建
   authors:
     - Samuel P. Huntington
   language: zh
