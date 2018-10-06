@@ -80,8 +80,7 @@ class Research extends Component {
               opacity: 1,
               translateX: 0,
               delay: this.props.delay + 1000,
-              duration: 1000,
-              ease: 'easeOutBack'
+              duration: 1000
             }}
           >
             <div className="research-image-wrap noselect">
@@ -124,8 +123,7 @@ class Research extends Component {
               opacity: 1,
               translateX: 0,
               delay: this.props.delay + 1500,
-              duration: 1000,
-              ease: 'easeOutBack'
+              duration: 1000
             }}
           >
             <div className="research-image-wrap noselect">

@@ -221,29 +221,41 @@ a {
   border-radius: 50px;
   border: 1px solid #ccc;
   transform-origin: 50% 50%;
+  stroke-width: 1px;
+}
+
+.logo path:first-child {
+  stroke: #0d8aba;
+}
+
+.logo path:last-child {
+  stroke: #222;
 }
 
 .logo:hover path:first-child {
-  fill: none;
-  stroke: #0d8aba;
-  stroke-width: 1px;
+  fill: #0d8aba;
+  fill-opacity: 0;
   stroke-dasharray: 164;
   stroke-dashoffset: 164;
   animation: logo-anim 1s linear forwards;
 }
 
 .logo:hover path:last-child {
-  fill: none;
-  stroke: #222;
-  stroke-width: 1px;
+  fill: #222;
+  fill-opacity: 0;
   stroke-dasharray: 86;
   stroke-dashoffset: 86;
   animation: logo-anim 1s linear forwards;
 }
 
 @keyframes logo-anim {
-  to {
+  90% {
     stroke-dashoffset: 0;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
   }
 }
 
@@ -367,13 +379,15 @@ a {
   justify-content: center;
   align-items: center;
   margin-top: 60px;
-  font-size: 24px;
+  font-size: 20px;
+  color: #aaa;
+  font-style: italic;
 }
 
 .number-cards-title-line {
   width: 50px;
   height: 2px;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #aaa;
 }
 
 .number-card {
@@ -820,20 +834,30 @@ a {
   color: #000;
 }
 
+.more-item-logo {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.more-item:hover .more-item-logo {
+  display: none;
+}
+
 .more-item-title {
-  top: 30px;
-  font-weight: bold;
+  top: 50px;
+  text-transform: uppercase;
 }
 
 .more-item-number {
-  top: 80px;
+  top: 90px;
   font-size: 48px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
 }
 
 .more-item-description {
-  bottom: 60px;
+  bottom: 65px;
   font-size: 24px;
   font-family: 'Oswald', sans-serif;
 }

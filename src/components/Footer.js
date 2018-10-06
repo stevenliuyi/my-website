@@ -129,7 +129,7 @@ class Footer extends Component {
                 <div style={{ padding: '10px' }}>
                   <FaKey size={48} color={'#ccc'} />
                   <div style={{ textAlign: 'left', marginTop: '10px' }}>
-                    If you are security paranoid (which is a good thing of
+                    If you are security-paranoid (which is a good thing of
                     course), you can send me encrypted messages using my PGP key{' '}
                     <a href="https://pgp.mit.edu/pks/lookup?op=get&search=0x3B2DB4E7">
                       <span className="pgp-text">0x3B2DB4E7</span>

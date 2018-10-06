@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
+import { GoOctoface } from 'react-icons/go'
+import { FaBookOpen } from 'react-icons/fa'
 import MoreItem from './MoreItem'
 import { getBlogCount } from '../utils/utils'
 import readingListCount from '../data/read-count.yml'
@@ -49,6 +51,7 @@ class More extends Component {
             description="Repositories"
             pic="markus-spiske-507983-unsplash-small.jpg"
             url="https://github.com/stevenliuyi"
+            logo={<GoOctoface size={50} color="#eee" />}
             {...this.props}
           />
           <MoreItem
@@ -57,6 +60,18 @@ class More extends Component {
             description="Articles"
             pic="aaron-burden-64849-unsplash-small.jpg"
             url="https://blog.yliu.io"
+            logo={
+              <i
+                className="iconfont icon-pen"
+                style={{
+                  fontSize: 64,
+                  color: '#eee',
+                  transform: 'translateY(32px)',
+                  clipPath: 'polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%)',
+                  display: 'inline-block'
+                }}
+              />
+            }
             {...this.props}
           />
           <MoreItem
@@ -65,6 +80,13 @@ class More extends Component {
             description="Books"
             pic="erol-ahmed-460283-unsplash-small.jpg"
             link={{ pathname: '/read', backId: 'more-page' }}
+            logo={
+              <FaBookOpen
+                size={50}
+                color="#eee"
+                style={{ transform: 'translateY(8px)' }}
+              />
+            }
             {...this.props}
           />
         </div>

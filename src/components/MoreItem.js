@@ -96,6 +96,17 @@ class MoreItem extends Component {
         >
           {this.props.description}
         </TweenOne>
+        <TweenOne
+          animation={{
+            opacity: 0,
+            type: 'from',
+            delay: this.props.delay + 500,
+            duration: 1000
+          }}
+          className="more-item-logo"
+        >
+          {this.props.logo}
+        </TweenOne>
       </div>
     )
   }
