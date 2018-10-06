@@ -3,6 +3,7 @@ import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import * as d3 from 'd3'
+import { isSafari, isIOS } from 'react-device-detect'
 
 // 0 - Novice
 // 0.25 - Advanced Beginner
@@ -133,6 +134,10 @@ const data = {
 }
 
 const updateD3Node = (data, width, height, delay = 0) => {
+  // dynamically changed gradient not working on Safari,
+  // perheps related to https://bugs.webkit.org/show_bug.cgi?id=41952
+  const showGradient = !(isIOS || isSafari)
+
   const marginV = 10
   const marginH = 50
   const interval = 100
@@ -148,49 +153,51 @@ const updateD3Node = (data, width, height, delay = 0) => {
     .style('opacity', 0)
     .remove()
 
-  let defs = svg.append('defs')
+  if (showGradient) {
+    let defs = svg.append('defs')
 
-  let grad = defs
-    .append('linearGradient')
-    .attr('id', 'bar-grad')
-    .attr('gradientUnits', 'userSpaceOnUse')
-    .attr('x1', 0)
-    .attr('y1', 0)
-    .attr('x2', width - 100)
-    .attr('y2', 0)
+    let grad = defs
+      .append('linearGradient')
+      .attr('id', 'bar-grad')
+      .attr('gradientUnits', 'userSpaceOnUse')
+      .attr('x1', 0)
+      .attr('y1', 0)
+      .attr('x2', width - 100)
+      .attr('y2', 0)
 
-  grad
-    .append('stop')
-    .attr('offset', '0%')
-    .style('stop-color', '#10e3ea')
-    .style('stop-opacity', 1)
+    grad
+      .append('stop')
+      .attr('offset', '0%')
+      .style('stop-color', '#10e3ea')
+      .style('stop-opacity', 1)
 
-  grad
-    .append('stop')
-    .attr('offset', '100%')
-    .style('stop-color', '#0b78a2')
-    .style('stop-opacity', 1)
+    grad
+      .append('stop')
+      .attr('offset', '100%')
+      .style('stop-color', '#0b78a2')
+      .style('stop-opacity', 1)
 
-  grad = defs
-    .append('linearGradient')
-    .attr('id', 'bar-grad-hover')
-    .attr('gradientUnits', 'userSpaceOnUse')
-    .attr('x1', 0)
-    .attr('y1', 0)
-    .attr('x2', width - 100)
-    .attr('y2', 0)
+    grad = defs
+      .append('linearGradient')
+      .attr('id', 'bar-grad-hover')
+      .attr('gradientUnits', 'userSpaceOnUse')
+      .attr('x1', 0)
+      .attr('y1', 0)
+      .attr('x2', width - 100)
+      .attr('y2', 0)
 
-  grad
-    .append('stop')
-    .attr('offset', '0%')
-    .style('stop-color', '#55eef3')
-    .style('stop-opacity', 1)
+    grad
+      .append('stop')
+      .attr('offset', '0%')
+      .style('stop-color', '#55eef3')
+      .style('stop-opacity', 1)
 
-  grad
-    .append('stop')
-    .attr('offset', '100%')
-    .style('stop-color', '#10aeeb')
-    .style('stop-opacity', 1)
+    grad
+      .append('stop')
+      .attr('offset', '100%')
+      .style('stop-color', '#10aeeb')
+      .style('stop-opacity', 1)
+  }
 
   svg = svg
     .append('g')
@@ -237,7 +244,7 @@ const updateD3Node = (data, width, height, delay = 0) => {
     .attr('height', y.bandwidth())
     .attr('x', 100)
     .attr('width', 0)
-    .attr('fill', 'url(#bar-grad)')
+    .attr('fill', showGradient ? 'url(#bar-grad)' : '#0d8aba')
     .on('mouseenter', handleMouseEnter)
     .on('mouseleave', handleMouseLeave)
     .transition()
@@ -296,12 +303,18 @@ const updateD3Node = (data, width, height, delay = 0) => {
       .style('transform', 'scaleX(1)')
 
     d3.select(`#skill-name${i}`).attr('font-weight', 'bold')
-    d3.select(`#skill-bar${i}`).attr('fill', 'url(#bar-grad-hover)')
+    d3.select(`#skill-bar${i}`).attr(
+      'fill',
+      showGradient ? 'url(#bar-grad-hover)' : '#10adea'
+    )
   }
 
   function handleMouseLeave(d, i) {
     d3.select(`#skill-name${i}`).attr('font-weight', '300')
-    d3.select(`#skill-bar${i}`).attr('fill', 'url(#bar-grad)')
+    d3.select(`#skill-bar${i}`).attr(
+      'fill',
+      showGradient ? 'url(#bar-grad)' : '#0d8aba'
+    )
   }
 }
 
