@@ -327,12 +327,14 @@ class Skills extends Component {
     width: 0
   }
 
+  getWidth = () => Math.max(window.innerWidth * 0.8 - 450, 400)
+
   onResize = () => {
     // only update chart after the initial animation is performed
     if (this.state.paused) return
 
     // only update if width is changed
-    const width = Math.max(window.innerWidth * 0.8 - 450, 400)
+    const width = this.getWidth()
     if (width === this.state.width) return
 
     clearTimeout(window.resizedFinished)
@@ -344,7 +346,7 @@ class Skills extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize)
-    this.setState({ width: Math.max(window.innerWidth * 0.8 - 450, 400) })
+    this.setState({ width: this.getWidth() })
   }
 
   componentWillUnmount() {

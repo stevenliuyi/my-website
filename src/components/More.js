@@ -68,6 +68,7 @@ class More extends Component {
                   color: '#eee',
                   transform: 'translateY(32px)',
                   clipPath: 'polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%)',
+                  WebkitClipPath: 'polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%)',
                   display: 'inline-block'
                 }}
               />
