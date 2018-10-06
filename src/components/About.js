@@ -133,8 +133,7 @@ class About extends Component {
                 opacity: 1,
                 translateX: 0,
                 delay: this.props.delay + 1000,
-                duration: 1000,
-                ease: 'easeOutBack'
+                duration: 1000
               }}
             >
               Hello! My name is <span className="strong">Yi Liu</span>, but I
@@ -307,6 +306,23 @@ class About extends Component {
             </Tooltip>
           </TweenOne>
         </div>
+        <TweenOne
+          className="number-cards-title"
+          animation={{
+            translateY: 100,
+            opacity: 0,
+            type: 'from',
+            duration: 1000,
+            delay: this.props.delay + 2000
+          }}
+        >
+          <div
+            className="number-cards-title-line"
+            style={{ marginRight: 20 }}
+          />
+          <div>just some fun numbers</div>
+          <div className="number-cards-title-line" style={{ marginLeft: 20 }} />
+        </TweenOne>
         <TweenOne
           key="3"
           className="number-cards"

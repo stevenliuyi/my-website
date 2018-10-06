@@ -148,6 +148,50 @@ const updateD3Node = (data, width, height, delay = 0) => {
     .style('opacity', 0)
     .remove()
 
+  let defs = svg.append('defs')
+
+  let grad = defs
+    .append('linearGradient')
+    .attr('id', 'bar-grad')
+    .attr('gradientUnits', 'userSpaceOnUse')
+    .attr('x1', 0)
+    .attr('y1', 0)
+    .attr('x2', width - 100)
+    .attr('y2', 0)
+
+  grad
+    .append('stop')
+    .attr('offset', '0%')
+    .style('stop-color', '#10e3ea')
+    .style('stop-opacity', 1)
+
+  grad
+    .append('stop')
+    .attr('offset', '100%')
+    .style('stop-color', '#0b78a2')
+    .style('stop-opacity', 1)
+
+  grad = defs
+    .append('linearGradient')
+    .attr('id', 'bar-grad-hover')
+    .attr('gradientUnits', 'userSpaceOnUse')
+    .attr('x1', 0)
+    .attr('y1', 0)
+    .attr('x2', width - 100)
+    .attr('y2', 0)
+
+  grad
+    .append('stop')
+    .attr('offset', '0%')
+    .style('stop-color', '#55eef3')
+    .style('stop-opacity', 1)
+
+  grad
+    .append('stop')
+    .attr('offset', '100%')
+    .style('stop-color', '#10aeeb')
+    .style('stop-opacity', 1)
+
   svg = svg
     .append('g')
     .attr('width', width)
@@ -193,6 +237,7 @@ const updateD3Node = (data, width, height, delay = 0) => {
     .attr('height', y.bandwidth())
     .attr('x', 100)
     .attr('width', 0)
+    .attr('fill', 'url(#bar-grad)')
     .on('mouseenter', handleMouseEnter)
     .on('mouseleave', handleMouseLeave)
     .transition()
@@ -251,14 +296,12 @@ const updateD3Node = (data, width, height, delay = 0) => {
       .style('transform', 'scaleX(1)')
 
     d3.select(`#skill-name${i}`).attr('font-weight', 'bold')
-
-    d3.select(`#skill-bar${i}`).style('fill', '#10adea')
+    d3.select(`#skill-bar${i}`).attr('fill', 'url(#bar-grad-hover)')
   }
 
   function handleMouseLeave(d, i) {
     d3.select(`#skill-name${i}`).attr('font-weight', '300')
-
-    d3.select(`#skill-bar${i}`).style('fill', '#0d8aba')
+    d3.select(`#skill-bar${i}`).attr('fill', 'url(#bar-grad)')
   }
 }
 

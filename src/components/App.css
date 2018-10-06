@@ -223,6 +223,30 @@ a {
   transform-origin: 50% 50%;
 }
 
+.logo:hover path:first-child {
+  fill: none;
+  stroke: #0d8aba;
+  stroke-width: 1px;
+  stroke-dasharray: 164;
+  stroke-dashoffset: 164;
+  animation: logo-anim 1s linear forwards;
+}
+
+.logo:hover path:last-child {
+  fill: none;
+  stroke: #222;
+  stroke-width: 1px;
+  stroke-dasharray: 86;
+  stroke-dashoffset: 86;
+  animation: logo-anim 1s linear forwards;
+}
+
+@keyframes logo-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 .about-wrap {
   margin: 15px auto;
   max-width: 80%;
@@ -329,16 +353,44 @@ a {
   transform: translateY(100px);
 }
 
+.number-cards {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 .projects {
   max-width: 1300px;
 }
 
+.number-cards-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  font-size: 24px;
+}
+
+.number-cards-title-line {
+  width: 50px;
+  height: 2px;
+  border-bottom: 1px solid #222;
+}
+
 .number-card {
   display: inline;
-  margin: 40px 20px 20px 20px;
+  margin: -1px 0 0 -1px;
   width: 250px;
   height: 200px;
   position: relative;
+}
+
+.number-card .card {
+  border-radius: 0px;
+}
+
+
+.number-card .card-body {
+  padding: 15px;
 }
 
 .number {
@@ -360,6 +412,10 @@ a {
   left: 0;
   position: absolute;
   opacity: 1;
+}
+
+.number-card-front .card {
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 .number-card-back {
@@ -398,8 +454,14 @@ a {
   background-color: #fff;
 }
 
+.project-card.card {
+  border: none;
+  border-radius: 0;
+}
+
 .project-card > img {
   transition: max-height .5s ease;
+  border-radius: 0;
 }
 
 .project-card .card-body {
@@ -567,10 +629,6 @@ a {
   font-size: 14px;
 }
 
-.skill-bar {
-  fill: #0d8aba;
-}
-
 .skill-chart-wrap {
   position: absolute;
   width: 100%;
@@ -665,12 +723,10 @@ a {
   height: 100%;
   object-fit: cover;
   border-radius: 9999px;
-  filter: grayscale(.15);
   transition: filter .5s;
 }
 
 .research:hover .research-image {
-  filter: grayscale(0);
   transition: filter .5s;
 }
 
@@ -1303,7 +1359,7 @@ a .pgp-text:hover {
 
 /* hack to maintain at least two items in the last row
  * except when every row has only one item */
-@media (max-width: 1303px) and (min-width: 982px ) {
+@media (max-width: 1110px) and (min-width: 830px ) {
   .number-cards {
     width: 60%;
   }

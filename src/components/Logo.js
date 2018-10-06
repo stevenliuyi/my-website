@@ -20,7 +20,7 @@ class Logo extends Component {
               space * 0.5 * Math.sqrt(3)} L ${size * 0.5} ${size *
               0.5 *
               Math.sqrt(3)} V ${(size * 0.5) / Math.sqrt(3) +
-              (space * 2) / Math.sqrt(3)}`}
+              (space * 2) / Math.sqrt(3)} Z`}
             fill={colors[1]}
           />
         </g>

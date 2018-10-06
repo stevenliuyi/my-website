@@ -30,7 +30,7 @@ class More extends Component {
           className="section-title noselect"
           delay={this.props.delay}
         >
-          MORE
+          MORE ON ME
         </Texty>
         <TweenOne
           key="1"
