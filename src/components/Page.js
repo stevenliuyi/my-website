@@ -3,6 +3,7 @@ import ProgressiveImage from 'react-progressive-image-loading'
 import { Link } from 'react-router-dom'
 import { FiX } from 'react-icons/fi'
 import { FaAngleDoubleDown } from 'react-icons/fa'
+import { MdArrowBack } from 'react-icons/md'
 import scrollToComponent from 'react-scroll-to-component'
 import { Tooltip } from 'reactstrap'
 import { isMobile } from 'react-device-detect'
@@ -14,7 +15,8 @@ import { setVhs } from '../utils/utils'
 class Page extends Component {
   state = {
     fontSize: 36,
-    logoTooltip: false
+    logoTooltip: false,
+    showLogo: true
   }
 
   handleScroll = e => {
@@ -72,7 +74,7 @@ class Page extends Component {
     }
 
     // logo
-    const logo = document.querySelector('.cover-logo')
+    const logo = document.getElementById('cover-logo')
     if (logo != null) {
       logo.style.transform = `rotate(${scrollTop}deg)`
     }
@@ -99,21 +101,49 @@ class Page extends Component {
     return (
       <div style={{ overflowX: 'hidden' }}>
         <div className="cover">
-          <div id="cover-logo" className="cover-logo">
-            <Link to={{ pathname: '/', backId: this.props.location.backId }}>
-              <Logo radius={12} colors={['#555', '#555']} />
-            </Link>
-          </div>
-          <Tooltip
-            placement="right"
-            target="cover-logo"
-            isOpen={this.state.logoTooltip}
-            toggle={() =>
-              this.setState({ logoTooltip: !this.state.logoTooltip })
-            }
+          <div
+            onMouseEnter={() => this.setState({ showLogo: false })}
+            onMouseLeave={() => this.setState({ showLogo: true })}
           >
-            back to homepage
-          </Tooltip>
+            {this.state.showLogo && (
+              <div id="cover-logo" className="cover-logo">
+                <Link
+                  to={{ pathname: '/', backId: this.props.location.backId }}
+                >
+                  <Logo radius={12} colors={['#555', '#555']} />
+                </Link>
+              </div>
+            )}
+            {!this.state.showLogo && (
+              <div className="cover-back-home-wrap">
+                <div className="cover-logo">
+                  <div style={{ visibility: 'hidden' }}>
+                    <Logo radius={12} colors={['#555', '#555']} />
+                  </div>
+                </div>
+                <div className="cover-back-home">
+                  <Link
+                    to={{ pathname: '/', backId: this.props.location.backId }}
+                  >
+                    <MdArrowBack size={24} color="#555" />
+                  </Link>
+                  <span>HOME</span>
+                </div>
+              </div>
+            )}
+          </div>
+          {this.state.showLogo && (
+            <Tooltip
+              placement="right"
+              target="cover-logo"
+              isOpen={this.state.logoTooltip}
+              toggle={() =>
+                this.setState({ logoTooltip: !this.state.logoTooltip })
+              }
+            >
+              back to homepage
+            </Tooltip>
+          )}
           <ProgressiveImage
             preview={`/images/${this.props.backgroundFilename}-small.jpg`}
             src={`/images/${this.props.backgroundFilename}.jpg`}
