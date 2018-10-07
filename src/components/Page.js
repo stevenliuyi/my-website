@@ -10,7 +10,7 @@ import { isMobile } from 'react-device-detect'
 import Texty from 'rc-texty'
 import TweenOne from 'rc-tween-one'
 import Logo from './Logo'
-import { setVhs } from '../utils/utils'
+import { setVhs, getImageURL } from '../utils/utils'
 
 class Page extends Component {
   state = {
@@ -145,8 +145,17 @@ class Page extends Component {
             </Tooltip>
           )}
           <ProgressiveImage
-            preview={`/images/${this.props.backgroundFilename}-small.jpg`}
-            src={`/images/${this.props.backgroundFilename}.jpg`}
+            preview={getImageURL(`${this.props.backgroundFilename}.jpg`, {
+              f: 'auto',
+              c: 'scale',
+              w: 500
+            })}
+            src={getImageURL(`${this.props.backgroundFilename}.jpg`, {
+              f: 'auto',
+              c: 'fill',
+              w: window.innerWidth * window.devicePixelRatio,
+              h: window.innerHeight * window.devicePixelRatio
+            })}
             render={(src, style) => (
               <div
                 className="cover-image"

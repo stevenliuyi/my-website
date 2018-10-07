@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Tooltip } from 'reactstrap'
 import TweenOne from 'rc-tween-one'
+import { getImageURL } from '../utils/utils'
 
 class BookDetail extends Component {
   state = {
@@ -70,7 +71,12 @@ class BookDetail extends Component {
             <img
               className="noselect"
               alt={this.props.name}
-              src={`images/books/${this.props.image}`}
+              src={getImageURL(`books/${this.props.image}`, {
+                f: 'auto',
+                c: 'fill',
+                w: 285 * window.devicePixelRatio,
+                h: 399 * window.devicePixelRatio
+              })}
               width={285}
               height={399}
               onError={e => {

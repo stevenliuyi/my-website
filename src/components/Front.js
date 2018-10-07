@@ -5,6 +5,7 @@ import 'react-typist/dist/Typist.css'
 import { TiCode } from 'react-icons/ti'
 import { IoIosArrowDown } from 'react-icons/io'
 import { isMobileOnly } from 'react-device-detect'
+import { getImageURL } from '../utils/utils'
 
 class Front extends Component {
   state = {
@@ -159,8 +160,17 @@ class Front extends Component {
         <div className="background">
           <canvas id="snow" />
           <ProgressiveImage
-            preview="/images/fabrice-villard-584622-unsplash-small.jpg"
-            src="/images/fabrice-villard-584622-unsplash.jpg"
+            preview={getImageURL('fabrice-villard-584622-unsplash.jpg', {
+              f: 'auto',
+              c: 'scale',
+              w: 500
+            })}
+            src={getImageURL('fabrice-villard-584622-unsplash.jpg', {
+              f: 'auto',
+              c: 'fill',
+              w: window.innerWidth * window.devicePixelRatio,
+              h: window.innerHeight * window.devicePixelRatio
+            })}
             render={(src, style) => (
               <div
                 className="background-image"

@@ -28,3 +28,11 @@ export const getBlogCount = () =>
   fetch('https://blog.yliu.io/post-count')
     .then(data => data.text())
     .catch(err => 0)
+
+// get image URL
+export const getImageURL = (path, options) => {
+  const options_str = Object.keys(options)
+    .map(o => `${o}_${options[o]}`)
+    .join()
+  return `https://res.cloudinary.com/yliu/image/upload/${options_str}/img/${path}`
+}

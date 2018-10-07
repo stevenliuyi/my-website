@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { getImageURL } from '../utils/utils'
 
 class Book extends Component {
   render() {
@@ -7,11 +8,31 @@ class Book extends Component {
         id={this.props.id}
         className="book"
         onClick={() => this.props.onSelectBook(this.props.idx)}
+        onMouseEnter={() => {
+          const imgElem = document.getElementById(`img-${this.props.image}`)
+          if (imgElem == null) return
+          // preload large image on hover
+          imgElem.style.backgroundImage = `url(${getImageURL(
+            `books/${this.props.image}`,
+            {
+              f: 'auto',
+              c: 'fill',
+              w: 285 * window.devicePixelRatio,
+              h: 399 * window.devicePixelRatio
+            }
+          )})`
+        }}
       >
         <img
+          id={`img-${this.props.image}`}
           className="noselect"
           alt={this.props.name}
-          src={`images/books/${this.props.image}`}
+          src={getImageURL(`books/${this.props.image}`, {
+            f: 'auto',
+            c: 'fill',
+            w: 143 * window.devicePixelRatio,
+            h: 200 * window.devicePixelRatio
+          })}
           width={143}
           height={200}
           onError={e => {
