@@ -34,5 +34,5 @@ export const getImageURL = (path, options) => {
   const options_str = Object.keys(options)
     .map(o => `${o}_${options[o]}`)
     .join()
-  return `https://res.cloudinary.com/yliu/image/upload/${options_str}/img/${path}`
+  return `/images/${options_str}/${path}`
 }
