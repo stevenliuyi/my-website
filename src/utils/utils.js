@@ -32,7 +32,12 @@ export const getBlogCount = () =>
 // get image URL
 export const getImageURL = (path, options) => {
   const options_str = Object.keys(options)
-    .map(o => `${o}_${options[o]}`)
+    .map(
+      o =>
+        `${o}_${
+          typeof options[o] === 'number' ? parseInt(options[o]) : options[o]
+        }`
+    )
     .join()
   return `/images/${options_str}/${path}`
 }
