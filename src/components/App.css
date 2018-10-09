@@ -1383,6 +1383,61 @@ a .pgp-text:hover {
   text-align: left; 
 }
 
+.cv-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cv-photo {
+  border-radius: 100px;
+}
+
+.cv-name {
+  font-size: 28px;
+}
+
+.cv-name > span:last-child {
+  font-weight: bold;
+}
+
+.cv-section {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.cv-section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #0d8aba;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.cv-section-title-text {
+  padding-left: 10px;
+}
+
+.cv-item {
+  margin-top: 10px;
+}
+
+.cv-item-title {
+  font-weight: bold;
+}
+
+.cv-item-right {
+  color: #555;
+  text-align: right;
+}
+
+.cv-section ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 /* for small screens */
 @media (max-width: 964px) {
   .about-links {

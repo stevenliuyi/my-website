@@ -226,7 +226,9 @@ class Page extends Component {
                 delay: this.props.delay + 750
               }}
               className="cover-author"
-            >{`— ${this.props.author}`}</TweenOne>
+            >
+              {this.props.author !== '' ? `— ${this.props.author}` : ''}
+            </TweenOne>
           </div>
           <TweenOne
             animation={{

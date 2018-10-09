@@ -9,6 +9,7 @@ import registerServiceWorker from './registerServiceWorker'
 import 'react-app-polyfill/ie11'
 
 const Read = asyncComponent(() => import('./components/Read'))
+const Resume = asyncComponent(() => import('./components/Resume'))
 
 ReactDOM.render(
   <Router>
@@ -16,6 +17,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" component={App} />
         <Route exact path="/read" component={Read} />
+        <Route exact path="/resume" component={Resume} />
         {/* redirect to https://go.yliu.io for shortened URLs */}
         <Route
           path="/:id"
