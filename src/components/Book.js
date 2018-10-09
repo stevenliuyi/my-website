@@ -12,27 +12,31 @@ class Book extends Component {
           const imgElem = document.getElementById(`img-${this.props.image}`)
           if (imgElem == null) return
           // preload large image on hover
-          imgElem.style.backgroundImage = `url(${getImageURL(
-            `books/${this.props.image}`,
-            {
-              f: 'auto',
-              c: 'fill',
-              w: 285 * window.devicePixelRatio,
-              h: 399 * window.devicePixelRatio
-            }
-          )})`
+          imgElem.style.backgroundImage =
+            process.env.NODE_ENV === 'development'
+              ? `url(/images/books/${this.props.image})`
+              : `url(${getImageURL(`books/${this.props.image}`, {
+                  f: 'auto',
+                  c: 'scale',
+                  w: 285 * window.devicePixelRatio,
+                  h: 399 * window.devicePixelRatio
+                })})`
         }}
       >
         <img
           id={`img-${this.props.image}`}
           className="noselect"
           alt={this.props.name}
-          src={getImageURL(`books/${this.props.image}`, {
-            f: 'auto',
-            c: 'fill',
-            w: 143 * window.devicePixelRatio,
-            h: 200 * window.devicePixelRatio
-          })}
+          src={
+            process.env.NODE_ENV === 'development'
+              ? `/images/books/${this.props.image}`
+              : getImageURL(`books/${this.props.image}`, {
+                  f: 'auto',
+                  c: 'scale',
+                  w: 143 * window.devicePixelRatio,
+                  h: 200 * window.devicePixelRatio
+                })
+          }
           width={143}
           height={200}
           onError={e => {

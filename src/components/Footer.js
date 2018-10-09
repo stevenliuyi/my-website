@@ -8,6 +8,7 @@ import { FaFacebookF, FaWeixin, FaKey } from 'react-icons/fa'
 import { MdLock } from 'react-icons/md'
 import { Tooltip } from 'reactstrap'
 import textEnter from '../utils/textEnter'
+import { getImageURL } from '../utils/utils'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -27,7 +28,18 @@ class Footer extends Component {
         playScale={0.1}
         always={false}
       >
-        <div className="footer-background" />
+        <div
+          className="footer-background"
+          style={{
+            backgroundImage:
+              process.env.NODE_ENV === 'development'
+                ? 'url(/images/ricardo-gomez-angel-298363-unsplash.jpg)'
+                : `url(${getImageURL(
+                    'ricardo-gomez-angel-298363-unsplash.jpg',
+                    { f: 'auto', c: 'scale', h: 250 * window.devicePixelRatio }
+                  )})`
+          }}
+        />
         <Texty
           key="0"
           className="section-title noselect"

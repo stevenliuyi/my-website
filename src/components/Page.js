@@ -145,17 +145,26 @@ class Page extends Component {
             </Tooltip>
           )}
           <ProgressiveImage
-            preview={getImageURL(`${this.props.backgroundFilename}.jpg`, {
-              f: 'auto',
-              c: 'scale',
-              w: 500
-            })}
-            src={getImageURL(`${this.props.backgroundFilename}.jpg`, {
-              f: 'auto',
-              c: 'fill',
-              w: window.innerWidth * window.devicePixelRatio,
-              h: window.innerHeight * window.devicePixelRatio
-            })}
+            preview={
+              process.env.NODE_ENV === 'development'
+                ? `/images/${this.props.backgroundFilename}.jpg`
+                : getImageURL(`${this.props.backgroundFilename}.jpg`, {
+                    f: 'auto',
+                    c: 'fill',
+                    w: Math.min(window.innerWidth * 0.3, 800),
+                    h: Math.min(window.innerHeight * 0.3, 800)
+                  })
+            }
+            src={
+              process.env.NODE_ENV === 'development'
+                ? `/images/${this.props.backgroundFilename}.jpg`
+                : getImageURL(`${this.props.backgroundFilename}.jpg`, {
+                    f: 'auto',
+                    c: 'fill',
+                    w: window.innerWidth * window.devicePixelRatio,
+                    h: window.innerHeight * window.devicePixelRatio
+                  })
+            }
             render={(src, style) => (
               <div
                 className="cover-image"

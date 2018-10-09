@@ -155,22 +155,32 @@ class Front extends Component {
   }
 
   render() {
+    const image_filename = 'fabrice-villard-584622-unsplash.jpg'
     return (
       <div>
         <div className="background">
           <canvas id="snow" />
           <ProgressiveImage
-            preview={getImageURL('fabrice-villard-584622-unsplash.jpg', {
-              f: 'auto',
-              c: 'scale',
-              w: 500
-            })}
-            src={getImageURL('fabrice-villard-584622-unsplash.jpg', {
-              f: 'auto',
-              c: 'fill',
-              w: window.innerWidth * window.devicePixelRatio,
-              h: window.innerHeight * window.devicePixelRatio
-            })}
+            preview={
+              process.env.NODE_ENV === 'development'
+                ? `/images/${image_filename}`
+                : getImageURL(image_filename, {
+                    f: 'auto',
+                    c: 'fill',
+                    w: Math.min(window.innerWidth * 0.3, 800),
+                    h: Math.min(window.innerHeight * 0.3, 800)
+                  })
+            }
+            src={
+              process.env.NODE_ENV === 'development'
+                ? `/images/${image_filename}`
+                : getImageURL(image_filename, {
+                    f: 'auto',
+                    c: 'fill',
+                    w: window.innerWidth * window.devicePixelRatio,
+                    h: window.innerHeight * window.devicePixelRatio
+                  })
+            }
             render={(src, style) => (
               <div
                 className="background-image"

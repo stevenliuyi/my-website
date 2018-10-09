@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Tooltip } from 'reactstrap'
 import TweenOne from 'rc-tween-one'
+import ProgressiveImage from 'react-progressive-image-loading'
 import { getImageURL } from '../utils/utils'
 
 class BookDetail extends Component {
@@ -68,21 +69,42 @@ class BookDetail extends Component {
             }}
             className="book-detail-img"
           >
-            <img
-              className="noselect"
-              alt={this.props.name}
-              src={getImageURL(`books/${this.props.image}`, {
-                f: 'auto',
-                c: 'fill',
-                w: 285 * window.devicePixelRatio,
-                h: 399 * window.devicePixelRatio
-              })}
-              width={285}
-              height={399}
-              onError={e => {
-                e.target.src =
-                  'https://imgplaceholder.com/285x399/f5f5f5/757575/ion-ios-book-outline?font-size=64'
-              }}
+            <ProgressiveImage
+              preview={
+                process.env.NODE_ENV === 'development'
+                  ? `/images/books/${this.props.image}`
+                  : getImageURL(`books/${this.props.image}`, {
+                      f: 'auto',
+                      c: 'scale',
+                      w: 143 * window.devicePixelRatio,
+                      h: 200 * window.devicePixelRatio
+                    })
+              }
+              src={
+                process.env.NODE_ENV === 'development'
+                  ? `/images/books/${this.props.image}`
+                  : getImageURL(`books/${this.props.image}`, {
+                      f: 'auto',
+                      c: 'scale',
+                      w: 285 * window.devicePixelRatio,
+                      h: 399 * window.devicePixelRatio
+                    })
+              }
+              initialBlur={0}
+              render={(src, style) => (
+                <img
+                  className="noselect"
+                  src={src}
+                  style={style}
+                  alt={this.props.name}
+                  width={285}
+                  height={399}
+                  onError={e => {
+                    e.target.src =
+                      'https://imgplaceholder.com/285x399/f5f5f5/757575/ion-ios-book-outline?font-size=64'
+                  }}
+                />
+              )}
             />
           </TweenOne>
           <div className="book-detail-info">
