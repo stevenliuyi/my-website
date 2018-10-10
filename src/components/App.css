@@ -780,6 +780,58 @@ a {
   border-radius: 999px !important;
 }
 
+.research-more-button {
+  position: relative;
+  width: 250px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 9999px;
+  border: 1px solid #555;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.research-more-button-front {
+  color: #555;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.research-more-button:hover .research-more-button-front {
+  color: #fff;
+  transition: color .5s;
+}
+
+.research-more-button:hover .research-more-button-arrow {
+  transform: translateX(12px);
+  transition: transform .5s;
+}
+
+.research-more-button-arrow {
+  padding-left: 5px;
+}
+
+.research-more-button-background {
+  position: absolute;
+  left: 0px;
+  width: 0%;
+  height: 100%;
+  background-color: #555;
+  border-radius: 9999px;
+}
+
+.research-more-button:hover .research-more-button-background {
+  width: 100%;
+  transition: width .5s;
+}
+
 .more-items {
   display: flex;
   justify-content: center;

@@ -3,6 +3,8 @@ import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import { Badge, Button } from 'reactstrap'
+import { MdArrowForward } from 'react-icons/md'
+import { Link } from 'react-router-dom'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -147,6 +149,26 @@ class Research extends Component {
             </div>
           </TweenOne>
         </div>
+        <Link to={{ pathname: '/resume', backId: 'research-page' }}>
+          <TweenOne
+            animation={{
+              opacity: 0,
+              translateY: 50,
+              type: 'from',
+              delay: this.props.delay + 2000
+            }}
+            className="research-more-button noselect"
+          >
+            <div className="research-more-button-front">
+              <span>More on my résumé</span>
+              <MdArrowForward
+                className="research-more-button-arrow"
+                size={24}
+              />
+            </div>
+            <div className="research-more-button-background" />
+          </TweenOne>
+        </Link>
       </ScrollOverPack>
     )
   }

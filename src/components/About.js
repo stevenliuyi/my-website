@@ -3,10 +3,11 @@ import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import NumberCard from './NumberCard'
-import { TiPencil } from 'react-icons/ti'
+import { TiPencil, TiDocumentText } from 'react-icons/ti'
 import { FaGoogle, FaGithub, FaAt, FaWikipediaW } from 'react-icons/fa'
 import { Tooltip } from 'reactstrap'
 import { isMobile } from 'react-device-detect'
+import { withRouter } from 'react-router-dom'
 import Logo from './Logo'
 
 const ScrollOverPack = ScrollAnim.OverPack
@@ -19,7 +20,8 @@ class About extends Component {
       googleScholar: false,
       wikipedia: false,
       zhihu: false,
-      blog: false
+      blog: false,
+      resume: false
     },
     placement: 'right',
     logoLoaded: false,
@@ -250,6 +252,23 @@ class About extends Component {
                 <FaGoogle size={iconSize * 0.7} />
               </span>
             </div>
+            <div
+              id="resume-icon"
+              className="about-link"
+              onClick={() =>
+                this.props.history.push({
+                  pathname: '/resume',
+                  backId: 'about-page'
+                })
+              }
+            >
+              <span
+                className="circle-icon"
+                style={{ backgroundColor: '#0d8aba' }}
+              >
+                <TiDocumentText size={iconSize * 0.7} />
+              </span>
+            </div>
             <Tooltip
               placement={this.state.placement}
               target="email-icon"
@@ -303,6 +322,15 @@ class About extends Component {
               delay={100}
             >
               Blog
+            </Tooltip>
+            <Tooltip
+              placement={this.state.placement}
+              target="resume-icon"
+              isOpen={this.state.tooltipOpen.resume}
+              toggle={() => this.tooltipToggle('resume')}
+              delay={100}
+            >
+              Résumé
             </Tooltip>
           </TweenOne>
         </div>
@@ -383,4 +411,4 @@ class About extends Component {
   }
 }
 
-export default About
+export default withRouter(About)
