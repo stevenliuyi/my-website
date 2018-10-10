@@ -247,7 +247,7 @@ class Page extends Component {
         </div>
         <div
           ref={el => (this.content = el)}
-          style={{ minHeight: '100vh', width: '100%' }}
+          style={{ minHeight: '100vh', width: '100%', overflow: 'hidden' }}
         >
           {this.props.children}
         </div>

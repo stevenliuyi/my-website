@@ -5,6 +5,7 @@ import Book from './Book'
 import BookDetail from './BookDetail'
 import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
+import InfiniteScroll from 'react-infinite-scroller'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -13,6 +14,7 @@ class Read extends Component {
     listWidth: 0,
     currentIdx: -1,
     readingList: [],
+    allLoaded: false,
     delay: 150
   }
 
@@ -26,12 +28,22 @@ class Read extends Component {
     this.setState({ listWidth })
   }
 
-  componentDidMount() {
+  loadMoreBooks = () => {
     // dynamically import reading list
     import('../data/read.yml')
       .then(m => m.default)
-      .then(data => this.setState({ readingList: data }))
+      .then(data => {
+        if (this.state.readingList.length === data.length) {
+          this.setState({ allLoaded: true })
+          return
+        }
+        this.setState({
+          readingList: data.slice(0, this.state.readingList.length + 10)
+        })
+      })
+  }
 
+  componentDidMount() {
     scrollToComponent(this.page, { align: 'top', duration: 1 })
     this.calcListWidth()
     window.addEventListener('resize', this.calcListWidth)
@@ -87,6 +99,11 @@ class Read extends Component {
                 type: 'from',
                 delay: this.state.delay,
                 duration: 1000
+              }}
+              component={InfiniteScroll}
+              componentProps={{
+                loadMore: this.loadMoreBooks,
+                hasMore: !this.state.allLoaded
               }}
             >
               {this.state.readingList.map((book, idx) => (
