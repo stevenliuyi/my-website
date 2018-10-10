@@ -1435,6 +1435,10 @@ a .pgp-text:hover {
   text-align: left; 
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .cv-sidebar {
   display: flex;
   flex-direction: column;

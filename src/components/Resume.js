@@ -173,7 +173,7 @@ class Resume extends Component {
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={8} className="cv-item-title">
-                          <b>{edu.school}</b>
+                          <div className="bold">{edu.school}</div>
                         </Col>
                         <Col xs={4} className="cv-item-right">
                           {edu.location}
@@ -216,7 +216,8 @@ class Resume extends Component {
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={8} className="cv-item-title">
-                          <b>{exp.title}</b> at {exp.institute}
+                          <span className="bold">{exp.title}</span> at{' '}
+                          {exp.institute}
                         </Col>
                         <Col xs={4} className="cv-item-right">
                           {exp.time}
@@ -241,7 +242,7 @@ class Resume extends Component {
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={8} className="cv-item-title">
-                          <b>{research.title}</b>
+                          <div className="bold">{research.title}</div>
                         </Col>
                         <Col xs={4} className="cv-item-right">
                           {research.time}
