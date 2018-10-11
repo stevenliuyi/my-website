@@ -128,10 +128,16 @@ class Resume extends Component {
   }
 
   setPhotoSize = () => {
-    const img = document.querySelector('.cv-photo')
     const sidebar = document.querySelector('.cv-sidebar-wrap')
-    if (img == null || sidebar == null) return
-    img.width = img.height = Math.min(200, sidebar.offsetWidth - 30)
+    if (sidebar == null) return
+
+    const img = document.querySelector('.cv-photo > img')
+    const background = document.querySelector('.cv-photo')
+    const newSize = Math.min(200, sidebar.offsetWidth - 30)
+
+    if (img != null) img.width = img.height = newSize
+    if (background != null)
+      background.style.width = background.style.height = `${newSize}px`
   }
 
   handleScroll = e => {
@@ -223,13 +229,15 @@ class Resume extends Component {
             <Row>
               <Col sm={12} md={3} className="cv-sidebar-wrap">
                 <div className="cv-sidebar">
-                  <img
-                    className="cv-photo"
-                    src="/images/photo.jpg"
-                    width={200}
-                    height={200}
-                    alt="avatar"
-                  />
+                  <div className="cv-photo">
+                    <div className="cv-photo-background" />
+                    <img
+                      src="/images/photo.png"
+                      width={200}
+                      height={200}
+                      alt="avatar"
+                    />
+                  </div>
                   <div className="cv-name">
                     <span>YI</span> <span>LIU</span>
                   </div>
