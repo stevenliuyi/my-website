@@ -143,7 +143,7 @@ class App extends Component {
             <div ref={el => (this.bar = el)} className="nav-bar" />
           </div>
         </div>
-        <About ref={el => (this.aboutPage = el)} {...this.state} />
+        <About {...this.state} />
         <Skills {...this.state} />
         <Research {...this.state} />
         <Projects {...this.state} />

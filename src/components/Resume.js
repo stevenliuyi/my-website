@@ -5,6 +5,8 @@ import { Container, Row, Col, Badge } from 'reactstrap'
 import ScrollAnim from 'rc-scroll-anim'
 import { MdSchool, MdWork, MdCode } from 'react-icons/md'
 import ResumeSection from './ResumeSection'
+import { Helmet } from 'react-helmet'
+import Particles from 'react-particles-js'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -111,8 +113,16 @@ const data = {
 
 class Resume extends Component {
   state = {
-    delay: 150
+    delay: 150,
+    width: window.innerWidth,
+    height: window.innerHeight
   }
+
+  updateSize = () =>
+    this.setState({
+      width: window.innerWidth,
+      height: window.innerHeight
+    })
 
   handleScroll = e => {
     if (window.innerWidth < 768) return
@@ -133,21 +143,60 @@ class Resume extends Component {
   componentDidMount() {
     scrollToComponent(this.page, { align: 'top', duration: 1 })
     window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('resize', this.updateSize)
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('resize', this.updateSize)
   }
 
   render() {
     return (
       <ScrollOverPack scale={0.5} always={false}>
+        <Helmet>
+          <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js" />
+        </Helmet>
         <Page
           ref={el => (this.page = el)}
           title="RÉSUMÉ"
           quote=""
           author=""
-          backgroundFilename="adrien-olichon-1059275-unsplash"
+          background={
+            <Particles
+              className="cover-canvas"
+              width={this.state.width}
+              height={this.state.height}
+              params={{
+                particles: {
+                  number: {
+                    value: parseInt(
+                      (this.state.width * this.state.height) / 2e4,
+                      10
+                    )
+                  },
+                  color: {
+                    value: '#aaa'
+                  },
+                  size: {
+                    value: 3
+                  },
+                  line_linked: {
+                    distance: 200,
+                    color: '#aaa'
+                  }
+                },
+                interactivity: {
+                  events: {
+                    onhover: {
+                      enable: true,
+                      mode: 'grab'
+                    }
+                  }
+                }
+              }}
+            />
+          }
           delay={this.state.delay}
           {...this.props}
         >

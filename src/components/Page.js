@@ -38,7 +38,8 @@ class Page extends Component {
     const blurElements = [
       document.querySelector('.cover-image'),
       document.querySelector('.cover-quote'),
-      document.querySelector('.scroll-to-content')
+      document.querySelector('.scroll-to-content'),
+      document.querySelector('.cover-canvas')
     ]
     blurElements.forEach(el => {
       if (el != null) {
@@ -144,34 +145,39 @@ class Page extends Component {
               back to homepage
             </Tooltip>
           )}
-          <ProgressiveImage
-            preview={
-              process.env.NODE_ENV === 'development'
-                ? `/images/${this.props.backgroundFilename}.jpg`
-                : getImageURL(`${this.props.backgroundFilename}.jpg`, {
-                    f: 'auto',
-                    c: 'fill',
-                    w: Math.min(window.innerWidth * 0.3, 800),
-                    h: Math.min(window.innerHeight * 0.3, 800)
-                  })
-            }
-            src={
-              process.env.NODE_ENV === 'development'
-                ? `/images/${this.props.backgroundFilename}.jpg`
-                : getImageURL(`${this.props.backgroundFilename}.jpg`, {
-                    f: 'auto',
-                    c: 'fill',
-                    w: window.innerWidth * window.devicePixelRatio,
-                    h: window.innerHeight * window.devicePixelRatio
-                  })
-            }
-            render={(src, style) => (
-              <div
-                className="cover-image"
-                style={Object.assign(style, { backgroundImage: `url(${src})` })}
-              />
-            )}
-          />
+          {this.props.backgroundFilename != null && (
+            <ProgressiveImage
+              preview={
+                process.env.NODE_ENV === 'development'
+                  ? `/images/${this.props.backgroundFilename}.jpg`
+                  : getImageURL(`${this.props.backgroundFilename}.jpg`, {
+                      f: 'auto',
+                      c: 'fill',
+                      w: Math.min(window.innerWidth * 0.3, 800),
+                      h: Math.min(window.innerHeight * 0.3, 800)
+                    })
+              }
+              src={
+                process.env.NODE_ENV === 'development'
+                  ? `/images/${this.props.backgroundFilename}.jpg`
+                  : getImageURL(`${this.props.backgroundFilename}.jpg`, {
+                      f: 'auto',
+                      c: 'fill',
+                      w: window.innerWidth * window.devicePixelRatio,
+                      h: window.innerHeight * window.devicePixelRatio
+                    })
+              }
+              render={(src, style) => (
+                <div
+                  className="cover-image"
+                  style={Object.assign(style, {
+                    backgroundImage: `url(${src})`
+                  })}
+                />
+              )}
+            />
+          )}
+          {this.props.background}
           <div
             className="cover-title noselect"
             onClick={this.props.onTitleClick}
