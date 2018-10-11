@@ -118,30 +118,49 @@ class Resume extends Component {
     height: window.innerHeight
   }
 
-  updateSize = () =>
+  updateSize = () => {
     this.setState({
       width: window.innerWidth,
       height: window.innerHeight
     })
+    this.setPhotoSize()
+    this.handleScroll()
+  }
+
+  setPhotoSize = () => {
+    const img = document.querySelector('.cv-photo')
+    const sidebar = document.querySelector('.cv-sidebar-wrap')
+    if (img == null || sidebar == null) return
+    img.width = img.height = Math.min(200, sidebar.offsetWidth - 30)
+  }
 
   handleScroll = e => {
-    if (window.innerWidth < 768) return
+    const sidebar = document.querySelector('.cv-sidebar')
+    if (window.innerWidth < 768 && sidebar != null) {
+      sidebar.style.position = 'inherit'
+      sidebar.style.top = 0
+      return
+    }
 
     const scrollTop =
       document.documentElement.scrollTop || document.scrollingElement.scrollTop
 
     const sidebarWrap = document.querySelector('.cv-sidebar-wrap')
-    const sidebar = document.querySelector('.cv-sidebar')
     if (sidebar == null || sidebarWrap == null) return
 
     const offset = sidebarWrap.offsetTop - scrollTop
     if (offset < 100) {
-      sidebar.style.marginTop = `${100 - offset}px`
+      sidebar.style.top = '100px'
+      sidebar.style.position = 'fixed'
+    } else {
+      sidebar.style.top = 0
+      sidebar.style.position = 'absolute'
     }
   }
 
   componentDidMount() {
     scrollToComponent(this.page, { align: 'top', duration: 1 })
+    this.setPhotoSize()
     window.addEventListener('scroll', this.handleScroll)
     window.addEventListener('resize', this.updateSize)
   }
