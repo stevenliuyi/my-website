@@ -121,12 +121,6 @@ a {
   z-index: 11;
 }
 
-@keyframes arrow-down-flash {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 .nav {
   width: 100%;
   height: 50px;
@@ -282,6 +276,15 @@ a {
   transform: translateX(-100px);
 }
 
+.about-text-paragraph {
+  transition: transform 1s ease-out;
+}
+
+.about-text-paragraph:hover {
+  transform: scale(1.05);
+  transition: transform 1s ease-out;
+}
+
 .about-links {
   font-size: 13px;
   width: 150px;
@@ -305,26 +308,26 @@ a {
 }
 
 .about-link-main {
-  transition: all .5s ease-out;
+  transition: all .75s ease-out;
 }
 
 .about-link-secondary {
   position: absolute;
   opacity: 0;
   transform: scale(0);
-  transition: all .5s ease-out;
+  transition: all .75s ease-out;
 }
 
 .about-link:hover .about-link-main {
   opacity: 0;
   transform: scale(1.5);
-  transition: all .5s ease-out;
+  transition: all .75s ease-out;
 }
 
 .about-link:hover .about-link-secondary {
   opacity: 1;
   transform: scale(1);
-  transition: all .5s ease-out;
+  transition: all .75s ease-out;
 }
 
 .circle-icon {
@@ -757,18 +760,19 @@ a {
   min-height: 120px;
   max-width: 300px;
   max-height: 300px;
+  clip-path: circle(50%);
 }
 
 .research-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   border-radius: 9999px;
-  transition: filter .5s;
+  transition: transform 1s ease-out;
 }
 
 .research:hover .research-image {
-  transition: filter .5s;
+  transform: scale(1.1);
+  transition: transform 1s ease-out;
 }
 
 .research-text {
@@ -978,12 +982,37 @@ a {
   padding-right: 2px;
 }
 
+@keyframes email-anim {
+  0%,
+  100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+
+
 a > .contact-email {
   color: #fff !important;
 }
 
 a:hover > .contact-email {
   color: #ccc !important;
+  animation: email-anim 1s both;
 }
 
 .at {

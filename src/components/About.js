@@ -138,14 +138,16 @@ class About extends Component {
                 duration: 1000
               }}
             >
-              Hello! My name is <span className="strong">Yi Liu</span>, but I
-              also go by <span className="strong">Steven</span>. Originally from
-              Shanghai, China, I'm a Ph.D. student in Aerospace and Mechanical
-              Engineering at the University of Notre Dame. Aenean pharetra dolor
-              eget lorem scelerisque, quis blandit justo finibus. Aliquam a
-              pulvinar nisl. Proin blandit velit sed ipsum pellentesque, ut
-              feugiat enim volutpat. Curabitur turpis lectus, aliquet vitae ante
-              a, facilisis consequat quam.
+              <div className="about-text-paragraph">
+                Hello! My name is <span className="strong">Yi Liu</span>, but I
+                also go by <span className="strong">Steven</span>. Originally
+                from Shanghai, China, I'm a Ph.D. student in Aerospace and
+                Mechanical Engineering at the University of Notre Dame. Aenean
+                pharetra dolor eget lorem scelerisque, quis blandit justo
+                finibus. Aliquam a pulvinar nisl. Proin blandit velit sed ipsum
+                pellentesque, ut feugiat enim volutpat. Curabitur turpis lectus,
+                aliquet vitae ante a, facilisis consequat quam.
+              </div>
             </TweenOne>
             <TweenOne
               key="1"
@@ -157,15 +159,18 @@ class About extends Component {
                 ease: 'easeOutBack'
               }}
             >
-              Nulla a egestas nibh. Suspendisse hendrerit magna sed odio
-              dignissim blandit. Morbi pharetra mi non ullamcorper semper.
-              Vestibulum mattis, est eget condimentum blandit, est eros
-              tristique diam, sit amet mattis tellus enim quis augue. Sed sed
-              justo tempus, auctor neque et, placerat nulla. Ut euismod
-              fringilla diam nec varius.
+              <div className="about-text-paragraph">
+                Nulla a egestas nibh. Suspendisse hendrerit magna sed odio
+                dignissim blandit. Morbi pharetra mi non ullamcorper semper.
+                Vestibulum mattis, est eget condimentum blandit, est eros
+                tristique diam, sit amet mattis tellus enim quis augue. Sed sed
+                justo tempus, auctor neque et, placerat nulla. Ut euismod
+                fringilla diam nec varius.
+              </div>
             </TweenOne>
             <TweenOne
               key="2"
+              className="about-text-paragraph"
               animation={{
                 opacity: 1,
                 translateX: 0,
@@ -174,9 +179,11 @@ class About extends Component {
                 ease: 'easeOutBack'
               }}
             >
-              Etiam non tortor diam. Aliquam et tempus velit. Nam interdum nunc
-              nec tortor gravida egestas. Curabitur porttitor sodales ante ut
-              ullamcorper.
+              <div className="about-text-paragraph">
+                Etiam non tortor diam. Aliquam et tempus velit. Nam interdum
+                nunc nec tortor gravida egestas. Curabitur porttitor sodales
+                ante ut ullamcorper.
+              </div>
             </TweenOne>
           </div>
           <TweenOne
