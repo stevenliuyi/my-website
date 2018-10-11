@@ -14,6 +14,7 @@ class Read extends Component {
     listWidth: 0,
     currentIdx: -1,
     readingList: [],
+    nBooksLoaded: 10,
     allLoaded: false,
     delay: 150
   }
@@ -29,21 +30,24 @@ class Read extends Component {
   }
 
   loadMoreBooks = () => {
-    // dynamically import reading list
-    import('../data/read.yml')
-      .then(m => m.default)
-      .then(data => {
-        if (this.state.readingList.length === data.length) {
-          this.setState({ allLoaded: true })
-          return
-        }
-        this.setState({
-          readingList: data.slice(0, this.state.readingList.length + 10)
-        })
-      })
+    if (this.state.readingList.length === 0 || this.state.allLoaded) return
+    if (this.state.nBooksLoaded === this.state.readingList.length) {
+      this.setState({ allLoaded: true })
+      return
+    }
+    const nBooksLoaded = Math.min(
+      this.state.readingList.length,
+      this.state.nBooksLoaded + 10
+    )
+    this.setState({ nBooksLoaded })
   }
 
   componentDidMount() {
+    // dynamically import reading list
+    import('../data/read.yml')
+      .then(m => m.default)
+      .then(data => this.setState({ readingList: data }))
+
     scrollToComponent(this.page, { align: 'top', duration: 1 })
     this.calcListWidth()
     window.addEventListener('resize', this.calcListWidth)
@@ -106,15 +110,17 @@ class Read extends Component {
                 hasMore: !this.state.allLoaded
               }}
             >
-              {this.state.readingList.map((book, idx) => (
-                <Book
-                  id={`book-${idx}`}
-                  key={idx}
-                  onSelectBook={this.onSelectBook}
-                  idx={idx}
-                  {...book}
-                />
-              ))}
+              {this.state.readingList
+                .slice(0, this.state.nBooksLoaded)
+                .map((book, idx) => (
+                  <Book
+                    id={`book-${idx}`}
+                    key={idx}
+                    onSelectBook={this.onSelectBook}
+                    idx={idx}
+                    {...book}
+                  />
+                ))}
             </TweenOne>
           )}
           {this.state.currentIdx >= 0 && (
