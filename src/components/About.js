@@ -4,7 +4,7 @@ import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import NumberCard from './NumberCard'
 import { TiPencil, TiDocumentText } from 'react-icons/ti'
-import { FaGoogle, FaGithub, FaAt, FaWikipediaW } from 'react-icons/fa'
+import { FaGithub, FaAt, FaWikipediaW } from 'react-icons/fa'
 import { Tooltip } from 'reactstrap'
 import { isMobile } from 'react-device-detect'
 import { withRouter } from 'react-router-dom'
@@ -248,9 +248,10 @@ class About extends Component {
                 )
               }
             >
-              <span className="circle-icon">
-                <FaGoogle size={iconSize * 0.7} />
-              </span>
+              <i
+                className="iconfont icon-gscholar"
+                style={{ fontSize: iconSize }}
+              />
             </div>
             <div
               id="resume-icon"
