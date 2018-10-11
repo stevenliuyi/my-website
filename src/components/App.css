@@ -299,15 +299,32 @@ a {
   text-align: left;
   display: flex;
   align-items: center;
-  color: #555;
   cursor: pointer;
   height: 40px;
   width: 40px;
 }
 
-.about-link:hover {
-  background-color: #ccc;
-  color: #fff;
+.about-link-main {
+  transition: all .5s ease-out;
+}
+
+.about-link-secondary {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0);
+  transition: all .5s ease-out;
+}
+
+.about-link:hover .about-link-main {
+  opacity: 0;
+  transform: scale(1.5);
+  transition: all .5s ease-out;
+}
+
+.about-link:hover .about-link-secondary {
+  opacity: 1;
+  transform: scale(1);
+  transition: all .5s ease-out;
 }
 
 .circle-icon {
@@ -319,11 +336,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.about-link:hover .circle-icon {
-  background-color: #fff;
-  color: #ccc;
 }
 
 .section-title {

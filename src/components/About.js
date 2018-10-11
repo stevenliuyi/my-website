@@ -193,7 +193,16 @@ class About extends Component {
               className="about-link"
               onClick={() => window.open('mailto:me@yliu.io', '_self')}
             >
-              <FaAt size={iconSize} />
+              <FaAt
+                size={iconSize}
+                color={'#555'}
+                className="about-link-main"
+              />
+              <FaAt
+                size={iconSize}
+                color={'#555'}
+                className="about-link-secondary"
+              />
             </div>
             <div
               id="github-icon"
@@ -202,14 +211,26 @@ class About extends Component {
                 window.open('https://github.com/stevenliuyi', '_blank')
               }
             >
-              <FaGithub size={iconSize} />
+              <FaGithub
+                size={iconSize}
+                color={'#555'}
+                className="about-link-main"
+              />
+              <FaGithub
+                size={iconSize}
+                color={'#555'}
+                className="about-link-secondary"
+              />
             </div>
             <div
               id="blog-icon"
               className="about-link"
               onClick={() => window.open('https://blog.yliu.io')}
             >
-              <span className="circle-icon">
+              <span className="circle-icon about-link-main">
+                <TiPencil size={iconSize * 0.8} />
+              </span>
+              <span className="circle-icon about-link-secondary">
                 <TiPencil size={iconSize * 0.8} />
               </span>
             </div>
@@ -220,7 +241,13 @@ class About extends Component {
                 window.open('https://www.zhihu.com/people/stevenliuyi')
               }
             >
-              <span className="circle-icon">
+              <span className="circle-icon about-link-main">
+                <i
+                  className="iconfont icon-zhihu"
+                  style={{ fontSize: iconSize * 0.7 }}
+                />
+              </span>
+              <span className="circle-icon about-link-secondary">
                 <i
                   className="iconfont icon-zhihu"
                   style={{ fontSize: iconSize * 0.7 }}
@@ -234,7 +261,10 @@ class About extends Component {
                 window.open('https://zh.wikipedia.org/wiki/User:Stevenliuyi')
               }
             >
-              <span className="circle-icon">
+              <span className="circle-icon about-link-main">
+                <FaWikipediaW size={iconSize * 0.7} />
+              </span>
+              <span className="circle-icon about-link-secondary">
                 <FaWikipediaW size={iconSize * 0.7} />
               </span>
             </div>
@@ -249,8 +279,12 @@ class About extends Component {
               }
             >
               <i
-                className="iconfont icon-gscholar"
-                style={{ fontSize: iconSize }}
+                className="iconfont icon-gscholar about-link-main"
+                style={{ fontSize: iconSize, color: '#555' }}
+              />
+              <i
+                className="iconfont icon-gscholar about-link-secondary"
+                style={{ fontSize: iconSize, color: '#555' }}
               />
             </div>
             <div
@@ -264,7 +298,13 @@ class About extends Component {
               }
             >
               <span
-                className="circle-icon"
+                className="circle-icon about-link-main"
+                style={{ backgroundColor: '#0d8aba' }}
+              >
+                <TiDocumentText size={iconSize * 0.7} />
+              </span>
+              <span
+                className="circle-icon about-link-secondary"
                 style={{ backgroundColor: '#0d8aba' }}
               >
                 <TiDocumentText size={iconSize * 0.7} />
