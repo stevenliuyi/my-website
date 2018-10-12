@@ -232,7 +232,7 @@ class Resume extends Component {
                   <div className="cv-photo">
                     <div className="cv-photo-background" />
                     <img
-                      src="/images/photo.png"
+                      src="/images/headshot.png"
                       width={200}
                       height={200}
                       alt="avatar"

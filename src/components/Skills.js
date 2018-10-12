@@ -296,7 +296,9 @@ const updateD3Node = (data, width, height, delay = 0) => {
       .duration(300)
       .attr(
         'src',
-        d.logo != null ? `images/${d.logo}` : 'icons/safari-pinned-tab.svg'
+        d.logo != null
+          ? `images/skills/${d.logo}`
+          : 'icons/safari-pinned-tab.svg'
       )
       .transition()
       .duration(300)
