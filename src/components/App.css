@@ -1521,10 +1521,53 @@ a .pgp-text:hover {
 .cv-name {
   font-size: 28px;
   padding-top: 10px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.cv-name > span:last-child {
-  font-weight: bold;
+.cv-nickname {
+  position: absolute; 
+  top: 0;
+  margin: 10px auto;
+  transform: translateY(30px);
+  opacity: 0;
+  z-index: 10;
+  background-color: #fff;
+  transition: all .5s;
+}
+
+.cv-name:hover .cv-nickname {
+  transform: translateY(0px);
+  opacity: 1;
+  transition: all .5s;
+}
+
+.cv-basic {
+  margin-top: 20px;
+}
+
+.cv-basic-info {
+  padding-left: 15px;
+}
+
+.cv-basic-row {
+  white-space: nowrap;
+}
+
+.cv-basic-row a {
+  color: #555;
+}
+
+.cv-basic-row:hover a {
+  color: #000;
+  border-bottom: dashed 1px #000;
+}
+
+.cv-basic-row:hover svg {
+  filter: brightness(20%);
+  transition: filter .5s;
 }
 
 .cv-section {
@@ -1547,6 +1590,14 @@ a .pgp-text:hover {
   color: #0d8aba;
   padding-top: 30px;
   display: flex;
+  align-items: center;
+}
+
+.cv-section-title-text-wrap {
+  background-color: #fff;
+  z-index: 10;
+  padding-right: 10px;
+  display: inline-flex;
   align-items: center;
 }
 
@@ -1587,6 +1638,21 @@ a .pgp-text:hover {
 .cv-details a:hover {
   color: #000;
   border-bottom: dashed 1px #000;
+}
+
+.cv-courses span:not(:first-child):not(:last-child)::after {
+  content: ', ';
+  padding-right: 3px;
+}
+
+.cv-courses a {
+  color: #aaa;
+  padding-left: 3px;
+  font-size: 85%;
+}
+
+.cv-courses a:hover {
+  color: #555;
 }
 
 /* for small screens */
@@ -1672,5 +1738,12 @@ a .pgp-text:hover {
   .cover-quote,
   .cover-author {
     display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .cv-teaching-details {
+    columns: 2;
+    list-style: inside disc;
   }
 }

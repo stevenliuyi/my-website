@@ -5,9 +5,7 @@ class ResumeSection extends Component {
     return (
       <div className="cv-section">
         <div className="cv-section-title">
-          <div
-            style={{ backgroundColor: '#fff', zIndex: 10, paddingRight: 10 }}
-          >
+          <div className="cv-section-title-text-wrap">
             {this.props.icon}
             <span className="cv-section-title-text">{this.props.title}</span>
           </div>

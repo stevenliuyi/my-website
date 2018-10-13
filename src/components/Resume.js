@@ -3,7 +3,16 @@ import scrollToComponent from 'react-scroll-to-component'
 import Page from './Page'
 import { Container, Row, Col, Badge } from 'reactstrap'
 import ScrollAnim from 'rc-scroll-anim'
-import { MdSchool, MdWork, MdCode } from 'react-icons/md'
+import { MdSchool, MdWork } from 'react-icons/md'
+import {
+  FaGlobe,
+  FaEnvelope,
+  FaGithub,
+  FaChalkboard,
+  FaBookReader,
+  FaIntegral
+} from 'react-icons/fa'
+import { FiGithub } from 'react-icons/fi'
 import ResumeSection from './ResumeSection'
 import { Helmet } from 'react-helmet'
 import Particles from 'react-particles-js'
@@ -11,6 +20,12 @@ import Particles from 'react-particles-js'
 const ScrollOverPack = ScrollAnim.OverPack
 
 const data = {
+  basic: {
+    website: '<a href="https://yliu.io">yliu.io</a>',
+    email: '<a href="mailto:me@yliu.io">me@yliu.io</a>',
+    github:
+      '<a href="https://github.com/stevenliuyi">github.com/stevenliuyi</a>'
+  },
   education: [
     {
       school: 'University of Notre Dame',
@@ -72,7 +87,8 @@ const data = {
   experience: [
     {
       title: 'Research Assistant',
-      institute: 'University of Notre Dame',
+      institute:
+        'Institute for Flow Physics and Control, University of Notre Dame',
       time: '2016 - Present'
     },
     {
@@ -106,6 +122,56 @@ const data = {
         'Computed 3D FTLE fields of the direct numerical simulation (DNS) results of a turbulent channel flow toinvestigate the 3D coherent structures.',
         'Adopted high-throughput computing (HTC) technique to speed up 3D calculations.',
         'Code available at <a href="https://github.com/stevenliuyi/3d-ftle">https://github.com/stevenliuyi/3d-ftle</a>.'
+      ]
+    }
+  ],
+  courses: [
+    {
+      category: 'Fluid',
+      courses: [
+        { title: 'Fluid Dynamics' },
+        { title: 'Computational Fluid Dynamics', github: 'cfd-euler-2d' },
+        { title: 'Turbomachinery' },
+        { title: 'Continuum Mechanics' },
+        { title: 'Advanced Aerodynamics' },
+        { title: 'Turbulence' }
+      ]
+    },
+    {
+      category: 'Applied Math/Computer Science',
+      courses: [
+        { title: 'Statistical Methods in Data Mining', github: 'data-mining' },
+        { title: 'Design & Analysis of Algorithms' },
+        { title: 'Methods of Analysis' },
+        { title: 'Numerical Methods' },
+        { title: 'Mathematical Methods' },
+        { title: 'Advanced Scientific Computing', github: 'lcs' },
+        { title: 'Uncertainty Quantification', github: 'uq' },
+        { title: 'Partial Differential Equations' }
+      ]
+    }
+  ],
+  teaching: [
+    {
+      title: 'Teaching Assistant',
+      institute: 'University of Notre Dame',
+      time: '2016 - Present',
+      courses: [
+        {
+          title: 'AME20214 Introduction to Engineering Computing',
+          time: 'Fall 2018'
+        },
+        { title: 'AME30363 Design of Machine Elements', time: 'Spring 2018' },
+        { title: 'AME30331 Fluid Mechanics', time: 'Fall 2016, Fall 2017' },
+        { title: 'AME20231 Thermodynamics', time: 'Spring 2017' }
+      ]
+    },
+    {
+      title: 'Teaching Assistant',
+      institute: 'Syracuse University',
+      time: '2014',
+      courses: [
+        { title: 'MAE585 Principle of Turbomachines', time: 'Fall 2014' }
       ]
     }
   ]
@@ -238,8 +304,34 @@ class Resume extends Component {
                       alt="avatar"
                     />
                   </div>
-                  <div className="cv-name">
-                    <span>YI</span> <span>LIU</span>
+                  <div className="cv-name noselect">
+                    <div>
+                      <span>YI</span> <span className="bold">LIU</span>
+                    </div>
+                    <div className="cv-nickname bold">STEVEN</div>
+                  </div>
+                  <div className="cv-basic">
+                    <div className="cv-basic-row">
+                      <FaEnvelope color={'#ccc'} />
+                      <span
+                        className="cv-basic-info"
+                        dangerouslySetInnerHTML={{ __html: data.basic.email }}
+                      />
+                    </div>
+                    <div className="cv-basic-row">
+                      <FaGlobe color={'#ccc'} />
+                      <span
+                        className="cv-basic-info"
+                        dangerouslySetInnerHTML={{ __html: data.basic.website }}
+                      />
+                    </div>
+                    <div className="cv-basic-row">
+                      <FaGithub color={'#ccc'} />
+                      <span
+                        className="cv-basic-info"
+                        dangerouslySetInnerHTML={{ __html: data.basic.github }}
+                      />
+                    </div>
                   </div>
                 </div>
               </Col>
@@ -248,20 +340,20 @@ class Resume extends Component {
                   {data.education.map((edu, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
-                        <Col xs={8} className="cv-item-title">
+                        <Col xs={8} md={9} className="cv-item-title">
                           <div className="bold">{edu.school}</div>
                         </Col>
-                        <Col xs={4} className="cv-item-right">
+                        <Col xs={4} md={3} className="cv-item-right">
                           {edu.location}
                         </Col>
                       </Row>
                       {edu.studies.map((study, idx) => (
                         <div key={idx}>
                           <Row className="cv-item-sub">
-                            <Col xs={8} className="cv-item-subtitle">
+                            <Col xs={8} md={9} className="cv-item-subtitle">
                               {study.title}
                             </Col>
-                            <Col xs={4} className="cv-item-right">
+                            <Col xs={4} md={3} className="cv-item-right">
                               {study.time}
                             </Col>
                           </Row>
@@ -291,11 +383,11 @@ class Resume extends Component {
                   {data.experience.map((exp, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
-                        <Col xs={8} className="cv-item-title">
+                        <Col xs={8} md={9} className="cv-item-title">
                           <span className="bold">{exp.title}</span> at{' '}
                           {exp.institute}
                         </Col>
-                        <Col xs={4} className="cv-item-right">
+                        <Col xs={4} md={3} className="cv-item-right">
                           {exp.time}
                         </Col>
                       </Row>
@@ -312,15 +404,15 @@ class Resume extends Component {
                 </ResumeSection>
                 <ResumeSection
                   title="SELECTED RESEARCH PROJECTS"
-                  icon={<MdCode />}
+                  icon={<FaIntegral />}
                 >
                   {data.research.map((research, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
-                        <Col xs={8} className="cv-item-title">
+                        <Col xs={8} md={9} className="cv-item-title">
                           <div className="bold">{research.title}</div>
                         </Col>
-                        <Col xs={4} className="cv-item-right">
+                        <Col xs={4} md={3} className="cv-item-right">
                           {research.time}
                         </Col>
                       </Row>
@@ -333,6 +425,65 @@ class Resume extends Component {
                                 dangerouslySetInnerHTML={{ __html: detail }}
                               />
                             ))}
+                        </ul>
+                      </Row>
+                    </div>
+                  ))}
+                </ResumeSection>
+                <ResumeSection
+                  title="SELECTED GRADUATE COURSES"
+                  icon={<FaBookReader />}
+                >
+                  {data.courses.map((cat, idx) => (
+                    <div key={idx}>
+                      <Row className="cv-item">
+                        <Col xs={12} className="cv-item-title cv-courses">
+                          <span className="bold">{cat.category}</span>
+                          {' — '}
+                          {cat.courses.map((course, idx) => (
+                            <span key={idx}>
+                              {course.title}
+                              {course.github != null && (
+                                <a
+                                  href={`https://github.com/stevenliuyi/${
+                                    course.github
+                                  }`}
+                                  target="_blank"
+                                  title="Github repository"
+                                  rel="noopener noreferrer"
+                                >
+                                  <FiGithub />
+                                </a>
+                              )}
+                            </span>
+                          ))}
+                        </Col>
+                      </Row>
+                    </div>
+                  ))}
+                </ResumeSection>
+                <ResumeSection
+                  title="TEACHING EXPERIENCE"
+                  icon={<FaChalkboard />}
+                >
+                  {data.teaching.map((position, idx) => (
+                    <div key={idx}>
+                      <Row className="cv-item">
+                        <Col xs={8} md={9} className="cv-item-title">
+                          <span className="bold">{position.title}</span> at{' '}
+                          {position.institute}
+                        </Col>
+                        <Col xs={4} md={3} className="cv-item-right">
+                          {position.time}
+                        </Col>
+                      </Row>
+                      <Row>
+                        <ul className="cv-details cv-teaching-details">
+                          {position.courses.map((course, idx) => (
+                            <li key={idx}>
+                              {course.title} ({course.time})
+                            </li>
+                          ))}
                         </ul>
                       </Row>
                     </div>
