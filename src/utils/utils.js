@@ -41,3 +41,14 @@ export const getImageURL = (path, options) => {
     .join()
   return `/images/${options_str}/${path}`
 }
+
+// Google Anaylsis
+export const gaConfig = () => {
+  const gtag = window.gtag
+  if (typeof gtag === 'function') {
+    gtag('config', 'UA-127965994-1', {
+      page_location: window.location.href,
+      page_path: window.location.pathname
+    })
+  }
+}

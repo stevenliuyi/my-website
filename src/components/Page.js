@@ -10,7 +10,7 @@ import { isMobile } from 'react-device-detect'
 import Texty from 'rc-texty'
 import TweenOne from 'rc-tween-one'
 import Logo from './Logo'
-import { setVhs, getImageURL } from '../utils/utils'
+import { setVhs, getImageURL, gaConfig } from '../utils/utils'
 
 class Page extends Component {
   state = {
@@ -90,6 +90,8 @@ class Page extends Component {
       this.setVhStyles()
       window.addEventListener('deviceorientation', this.setVhStyles)
     }
+
+    gaConfig()
   }
 
   componentWillUnmount() {

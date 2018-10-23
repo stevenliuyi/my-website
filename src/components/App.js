@@ -14,7 +14,7 @@ import Projects from './Projects'
 import More from './More'
 import Footer from './Footer'
 import '../iconfont.css'
-import { setVhs } from '../utils/utils.js'
+import { setVhs, gaConfig } from '../utils/utils.js'
 
 const Link = ScrollAnim.Link
 const EventListener = ScrollAnim.Event
@@ -54,6 +54,8 @@ class App extends Component {
       setVhs()
       window.addEventListener('deviceorientation', setVhs)
     }
+
+    gaConfig()
   }
 
   componentWillUnmount() {
