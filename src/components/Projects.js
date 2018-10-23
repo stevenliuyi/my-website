@@ -59,14 +59,14 @@ class Projects extends Component {
   }
 
   expandCard = e => {
-    if (!this.state.projectsLoaded) return
+    // if (!this.state.projectsLoaded) return
     const img = e.currentTarget.parentElement.querySelector('img')
     if (img != null) img.style.maxHeight = '0px'
     this.setState({ cardExpanded: true })
   }
 
   collapseCard = e => {
-    if (!this.state.projectsLoaded) return
+    // if (!this.state.projectsLoaded) return
     const img = e.currentTarget.parentElement.querySelector('img')
     if (img != null) img.style.maxHeight = '200px'
     this.setState({ cardExpanded: false })

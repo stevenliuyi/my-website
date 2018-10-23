@@ -916,6 +916,7 @@ a {
   position: absolute;
   left: 0px;
   width: 0%;
+  opacity: 0;
   height: 100%;
   background-color: #555;
   border-radius: 9999px;
@@ -923,7 +924,8 @@ a {
 
 .research-more-button:hover .research-more-button-background {
   width: 100%;
-  transition: width .5s;
+  opacity: 1;
+  transition: all .5s;
 }
 
 .more-items {
