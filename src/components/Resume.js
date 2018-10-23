@@ -97,7 +97,7 @@ const data = {
       time: '2014 - 2016'
     },
     {
-      title: 'Programmer',
+      title: 'Computer Programmer',
       institute: 'Core Infrastructure Services, Syracuse University',
       time: '2015 - 2016',
       details: [
@@ -106,6 +106,14 @@ const data = {
     }
   ],
   research: [
+    {
+      title:
+        'Wall pressure fluctuations in compressible turbulent channel flows',
+      time: '2017 - Present',
+      details: [
+        'Performing direct numerical simulations (DNS) and large-eddy simulations (LES) to investigate spatiotemporal characteristics of unsteady wall pressure in compressible channel flows.'
+      ]
+    },
     {
       title: 'Lagrangian  coherent  structures  (LCS)  in  the  Gulf  Stream',
       time: '2014 - 2018',
@@ -134,7 +142,8 @@ const data = {
         { title: 'Turbomachinery' },
         { title: 'Continuum Mechanics' },
         { title: 'Advanced Aerodynamics' },
-        { title: 'Turbulence' }
+        { title: 'Turbulence' },
+        { title: 'Viscous Flow' }
       ]
     },
     {
@@ -147,7 +156,7 @@ const data = {
         { title: 'Mathematical Methods' },
         { title: 'Advanced Scientific Computing', github: 'lcs' },
         { title: 'Uncertainty Quantification', github: 'uq' },
-        { title: 'Partial Differential Equations' }
+        { title: 'Applied Partial Differential Equations' }
       ]
     }
   ],

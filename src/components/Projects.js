@@ -35,12 +35,13 @@ const projects = [
     tools: ['Swift']
   },
   {
-    title: 'Google RHS',
+    title: 'RHS for Google Search',
     desc:
       'Chrome extension that integrates contents into Google search results',
     image: 'google-rhs.jpg',
     tools: ['JavaScript'],
-    link: 'https://tools.wmflabs.org/dataviz'
+    link:
+      'https://chrome.google.com/webstore/detail/right-hand-side-for-googl/fmdnfbdnbcglagflegehgacalfmgejhe'
   },
   {
     title: 'LCS',

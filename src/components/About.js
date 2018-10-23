@@ -12,6 +12,35 @@ import Logo from './Logo'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
+const states = [
+  'CA',
+  'CO',
+  'CT',
+  'FL',
+  'GA',
+  'IA',
+  'IL',
+  'IN',
+  'KY',
+  'MA',
+  'MD',
+  'MI',
+  'NC',
+  'NE',
+  'NJ',
+  'NV',
+  'NY',
+  'OH',
+  'PA',
+  'SC',
+  'TN',
+  'TX',
+  'UT',
+  'VA',
+  'WI',
+  'WY'
+]
+
 class About extends Component {
   state = {
     tooltipOpen: {
@@ -432,7 +461,7 @@ class About extends Component {
           />
           <NumberCard
             description="number of U.S. states I've set foot on"
-            number="23"
+            number={states.length}
             detail="... and Washington, D.C.!"
           />
           <NumberCard

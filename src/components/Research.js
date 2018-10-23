@@ -143,8 +143,8 @@ class Research extends Component {
               <div className="research-detai">
                 Direct numerical simulations (DNS) are performed using
                 high-order non-dissipative schemes to investigate spatiotemporal
-                characteristics of unsteady wall pressure in both subsonice and
-                supersonice compressible channel flows.
+                characteristics of unsteady wall pressure in both subsonic and
+                supersonic compressible channel flows.
               </div>
             </div>
           </TweenOne>
