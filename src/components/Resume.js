@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import scrollToComponent from 'react-scroll-to-component'
 import Page from './Page'
-import { Container, Row, Col, Badge } from 'reactstrap'
+import { Container, Row, Col, Badge, Tooltip } from 'reactstrap'
 import ScrollAnim from 'rc-scroll-anim'
 import { MdSchool, MdWork } from 'react-icons/md'
 import {
@@ -10,9 +10,12 @@ import {
   FaGithub,
   FaChalkboard,
   FaBookReader,
-  FaIntegral
+  FaIntegral,
+  FaAward,
+  FaChalkboardTeacher
 } from 'react-icons/fa'
 import { FiGithub } from 'react-icons/fi'
+import { IoIosDocument } from 'react-icons/io'
 import ResumeSection from './ResumeSection'
 import { Helmet } from 'react-helmet'
 import Particles from 'react-particles-js'
@@ -183,6 +186,76 @@ const data = {
         { title: 'MAE585 Principle of Turbomachines', time: 'Fall 2014' }
       ]
     }
+  ],
+  publications: [
+    {
+      title:
+        'Gulf Stream Transport and Mixing Processes via Coherent Structure Dynamics',
+      authors:
+        '<span class="under">Yi Liu</span> <i class="iconfont icon-mail" id="corresponding-author"></i>, Melissa Green, Chris Wilson, Chris Hughes (2018)',
+      detail:
+        '<i>Journal of Geophysical Research: Oceans</i>, 123(4), 3014-3037',
+      link: 'https://doi.org/10.1002/2017JC013390'
+    }
+  ],
+  presentations: [
+    {
+      title:
+        'Computation of Wall Pressure Fluctuations in Compressible Turbulent Channel Flows',
+      authors: '<span class="under">Yi Liu</span>, Kan Wang, Meng Wang',
+      detail:
+        '71th Annual Meeting of the APS Division of Fluid Dynamics, Atlanta, GA, USA. 18-20 Nov 2018 (scheduled)'
+    },
+    {
+      title:
+        'Gulf Stream Transport and Mixing Processes via Lagrangian Coherent Structure Dynamics',
+      authors:
+        '<span class="under">Yi Liu</span>, Chris Wilson, Melissa Green, Chris Hughes',
+      detail: '2018 Ocean Sciences Meeting, Portland, OR, USA. 11-16 Feb 2018'
+    },
+    {
+      title:
+        'Gulf Stream Transport and Mixing Processes via Coherent Structure Dynamics',
+      authors:
+        'Chris Wilson, <span class="under">Yi Liu</span>, Melissa Green, Chris Hughes',
+      detail:
+        'European Geosciences Union General Assembly 2017, Vienna, Austria. 23-28 April 2017'
+    },
+    {
+      title:
+        'An Update to the “Barrier or Blender” Model of the Gulf Stream, Based on Lagrangian Analysis of Aviso Altimetry',
+      authors:
+        'Chris Wilson, <span class="under">Yi Liu</span>, Melissa Green, Chris Hughes',
+      detail:
+        '2016 Ocean Sciences Meeting, New Orleans, LA, USA. 21-26 Feb 2016'
+    },
+    {
+      title: 'Lagrangian Coherent Structures in the Gulf Stream',
+      authors:
+        '<span class="under">Yi Liu</span>, Chris Wilson, Melissa Green, Chris Hughes',
+      detail:
+        '68th Annual Meeting of the APS Division of Fluid Dynamics, Boston, MA, USA. 22-24 Nov 2015'
+    }
+  ],
+  awards: [
+    {
+      award:
+        'Outstanding Graduate Student of Mechanical & Aerospace Engineering, Syracuse University',
+      detail: 'for ranking first in the program',
+      time: '2015'
+    },
+    {
+      award: 'Member of Honor Society of Phi Kappa Phi',
+      time: '2014 - Present'
+    },
+    {
+      award: 'Graduate Student Scholarship, Syracuse University',
+      time: '2013 - 2015'
+    },
+    {
+      award: 'Outstanding Student Scholarship, Tongji Unversity',
+      time: '2008, 2009'
+    }
   ]
 }
 
@@ -190,7 +263,8 @@ class Resume extends Component {
   state = {
     delay: 150,
     width: window.innerWidth,
-    height: window.innerHeight
+    height: window.innerHeight,
+    tooltipOpen: false
   }
 
   updateSize = () => {
@@ -497,6 +571,101 @@ class Resume extends Component {
                       </Row>
                     </div>
                   ))}
+                </ResumeSection>
+                <ResumeSection title="PUBLICATIONS" icon={<IoIosDocument />}>
+                  {data.publications.map((publication, idx) => (
+                    <div key={idx}>
+                      <Row className="cv-item">
+                        <Col xs={12} className="cv-item-title">
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: publication.authors
+                            }}
+                          />
+                          <span>. </span>
+                          <span>
+                            <a className="cv-link" href={publication.link}>
+                              {publication.title}
+                            </a>
+                          </span>
+                          <span>. </span>
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: publication.detail
+                            }}
+                          />
+                          <span>. </span>
+                        </Col>
+                      </Row>
+                    </div>
+                  ))}
+                </ResumeSection>
+                <ResumeSection
+                  title="PRESENTATIONS & ABSTRACTS"
+                  icon={<FaChalkboardTeacher />}
+                >
+                  {data.presentations.map((presentation, idx) => (
+                    <div key={idx}>
+                      <Row className="cv-item">
+                        <Col xs={12} className="cv-item-title">
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: presentation.authors
+                            }}
+                          />
+                          <span>. </span>
+                          <span>
+                            {presentation.link != null ? (
+                              <a href={presentation.link}>
+                                {presentation.title}
+                              </a>
+                            ) : (
+                              presentation.title
+                            )}
+                          </span>
+                          <span>. </span>
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: presentation.detail
+                            }}
+                          />
+                          <span>. </span>
+                        </Col>
+                      </Row>
+                    </div>
+                  ))}
+                </ResumeSection>
+                <ResumeSection title="HONORS & AWARDS" icon={<FaAward />}>
+                  {data.awards.map((award, idx) => (
+                    <div key={idx}>
+                      <Row className="cv-item">
+                        <Col xs={8} md={9} className="cv-item-title">
+                          <div>
+                            {award.award}{' '}
+                            <span className="cv-details">
+                              {award.detail != null ? `(${award.detail})` : ''}
+                            </span>
+                          </div>
+                        </Col>
+                        <Col xs={4} md={3} className="cv-item-right">
+                          {award.time}
+                        </Col>
+                      </Row>
+                    </div>
+                  ))}
+                  <Tooltip
+                    placement="top"
+                    target="corresponding-author"
+                    isOpen={this.state.tooltipOpen}
+                    autohide={true}
+                    toggle={() =>
+                      this.setState({
+                        tooltipOpen: !this.state.tooltipOpen
+                      })
+                    }
+                  >
+                    corresponding author
+                  </Tooltip>
                 </ResumeSection>
               </Col>
             </Row>

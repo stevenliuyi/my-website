@@ -1685,6 +1685,18 @@ a .pgp-text:hover {
   margin-top: 10px;
 }
 
+.cv-link {
+  color: #000;
+}
+.cv-link:hover {
+  color: #000;
+  border-bottom: dashed 1px #000;
+}
+
+.cv-item-title .under {
+  border-bottom: solid 1px #000;
+}
+
 .cv-item-right {
   color: #555;
   text-align: right;
