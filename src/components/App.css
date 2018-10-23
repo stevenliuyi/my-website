@@ -504,6 +504,13 @@ a {
 .project-card > img {
   transition: max-height .5s ease;
   border-radius: 0;
+  filter: grayscale(40%);
+  transition: all .5s;
+}
+
+.project-card > img:hover {
+  filter: grayscale(0%);
+  transition: all .5s;
 }
 
 .project-card .card-body {
@@ -513,6 +520,67 @@ a {
 
 .project-card-title {
   font-family: 'Oswald', sans-serif;
+}
+
+.project-card-expanded {
+  transition: opacity .5s;
+}
+
+.project-card-expanded .badge {
+  background-color: #fff;
+  color: #aaa;
+  border: 1px solid #aaa;
+  margin: 3px;
+}
+
+.project-card-expanded a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+}
+
+.project-card-expanded a:hover {
+  color: #555;
+}
+
+.project-card-link {
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 30px;
+}
+
+.project-card-link:not(.nolink):hover {
+  width: 100px;
+}
+
+.project-card-link span {
+  transform: scaleX(0);
+  width: 0;
+  white-space: nowrap;
+}
+
+.project-card-link:not(.nolink):hover span {
+  transform: scaleX(1);
+  width: auto;
+  padding: 5px;
+  transition: transform .5s;
+}
+
+.project-card-link.nolink {
+  border: 1px solid #eee;
+}
+
+.project-card .card-text {
+  line-height: 1.2;
 }
 
 .skill-chart-wrap {

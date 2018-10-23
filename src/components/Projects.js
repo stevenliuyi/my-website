@@ -1,10 +1,55 @@
 import React, { Component } from 'react'
-import { Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap'
 import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
+import ProjectCard from './ProjectCard'
 
 const ScrollOverPack = ScrollAnim.OverPack
+
+const projects = [
+  {
+    title: 'Admix',
+    desc: 'DNA admixture analysis tool',
+    image: 'admix.jpg',
+    tools: ['Python'],
+    link: 'https://github.com/stevenliuyi/admix'
+  },
+  {
+    title: 'Wikidata Visualization',
+    desc: 'visualization tools for Wikidata SPARQL queries',
+    image: 'dataviz.png',
+    tools: ['React', 'SPARQL', 'D3.js'],
+    link: 'https://tools.wmflabs.org/dataviz'
+  },
+  {
+    title: 'xkcd in Chinese',
+    desc: 'Chinese translations of xkcd comics',
+    image: 'xkcd-cn.png',
+    tools: ['Python', 'Jinja2'],
+    link: 'https://app-xkcd-cn.appspot.com'
+  },
+  {
+    title: 'Yun',
+    desc: 'iOS app for historical Chinese phonology',
+    image: 'yun.png',
+    tools: ['Swift']
+  },
+  {
+    title: 'Google RHS',
+    desc:
+      'Chrome extension that integrates contents into Google search results',
+    image: 'google-rhs.jpg',
+    tools: ['JavaScript'],
+    link: 'https://tools.wmflabs.org/dataviz'
+  },
+  {
+    title: 'LCS',
+    desc: 'C++ library for Lagrangian coherent structure analysis',
+    image: 'lcs.png',
+    tools: ['C++', 'OpenMP'],
+    link: 'https://stevenliuyi.github.io/lcs'
+  }
+]
 
 class Projects extends Component {
   state = {
@@ -34,15 +79,10 @@ class Projects extends Component {
         playScale={0.5}
         always={false}
       >
-        <Texty
-          key="0"
-          className="section-title noselect"
-          delay={this.props.delay}
-        >
+        <Texty className="section-title noselect" delay={this.props.delay}>
           PROJECTS
         </Texty>
         <TweenOne
-          key="1"
           className="underline"
           animation={{
             opacity: 1,
@@ -52,7 +92,6 @@ class Projects extends Component {
           }}
         />
         <TweenOne
-          key="2"
           className="projects"
           animation={{
             opacity: 1,
@@ -64,39 +103,14 @@ class Projects extends Component {
             }
           }}
         >
-          {[...Array(6).keys()].map(i => (
-            <Card key={i} className="project-card">
-              <CardImg
-                top
-                width="100%"
-                src="images/demo.jpg"
-                className="noselect"
-              />
-              <TweenOne
-                component={CardBody}
-                componentProps={{
-                  onMouseEnter: this.expandCard,
-                  onMouseLeave: this.collapseCard,
-                  onTouchStart: e => {
-                    if (this.state.cardExpanded) this.collapseCard(e)
-                    else this.expandCard(e)
-                  }
-                }}
-                animation={{
-                  opacity: 1,
-                  x: 0,
-                  duration: 1000,
-                  ease: 'easeOutQuart',
-                  delay: this.props.delay + 500
-                }}
-              >
-                <CardTitle className="project-card-title">{`Project ${i +
-                  1}`}</CardTitle>
-                <CardText>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </CardText>
-              </TweenOne>
-            </Card>
+          {projects.map((project, idx) => (
+            <ProjectCard
+              key={idx}
+              expandCard={this.expandCard}
+              collapseCard={this.collapseCard}
+              {...project}
+              {...this.state}
+            />
           ))}
         </TweenOne>
       </ScrollOverPack>
