@@ -285,6 +285,16 @@ a {
   transition: transform 1s ease-out;
 }
 
+.about-text-paragraph a {
+  color: #000;
+  border-bottom: solid 1px #aaa;
+}
+
+.about-text-paragraph a:hover {
+  color: #000;
+  border-bottom: solid 1px #000;
+}
+
 .about-links {
   font-size: 13px;
   width: 150px;
