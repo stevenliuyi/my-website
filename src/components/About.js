@@ -189,9 +189,9 @@ class About extends Component {
             >
               <div className="about-text-paragraph">
                 In addition to my research, I am very passionate about{' '}
-                <span className="strong">computer programming</span>. Acutally I
-                have been obsessed with it since age of 10 when I wrote my first
-                program in{' '}
+                <span className="strong">computer programming</span> in general.
+                Acutally I have been obsessed with it since age of 10 when I
+                wrote my first program in{' '}
                 <a
                   href="https://en.wikipedia.org/wiki/Logo_(programming_language)"
                   target="_blank"

@@ -85,7 +85,7 @@ class More extends Component {
               <FaBookOpen
                 size={50}
                 color="#eee"
-                style={{ transform: 'translateY(8px)' }}
+                style={{ transform: 'translateY(5px)' }}
               />
             }
             {...this.props}
