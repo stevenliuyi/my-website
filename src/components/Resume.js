@@ -204,7 +204,7 @@ const data = {
         'Computation of Wall Pressure Fluctuations in Compressible Turbulent Channel Flows',
       authors: '<span class="under">Yi Liu</span>, Kan Wang, Meng Wang',
       detail:
-        '71th Annual Meeting of the APS Division of Fluid Dynamics, Atlanta, GA, USA. 18-20 Nov 2018 (scheduled)'
+        "71st Annual Meeting of the American Physical Society's Division of Fluid Dynamics, Atlanta, GA, USA. 18-20 Nov 2018"
     },
     {
       title:
@@ -234,7 +234,7 @@ const data = {
       authors:
         '<span class="under">Yi Liu</span>, Chris Wilson, Melissa Green, Chris Hughes',
       detail:
-        '68th Annual Meeting of the APS Division of Fluid Dynamics, Boston, MA, USA. 22-24 Nov 2015'
+        "68th Annual Meeting of the American Physical Society's Division of Fluid Dynamics, Boston, MA, USA. 22-24 Nov 2015"
     }
   ],
   awards: [

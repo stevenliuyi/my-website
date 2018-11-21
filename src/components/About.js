@@ -214,17 +214,17 @@ class About extends Component {
               <div className="about-text-paragraph">
                 When out of the office, I really enjoy{' '}
                 <span className="strong">writting Wikipedia articles</span>. I
-                have been an active editor in Wikipedia (and Wikidata) since
-                2010, and you can read more about{' '}
+                have been an active editor on Wikipedia (and Wikidata) since
+                2010. If you're interested,{' '}
                 <a
                   href="http://sh.eastday.com/m/20130712/u1a7515530.html"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  my Wikipedia story
+                  here
                 </a>{' '}
-                (in Chinese) published several years ago in my hometown daily
-                newspaper{' '}
+                is an article about my Wikipedia experience (in Chinese)
+                published several years ago in my hometown daily newspaper{' '}
                 <i>
                   <a
                     href="https://en.wikipedia.org/wiki/Wenhui_Bao"
