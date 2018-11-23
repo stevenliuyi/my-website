@@ -281,8 +281,8 @@ a {
 }
 
 .about-text-paragraph:hover {
-  transform: scale(1.05);
-  transition: transform 1s ease-out;
+  transform: scale(1.02);
+  transition: transform .3s ease-out;
 }
 
 .about-text-paragraph a {

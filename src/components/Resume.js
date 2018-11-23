@@ -134,6 +134,23 @@ const data = {
         'Adopted high-throughput computing (HTC) technique to speed up 3D calculations.',
         'Code available at <a href="https://github.com/stevenliuyi/3d-ftle">https://github.com/stevenliuyi/3d-ftle</a>.'
       ]
+    },
+    {
+      title: 'GPU programming in CFD simulations',
+      time: '2015',
+      details: [
+        'Compared GPU parallel (OpenCL framework) and CPU sequential computing in CFD simulations.',
+        'Developed CFD codes to capture shock-waves and tested for two cases (a shock-tube flow simulation and a transonic nozzle flow simulation).',
+        'Code available at <a href="https://github.com/stevenliuyi/gpu-cfd">https://github.com/stevenliuyi/gpu-cfd</a>.'
+      ]
+    },
+    {
+      title:
+        'Aerodynamics of electric vehicles based on CFD and neural network',
+      time: '2012',
+      details: [
+        'Combined artificial neural network, genetic algorithm and CFD simulation to develop a novel method to improve aerodynamics performance in the automobile design process.'
+      ]
     }
   ],
   courses: [

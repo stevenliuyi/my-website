@@ -19,7 +19,7 @@ class Footer extends Component {
   }
 
   render() {
-    const leftText = '© 2018 | Handcrafted with'
+    const leftText = `© ${new Date().getFullYear()} | Handcrafted with`
     const rightText = 'by YI LIU'
     return (
       <ScrollOverPack
