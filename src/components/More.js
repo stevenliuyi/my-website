@@ -4,9 +4,10 @@ import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import { GoOctoface } from 'react-icons/go'
 import { FaBookOpen } from 'react-icons/fa'
+import { MdPalette } from 'react-icons/md'
 import MoreItem from './MoreItem'
 import { getBlogCount } from '../utils/utils'
-import readingListCount from '../data/read-count.yml'
+import counts from '../data/counts.yml'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -77,7 +78,7 @@ class More extends Component {
           />
           <MoreItem
             title="reading list"
-            number={readingListCount.count}
+            number={counts.read}
             description="Books"
             pic="erol-ahmed-460283-unsplash-small.jpg"
             link={{ pathname: '/read', backId: 'more-page' }}
@@ -92,13 +93,13 @@ class More extends Component {
           />
           <MoreItem
             title="portfolio"
-            number={16}
+            number={counts.portfolio}
             description="Works"
             pic="agence-olloweb-520953-unsplash-small.jpg"
             link={{ pathname: '/portfolio', backId: 'more-page' }}
             logo={
-              <FaBookOpen
-                size={50}
+              <MdPalette
+                size={55}
                 color="#eee"
                 style={{ transform: 'translateY(5px)' }}
               />
