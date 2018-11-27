@@ -234,7 +234,7 @@ class About extends Component {
                     Wenhui Bao
                   </a>
                 </i>
-                . Besides, in my spare time I also enjoy reading, painting,
+                . Besides, in my spare time I also enjoy reading, drawing,
                 designing, photographing, stargazing, playing contract bridge,
                 travelling, playing Pokémon games and a little bit of wine
                 tasting.

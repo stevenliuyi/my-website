@@ -95,15 +95,7 @@ class Read extends Component {
           {...this.props}
         >
           {this.state.currentIdx === -1 && (
-            <div
-              style={{
-                marginTop: 60,
-                marginBottom: -50,
-                display: 'flex',
-                justifyContent: 'center',
-                color: '#aaa'
-              }}
-            >
+            <div className="cover-text">
               The reading list is not completed yet and is still under
               construction.
             </div>

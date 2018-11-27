@@ -1298,6 +1298,14 @@ a .pgp-text:hover {
   transform: translateY(1px);
 }
 
+.cover-text {
+  margin-top: 60px;
+  margin-bottom: -50px;
+  display: flex;
+  justify-content: center;
+  color: #aaa;
+}
+
 .reading-list {
   padding-top: 100px;
   display: flex;
@@ -1811,6 +1819,16 @@ a .pgp-text:hover {
   text-overflow: ellipsis;
   margin-top: 4px;
   cursor: pointer;
+}
+
+.portfolio-link {
+  color: #555;
+  transform: translateY(-1px);
+  margin-left: 6px;
+}
+
+.portfolio-link:hover {
+  color: #aaa;
 }
 
 #lightboxBackdrop svg {

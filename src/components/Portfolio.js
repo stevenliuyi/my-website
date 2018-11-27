@@ -98,6 +98,10 @@ class Portfolio extends Component {
     })
   }
 
+  openLink = () => {
+    window.open(this.getPortfolio()[this.state.currentImage].link, '_blank')
+  }
+
   getPortfolio = () =>
     this.state.portfolio.sort((a, b) => a.name.localeCompare(b.name)).map(
       p =>
@@ -131,6 +135,10 @@ class Portfolio extends Component {
           delay={this.state.delay}
           {...this.props}
         >
+          <div className="cover-text">
+            This portfolio includes some of my sketches, drawings and designs.
+            It is still under construction.
+          </div>
           <div className="portfolio-list">
             <Measure
               bounds
@@ -162,6 +170,7 @@ class Portfolio extends Component {
               onClose={this.closeLightbox}
               onClickPrev={this.gotoPrevious}
               onClickNext={this.gotoNext}
+              onClickImage={this.openLink}
               currentImage={this.state.currentImage}
               isOpen={this.state.lightboxIsOpen}
               theme={lightboxTheme}

@@ -4,11 +4,12 @@
   height: 2048
   time: 2018
 
-- name: Pangtoucong Sticker for WeChat
+- name: Pangtoucong (WeChat Stickers)
   filename: pangtoucong.png
   width: 1500
   height: 800
   time: 2018
+  link: https://yliu.io/pangtoucong
 
 - name: Pokémon Quest Rainbow
   filename: pokemon_quest_rainbow.png

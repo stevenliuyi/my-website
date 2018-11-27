@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Measure from 'react-measure'
+import { GoLinkExternal } from 'react-icons/go'
 import { getImageURL } from '../utils/utils'
 
 class PortfolioWork extends Component {
@@ -65,7 +66,17 @@ class PortfolioWork extends Component {
                 className="portfolio-title"
                 style={{ maxWidth: photo.width }}
               >
-                {photo.name}
+                <span>{photo.name}</span>
+                {photo.link != null && (
+                  <a
+                    href={photo.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={e => e.stopPropagation()}
+                  >
+                    <GoLinkExternal className="portfolio-link" />
+                  </a>
+                )}
               </div>
             )}
           </Measure>
