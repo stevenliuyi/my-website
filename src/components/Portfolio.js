@@ -6,6 +6,7 @@ import Measure from 'react-measure'
 import Lightbox from 'react-images'
 import Page from './Page'
 import PortfolioWork from './PortfolioWork'
+import { getImageURL } from '../utils/utils'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -17,10 +18,10 @@ const lightboxTheme = {
     opacity: 0.6,
     transition: 'opacity .2s'
   },
-  arrow__direction_left: {
+  arrow__direction__left: {
     marginLeft: 10
   },
-  arrow__direction_right: {
+  arrow__direction__right: {
     marginRight: 10
   },
   arrow__size__medium: {
@@ -98,13 +99,20 @@ class Portfolio extends Component {
   }
 
   getPortfolio = () =>
-    this.state.portfolio
-      .sort((a, b) => a.name.localeCompare(b.name))
-      .map(p => ({
-        src: `/images/portfolio/${p.filename}`,
-        caption: p.name,
-        ...p
-      }))
+    this.state.portfolio.sort((a, b) => a.name.localeCompare(b.name)).map(
+      p =>
+        process.env.NODE_ENV === 'development'
+          ? {
+              src: `/images/portfolio/${p.filename}`,
+              caption: p.name,
+              ...p
+            }
+          : {
+              src: getImageURL(`portfolio/${p.filename}`, { f: 'auto' }),
+              caption: p.name,
+              ...p
+            }
+    )
 
   render() {
     const width = this.state.width

@@ -39,7 +39,7 @@ export const getImageURL = (path, options) => {
         }`
     )
     .join()
-  return `/images/${options_str}/${path}`
+  return `https://yliu.io/images/${options_str}/${path}`
 }
 
 // Google Anaylsis

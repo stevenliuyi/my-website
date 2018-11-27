@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import Measure from 'react-measure'
+import { getImageURL } from '../utils/utils'
 
 class PortfolioWork extends Component {
   state = {
-    titleWidth: -1
+    titleWidth: -1,
+    imageWidth: -1
   }
 
   render() {
@@ -14,18 +16,35 @@ class PortfolioWork extends Component {
         style={{ margin: margin }}
         onClick={e => onClick(e, { index, photo })}
       >
-        <div
-          className={`portfolio-img ${
-            photo.white ? 'portfolio-img-white' : ''
-          }`}
-          style={{
-            width: photo.width,
-            height: photo.height,
-            backgroundImage: `url(${photo.src})`
+        <Measure
+          bounds
+          onResize={contentRect => {
+            this.setState({ imageWidth: contentRect.bounds.width })
           }}
         >
-          <div className="portfolio-year">{photo.time}</div>
-        </div>
+          {({ measureRef }) => (
+            <div
+              ref={measureRef}
+              className={`portfolio-img ${
+                photo.white ? 'portfolio-img-white' : ''
+              }`}
+              style={{
+                width: photo.width,
+                height: photo.height,
+                backgroundImage:
+                  process.env.NODE_ENV === 'development'
+                    ? `url(/images/portfolio/${photo.filename})`
+                    : `url(${getImageURL(`portfolio/${photo.filename}`, {
+                        f: 'auto',
+                        c: 'scale',
+                        w: this.state.imageWidth * window.devicePixelRatio
+                      })})`
+              }}
+            >
+              <div className="portfolio-year">{photo.time}</div>
+            </div>
+          )}
+        </Measure>
         <div className="portfolio-title-wrap">
           <Measure
             bounds
