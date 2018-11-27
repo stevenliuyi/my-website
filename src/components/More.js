@@ -90,6 +90,21 @@ class More extends Component {
             }
             {...this.props}
           />
+          <MoreItem
+            title="portfolio"
+            number={16}
+            description="Works"
+            pic="agence-olloweb-520953-unsplash-small.jpg"
+            link={{ pathname: '/portfolio', backId: 'more-page' }}
+            logo={
+              <FaBookOpen
+                size={50}
+                color="#eee"
+                style={{ transform: 'translateY(5px)' }}
+              />
+            }
+            {...this.props}
+          />
         </div>
       </ScrollOverPack>
     )
