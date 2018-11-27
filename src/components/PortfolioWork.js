@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
+import Measure from 'react-measure'
 
 class PortfolioWork extends Component {
+  state = {
+    titleWidth: -1
+  }
+
   render() {
     const { index, onClick, photo, margin } = this.props
     return (
@@ -21,8 +26,29 @@ class PortfolioWork extends Component {
         >
           <div className="portfolio-year">{photo.time}</div>
         </div>
-        <div className="portfolio-title" style={{ width: photo.width }}>
-          {photo.name}
+        <div className="portfolio-title-wrap">
+          <Measure
+            bounds
+            onResize={contentRect => {
+              this.setState({ titleWidth: contentRect.bounds.width })
+            }}
+          >
+            {({ measureRef }) => (
+              <div
+                ref={measureRef}
+                className="portfolio-title"
+                style={{ maxWidth: photo.width }}
+              >
+                {photo.name}
+              </div>
+            )}
+          </Measure>
+        </div>
+        <div className="portfolio-title-wrap">
+          <div
+            className="title-underline"
+            style={{ width: this.state.titleWidth, maxWidth: photo.width }}
+          />
         </div>
       </div>
     )

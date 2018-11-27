@@ -1331,7 +1331,7 @@ a .pgp-text:hover {
   text-overflow: ellipsis;
 }
 
-.book-title-underline {
+.title-underline {
   width: 100%;
   height: 2px;
   border-top: solid 1px #ccc;
@@ -1339,7 +1339,8 @@ a .pgp-text:hover {
   transform: translateY(50px);
 }
 
-.book:hover .book-title-underline {
+.book:hover .title-underline,
+.portfolio-work:hover .title-underline {
   opacity: 1;
   transform: translateY(0);
   transition: all .5s;
@@ -1781,6 +1782,10 @@ a .pgp-text:hover {
   transition: all .5s ease;
 }
 
+.portfolio-work {
+  padding-bottom: 8px;
+}
+
 .portfolio-work:hover .portfolio-img {
   transform: scale(1.05);
   transform-origin: center bottom;
@@ -1793,13 +1798,18 @@ a .pgp-text:hover {
   transition: all .5s ease;
 }
 
+.portfolio-title-wrap {
+  display: flex;
+  justify-content: center;
+}
+
 .portfolio-title {
+  display: inline-block;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-top: 4px;
-  margin-bottom: 8px;
   cursor: pointer;
 }
 

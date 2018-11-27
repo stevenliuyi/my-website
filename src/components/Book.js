@@ -45,7 +45,7 @@ class Book extends Component {
           }}
         />
         <div className="book-title">{this.props.name}</div>
-        <div className="book-title-underline" />
+        <div className="title-underline" />
       </div>
     )
   }

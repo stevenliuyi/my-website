@@ -45,7 +45,8 @@ const lightboxTheme = {
   },
   footer: {
     color: '#222',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontVariant: 'small-caps'
   },
   footerCount: {
     color: '#222'
