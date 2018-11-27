@@ -1,0 +1,100 @@
+- name: uNDefeated Season
+  filename: undefeated_season.png
+  width: 2048
+  height: 2048
+  time: 2018
+
+- name: Pangtoucong Sticker for WeChat
+  filename: pangtoucong.png
+  width: 1500
+  height: 800
+  time: 2018
+
+- name: Pokémon Quest Rainbow
+  filename: pokemon_quest_rainbow.png
+  width: 1640
+  height: 1282
+  time: 2018
+  white: true
+
+- name: The Mountains
+  filename: the_mountains.jpg
+  width: 2048
+  height: 1536
+  time: 2017
+
+- name: Evolution
+  filename: evolution.jpg
+  width: 2048
+  height: 2048
+  time: 2016
+
+- name: Plum Blossom I
+  filename: plum_blossom_1.jpg
+  width: 1024
+  height: 768
+  time: 2015
+  white: true
+  
+- name: Plum Blossom II
+  filename: plum_blossom_2.jpg
+  width: 1024
+  height: 768
+  time: 2015
+  white: true
+
+- name: Lemons
+  filename: lemons.png
+  width: 2048
+  height: 1536
+  time: 2014
+
+- name: Dürer's Rhinoceros
+  filename: durers_rhinoceros.png
+  width: 2048
+  height: 1536
+  time: 2014
+
+- name: Squirrel on Campus
+  filename: squirrel_on_campus.jpg
+  width: 944
+  height: 708
+  time: 2013
+
+- name: Light
+  filename: light.png
+  width: 768
+  height: 1024
+  time: 2013
+
+- name: Bee-do
+  filename: beedo.jpg
+  width: 1024
+  height: 768
+  time: 2013
+
+- name: Electric Vehicle
+  filename: ev.jpg
+  width: 1920
+  height: 1080
+  time: 2012
+
+- name: Qianziwen
+  filename: qianziwen.png
+  width: 426
+  height: 753
+  time: 2013
+
+- name: Glasses You Love
+  filename: glasses.png
+  width: 600
+  height: 600
+  time: 2018
+  white: true
+
+- name: Infographic for China's Modern History
+  filename: china_modern_history.png
+  width: 4250
+  height: 5510
+  time: 2014
+  white: true
