@@ -104,11 +104,13 @@ class Portfolio extends Component {
         process.env.NODE_ENV === 'development'
           ? {
               src: `/images/portfolio/${p.filename}`,
+              originalWidth: p.width,
               caption: p.name,
               ...p
             }
           : {
               src: getImageURL(`portfolio/${p.filename}`, { f: 'auto' }),
+              originalWidth: p.width,
               caption: p.name,
               ...p
             }

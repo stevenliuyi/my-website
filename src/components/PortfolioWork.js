@@ -8,6 +8,18 @@ class PortfolioWork extends Component {
     imageWidth: -1
   }
 
+  calcRatio = () => {
+    const ratio = Math.max(
+      Math.ceil(
+        ((this.props.photo.width * window.devicePixelRatio) /
+          this.props.photo.originalWidth) *
+          10
+      ) / 10,
+      0.1
+    )
+    return ratio
+  }
+
   render() {
     const { index, onClick, photo, margin } = this.props
     return (
@@ -16,35 +28,30 @@ class PortfolioWork extends Component {
         style={{ margin: margin }}
         onClick={e => onClick(e, { index, photo })}
       >
-        <Measure
-          bounds
-          onResize={contentRect => {
-            this.setState({ imageWidth: contentRect.bounds.width })
+        <div
+          className={`portfolio-img ${
+            photo.white ? 'portfolio-img-white' : ''
+          }`}
+          style={{
+            width: photo.width,
+            height: photo.height,
+            backgroundImage:
+              process.env.NODE_ENV === 'development'
+                ? `url(/images/portfolio/${photo.filename})`
+                : // set the width ratio if the expect image size is smaller than the original size
+                  this.calcRatio() < 1
+                  ? `url(${getImageURL(`portfolio/${photo.filename}`, {
+                      f: 'auto',
+                      c: 'scale',
+                      w: this.calcRatio()
+                    })})`
+                  : `url(${getImageURL(`portfolio/${photo.filename}`, {
+                      f: 'auto'
+                    })})`
           }}
         >
-          {({ measureRef }) => (
-            <div
-              ref={measureRef}
-              className={`portfolio-img ${
-                photo.white ? 'portfolio-img-white' : ''
-              }`}
-              style={{
-                width: photo.width,
-                height: photo.height,
-                backgroundImage:
-                  process.env.NODE_ENV === 'development'
-                    ? `url(/images/portfolio/${photo.filename})`
-                    : `url(${getImageURL(`portfolio/${photo.filename}`, {
-                        f: 'auto',
-                        c: 'scale',
-                        w: this.state.imageWidth * window.devicePixelRatio
-                      })})`
-              }}
-            >
-              <div className="portfolio-year">{photo.time}</div>
-            </div>
-          )}
-        </Measure>
+          <div className="portfolio-year">{photo.time}</div>
+        </div>
         <div className="portfolio-title-wrap">
           <Measure
             bounds

@@ -35,7 +35,11 @@ export const getImageURL = (path, options) => {
     .map(
       o =>
         `${o}_${
-          typeof options[o] === 'number' ? parseInt(options[o], 10) : options[o]
+          typeof options[o] === 'number'
+            ? options[o] < 1
+              ? parseFloat(options[o]).toFixed(1)
+              : parseInt(options[o], 10)
+            : options[o]
         }`
     )
     .join()
