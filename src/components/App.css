@@ -1831,8 +1831,17 @@ a .pgp-text:hover {
   color: #aaa;
 }
 
+.portfolio-link-lightbox {
+  transform: translateY(1px) !important;
+}
+
 #lightboxBackdrop svg {
   vertical-align: inherit;
+}
+
+#lightboxBackdrop figcaption > a {
+  display: inline-flex;
+  align-items: center;
 }
 
 /* for small screens */

@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import { renderToString } from 'react-dom/server'
 import scrollToComponent from 'react-scroll-to-component'
 import ScrollAnim from 'rc-scroll-anim'
 import Gallery from 'react-photo-gallery'
 import Measure from 'react-measure'
 import Lightbox from 'react-images'
+import { GoLinkExternal } from 'react-icons/go'
 import Page from './Page'
 import PortfolioWork from './PortfolioWork'
 import { getImageURL } from '../utils/utils'
@@ -47,7 +49,13 @@ const lightboxTheme = {
   footer: {
     color: '#222',
     fontWeight: 'bold',
-    fontVariant: 'small-caps'
+    fontVariant: 'small-caps',
+    marginLeft: '5px',
+    marginRight: '5px'
+  },
+  footerCaption: {
+    display: 'inline-flex',
+    alignItems: 'center'
   },
   footerCount: {
     color: '#222'
@@ -98,9 +106,20 @@ class Portfolio extends Component {
     })
   }
 
-  openLink = e => {
-    const link = this.getPortfolio()[this.state.currentImage].link
-    if (link != null) window.open(link, '_blank')
+  onClickImage = e => {
+    window.open(e.target.src, '_blank')
+  }
+
+  lightboxCaption = photo => {
+    if (photo.link == null) return photo.name
+
+    const linkString = renderToString(
+      <a href={photo.link} target="_blank" rel="noopener noreferrer">
+        <GoLinkExternal className="portfolio-link portfolio-link-lightbox" />
+      </a>
+    )
+
+    return `<span>${photo.name}</span>${linkString}`
   }
 
   getPortfolio = () =>
@@ -110,13 +129,13 @@ class Portfolio extends Component {
           ? {
               src: `/images/portfolio/${p.filename}`,
               originalWidth: p.width,
-              caption: p.name,
+              caption: this.lightboxCaption(p),
               ...p
             }
           : {
               src: getImageURL(`portfolio/${p.filename}`, { f: 'auto' }),
               originalWidth: p.width,
-              caption: p.name,
+              caption: this.lightboxCaption(p),
               ...p
             }
     )
@@ -171,10 +190,13 @@ class Portfolio extends Component {
               onClose={this.closeLightbox}
               onClickPrev={this.gotoPrevious}
               onClickNext={this.gotoNext}
-              onClickImage={this.openLink}
+              onClickImage={this.onClickImage}
               currentImage={this.state.currentImage}
               isOpen={this.state.lightboxIsOpen}
               theme={lightboxTheme}
+              spinnerColor={'#aaa'}
+              showCloseButton={false}
+              backdropClosesModal={true}
             />
           </div>
         </Page>
