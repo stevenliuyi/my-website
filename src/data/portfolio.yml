@@ -76,8 +76,8 @@
 
 - name: Electric Vehicle
   filename: ev.jpg
-  width: 1920
-  height: 1080
+  width: 1800
+  height: 1000
   time: 2012
 
 - name: Qianziwen
@@ -99,3 +99,23 @@
   height: 5510
   time: 2014
   white: true
+
+- name: Gulf Stream Jet Schematic
+  filename: gulf_stream.png
+  width: 3681
+  height: 2785
+  time: 2017
+  link: https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2017JC013390
+  
+- name: MeToo in China Website
+  filename: metoo_china.jpg
+  width: 1200
+  height: 630
+  time: 2018
+  link: https://metoochina.me
+
+- name: Loyalty - Luxury Car Interior
+  filename: loyalty.jpg
+  width: 2631
+  height: 3236
+  time: 2011

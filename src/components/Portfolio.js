@@ -98,8 +98,9 @@ class Portfolio extends Component {
     })
   }
 
-  openLink = () => {
-    window.open(this.getPortfolio()[this.state.currentImage].link, '_blank')
+  openLink = e => {
+    const link = this.getPortfolio()[this.state.currentImage].link
+    if (link != null) window.open(link, '_blank')
   }
 
   getPortfolio = () =>
@@ -136,7 +137,7 @@ class Portfolio extends Component {
           {...this.props}
         >
           <div className="cover-text">
-            This portfolio includes some of my sketches, drawings and designs.
+            This portfolio displays some of my sketches, drawings and designs.
             It is still under construction.
           </div>
           <div className="portfolio-list">
