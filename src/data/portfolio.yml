@@ -119,3 +119,34 @@
   width: 2631
   height: 3236
   time: 2011
+
+- name: Fire
+  filename: fire.jpg
+  width: 1024
+  height: 768
+  time: 2010
+
+- name: Penholder
+  filename: penholder.jpg
+  width: 2231
+  height: 1579
+  time: 2009
+
+- name: Chinese Tableware
+  filename: tableware.jpg
+  width: 720
+  height: 456
+  time: 2008
+
+- name: Water Filter
+  filename: water_filter.jpg
+  width: 1024
+  height: 768
+  time: 2008
+
+- name: Wheels
+  filename: wheels.jpg
+  width: 2684
+  height: 2077
+  time: 2011
+  white: true
