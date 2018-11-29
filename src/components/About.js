@@ -7,8 +7,9 @@ import { TiPencil, TiDocumentText } from 'react-icons/ti'
 import { FaGithub, FaAt, FaWikipediaW } from 'react-icons/fa'
 import { Tooltip } from 'reactstrap'
 import { isMobile } from 'react-device-detect'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import Logo from './Logo'
+import SimpleTooltip from './SimpleTooltip'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -234,8 +235,25 @@ class About extends Component {
                     Wenhui Bao
                   </a>
                 </i>
-                . Besides, in my spare time I also enjoy reading, drawing,
-                designing, photographing, stargazing, playing contract bridge,
+                . Besides, in my spare time I also enjoy{' '}
+                <Link to={{ pathname: 'read', backId: 'about-page' }}>
+                  <SimpleTooltip id="tt-read" text="visit my reading list">
+                    reading
+                  </SimpleTooltip>
+                </Link>
+                ,{' '}
+                <Link to={{ pathname: 'portfolio', backId: 'about-page' }}>
+                  <SimpleTooltip id="tt-draw" text="visit my portfolio">
+                    drawing
+                  </SimpleTooltip>
+                </Link>
+                ,{' '}
+                <Link to={{ pathname: 'portfolio', backId: 'about-page' }}>
+                  <SimpleTooltip id="tt-desing" text="visit my portfolio">
+                    designing
+                  </SimpleTooltip>
+                </Link>
+                , photographing, stargazing, playing contract bridge,
                 travelling, playing Pokémon games and a little bit of wine
                 tasting.
               </div>
