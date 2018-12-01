@@ -1224,7 +1224,6 @@ a .pgp-text:hover {
   align-items: center;
   font-size: 36px;
   margin-top: 20px;
-  cursor: pointer;
   z-index: 100;
   background-color: rgba(0,0,0,.1);
   color: #222;

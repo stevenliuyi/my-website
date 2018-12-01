@@ -151,7 +151,6 @@ class Portfolio extends Component {
           quote="Creativity takes courage."
           author="Henri Matisse"
           backgroundFilename="plush-design-studio-483666-unsplash"
-          onTitleClick={() => this.setState({ currentIdx: -1 })}
           delay={this.state.delay}
           {...this.props}
         >

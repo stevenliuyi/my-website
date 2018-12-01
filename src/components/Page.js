@@ -183,6 +183,7 @@ class Page extends Component {
           <div
             className="cover-title noselect"
             onClick={this.props.onTitleClick}
+            style={this.props.titleStyle}
           >
             <Texty
               component="span"
