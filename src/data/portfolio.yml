@@ -150,3 +150,10 @@
   height: 2077
   time: 2011
   white: true
+
+- name: Lion
+  filename: lion.png
+  width: 2048
+  height: 2048
+  time: 2018
+  white: true
