@@ -91,12 +91,13 @@ const data = {
     {
       title: 'Research Assistant',
       institute:
-        'Institute for Flow Physics and Control, University of Notre Dame',
+        '<a class="cv-link" target="_blank" href="http://www.nd.edu/~flowpac/">Institute for Flow Physics and Control</a>, University of Notre Dame',
       time: '2016 - Present'
     },
     {
       title: 'Research Assistant',
-      institute: 'Green Fluid Dynamics Lab, Syracuse University',
+      institute:
+        '<a class="cv-link" target="_blank" href="http://greenfluids.syr.edu/">Green Fluid Dynamics Lab</a>, Syracuse University',
       time: '2014 - 2016'
     },
     {
@@ -221,14 +222,23 @@ const data = {
         'Computation of Wall Pressure Fluctuations in Compressible Turbulent Channel Flows',
       authors: '<span class="under">Yi Liu</span>, Kan Wang, Meng Wang',
       detail:
-        "71st Annual Meeting of the American Physical Society's Division of Fluid Dynamics, Atlanta, GA, USA. 18-20 Nov 2018"
+        'Mechanics and Applied Science Seminar, University of Notre Dame, Notre Dame, IN, USA. 18 Jan 2019 (scheduled)'
+    },
+    {
+      title:
+        'Computation of Wall Pressure Fluctuations in Compressible Turbulent Channel Flows',
+      authors: '<span class="under">Yi Liu</span>, Kan Wang, Meng Wang',
+      detail:
+        "71st Annual Meeting of the American Physical Society's Division of Fluid Dynamics, Atlanta, GA, USA. 18-20 Nov 2018",
+      link: 'http://meetings.aps.org/Meeting/DFD18/Session/A05.7'
     },
     {
       title:
         'Gulf Stream Transport and Mixing Processes via Lagrangian Coherent Structure Dynamics',
       authors:
         '<span class="under">Yi Liu</span>, Chris Wilson, Melissa Green, Chris Hughes',
-      detail: '2018 Ocean Sciences Meeting, Portland, OR, USA. 11-16 Feb 2018'
+      detail: '2018 Ocean Sciences Meeting, Portland, OR, USA. 11-16 Feb 2018',
+      link: 'https://agu.confex.com/agu/os18/meetingapp.cgi/Paper/308347'
     },
     {
       title:
@@ -236,7 +246,8 @@ const data = {
       authors:
         'Chris Wilson, <span class="under">Yi Liu</span>, Melissa Green, Chris Hughes',
       detail:
-        'European Geosciences Union General Assembly 2017, Vienna, Austria. 23-28 April 2017'
+        'European Geosciences Union General Assembly 2017, Vienna, Austria. 23-28 April 2017',
+      link: 'https://meetingorganizer.copernicus.org/EGU2017/EGU2017-10345.pdf'
     },
     {
       title:
@@ -244,14 +255,16 @@ const data = {
       authors:
         'Chris Wilson, <span class="under">Yi Liu</span>, Melissa Green, Chris Hughes',
       detail:
-        '2016 Ocean Sciences Meeting, New Orleans, LA, USA. 21-26 Feb 2016'
+        '2016 Ocean Sciences Meeting, New Orleans, LA, USA. 21-26 Feb 2016',
+      link: 'https://agu.confex.com/agu/os16/meetingapp.cgi/Paper/92464'
     },
     {
       title: 'Lagrangian Coherent Structures in the Gulf Stream',
       authors:
         '<span class="under">Yi Liu</span>, Chris Wilson, Melissa Green, Chris Hughes',
       detail:
-        "68th Annual Meeting of the American Physical Society's Division of Fluid Dynamics, Boston, MA, USA. 22-24 Nov 2015"
+        "68th Annual Meeting of the American Physical Society's Division of Fluid Dynamics, Boston, MA, USA. 22-24 Nov 2015",
+      link: 'https://meetings.aps.org/Meeting/DFD15/Session/R28.5'
     }
   ],
   awards: [
@@ -485,7 +498,9 @@ class Resume extends Component {
                       <Row className="cv-item">
                         <Col xs={8} md={9} className="cv-item-title">
                           <span className="bold">{exp.title}</span> at{' '}
-                          {exp.institute}
+                          <span
+                            dangerouslySetInnerHTML={{ __html: exp.institute }}
+                          />
                         </Col>
                         <Col xs={4} md={3} className="cv-item-right">
                           {exp.time}
@@ -633,7 +648,12 @@ class Resume extends Component {
                           <span>. </span>
                           <span>
                             {presentation.link != null ? (
-                              <a href={presentation.link}>
+                              <a
+                                className="cv-link"
+                                target="_blank"
+                                href={presentation.link}
+                                rel="noopener noreferrer"
+                              >
                                 {presentation.title}
                               </a>
                             ) : (
