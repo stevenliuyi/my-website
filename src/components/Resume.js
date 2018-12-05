@@ -22,275 +22,9 @@ import Particles from 'react-particles-js'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
-const data = {
-  basic: {
-    website: '<a href="https://yliu.io">yliu.io</a>',
-    email: '<a href="mailto:me@yliu.io">me@yliu.io</a>',
-    github:
-      '<a href="https://github.com/stevenliuyi">github.com/stevenliuyi</a>'
-  },
-  education: [
-    {
-      school: 'University of Notre Dame',
-      location: 'Notre Dame, IN',
-      studies: [
-        {
-          title: 'Ph.D. student in Aerospace & Mechanical Engineering',
-          time: '2016 - Present',
-          keywords: [
-            'computational fluid dynamics',
-            'turbulence',
-            'high-performance computing',
-            'aeroacoustics'
-          ],
-          items: ['GPA: 4.0/4.0', 'Advisor: Prof. Meng Wang']
-        }
-      ]
-    },
-    {
-      school: 'Syracuse University',
-      location: 'Syracuse, NY',
-      studies: [
-        {
-          title: 'M.S. in Mechanical & Aerospace Engineering',
-          time: '2013 - 2015',
-          keywords: [
-            'turbulence',
-            'dynamical system',
-            'geophysical fluid dynamics',
-            'high-throughput computing',
-            'GPU computing'
-          ],
-          items: ['GPA: 4.0/4.0', 'Advisor: Prof. Melissa Green']
-        }
-      ]
-    },
-    {
-      school: 'Tongji University',
-      location: 'Shanghai, China',
-      studies: [
-        {
-          title: 'B.S. in Automotive Engineering',
-          time: '2007 - 2012',
-          keywords: [
-            'transportation design',
-            'automotive aerodynamics',
-            'artificial neural network'
-          ],
-          items: ['GPA: 86.21/100']
-        },
-        {
-          title:
-            'Visiting student in Industrial Design at College of Architecture and Urban Planning',
-          time: '2007 - 2009'
-        }
-      ]
-    }
-  ],
-  experience: [
-    {
-      title: 'Research Assistant',
-      institute:
-        '<a class="cv-link" target="_blank" href="http://www.nd.edu/~flowpac/">Institute for Flow Physics and Control</a>, University of Notre Dame',
-      time: '2016 - Present'
-    },
-    {
-      title: 'Research Assistant',
-      institute:
-        '<a class="cv-link" target="_blank" href="http://greenfluids.syr.edu/">Green Fluid Dynamics Lab</a>, Syracuse University',
-      time: '2014 - 2016'
-    },
-    {
-      title: 'Computer Programmer',
-      institute: 'Core Infrastructure Services, Syracuse University',
-      time: '2015 - 2016',
-      details: [
-        'Assisted researchers in Department of Biology by performing bioinformatics programming on OrangeGrid (a high-throughput computing environment on campus) for evolutionary biology researches.'
-      ]
-    }
-  ],
-  research: [
-    {
-      title:
-        'Wall pressure fluctuations in compressible turbulent channel flows',
-      time: '2017 - Present',
-      details: [
-        'Performing direct numerical simulations (DNS) and large-eddy simulations (LES) to investigate spatiotemporal characteristics of unsteady wall pressure in compressible channel flows.'
-      ]
-    },
-    {
-      title: 'Lagrangian  coherent  structures  (LCS)  in  the  Gulf  Stream',
-      time: '2014 - 2018',
-      details: [
-        'Developed programs to calculate the finite-time Lyapunov exponent (FTLE) and Lagrangian-averagedvorticity deviation (LAVD) to find LCS in the Gulf Stream region using altimeter data.',
-        'Investigated the transport and mixing properties of the meandering jet and vortices, and the topological changesassociated with the structures.',
-        'Code available at <a href="https://github.com/stevenliuyi/ocean-ftle">https://github.com/stevenliuyi/ocean-ftle</a>.'
-      ]
-    },
-    {
-      title: 'Three dimensional LCS in a turbulent channel flow',
-      time: '2014 – 2016',
-      details: [
-        'Computed 3D FTLE fields of the direct numerical simulation (DNS) results of a turbulent channel flow toinvestigate the 3D coherent structures.',
-        'Adopted high-throughput computing (HTC) technique to speed up 3D calculations.',
-        'Code available at <a href="https://github.com/stevenliuyi/3d-ftle">https://github.com/stevenliuyi/3d-ftle</a>.'
-      ]
-    },
-    {
-      title: 'GPU programming in CFD simulations',
-      time: '2015',
-      details: [
-        'Compared GPU parallel (OpenCL framework) and CPU sequential computing in CFD simulations.',
-        'Developed CFD codes to capture shock-waves and tested for two cases (a shock-tube flow simulation and a transonic nozzle flow simulation).',
-        'Code available at <a href="https://github.com/stevenliuyi/gpu-cfd">https://github.com/stevenliuyi/gpu-cfd</a>.'
-      ]
-    },
-    {
-      title:
-        'Aerodynamics of electric vehicles based on CFD and neural network',
-      time: '2012',
-      details: [
-        'Combined artificial neural network, genetic algorithm and CFD simulation to develop a novel method to improve aerodynamics performance in the automobile design process.'
-      ]
-    }
-  ],
-  courses: [
-    {
-      category: 'Fluid',
-      courses: [
-        { title: 'Fluid Dynamics' },
-        { title: 'Computational Fluid Dynamics', github: 'cfd-euler-2d' },
-        { title: 'Turbomachinery' },
-        { title: 'Continuum Mechanics' },
-        { title: 'Advanced Aerodynamics' },
-        { title: 'Turbulence' },
-        { title: 'Viscous Flow' }
-      ]
-    },
-    {
-      category: 'Applied Math/Computer Science',
-      courses: [
-        { title: 'Statistical Methods in Data Mining', github: 'data-mining' },
-        { title: 'Design & Analysis of Algorithms' },
-        { title: 'Methods of Analysis' },
-        { title: 'Numerical Methods' },
-        { title: 'Mathematical Methods' },
-        { title: 'Advanced Scientific Computing', github: 'lcs' },
-        { title: 'Uncertainty Quantification', github: 'uq' },
-        { title: 'Applied Partial Differential Equations' }
-      ]
-    }
-  ],
-  teaching: [
-    {
-      title: 'Teaching Assistant',
-      institute: 'University of Notre Dame',
-      time: '2016 - Present',
-      courses: [
-        {
-          title: 'AME20214 Introduction to Engineering Computing',
-          time: 'Fall 2018'
-        },
-        { title: 'AME30363 Design of Machine Elements', time: 'Spring 2018' },
-        { title: 'AME30331 Fluid Mechanics', time: 'Fall 2016, Fall 2017' },
-        { title: 'AME20231 Thermodynamics', time: 'Spring 2017' }
-      ]
-    },
-    {
-      title: 'Teaching Assistant',
-      institute: 'Syracuse University',
-      time: '2014',
-      courses: [
-        { title: 'MAE585 Principle of Turbomachines', time: 'Fall 2014' }
-      ]
-    }
-  ],
-  publications: [
-    {
-      title:
-        'Gulf Stream Transport and Mixing Processes via Coherent Structure Dynamics',
-      authors:
-        '<span class="under">Yi Liu</span> <i class="iconfont icon-mail" id="corresponding-author"></i>, Melissa Green, Chris Wilson, Chris Hughes (2018)',
-      detail:
-        '<i>Journal of Geophysical Research: Oceans</i>, 123(4), 3014-3037',
-      link: 'https://doi.org/10.1002/2017JC013390'
-    }
-  ],
-  presentations: [
-    {
-      title:
-        'Computation of Wall Pressure Fluctuations in Compressible Turbulent Channel Flows',
-      authors: '<span class="under">Yi Liu</span>, Kan Wang, Meng Wang',
-      detail:
-        'Mechanics and Applied Science Seminar, University of Notre Dame, Notre Dame, IN, USA. 18 Jan 2019 (scheduled)'
-    },
-    {
-      title:
-        'Computation of Wall Pressure Fluctuations in Compressible Turbulent Channel Flows',
-      authors: '<span class="under">Yi Liu</span>, Kan Wang, Meng Wang',
-      detail:
-        "71st Annual Meeting of the American Physical Society's Division of Fluid Dynamics, Atlanta, GA, USA. 18-20 Nov 2018",
-      link: 'http://meetings.aps.org/Meeting/DFD18/Session/A05.7'
-    },
-    {
-      title:
-        'Gulf Stream Transport and Mixing Processes via Lagrangian Coherent Structure Dynamics',
-      authors:
-        '<span class="under">Yi Liu</span>, Chris Wilson, Melissa Green, Chris Hughes',
-      detail: '2018 Ocean Sciences Meeting, Portland, OR, USA. 11-16 Feb 2018',
-      link: 'https://agu.confex.com/agu/os18/meetingapp.cgi/Paper/308347'
-    },
-    {
-      title:
-        'Gulf Stream Transport and Mixing Processes via Coherent Structure Dynamics',
-      authors:
-        'Chris Wilson, <span class="under">Yi Liu</span>, Melissa Green, Chris Hughes',
-      detail:
-        'European Geosciences Union General Assembly 2017, Vienna, Austria. 23-28 April 2017',
-      link: 'https://meetingorganizer.copernicus.org/EGU2017/EGU2017-10345.pdf'
-    },
-    {
-      title:
-        'An Update to the “Barrier or Blender” Model of the Gulf Stream, Based on Lagrangian Analysis of Aviso Altimetry',
-      authors:
-        'Chris Wilson, <span class="under">Yi Liu</span>, Melissa Green, Chris Hughes',
-      detail:
-        '2016 Ocean Sciences Meeting, New Orleans, LA, USA. 21-26 Feb 2016',
-      link: 'https://agu.confex.com/agu/os16/meetingapp.cgi/Paper/92464'
-    },
-    {
-      title: 'Lagrangian Coherent Structures in the Gulf Stream',
-      authors:
-        '<span class="under">Yi Liu</span>, Chris Wilson, Melissa Green, Chris Hughes',
-      detail:
-        "68th Annual Meeting of the American Physical Society's Division of Fluid Dynamics, Boston, MA, USA. 22-24 Nov 2015",
-      link: 'https://meetings.aps.org/Meeting/DFD15/Session/R28.5'
-    }
-  ],
-  awards: [
-    {
-      award:
-        'Outstanding Graduate Student of Mechanical & Aerospace Engineering, Syracuse University',
-      detail: 'for ranking first in the program',
-      time: '2015'
-    },
-    {
-      award: 'Member of Honor Society of Phi Kappa Phi',
-      time: '2014 - Present'
-    },
-    {
-      award: 'Graduate Student Scholarship, Syracuse University',
-      time: '2013 - 2015'
-    },
-    {
-      award: 'Outstanding Student Scholarship, Tongji Unversity',
-      time: '2008, 2009'
-    }
-  ]
-}
-
 class Resume extends Component {
   state = {
+    data: null,
     delay: 150,
     width: window.innerWidth,
     height: window.innerHeight,
@@ -344,6 +78,11 @@ class Resume extends Component {
   }
 
   componentDidMount() {
+    // dynamically import resume
+    import('../data/resume.yml')
+      .then(m => m.default)
+      .then(data => this.setState({ data }))
+
     scrollToComponent(this.page, { align: 'top', duration: 1 })
     this.setPhotoSize()
     window.addEventListener('scroll', this.handleScroll)
@@ -356,6 +95,8 @@ class Resume extends Component {
   }
 
   render() {
+    if (this.state.data == null) return <div />
+
     return (
       <ScrollOverPack scale={0.5} always={false}>
         <Helmet>
@@ -428,21 +169,27 @@ class Resume extends Component {
                       <FaEnvelope color={'#ccc'} />
                       <span
                         className="cv-basic-info"
-                        dangerouslySetInnerHTML={{ __html: data.basic.email }}
+                        dangerouslySetInnerHTML={{
+                          __html: this.state.data.basic.email
+                        }}
                       />
                     </div>
                     <div className="cv-basic-row">
                       <FaGlobe color={'#ccc'} />
                       <span
                         className="cv-basic-info"
-                        dangerouslySetInnerHTML={{ __html: data.basic.website }}
+                        dangerouslySetInnerHTML={{
+                          __html: this.state.data.basic.website
+                        }}
                       />
                     </div>
                     <div className="cv-basic-row">
                       <FaGithub color={'#ccc'} />
                       <span
                         className="cv-basic-info"
-                        dangerouslySetInnerHTML={{ __html: data.basic.github }}
+                        dangerouslySetInnerHTML={{
+                          __html: this.state.data.basic.github
+                        }}
                       />
                     </div>
                   </div>
@@ -450,7 +197,7 @@ class Resume extends Component {
               </Col>
               <Col sm={12} md={9} style={{ paddingBottom: 100 }}>
                 <ResumeSection title="EDUCATION" icon={<MdSchool />}>
-                  {data.education.map((edu, idx) => (
+                  {this.state.data.education.map((edu, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={8} md={9} className="cv-item-title">
@@ -493,7 +240,7 @@ class Resume extends Component {
                   ))}
                 </ResumeSection>
                 <ResumeSection title="EXPERIENCE" icon={<MdWork />}>
-                  {data.experience.map((exp, idx) => (
+                  {this.state.data.experience.map((exp, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={8} md={9} className="cv-item-title">
@@ -521,7 +268,7 @@ class Resume extends Component {
                   title="SELECTED RESEARCH PROJECTS"
                   icon={<FaIntegral />}
                 >
-                  {data.research.map((research, idx) => (
+                  {this.state.data.research.map((research, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={8} md={9} className="cv-item-title">
@@ -549,7 +296,7 @@ class Resume extends Component {
                   title="SELECTED GRADUATE COURSES"
                   icon={<FaBookReader />}
                 >
-                  {data.courses.map((cat, idx) => (
+                  {this.state.data.courses.map((cat, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={12} className="cv-item-title cv-courses">
@@ -581,7 +328,7 @@ class Resume extends Component {
                   title="TEACHING EXPERIENCE"
                   icon={<FaChalkboard />}
                 >
-                  {data.teaching.map((position, idx) => (
+                  {this.state.data.teaching.map((position, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={8} md={9} className="cv-item-title">
@@ -605,7 +352,7 @@ class Resume extends Component {
                   ))}
                 </ResumeSection>
                 <ResumeSection title="PUBLICATIONS" icon={<IoIosDocument />}>
-                  {data.publications.map((publication, idx) => (
+                  {this.state.data.publications.map((publication, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={12} className="cv-item-title">
@@ -616,7 +363,12 @@ class Resume extends Component {
                           />
                           <span>. </span>
                           <span>
-                            <a className="cv-link" href={publication.link}>
+                            <a
+                              className="cv-link"
+                              target="_blank"
+                              href={publication.link}
+                              rel="noopener noreferrer"
+                            >
                               {publication.title}
                             </a>
                           </span>
@@ -636,7 +388,7 @@ class Resume extends Component {
                   title="PRESENTATIONS & ABSTRACTS"
                   icon={<FaChalkboardTeacher />}
                 >
-                  {data.presentations.map((presentation, idx) => (
+                  {this.state.data.presentations.map((presentation, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={12} className="cv-item-title">
@@ -673,7 +425,7 @@ class Resume extends Component {
                   ))}
                 </ResumeSection>
                 <ResumeSection title="HONORS & AWARDS" icon={<FaAward />}>
-                  {data.awards.map((award, idx) => (
+                  {this.state.data.awards.map((award, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={8} md={9} className="cv-item-title">
