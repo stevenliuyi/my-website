@@ -6,6 +6,7 @@ import Gallery from 'react-photo-gallery'
 import Measure from 'react-measure'
 import Lightbox from 'react-images'
 import { GoLinkExternal } from 'react-icons/go'
+import { isMobile } from 'react-device-detect'
 import Page from './Page'
 import PortfolioWork from './PortfolioWork'
 import { getImageURL } from '../utils/utils'
@@ -107,7 +108,10 @@ class Portfolio extends Component {
   }
 
   onClickImage = e => {
-    window.open(e.target.src, '_blank')
+    window.open(
+      e.target.originalSrc != null ? e.target.originalSrc : e.target.src,
+      '_blank'
+    )
   }
 
   lightboxCaption = photo => {
@@ -134,6 +138,7 @@ class Portfolio extends Component {
             }
           : {
               src: getImageURL(`portfolio/${p.filename}`, { f: 'auto' }),
+              originalSrc: `/images/portfolio/${p.filename}`,
               originalWidth: p.width,
               caption: this.lightboxCaption(p),
               ...p
@@ -194,7 +199,7 @@ class Portfolio extends Component {
               isOpen={this.state.lightboxIsOpen}
               theme={lightboxTheme}
               spinnerColor={'#aaa'}
-              showCloseButton={false}
+              showCloseButton={isMobile}
               backdropClosesModal={true}
             />
           </div>
