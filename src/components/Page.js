@@ -10,6 +10,7 @@ import { isMobile } from 'react-device-detect'
 import Texty from 'rc-texty'
 import TweenOne from 'rc-tween-one'
 import Logo from './Logo'
+import PageFooter from './PageFooter'
 import { setVhs, getImageURL, gaConfig } from '../utils/utils'
 
 class Page extends Component {
@@ -260,6 +261,9 @@ class Page extends Component {
         >
           {this.props.children}
         </div>
+        {(this.props.showFooter == null || this.props.showFooter) && (
+          <PageFooter footerStyle={this.props.footerStyle} />
+        )}
       </div>
     )
   }

@@ -95,6 +95,20 @@ class Read extends Component {
           titleStyle={{
             cursor: this.state.currentIdx === -1 ? 'inherit' : 'pointer'
           }}
+          footerStyle={{
+            backgroundColor:
+              this.state.currentIdx === -1
+                ? '#fff'
+                : this.state.readingList[this.state.currentIdx].quotes == null
+                  ? '#eee'
+                  : '#555',
+            color:
+              this.state.currentIdx === -1
+                ? '#000'
+                : this.state.readingList[this.state.currentIdx].quotes == null
+                  ? '#000'
+                  : '#fff'
+          }}
           {...this.props}
         >
           {this.state.currentIdx === -1 && (
