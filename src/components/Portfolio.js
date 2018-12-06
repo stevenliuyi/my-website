@@ -108,10 +108,7 @@ class Portfolio extends Component {
   }
 
   onClickImage = e => {
-    window.open(
-      e.target.originalSrc != null ? e.target.originalSrc : e.target.src,
-      '_blank'
-    )
+    window.open(e.target.src.replace('f_auto/', ''), '_blank')
   }
 
   lightboxCaption = photo => {
@@ -138,7 +135,6 @@ class Portfolio extends Component {
             }
           : {
               src: getImageURL(`portfolio/${p.filename}`, { f: 'auto' }),
-              originalSrc: `/images/portfolio/${p.filename}`,
               originalWidth: p.width,
               caption: this.lightboxCaption(p),
               ...p
