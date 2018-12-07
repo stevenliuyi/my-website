@@ -19,6 +19,7 @@ import { IoIosDocument } from 'react-icons/io'
 import { Helmet } from 'react-helmet'
 import Particles from 'react-particles-js'
 import ResumeSection from './ResumeSection'
+import data from '../data/resume.yml'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -80,11 +81,6 @@ class Resume extends Component {
   }
 
   componentDidMount() {
-    // dynamically import resume
-    import('../data/resume.yml')
-      .then(m => m.default)
-      .then(data => this.setState({ data }))
-
     scrollToComponent(this.page, { align: 'top', duration: 1 })
     this.setPhotoSize()
     window.addEventListener('scroll', this.handleScroll)
@@ -97,7 +93,7 @@ class Resume extends Component {
   }
 
   render() {
-    if (this.state.data == null) return <div />
+    if (data == null) return <div />
 
     return (
       <ScrollOverPack scale={0.5} always={false}>
@@ -176,30 +172,24 @@ class Resume extends Component {
                     <div className="cv-basic-row">
                       <FaEnvelope color={'#ccc'} />
                       <span className="cv-basic-info">
-                        <a
-                          href={`mailto:${
-                            this.state.data.basic.email.personal
-                          }`}
-                        >
-                          {this.state.data.basic.email.personal}
+                        <a href={`mailto:${data.basic.email.personal}`}>
+                          {data.basic.email.personal}
                         </a>
                       </span>
                     </div>
                     <div className="cv-basic-row">
                       <FaGlobe color={'#ccc'} />
                       <span className="cv-basic-info">
-                        <a href={this.state.data.basic.website}>
-                          {this.removeUrlProtocol(
-                            this.state.data.basic.website
-                          )}
+                        <a href={data.basic.website}>
+                          {this.removeUrlProtocol(data.basic.website)}
                         </a>
                       </span>
                     </div>
                     <div className="cv-basic-row">
                       <FaGithub color={'#ccc'} />
                       <span className="cv-basic-info">
-                        <a href={this.state.data.basic.github}>
-                          {this.removeUrlProtocol(this.state.data.basic.github)}
+                        <a href={data.basic.github}>
+                          {this.removeUrlProtocol(data.basic.github)}
                         </a>
                       </span>
                     </div>
@@ -208,7 +198,7 @@ class Resume extends Component {
               </Col>
               <Col sm={12} md={9} style={{ paddingBottom: 100 }}>
                 <ResumeSection title="EDUCATION" icon={<MdSchool />}>
-                  {this.state.data.education.map((edu, idx) => (
+                  {data.education.map((edu, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={8} md={9} className="cv-item-title">
@@ -251,7 +241,7 @@ class Resume extends Component {
                   ))}
                 </ResumeSection>
                 <ResumeSection title="EXPERIENCE" icon={<MdWork />}>
-                  {this.state.data.experience.map((exp, idx) => (
+                  {data.experience.map((exp, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={8} md={9} className="cv-item-title">
@@ -279,7 +269,7 @@ class Resume extends Component {
                   title="SELECTED RESEARCH PROJECTS"
                   icon={<FaIntegral />}
                 >
-                  {this.state.data.research.map((research, idx) => (
+                  {data.research.map((research, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={8} md={9} className="cv-item-title">
@@ -307,7 +297,7 @@ class Resume extends Component {
                   title="SELECTED GRADUATE COURSES"
                   icon={<FaBookReader />}
                 >
-                  {this.state.data.courses.map((cat, idx) => (
+                  {data.courses.map((cat, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={12} className="cv-item-title cv-courses">
@@ -339,7 +329,7 @@ class Resume extends Component {
                   title="TEACHING EXPERIENCE"
                   icon={<FaChalkboard />}
                 >
-                  {this.state.data.teaching.map((position, idx) => (
+                  {data.teaching.map((position, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={8} md={9} className="cv-item-title">
@@ -363,7 +353,7 @@ class Resume extends Component {
                   ))}
                 </ResumeSection>
                 <ResumeSection title="PUBLICATIONS" icon={<IoIosDocument />}>
-                  {this.state.data.publications.map((publication, idx) => (
+                  {data.publications.map((publication, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={12} className="cv-item-title">
@@ -399,7 +389,7 @@ class Resume extends Component {
                   title="PRESENTATIONS & ABSTRACTS"
                   icon={<FaChalkboardTeacher />}
                 >
-                  {this.state.data.presentations.map((presentation, idx) => (
+                  {data.presentations.map((presentation, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={12} className="cv-item-title">
@@ -436,7 +426,7 @@ class Resume extends Component {
                   ))}
                 </ResumeSection>
                 <ResumeSection title="HONORS & AWARDS" icon={<FaAward />}>
-                  {this.state.data.awards.map((award, idx) => (
+                  {data.awards.map((award, idx) => (
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={8} md={9} className="cv-item-title">

@@ -10,6 +10,7 @@ import { isMobile } from 'react-device-detect'
 import Page from './Page'
 import PortfolioWork from './PortfolioWork'
 import { getImageURL } from '../utils/utils'
+import portfolio from '../data/portfolio.yml'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -73,11 +74,6 @@ class Portfolio extends Component {
   }
 
   componentDidMount() {
-    // dynamically import list
-    import('../data/portfolio.yml')
-      .then(m => m.default)
-      .then(data => this.setState({ portfolio: data }))
-
     scrollToComponent(this.page, { align: 'top', duration: 1 })
   }
 
@@ -124,7 +120,7 @@ class Portfolio extends Component {
   }
 
   getPortfolio = () =>
-    this.state.portfolio.sort((a, b) => a.name.localeCompare(b.name)).map(
+    portfolio.sort((a, b) => a.name.localeCompare(b.name)).map(
       p =>
         process.env.NODE_ENV === 'development'
           ? {
