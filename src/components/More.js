@@ -48,7 +48,7 @@ class More extends Component {
         <div className="more-items">
           <MoreItem
             title="github"
-            number="39"
+            number={counts.github}
             description="Repositories"
             pic="markus-spiske-507983-unsplash-small.jpg"
             url="https://github.com/stevenliuyi"
