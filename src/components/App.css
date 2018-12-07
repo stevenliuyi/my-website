@@ -1766,6 +1766,32 @@ a .pgp-text:hover {
   color: #555;
 }
 
+.cv-download {
+  margin-top: 20px;
+  position: relative;
+  transition: all .2s ease;
+}
+
+.cv-download-text {
+  position: absolute; 
+  font-size: 14px;
+  color: #555;
+  padding: 2px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all .2s ease;
+}
+
+.cv-download:hover .cv-download-text {
+  opacity: 1;
+  transition: all .2s ease;
+}
+
+.cv-download:hover {
+  transform: translateX(-45px);
+  transition: all .2s ease;
+}
+
 .portfolio-list {
   margin: 100px 50px 100px 50px;
 }

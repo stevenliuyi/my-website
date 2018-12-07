@@ -3,7 +3,7 @@ import scrollToComponent from 'react-scroll-to-component'
 import Page from './Page'
 import { Container, Row, Col, Badge, Tooltip } from 'reactstrap'
 import ScrollAnim from 'rc-scroll-anim'
-import { MdSchool, MdWork } from 'react-icons/md'
+import { MdSchool, MdWork, MdPictureAsPdf } from 'react-icons/md'
 import {
   FaGlobe,
   FaEnvelope,
@@ -16,9 +16,9 @@ import {
 } from 'react-icons/fa'
 import { FiGithub } from 'react-icons/fi'
 import { IoIosDocument } from 'react-icons/io'
-import ResumeSection from './ResumeSection'
 import { Helmet } from 'react-helmet'
 import Particles from 'react-particles-js'
+import ResumeSection from './ResumeSection'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -165,6 +165,12 @@ class Resume extends Component {
                       <span>YI</span> <span className="bold">LIU</span>
                     </div>
                     <div className="cv-nickname bold">STEVEN</div>
+                  </div>
+                  <div className="cv-download">
+                    <a href="/resume.pdf" download="Yi_Liu_Resume">
+                      <MdPictureAsPdf size={24} color={'#555'} />
+                      <span className="cv-download-text">Download PDF</span>
+                    </a>
                   </div>
                   <div className="cv-basic">
                     <div className="cv-basic-row">
