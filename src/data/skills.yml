@@ -1,0 +1,285 @@
+# Values
+# 0 - Novice
+# 0.25 - Advanced Beginner
+# 0.5 - Intermediate
+# 0.75 - Proficient
+# 1.0 - Expert
+
+Languages:
+  - skill: Python
+    value: 0.75
+    logo: python.svg
+  - skill: C/C++
+    value: 0.5
+    logo: c++.png
+  - skill: R
+    value: 0.65
+    logo: r.svg
+  - skill: Fortran
+    value: 0.8
+    logo: fortran.svg
+  - skill: MATLAB
+    value: 0.65
+    logo: matlab.png
+  - skill: Java
+    value: 0.25
+    logo: java.svg
+  - skill: JS (ES6)
+    value: 0.75
+    logo: javascript.png
+  - skill: Perl
+    value: 0.25
+    logo: perl.png
+  - skill: Swift
+    value: 0.3
+    logo: swift.svg
+  - skill: Wolfram
+    value: 0.75
+    logo: wolfram.png
+
+Web Development:
+  - skill: CSS
+    value: 0.65
+    logo: css3.png
+  - skill: HTML5
+    value: 0.4
+    logo: html5.png
+  - skill: React
+    value: 0.65
+    logo: react.svg
+  - skill: JS (ES6)
+    value: 0.75
+    logo: javascript.png
+  - skill: Node.js
+    value: 0.25
+    logo: nodejs.svg
+  - skill: Jinja2
+    value: 0.3
+    logo: jinja.png
+  - skill: jQuery
+    value: 0.5
+    logo: jquery.svg
+  - skill: d3.js
+    value: 0.5
+    logo: d3.svg
+  - skill: placeholder9
+    value: 0
+  - skill: placeholder10
+    value: 0
+
+Databases:
+  - skill: MySQL
+    value: 0.5
+    logo: mysql.png
+  - skill: MongoDB
+    value: 0.3
+    logo: mongodb.png
+  - skill: SQLite
+    value: 0.5
+    logo: sqlite.svg
+  - skill: SPARQL
+    value: 0.8
+    logo: sparql.svg
+  - skill: placeholder5
+    value: 0
+  - skill: placeholder6
+    value: 0
+  - skill: placeholder7
+    value: 0
+  - skill: placeholder8
+    value: 0
+  - skill: placeholder9
+    value: 0
+  - skill: placeholder10
+    value: 0 
+
+CI/CD:
+  - skill: Git
+    value: 0.75
+    logo: git.svg
+  - skill: AWS
+    value: 0.4
+    logo: aws.svg
+  - skill: Google Cloud
+    value: 0.4
+    logo: gcloud.svg
+  - skill: Travis CI
+    value: 0.65
+    logo: travis.svg
+  - skill: Heroku
+    value: 0.5
+    logo: heroku.png
+  - skill: placeholder6
+    value: 0
+  - skill: placeholder7
+    value: 0
+  - skill: placeholder8
+    value: 0
+  - skill: placeholder9
+    value: 0
+  - skill: placeholder10
+    value: 0 
+
+Data Mining:
+  - skill: R
+    value: 0.65
+    logo: r.svg
+  - skill: scikit-learn
+    value: 0.5
+    logo: scikit.png
+  - skill: Tensorflow
+    value: 0.5
+    logo: tensorflow.svg
+  - skill: Pytorch
+    value: 0.3
+    logo: pytorch.svg
+  - skill: placeholder5
+    value: 0
+  - skill: placeholder6
+    value: 0
+  - skill: placeholder7
+    value: 0
+  - skill: placeholder8
+    value: 0
+  - skill: placeholder9
+    value: 0
+  - skill: placeholder10
+    value: 0 
+
+Parallel Programming:
+  - skill: MPI
+    value: 0.75
+    logo: mpi.png
+  - skill: OpenMP
+    value: 0.5
+    logo: openmp.png
+  - skill: OpenCL
+    value: 0.5
+    logo: opencl.png
+  - skill: HTCondor
+    value: 0.75
+    logo: htcondor.png
+  - skill: placeholder5
+    value: 0
+  - skill: placeholder6
+    value: 0
+  - skill: placeholder7
+    value: 0
+  - skill: placeholder8
+    value: 0
+  - skill: placeholder9
+    value: 0
+  - skill: placeholder10
+    value: 0 
+
+Math/Engineering Softwares:
+  - skill: MATLAB
+    value: 0.65
+    logo: matlab.png
+  - skill: Mathematica
+    value: 0.75
+    logo: mathematica.png
+  - skill: Maple
+    value: 0.35
+    logo: maple.png
+  - skill: Fluent
+    value: 0.65
+    logo: fluent.png
+  - skill: STAR-CCM+
+    value: 0.5
+    logo: starccm.png
+  - skill: AutoCAD
+    value: 0.5
+    logo: autocad.png
+  - skill: CATIA
+    value: 0.6
+    logo: catia.svg
+  - skill: Pointwise
+    value: 0.65
+    logo: pointwise.png
+  - skill: placeholder9
+    value: 0
+  - skill: placeholder10
+    value: 0 
+
+Markup Languages:
+  - skill: HTML
+    value: 0.75
+    logo: html5.png
+  - skill: LaTeX
+    value: 0.8
+    logo: latex.svg
+  - skill: XML
+    value: 0.5
+    logo: xml.png
+  - skill: JSON
+    value: 0.6
+    logo: json.svg
+  - skill: YAML
+    value: 0.4
+    logo: yaml.png
+  - skill: placeholder6
+    value: 0
+  - skill: placeholder7
+    value: 0
+  - skill: placeholder8
+    value: 0
+  - skill: placeholder9
+    value: 0
+  - skill: placeholder10
+    value: 0 
+
+Design:
+  - skill: Photoshop
+    value: 0.8
+    logo: ps.png
+  - skill: Illustrator
+    value: 0.4
+    logo: ai.png
+  - skill: InDesign
+    value: 0.25
+    logo: id.png
+  - skill: After Effects
+    value: 0.25
+    logo: ae.png
+  - skill: 3ds Max
+    value: 0.25
+    logo: 3dsmax.png
+  - skill: Alias
+    value: 0.4
+    logo: alias.png
+  - skill: placeholder7
+    value: 0
+  - skill: placeholder8
+    value: 0
+  - skill: placeholder9
+    value: 0
+  - skill: placeholder10
+    value: 0 
+
+Miscellaneous:
+  - skill: Vim
+    value: 0.65
+    logo: vim.png
+  - skill: MediaWiki
+    value: 0.6
+    logo: mediawiki.svg
+  - skill: VBA
+    value: 0.6
+    logo: vba.png
+  - skill: Doxygen
+    value: 0.5
+    logo: doxygen.png
+  - skill: Jupyter
+    value: 0.75
+    logo: jupyter.svg
+  - skill: placeholder6
+    value: 0
+  - skill: placeholder7
+    value: 0
+  - skill: placeholder8
+    value: 0
+  - skill: placeholder10
+    value: 0
+  - skill: placeholder9
+    value: 0 
