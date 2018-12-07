@@ -31,6 +31,8 @@ class Resume extends Component {
     tooltipOpen: false
   }
 
+  removeUrlProtocol = url => url.replace(/(^\w+:|^)\/\//, '')
+
   updateSize = () => {
     this.setState({
       width: window.innerWidth,
@@ -167,30 +169,33 @@ class Resume extends Component {
                   <div className="cv-basic">
                     <div className="cv-basic-row">
                       <FaEnvelope color={'#ccc'} />
-                      <span
-                        className="cv-basic-info"
-                        dangerouslySetInnerHTML={{
-                          __html: this.state.data.basic.email
-                        }}
-                      />
+                      <span className="cv-basic-info">
+                        <a
+                          href={`mailto:${
+                            this.state.data.basic.email.personal
+                          }`}
+                        >
+                          {this.state.data.basic.email.personal}
+                        </a>
+                      </span>
                     </div>
                     <div className="cv-basic-row">
                       <FaGlobe color={'#ccc'} />
-                      <span
-                        className="cv-basic-info"
-                        dangerouslySetInnerHTML={{
-                          __html: this.state.data.basic.website
-                        }}
-                      />
+                      <span className="cv-basic-info">
+                        <a href={this.state.data.basic.website}>
+                          {this.removeUrlProtocol(
+                            this.state.data.basic.website
+                          )}
+                        </a>
+                      </span>
                     </div>
                     <div className="cv-basic-row">
                       <FaGithub color={'#ccc'} />
-                      <span
-                        className="cv-basic-info"
-                        dangerouslySetInnerHTML={{
-                          __html: this.state.data.basic.github
-                        }}
-                      />
+                      <span className="cv-basic-info">
+                        <a href={this.state.data.basic.github}>
+                          {this.removeUrlProtocol(this.state.data.basic.github)}
+                        </a>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -228,8 +233,8 @@ class Resume extends Component {
                           )}
                           <Row>
                             <ul>
-                              {study.items != null &&
-                                study.items.map((item, idx) => (
+                              {study.details != null &&
+                                study.details.map((item, idx) => (
                                   <li key={idx}>{item}</li>
                                 ))}
                             </ul>
