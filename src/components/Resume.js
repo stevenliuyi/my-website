@@ -202,7 +202,20 @@ class Resume extends Component {
                     <div key={idx}>
                       <Row className="cv-item">
                         <Col xs={8} md={9} className="cv-item-title">
-                          <div className="bold">{edu.school}</div>
+                          {edu.link == null ? (
+                            <div className="bold">{edu.school}</div>
+                          ) : (
+                            <div className="bold">
+                              <a
+                                className="cv-link"
+                                target="_blank"
+                                href={edu.link}
+                                rel="noopener noreferrer"
+                              >
+                                {edu.school}
+                              </a>
+                            </div>
+                          )}
                         </Col>
                         <Col xs={4} md={3} className="cv-item-right">
                           {edu.location}
@@ -212,7 +225,11 @@ class Resume extends Component {
                         <div key={idx}>
                           <Row className="cv-item-sub">
                             <Col xs={8} md={9} className="cv-item-subtitle">
-                              {study.title}
+                              <span
+                                dangerouslySetInnerHTML={{
+                                  __html: study.title
+                                }}
+                              />
                             </Col>
                             <Col xs={4} md={3} className="cv-item-right">
                               {study.time}
@@ -258,7 +275,10 @@ class Resume extends Component {
                         <ul className="cv-details">
                           {exp.details != null &&
                             exp.details.map((detail, idx) => (
-                              <li key={idx}>{detail}</li>
+                              <li
+                                key={idx}
+                                dangerouslySetInnerHTML={{ __html: detail }}
+                              />
                             ))}
                         </ul>
                       </Row>
@@ -431,7 +451,9 @@ class Resume extends Component {
                       <Row className="cv-item">
                         <Col xs={8} md={9} className="cv-item-title">
                           <div>
-                            {award.award}{' '}
+                            <span
+                              dangerouslySetInnerHTML={{ __html: award.award }}
+                            />{' '}
                             <span className="cv-details">
                               {award.detail != null ? `(${award.detail})` : ''}
                             </span>

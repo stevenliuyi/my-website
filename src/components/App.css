@@ -1754,6 +1754,7 @@ a .pgp-text:hover {
 }
 
 .cv-section .badge {
+  margin-top: 3px;
   margin-left: 5px;
   margin-bottom: 5px;
   background-color: #eee;
@@ -1820,11 +1821,11 @@ a .pgp-text:hover {
   font-size: 80%;
 }
 
-.cv-details a {
+.cv-link-gray {
   color: #aaa;
 }
 
-.cv-details a:hover {
+.cv-link-gray:hover {
   color: #000;
   border-bottom: dashed 1px #000;
 }
