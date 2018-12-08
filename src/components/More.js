@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
-import { GoOctoface } from 'react-icons/go'
 import { FaBookOpen } from 'react-icons/fa'
 import { MdPalette } from 'react-icons/md'
 import MoreItem from './MoreItem'
@@ -46,15 +45,6 @@ class More extends Component {
           }}
         />
         <div className="more-items">
-          <MoreItem
-            title="github"
-            number={counts.github}
-            description="Repositories"
-            pic="markus-spiske-507983-unsplash-small.jpg"
-            url="https://github.com/stevenliuyi"
-            logo={<GoOctoface size={50} color="#eee" />}
-            {...this.props}
-          />
           <MoreItem
             title="blog"
             number={this.state.blogCount}

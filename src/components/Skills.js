@@ -7,6 +7,7 @@ import { isSafari, isIOS } from 'react-device-detect'
 import { GoOctoface } from 'react-icons/go'
 import { FaLaptopCode } from 'react-icons/fa'
 import GithubCard from './GithubCard'
+import MoreButton from './MoreButton'
 import data from '../data/skills.yml'
 import languages from '../data/languages.yml'
 import counts from '../data/counts.yml'
@@ -574,6 +575,15 @@ class Skills extends Component {
               duration: 1000
             }}
           />
+          {this.state.github && (
+            <a
+              target="_blank"
+              href="https://github.com/stevenliuyi"
+              rel="noopener noreferrer"
+            >
+              <MoreButton title={'My Github'} delay={500} />
+            </a>
+          )}
         </ScrollOverPack>
       </div>
     )
