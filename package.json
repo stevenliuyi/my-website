@@ -36,7 +36,7 @@
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject",
     "preinstall": "cp cv/cv.yml src/data/resume.yml; cp cv/cv.pdf public/resume.pdf",
-    "postinstall": "patch-package; node src/scripts/counts.js",
+    "postinstall": "patch-package; node src/scripts/counts.js; node src/scripts/languages.js",
     "postbuild": "cp _redirects build"
   },
   "devDependencies": {

@@ -4,9 +4,196 @@ import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import * as d3 from 'd3'
 import { isSafari, isIOS } from 'react-device-detect'
+import { GoOctoface } from 'react-icons/go'
+import { FaLaptopCode } from 'react-icons/fa'
 import data from '../data/skills.yml'
+import languages from '../data/languages.yml'
 
-const updateD3Node = (data, width, height, delay = 0) => {
+const updateGithubD3Node = (width, height, delay = 0) => {
+  // dynamically changed gradient not working on Safari,
+  // perheps related to https://bugs.webkit.org/show_bug.cgi?id=41952
+  const showGradient = !(isIOS || isSafari)
+
+  const marginV = 0
+  const marginH = 45
+  const interval = 100
+  const labelHeight = 40
+
+  console.log(languages)
+  width -= 2 * marginH
+  height -= 2 * marginV
+
+  let svg = d3.select('#github-chart')
+  svg
+    .selectAll('*')
+    .transition()
+    .duration(1000)
+    .style('opacity', 0)
+    .remove()
+
+  svg = svg
+    .append('g')
+    .attr('width', width)
+    .attr('height', height)
+    .attr('transform', `translate(${marginH}, ${marginV - labelHeight})`)
+
+  if (showGradient) {
+    let defs = svg.append('defs')
+
+    let grad = defs
+      .append('linearGradient')
+      .attr('id', 'bar-grad')
+      .attr('gradientUnits', 'userSpaceOnUse')
+      .attr('x1', 0)
+      .attr('y1', 0)
+      .attr('x2', 0)
+      .attr('y2', height - labelHeight)
+
+    grad
+      .append('stop')
+      .attr('offset', '0%')
+      .style('stop-color', '#0b78a2')
+      .style('stop-opacity', 1)
+
+    grad
+      .append('stop')
+      .attr('offset', '100%')
+      .style('stop-color', '#10e3ea')
+      .style('stop-opacity', 1)
+
+    grad = defs
+      .append('linearGradient')
+      .attr('id', 'bar-grad-hover')
+      .attr('gradientUnits', 'userSpaceOnUse')
+      .attr('x1', 0)
+      .attr('y1', 0)
+      .attr('x2', 0)
+      .attr('y2', height - labelHeight)
+
+    grad
+      .append('stop')
+      .attr('offset', '0%')
+      .style('stop-color', '#10aeeb')
+      .style('stop-opacity', 1)
+
+    grad
+      .append('stop')
+      .attr('offset', '100%')
+      .style('stop-color', '#53eef3')
+      .style('stop-opacity', 1)
+  }
+  const x = d3
+    .scaleBand()
+    .range([0, width])
+    .domain(languages.map(d => d.language))
+    .paddingInner(0.2)
+
+  let yMin = d3.min(languages, d => d.bytes)
+  let yMax = d3.max(languages, d => d.bytes)
+  yMin = Math.pow(
+    10,
+    Math.max(Math.floor(Math.log(yMin) / Math.log(10)) - 1, 1)
+  )
+
+  const y = d3
+    .scaleLog()
+    .range([labelHeight, height])
+    .domain([yMax, yMin])
+
+  // add x-axis
+  let xAxis = svg
+    .append('g')
+    .attr('class', 'github-x-axis')
+    .attr('transform', `translate(0, ${height - labelHeight})`)
+    .call(d3.axisBottom(x))
+
+  xAxis.select('.domain').remove()
+
+  xAxis
+    .selectAll('text')
+    .attr('class', 'github-name noselect')
+    .attr('id', (d, i) => `github-name${i}`)
+    .attr('dx', '-.8em')
+    .attr('dy', '.4em')
+    .attr('transform', 'rotate(-45)')
+    .style('opacity', 0)
+    .transition()
+    .duration(interval * 5)
+    .delay(delay)
+    .style('opacity', 1)
+
+  // add y-axis
+  const yMin_log = Math.log(yMin) / Math.log(10) + 1
+  const yMax_log = Math.floor(Math.log(yMax) / Math.log(10))
+  let yAxis = svg
+    .append('g')
+    .attr('class', 'gitub-y-axis')
+    .call(
+      d3
+        .axisRight(y)
+        .tickValues(d3.range(yMin_log, yMax_log + 1).map(d => Math.pow(10, d)))
+        .tickSize(width)
+        .tickFormat(d => `${d3.format('.0s')(d)}B`)
+    )
+
+  yAxis.select('.domain').remove()
+  yAxis.selectAll('.tick line').attr('stroke', '#aaa')
+
+  yAxis
+    .selectAll('.tick text')
+    .attr('class', 'github-byte noselect')
+    .attr('x', -5)
+
+  yAxis
+    .selectAll('.tick line,.tick text')
+    .style('opacity', 0)
+    .transition()
+    .duration(interval * 5)
+    .delay(delay)
+    .style('opacity', 1)
+
+  // add bars
+  let bars = svg
+    .selectAll('.bar')
+    .data(languages)
+    .enter()
+    .append('g')
+
+  bars
+    .append('rect')
+    .attr('class', 'github-bar')
+    .attr('id', (d, i) => `github-bar${i}`)
+    .attr('x', d => x(d.language))
+    .attr('width', x.bandwidth())
+    .attr('y', height - labelHeight)
+    .attr('height', 0)
+    .attr('fill', showGradient ? 'url(#bar-grad)' : '#0d8aba')
+    .on('mouseenter', handleMouseEnter)
+    .on('mouseleave', handleMouseLeave)
+    .transition()
+    .duration(interval * 5)
+    .delay((d, i) => delay + interval * (1 + i))
+    .attr('y', d => y(d.bytes))
+    .attr('height', d => height - labelHeight - y(d.bytes))
+
+  function handleMouseEnter(d, i) {
+    d3.select(`#github-name${i}`).attr('font-weight', 'bold')
+    d3.select(`#github-bar${i}`).attr(
+      'fill',
+      showGradient ? 'url(#bar-grad-hover)' : '#10adea'
+    )
+  }
+
+  function handleMouseLeave(d, i) {
+    d3.select(`#github-name${i}`).attr('font-weight', '300')
+    d3.select(`#github-bar${i}`).attr(
+      'fill',
+      showGradient ? 'url(#bar-grad)' : '#0d8aba'
+    )
+  }
+}
+
+const updateSkillD3Node = (data, width, height, delay = 0) => {
   // dynamically changed gradient not working on Safari,
   // perheps related to https://bugs.webkit.org/show_bug.cgi?id=41952
   const showGradient = !(isIOS || isSafari)
@@ -33,9 +220,9 @@ const updateD3Node = (data, width, height, delay = 0) => {
       .append('linearGradient')
       .attr('id', 'bar-grad')
       .attr('gradientUnits', 'userSpaceOnUse')
-      .attr('x1', 0)
+      .attr('x1', 100)
       .attr('y1', 0)
-      .attr('x2', width - 100)
+      .attr('x2', 100 + (width - 100) * d3.max(data, d => d.value))
       .attr('y2', 0)
 
     grad
@@ -54,15 +241,15 @@ const updateD3Node = (data, width, height, delay = 0) => {
       .append('linearGradient')
       .attr('id', 'bar-grad-hover')
       .attr('gradientUnits', 'userSpaceOnUse')
-      .attr('x1', 0)
+      .attr('x1', 100)
       .attr('y1', 0)
-      .attr('x2', width - 100)
+      .attr('x2', 100 + (width - 100) * d3.max(data, d => d.value))
       .attr('y2', 0)
 
     grad
       .append('stop')
       .attr('offset', '0%')
-      .style('stop-color', '#55eef3')
+      .style('stop-color', '#53eef3')
       .style('stop-opacity', 1)
 
     grad
@@ -199,7 +386,8 @@ class Skills extends Component {
   state = {
     paused: true,
     activeCategory: 'Languages',
-    width: 0
+    width: 0,
+    github: false
   }
 
   getWidth = () => Math.max(window.innerWidth * 0.8 - 450, 400)
@@ -214,9 +402,30 @@ class Skills extends Component {
 
     clearTimeout(window.resizedFinished)
     window.resizedFinished = setTimeout(() => {
-      updateD3Node(data[this.state.activeCategory], width, 400)
+      if (!this.state.github)
+        updateSkillD3Node(data[this.state.activeCategory], width, 400)
+      else updateGithubD3Node(width, 400)
+
       this.setState({ width })
     }, 250)
+  }
+
+  switchPage = () => {
+    this.setState({ github: !this.state.github })
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.github !== prevState.github) {
+      if (!this.state.github) {
+        updateSkillD3Node(
+          data[this.state.activeCategory],
+          this.state.width,
+          400
+        )
+      } else {
+        updateGithubD3Node(this.state.width, 400)
+      }
+    }
   }
 
   componentDidMount() {
@@ -235,80 +444,98 @@ class Skills extends Component {
         id="skill-page"
         className="skill-page"
       >
-        <div className="skill-chart-wrap">
-          <div className="skill-categories">
-            {Object.keys(data).map((category, i) => (
-              <div key={`skill-category-${i}`}>
-                <TweenOne
-                  paused={this.state.paused}
-                  style={{ opacity: 0, transform: 'translateY(100px)' }}
-                  animation={{
-                    opacity: 1,
-                    translateY: 0,
-                    delay: this.props.delay + 500 + i * 100
-                  }}
-                  onClick={() => {
-                    updateD3Node(
-                      data[category],
-                      this.state.width,
-                      400,
-                      this.props.delay
-                    )
-                    this.setState({ activeCategory: category })
-                  }}
-                >
-                  <div
-                    className={`skill-category noselect ${
-                      this.state.activeCategory === category
-                        ? 'skill-category-active'
-                        : ''
-                    }`}
-                  >
-                    <span className="skill-category-bracket">{'<'}</span>
-                    {category}
-                    <span className="skill-category-bracket">{'/>'}</span>
-                  </div>
-                  {i !== Object.keys(data).length - 1 && (
-                    <div className="skill-category-line" />
-                  )}
-                </TweenOne>
-              </div>
-            ))}
-          </div>
-          <TweenOne
-            paused={this.state.paused}
-            className="skill-logo noselect"
-            animation={{
-              opacity: 1,
-              scale: 1,
-              delay: this.props.delay + 500,
-              duration: 1000,
-              ease: 'easeOutBack'
-            }}
-          >
-            <img
-              src="icons/safari-pinned-tab.svg"
-              width={60}
-              height={60}
-              alt="skill logo"
-            />
-          </TweenOne>
+        <div className="skill-switch" onClick={this.switchPage}>
           <div>
-            <svg id="skill-chart" width={this.state.width} height={400} />
+            {!this.state.github ? 'My Github Stats' : 'Computer Skills'}
           </div>
+          {!this.state.github && <GoOctoface size={30} color={'#eee'} />}
+          {this.state.github && <FaLaptopCode size={30} color={'#eee'} />}
         </div>
+        {// Computer Skills
+        !this.state.github && (
+          <div className="skill-chart-wrap">
+            <div className="skill-categories">
+              {Object.keys(data).map((category, i) => (
+                <div key={`skill-category-${i}`}>
+                  <TweenOne
+                    paused={this.state.paused}
+                    style={{ opacity: 0, transform: 'translateY(100px)' }}
+                    animation={{
+                      opacity: 1,
+                      translateY: 0,
+                      delay: this.props.delay + 500 + i * 100
+                    }}
+                    onClick={() => {
+                      updateSkillD3Node(
+                        data[category],
+                        this.state.width,
+                        400,
+                        this.props.delay
+                      )
+                      this.setState({ activeCategory: category })
+                    }}
+                  >
+                    <div
+                      className={`skill-category noselect ${
+                        this.state.activeCategory === category
+                          ? 'skill-category-active'
+                          : ''
+                      }`}
+                    >
+                      <span className="skill-category-bracket">{'<'}</span>
+                      {category}
+                      <span className="skill-category-bracket">{'/>'}</span>
+                    </div>
+                    {i !== Object.keys(data).length - 1 && (
+                      <div className="skill-category-line" />
+                    )}
+                  </TweenOne>
+                </div>
+              ))}
+            </div>
+            <TweenOne
+              paused={this.state.paused}
+              className="skill-logo noselect"
+              animation={{
+                opacity: 1,
+                scale: 1,
+                delay: this.props.delay + 500,
+                duration: 1000,
+                ease: 'easeOutBack'
+              }}
+            >
+              <img
+                src="icons/safari-pinned-tab.svg"
+                width={60}
+                height={60}
+                alt="skill logo"
+              />
+            </TweenOne>
+            <div>
+              <svg id="skill-chart" width={this.state.width} height={400} />
+            </div>
+          </div>
+        )}
+
+        {// Github statistics
+        this.state.github && (
+          <div className="skill-chart-wrap">
+            <svg id="github-chart" width={this.state.width} height={400} />
+          </div>
+        )}
         <ScrollOverPack
           id="skill-page"
           playScale={0.5}
           always={false}
           onChange={({ mode, id }) => {
             if (mode === 'enter') {
-              updateD3Node(
-                data.Languages,
-                this.state.width,
-                400,
-                this.props.delay
-              )
+              if (!this.state.github)
+                updateSkillD3Node(
+                  data.Languages,
+                  this.state.width,
+                  400,
+                  this.props.delay
+                )
               this.setState({ paused: false })
             }
           }}

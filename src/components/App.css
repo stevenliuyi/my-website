@@ -608,6 +608,37 @@ a {
   margin: 0;
 }
 
+.skill-switch {
+  position: absolute;
+  width: 120px;
+  height: 50px;
+  bottom: 100px;
+  background-color: #aaa;
+  padding: 10px;
+  border-radius: 10px;
+  transform: translateX(-72px);
+  cursor: pointer;
+  z-index: 99;
+  transition: all .2s;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.skill-switch:hover {
+  transform: translateX(-8px);
+  transition: all .2s;
+}
+
+.skill-switch > div {
+  width: 70px;
+  word-wrap: break-word;
+  color: #eee;
+  font-weight: bold;
+  font-size: 12px;
+  padding-right: 5px;
+}
+
 .scroll-to-top,
 .scroll-to-content {
   position: absolute;
@@ -780,6 +811,16 @@ a {
   .skill-categories {
     display: none;
   }
+}
+
+.github-name,
+.github-byte {
+  text-anchor: end;
+  font-size: 14px;
+}
+
+.github-x-axis .tick line {
+  display: none;
 }
 
 .keywords-wrap {

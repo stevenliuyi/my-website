@@ -1,17 +1,6 @@
 const yaml = require('js-yaml')
 const fs = require('fs')
-const fetch = require('node-fetch')
-
-function fetchGithubCount() {
-  return fetch('https://api.github.com/user/repos?per_page=100', {
-    headers: {
-      Accept: 'application/vnd.github.v3+json',
-      Authorization: `token ${process.env.GITHUB_TOKEN}`
-    }
-  })
-    .then(res => res.json())
-    .then(data => data.length)
-}
+const api = require('./api')
 
 function writeCounts(read, portfolio, github) {
   const text = `read: ${read}\r\nportfolio: ${portfolio}\r\ngithub: ${github}`
@@ -36,9 +25,11 @@ try {
   const readingListCount = readingList.length
   const portfolioCount = portfolioList.length
 
-  fetchGithubCount().then(githubCount =>
-    writeCounts(readingListCount, portfolioCount, githubCount)
-  )
+  api
+    .fetchGithubCount()
+    .then(githubCount =>
+      writeCounts(readingListCount, portfolioCount, githubCount)
+    )
 } catch (e) {
   console.log(e)
 }
