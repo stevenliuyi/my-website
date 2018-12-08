@@ -199,9 +199,9 @@ class Front extends Component {
                   if (!this.state.linkShown) this.setState({ linkShown: true })
                 }}
               >
-                <span>hi, I'm Yi Liu</span>
-                <Typist.Backspace count={6} delay={1000} />
-                <span>Steven.</span>
+                <span>Hello, I'm Yi Liu.</span>
+                <Typist.Backspace count={11} delay={1000} />
+                <span>World!</span>
               </Typist>
               <div className="main-links noselect">
                 <a href="https://github.com/stevenliuyi">
