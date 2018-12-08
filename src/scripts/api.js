@@ -18,5 +18,11 @@ module.exports = {
     return this.fetchGithub(`repos/stevenliuyi/${repo}/languages`).then(
       data => (data.message == null ? data : {})
     )
+  },
+
+  fetchGithubCommitCount: function(repo) {
+    return this.fetchGithub(`repos/stevenliuyi/${repo}/commits`).then(
+      data => data.length
+    )
   }
 }

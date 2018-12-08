@@ -600,6 +600,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: top;
+  flex-wrap: wrap;
 }
 
 .skills {
@@ -821,6 +822,42 @@ a {
 
 .github-x-axis .tick line {
   display: none;
+}
+
+.github-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 160px;
+}
+
+.github-card {
+  width: 30vw;
+  max-width: 150px;
+  height: 125px;
+  padding: 5px;
+}
+
+.github-card .card {
+  border: none;
+  border-radius: 0;
+}
+
+.github-card-desc {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.github-card-number {
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  transition: transform .5s ease;
+}
+
+.github-card:hover .github-card-number {
+  transform: scale(1.2);
+  transition: transform .5s ease;
 }
 
 .keywords-wrap {
@@ -2011,5 +2048,11 @@ a .pgp-text:hover {
   .cv-teaching-details {
     columns: 2;
     list-style: inside disc;
+  }
+}
+
+@media (max-width: 560px) {
+  .github-cards {
+    width: 90vw;
   }
 }

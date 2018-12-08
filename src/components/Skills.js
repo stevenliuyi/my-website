@@ -6,8 +6,10 @@ import * as d3 from 'd3'
 import { isSafari, isIOS } from 'react-device-detect'
 import { GoOctoface } from 'react-icons/go'
 import { FaLaptopCode } from 'react-icons/fa'
+import GithubCard from './GithubCard'
 import data from '../data/skills.yml'
 import languages from '../data/languages.yml'
+import counts from '../data/counts.yml'
 
 const updateGithubD3Node = (width, height, delay = 0) => {
   // dynamically changed gradient not working on Safari,
@@ -19,7 +21,6 @@ const updateGithubD3Node = (width, height, delay = 0) => {
   const interval = 100
   const labelHeight = 40
 
-  console.log(languages)
   width -= 2 * marginH
   height -= 2 * marginV
 
@@ -521,6 +522,11 @@ class Skills extends Component {
         this.state.github && (
           <div className="skill-chart-wrap">
             <svg id="github-chart" width={this.state.width} height={400} />
+            <div className="github-cards">
+              <GithubCard description={'Repositories'} number={counts.github} />
+              <GithubCard description={'Languages'} number={languages.length} />
+              <GithubCard description={'Commits'} number={counts.commits} />
+            </div>
           </div>
         )}
         <ScrollOverPack
@@ -540,15 +546,26 @@ class Skills extends Component {
             }
           }}
         >
-          <Texty
-            key="0"
-            className="section-title noselect"
-            delay={this.props.delay}
-          >
-            COMPUTER SKILLS
-          </Texty>
+          {!this.state.github && (
+            <Texty
+              key="0"
+              className="section-title noselect"
+              delay={this.props.delay}
+            >
+              COMPUTER SKILLS
+            </Texty>
+          )}
+          {this.state.github && (
+            <Texty
+              key="1"
+              className="section-title noselect"
+              delay={this.props.delay}
+            >
+              GITHUB STATS
+            </Texty>
+          )}
           <TweenOne
-            key="1"
+            key="2"
             className="underline"
             animation={{
               opacity: 1,

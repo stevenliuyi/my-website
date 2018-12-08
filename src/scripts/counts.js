@@ -2,8 +2,8 @@ const yaml = require('js-yaml')
 const fs = require('fs')
 const api = require('./api')
 
-function writeCounts(read, portfolio, github) {
-  const text = `read: ${read}\r\nportfolio: ${portfolio}\r\ngithub: ${github}`
+function writeCounts(read, portfolio, github, commits) {
+  const text = `read: ${read}\r\nportfolio: ${portfolio}\r\ngithub: ${github}\r\ncommits: ${commits}`
   const filename = 'src/data/counts.yml'
   fs.writeFile(filename, text, function(e) {
     if (e) {
@@ -25,11 +25,31 @@ try {
   const readingListCount = readingList.length
   const portfolioCount = portfolioList.length
 
-  api
-    .fetchGithubCount()
-    .then(githubCount =>
-      writeCounts(readingListCount, portfolioCount, githubCount)
+  let githubCommitCount = 0
+  let promises = []
+  api.fetchGithub('user/repos').then(data => {
+    data.forEach(repo => {
+      promises.push(
+        api.fetchGithubCommitCount(repo.name).then(count => {
+          if (count > 0) githubCommitCount += count
+        })
+      )
+    })
+
+    let githubRepoCount = 0
+    promises.push(
+      api.fetchGithubCount().then(count => (githubRepoCount = count))
     )
+
+    Promise.all(promises).then(() =>
+      writeCounts(
+        readingListCount,
+        portfolioCount,
+        githubRepoCount,
+        githubCommitCount
+      )
+    )
+  })
 } catch (e) {
   console.log(e)
 }
