@@ -188,8 +188,8 @@ class Resume extends Component {
                     <div className="cv-basic-row">
                       <FaGithub color={'#ccc'} />
                       <span className="cv-basic-info">
-                        <a href={data.basic.github}>
-                          {this.removeUrlProtocol(data.basic.github)}
+                        <a href={`https://github.com/${data.basic.github}`}>
+                          {data.basic.github}
                         </a>
                       </span>
                     </div>
