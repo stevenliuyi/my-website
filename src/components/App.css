@@ -50,7 +50,7 @@
 .title {
   position: absolute;
   top: 60vh;
-  left: 35%;
+  left: calc(35% + 20px);
   transform: translate(-50%, 0);
   font-family: 'Domaine Display', serif;
   font-size: 26px;
@@ -65,7 +65,7 @@
 
 .main-links {
   position: absolute;
-  left: 35%;
+  left: calc(35% + 20px);
   transform: translate(-50%, -10px);
   width: 200px;
   top: 60vh;
@@ -614,7 +614,8 @@ a {
   width: 120px;
   height: 50px;
   bottom: 20vh;
-  background-color: #aaa;
+  background-color: #555;
+  opacity: .5;
   padding: 10px;
   border-radius: 10px;
   transform: translateX(-72px);
@@ -649,7 +650,7 @@ a {
 .scroll-to-top,
 .scroll-to-content {
   position: absolute;
-  background-color: #ddd;
+  background-color: rgba(212, 212, 212, .8);
   margin: 0 auto;
   width: 50px;
   height: 50px;
@@ -676,7 +677,7 @@ a {
 
 .scroll-to-top:hover,
 .scroll-to-content:hover {
-  background-color: #bbb;
+  background-color: rgba(170, 170, 170, .8);
 }
 
 .scroll-to-top:hover > .scroll-arrow {
@@ -1349,11 +1350,11 @@ a .pgp-text:hover {
 
 .cover-logo {
   position: fixed;
-  z-index: 10;
+  z-index: 100;
   padding: 6px;
   margin: 12px;
   transform-origin: 50% 50%;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, .8);
   border-radius: 9999px;
 }
 
@@ -1366,7 +1367,7 @@ a .pgp-text:hover {
   position: fixed;
   padding: 6px;
   margin: 11px 0px 11px 12px;
-  z-index: 11;
+  z-index: 101;
   display: flex;
   align-items: center;
   transform: translate(10px);
@@ -1390,8 +1391,7 @@ a .pgp-text:hover {
 }
 
 .cover-text {
-  margin-top: 60px;
-  margin-bottom: -50px;
+  margin: 60px 20px -50px 20px;
   display: flex;
   justify-content: center;
   color: #aaa;
