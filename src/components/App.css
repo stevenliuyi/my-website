@@ -610,10 +610,10 @@ a {
 }
 
 .skill-switch {
-  position: absolute;
+  position: fixed;
   width: 120px;
   height: 50px;
-  bottom: 100px;
+  bottom: 20vh;
   background-color: #aaa;
   padding: 10px;
   border-radius: 10px;
@@ -624,11 +624,17 @@ a {
   display: flex;
   justify-content: end;
   align-items: center;
+  transition: all .3s;
+}
+
+.skill-switch-init {
+  transform: translateX(-120px);
+  transition: all .3s;
 }
 
 .skill-switch:hover {
   transform: translateX(-8px);
-  transition: all .2s;
+  transition: all .3s;
 }
 
 .skill-switch > div {

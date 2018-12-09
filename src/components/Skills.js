@@ -389,7 +389,8 @@ class Skills extends Component {
     paused: true,
     activeCategory: 'Languages',
     width: 0,
-    github: false
+    github: false,
+    showSwitchButton: false
   }
 
   getWidth = () => Math.max(window.innerWidth * 0.8 - 450, 400)
@@ -416,7 +417,22 @@ class Skills extends Component {
     this.setState({ github: !this.state.github })
   }
 
+  handleScroll = e => {
+    let scrollTop = null
+    try {
+      scrollTop =
+        document.documentElement.scrollTop || document.scollingElement.scrollTop
+    } catch {
+      return
+    }
+    const offset = document.querySelector('.skill-page').offsetTop - scrollTop
+    this.setState({
+      showSwitchButton: offset - 0.5 * window.innerHeight < 0 && offset > -200
+    })
+  }
+
   componentDidUpdate(prevProps, prevState) {
+    // switch button clicked
     if (this.state.github !== prevState.github) {
       if (!this.state.github) {
         updateSkillD3Node(
@@ -428,15 +444,26 @@ class Skills extends Component {
         updateGithubD3Node(this.state.width, 400)
       }
     }
+
+    // page scrolled into view
+    if (this.state.showSwitchButton !== prevState.showSwitchButton) {
+      const switchElement = document.querySelector('.skill-switch')
+      if (switchElement == null) return
+      if (this.state.showSwitchButton)
+        switchElement.classList.remove('skill-switch-init')
+      else switchElement.classList.add('skill-switch-init')
+    }
   }
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize)
+    window.addEventListener('scroll', this.handleScroll)
     this.setState({ width: this.getWidth() })
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.onResize)
+    window.removeEventListener('scroll', this.handleScroll)
   }
 
   render() {
@@ -446,7 +473,10 @@ class Skills extends Component {
         id="skill-page"
         className="skill-page"
       >
-        <div className="skill-switch" onClick={this.switchPage}>
+        <div
+          className="skill-switch skill-switch-init"
+          onClick={this.switchPage}
+        >
           <div>
             {!this.state.github ? 'My Github Stats' : 'Computer Skills'}
           </div>
