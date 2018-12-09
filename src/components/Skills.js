@@ -565,6 +565,7 @@ class Skills extends Component {
           playScale={0.5}
           always={false}
           onChange={({ mode, id }) => {
+            if (!this.state.paused) return
             if (mode === 'enter') {
               if (!this.state.github)
                 updateSkillD3Node(
