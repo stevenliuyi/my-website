@@ -2074,3 +2074,9 @@ a .pgp-text:hover {
     top: 700px;
   }
 }
+
+@media (hover: none) {
+  .skill-switch:hover {
+    transform: translateX(-72px);
+  }
+}

@@ -12,6 +12,29 @@ import data from '../data/skills.yml'
 import languages from '../data/languages.yml'
 import counts from '../data/counts.yml'
 
+// combine entries with small values
+const compactData = (data, n) => {
+  if (n >= data.length) return data
+
+  // clone object
+  let newData = JSON.parse(JSON.stringify(data))
+  // sort by values
+  newData = newData.sort((a, b) => a.bytes - b.bytes)
+  // calculate sum of small values
+  let sum = newData
+    .slice(0, data.length - n + 1)
+    .map(d => d.bytes)
+    .reduce((sum, x) => sum + x)
+  // exclude entries of small values and sort alphabetically
+  newData = newData
+    .slice(data.length - n + 1)
+    .sort((a, b) => a.language.localeCompare(b.language))
+  // add the sum as a single entry
+  newData.push({ language: 'Others', bytes: sum })
+
+  return newData
+}
+
 const updateGithubD3Node = (width, height, delay = 0) => {
   // dynamically changed gradient not working on Safari,
   // perheps related to https://bugs.webkit.org/show_bug.cgi?id=41952
@@ -21,6 +44,7 @@ const updateGithubD3Node = (width, height, delay = 0) => {
   const marginH = 45
   const interval = 100
   const labelHeight = 40
+  const minBandwidth = 30
 
   width -= 2 * marginH
   height -= 2 * marginV
@@ -84,14 +108,20 @@ const updateGithubD3Node = (width, height, delay = 0) => {
       .style('stop-color', '#53eef3')
       .style('stop-opacity', 1)
   }
+
+  const nBands = Math.min(
+    Math.round((width + 0.2 * minBandwidth) / (1.2 * minBandwidth)),
+    languages.length
+  )
+  const languagesData = compactData(languages, nBands)
   const x = d3
     .scaleBand()
     .range([0, width])
-    .domain(languages.map(d => d.language))
+    .domain(languagesData.map(d => d.language))
     .paddingInner(0.2)
 
-  let yMin = d3.min(languages, d => d.bytes)
-  let yMax = d3.max(languages, d => d.bytes)
+  let yMin = d3.min(languagesData, d => d.bytes)
+  let yMax = d3.max(languagesData, d => d.bytes)
   yMin = Math.pow(
     10,
     Math.max(Math.floor(Math.log(yMin) / Math.log(10)) - 1, 1)
@@ -157,7 +187,7 @@ const updateGithubD3Node = (width, height, delay = 0) => {
   // add bars
   let bars = svg
     .selectAll('.bar')
-    .data(languages)
+    .data(languagesData)
     .enter()
     .append('g')
 
