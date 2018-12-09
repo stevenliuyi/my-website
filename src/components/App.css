@@ -2069,4 +2069,8 @@ a .pgp-text:hover {
   .github-cards {
     width: 90vw;
   }
+
+  .skill-page .more-button {
+    top: 700px;
+  }
 }

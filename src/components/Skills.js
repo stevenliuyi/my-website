@@ -418,13 +418,8 @@ class Skills extends Component {
   }
 
   handleScroll = e => {
-    let scrollTop = null
-    try {
-      scrollTop =
-        document.documentElement.scrollTop || document.scollingElement.scrollTop
-    } catch {
-      return
-    }
+    const scrollTop =
+      document.documentElement.scrollTop || document.scrollingElement.scrollTop
     const offset = document.querySelector('.skill-page').offsetTop - scrollTop
     this.setState({
       showSwitchButton: offset - 0.5 * window.innerHeight < 0 && offset > -200
