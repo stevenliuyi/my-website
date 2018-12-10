@@ -12,6 +12,32 @@ world:
     - KOR
     - JPN
 
+
+CHN:
+  filename: china.json
+  center: 105, 38
+  scale: 450
+  abbr_key: latinName
+  name_key: latinName
+  places:
+    - Beijing
+    - Shanghai
+    - Fujian
+    - Jiangsu
+    - Jiangxi
+    - Zhejiang
+    - Anhui
+
+CAN:
+  filename: canada.json
+  center: -105, 70
+  scale: 200
+  abbr_key: NAME
+  name_key: FULLNAME
+  places:
+    - ON
+    - QC
+
 USA:
   filename: usa.json
   center: -95, 40
@@ -46,18 +72,3 @@ USA:
     - VA
     - WI
     - WY
-
-CHN:
-  filename: china.json
-  center: 105, 38
-  scale: 450
-  abbr_key: latinName
-  name_key: latinName
-  places:
-    - Beijing
-    - Shanghai
-    - Fujian
-    - Jiangsu
-    - Jiangxi
-    - Zhejiang
-    - Anhui
