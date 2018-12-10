@@ -10,37 +10,9 @@ import { isMobile } from 'react-device-detect'
 import { Link, withRouter } from 'react-router-dom'
 import Logo from './Logo'
 import SimpleTooltip from './SimpleTooltip'
+import places from '../data/places.yml'
 
 const ScrollOverPack = ScrollAnim.OverPack
-
-const states = [
-  'CA',
-  'CO',
-  'CT',
-  'FL',
-  'GA',
-  'IA',
-  'IL',
-  'IN',
-  'KY',
-  'MA',
-  'MD',
-  'MI',
-  'NC',
-  'NE',
-  'NJ',
-  'NV',
-  'NY',
-  'OH',
-  'PA',
-  'SC',
-  'TN',
-  'TX',
-  'UT',
-  'VA',
-  'WI',
-  'WY'
-]
 
 class About extends Component {
   state = {
@@ -512,8 +484,16 @@ class About extends Component {
           />
           <NumberCard
             description="number of U.S. states I've set foot on"
-            number={states.length}
-            detail="... and Washington, D.C.!"
+            number={places.USA.places.length - 1}
+            detail={
+              <span>
+                ...{' '}
+                <Link to={{ pathname: 'places', backId: 'about-page' }}>
+                  and Washington, D.C.
+                </Link>
+                !
+              </span>
+            }
           />
           <NumberCard
             description="my favorite number"

@@ -12,6 +12,7 @@ import {
 } from 'react-simple-maps'
 import ReactTooltip from 'react-tooltip'
 import places from '../data/places.yml'
+import { Spring, config } from 'react-spring'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -24,7 +25,7 @@ const markers = [
   },
   {
     name: 'South Bend',
-    info: 'my current location',
+    info: 'where I currently live',
     coordinates: [-86.25023, 41.6764],
     markerOffsets: [5, 5]
   }
@@ -32,11 +33,28 @@ const markers = [
 
 class Places extends Component {
   state = {
+    currentMap: 'world',
+    resetSpring: false,
     delay: 150
   }
 
-  isVisited = (map, id) => {
-    return places.find(el => el.map === map).places.includes(id)
+  isVisited = abbr => {
+    return places[this.state.currentMap].places.includes(abbr)
+  }
+
+  switchPaths = id => {
+    if (this.state.currentMap === 'world') {
+      if (id === 'USA') this.setState({ currentMap: 'USA', resetSpring: true })
+    } else {
+      this.setState({ currentMap: 'world', resetSpring: true })
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.currentMap !== prevState.currentMap)
+      setTimeout(() => {
+        ReactTooltip.rebuild()
+      }, 100)
   }
 
   componentDidMount() {
@@ -47,6 +65,7 @@ class Places extends Component {
   }
 
   render() {
+    const currentMap = this.state.currentMap
     return (
       <ScrollOverPack scale={0.5} always={false}>
         <Page
@@ -62,86 +81,135 @@ class Places extends Component {
             This is a map marking all the places I've been.
           </div>
           <div className="places-map-wrap">
-            <ComposableMap
-              className="places-map"
-              projectionConfig={{
-                scale: 160,
-                rotation: [-11, 0, 0],
-                xOffset: -10,
-                yOffset: 10
-              }}
+            <Spring
+              from={{ zoom: currentMap === 'world' ? 2 : 0.5 }}
+              to={{ zoom: 1 }}
+              config={config.stiff}
+              reset={this.state.resetSpring}
+              onStart={() => this.setState({ resetSpring: false })}
             >
-              <ZoomableGroup>
-                <Geographies geography="/maps/world-50m.json">
-                  {(geographies, projection) =>
-                    geographies.map(
-                      (geography, i) =>
-                        geography.id !== 'ATA' && (
-                          <Geography
-                            key={i}
-                            data-tip={geography.properties.name}
-                            geography={geography}
-                            projection={projection}
-                            style={{
-                              default: {
-                                fill: this.isVisited('world', geography.id)
-                                  ? '#aaa'
-                                  : '#eee',
-                                stroke: '#aaa',
-                                strokeWidth: 0.5,
-                                outline: 'none'
-                              },
-                              hover: {
-                                fill: '#aaa',
-                                stroke: '#aaa',
-                                strokeWidth: 0.5,
-                                outline: 'none'
-                              },
-                              pressed: {
-                                fill: '#0d8aba',
-                                stroke: '#aaa',
-                                strokeWidth: 0.5,
-                                outline: 'none'
-                              }
-                            }}
-                          />
-                        )
-                    )
-                  }
-                </Geographies>
-                <Markers>
-                  {markers.map((marker, i) => (
-                    <Marker
-                      key={i}
-                      marker={marker}
-                      style={{
-                        default: { fill: '#0d8aba' },
-                        hover: { fill: '#fff' },
-                        pressed: { fill: '0d8aba' }
-                      }}
+              {styles => (
+                <ComposableMap
+                  className="places-map"
+                  projection={currentMap === 'world' ? 'times' : 'mercator'}
+                  projectionConfig={{
+                    scale: places[currentMap].scale,
+                    rotation:
+                      places[currentMap].rotation != null
+                        ? places[currentMap].rotation
+                            .split(',')
+                            .map(d => parseInt(d, 10))
+                        : [0, 0, 0]
+                  }}
+                >
+                  <ZoomableGroup
+                    center={places[currentMap].center
+                      .split(',')
+                      .map(d => parseInt(d, 10))}
+                    zoom={styles.zoom}
+                  >
+                    <Geographies
+                      geography={`/maps/${places[currentMap].filename}`}
+                      disableOptimization
                     >
-                      <circle cx={0} cy={0} r={3} className="places-marker" />
-                      <text
-                        textAnchor="start"
-                        x={marker.markerOffsets[0]}
-                        y={marker.markerOffsets[1]}
-                        className="places-marker-text"
-                      >
-                        {marker.name}
-                      </text>
-                      <text
-                        textAnchor="start"
-                        x={marker.markerOffsets[0]}
-                        y={marker.markerOffsets[1] + 8}
-                        className="places-marker-info"
-                      >
-                        {marker.info}
-                      </text>
-                    </Marker>
-                  ))}
-                </Markers>
-              </ZoomableGroup>
-            </ComposableMap>
+                      {(geographies, projection) =>
+                        geographies.map(
+                          (geography, i) =>
+                            geography.id !== 'ATA' && (
+                              <Geography
+                                className={
+                                  currentMap !== 'world' ||
+                                  Object.keys(places).includes(geography.id)
+                                    ? 'places-geo-pointer'
+                                    : ''
+                                }
+                                key={i}
+                                cacheId={`${currentMap}-${
+                                  geography.properties[
+                                    places[currentMap].name_key
+                                  ]
+                                }`}
+                                data-tip={
+                                  geography.properties[
+                                    places[currentMap].name_key
+                                  ]
+                                }
+                                geography={geography}
+                                projection={projection}
+                                onClick={() => this.switchPaths(geography.id)}
+                                style={{
+                                  default: {
+                                    fill: this.isVisited(
+                                      currentMap === 'world'
+                                        ? geography.id
+                                        : geography.properties[
+                                            places[currentMap].abbr_key
+                                          ]
+                                    )
+                                      ? '#aaa'
+                                      : '#eee',
+                                    stroke: '#aaa',
+                                    strokeWidth: 0.5,
+                                    outline: 'none'
+                                  },
+                                  hover: {
+                                    fill: '#0d8aba',
+                                    stroke: '#0d8aba',
+                                    strokeWidth: 0.5,
+                                    outline: 'none'
+                                  },
+                                  pressed: {
+                                    fill: '#0d8aba',
+                                    stroke: '#aaa',
+                                    strokeWidth: 0.5,
+                                    outline: 'none'
+                                  }
+                                }}
+                              />
+                            )
+                        )
+                      }
+                    </Geographies>
+                    <Markers>
+                      {markers.map((marker, i) => (
+                        <Marker
+                          key={i}
+                          marker={marker}
+                          style={{
+                            default: { fill: '#0d8aba' },
+                            hover: { fill: '#fff' },
+                            pressed: { fill: '0d8aba' }
+                          }}
+                        >
+                          <circle
+                            cx={0}
+                            cy={0}
+                            r={3}
+                            className="places-marker"
+                          />
+                          <text
+                            textAnchor="start"
+                            x={marker.markerOffsets[0]}
+                            y={marker.markerOffsets[1]}
+                            className="places-marker-text noselect"
+                          >
+                            {marker.name}
+                          </text>
+                          <text
+                            textAnchor="start"
+                            x={marker.markerOffsets[0]}
+                            y={marker.markerOffsets[1] + 8}
+                            className="places-marker-info noselect"
+                          >
+                            {marker.info}
+                          </text>
+                        </Marker>
+                      ))}
+                    </Markers>
+                  </ZoomableGroup>
+                </ComposableMap>
+              )}
+            </Spring>
             <ReactTooltip type="light" />
           </div>
         </Page>

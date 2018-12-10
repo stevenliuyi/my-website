@@ -1,4 +1,10 @@
-- map: world
+world:
+  filename: world-50m.json
+  center: 10, 20
+  scale: 160
+  rotation: -11, 0, 0
+  zoom: 1
+  name_key: name
   places:
     - CHN
     - USA
@@ -6,3 +12,39 @@
     - CAN
     - KOR
     - JPN
+
+USA:
+  filename: usa.json
+  center: -95, 40
+  scale: 600
+  zoom: 4
+  abbr_key: STUSPS10
+  name_key: NAME10
+  places:
+    - CA
+    - CO
+    - CT
+    - DC
+    - FL
+    - GA
+    - IA
+    - IL
+    - IN
+    - KY
+    - MA
+    - MD
+    - MI
+    - NC
+    - NE
+    - NJ
+    - NV
+    - NY
+    - OH
+    - PA
+    - SC
+    - TN
+    - TX
+    - UT
+    - VA
+    - WI
+    - WY

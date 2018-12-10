@@ -1983,6 +1983,10 @@ a .pgp-text:hover {
   max-height: 80vh;
 }
 
+.places-geo-pointer {
+  cursor: pointer;
+}
+
 .places-marker-text {
   fill: #555;
   font-size: 10px;

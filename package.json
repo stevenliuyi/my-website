@@ -28,6 +28,7 @@
     "react-scripts": "2.0.3",
     "react-scroll-to-component": "^1.0.2",
     "react-simple-maps": "^0.12.1",
+    "react-spring": "^6.1.10",
     "react-tooltip": "^3.9.0",
     "react-typist": "^2.0.4",
     "reactstrap": "^6.4.0"
