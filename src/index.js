@@ -6,6 +6,7 @@ import asyncComponent from './components/AsyncComponent'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import 'react-app-polyfill/ie11'
+import { unregister } from './registerServiceWorker'
 
 const Read = asyncComponent(() => import('./components/Read'))
 const Resume = asyncComponent(() => import('./components/Resume'))
@@ -38,3 +39,4 @@ ReactDOM.render(
   </Router>,
   document.getElementById('root')
 )
+unregister()
