@@ -249,13 +249,20 @@ class About extends Component {
                 </Link>
                 ,{' '}
                 <Link to={{ pathname: 'portfolio', backId: 'about-page' }}>
-                  <SimpleTooltip id="tt-desing" text="visit my portfolio">
+                  <SimpleTooltip id="tt-design" text="visit my portfolio">
                     designing
                   </SimpleTooltip>
                 </Link>
                 , photographing, stargazing, playing contract bridge,
-                travelling, playing Pokémon games and a little bit of wine
-                tasting.
+                <Link to={{ pathname: 'places', backId: 'about-page' }}>
+                  <SimpleTooltip
+                    id="tt-places"
+                    text="see the places I've been to"
+                  >
+                    travelling
+                  </SimpleTooltip>
+                </Link>
+                , playing Pokémon games and a little bit of wine tasting.
               </div>
             </TweenOne>
           </div>

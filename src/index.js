@@ -11,6 +11,7 @@ import 'react-app-polyfill/ie11'
 const Read = asyncComponent(() => import('./components/Read'))
 const Resume = asyncComponent(() => import('./components/Resume'))
 const Portfolio = asyncComponent(() => import('./components/Portfolio'))
+const Places = asyncComponent(() => import('./components/Places'))
 
 ReactDOM.render(
   <Router>
@@ -20,6 +21,7 @@ ReactDOM.render(
         <Route exact path="/read" component={Read} />
         <Route exact path="/resume" component={Resume} />
         <Route exact path="/portfolio" component={Portfolio} />
+        <Route exact path="/places" component={Places} />
         {/* redirect to https://go.yliu.io for shortened URLs */}
         <Route
           path="/:id"

@@ -260,10 +260,10 @@ class Page extends Component {
           style={{ minHeight: '100vh', width: '100%', overflow: 'hidden' }}
         >
           {this.props.children}
+          {(this.props.showFooter == null || this.props.showFooter) && (
+            <PageFooter footerStyle={this.props.footerStyle} />
+          )}
         </div>
-        {(this.props.showFooter == null || this.props.showFooter) && (
-          <PageFooter footerStyle={this.props.footerStyle} />
-        )}
       </div>
     )
   }
