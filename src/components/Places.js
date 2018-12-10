@@ -19,15 +19,17 @@ const ScrollOverPack = ScrollAnim.OverPack
 const markers = [
   {
     name: 'Shanghai',
+    id: 'shanghai',
     info: 'my hometown',
     coordinates: [121.4667, 31.1667],
     markerOffsets: [5, 10]
   },
   {
     name: 'South Bend',
+    id: 'southbend',
     info: 'where I currently live',
     coordinates: [-86.25023, 41.6764],
-    markerOffsets: [5, 5]
+    markerOffsets: [6, 0]
   }
 ]
 
@@ -45,35 +47,60 @@ class Places extends Component {
     return places[this.state.currentMap].places.includes(abbr)
   }
 
-  switchPaths = id => {
+  switchPaths = abbr => {
     if (this.state.currentMap === 'world') {
-      if (Object.keys(places).includes(id))
-        this.setState({ currentMap: id, resetSpring: true })
+      if (Object.keys(places).includes(abbr)) {
+        this.setState({ currentMap: abbr, resetSpring: true })
+        this.markersHoverEffect(abbr, false)
+      }
       // Chinese political correctness
-      if (['HKG', 'TWN'].includes(id))
+      if (['HKG', 'TWN'].includes(abbr)) {
         this.setState({ currentMap: 'CHN', resetSpring: true })
+        this.markersHoverEffect(abbr, false)
+      }
     } else {
       this.setState({ currentMap: 'world', resetSpring: true })
+      this.markersHoverEffect(abbr, false)
     }
   }
 
-  handleMouseEnter = id => {
+  markersHoverEffect = (abbr, enter) => {
+    let elements = []
+    if (['CHN', 'HKG', 'TWN', 'Shanghai'].includes(abbr)) {
+      const el = document.getElementById('marker-shanghai')
+      elements.push(el)
+    }
+    if (['USA', 'MI', 'IN'].includes(abbr)) {
+      const el = document.getElementById('marker-southbend')
+      elements.push(el)
+    }
+    elements.forEach(el => {
+      if (el != null && enter) el.classList.add('place-marker-hover')
+      if (el != null && !enter) el.classList.remove('place-marker-hover')
+    })
+  }
+
+  handleMouseEnter = abbr => {
     // Chinese political correctness
-    if (['CHN', 'HKG', 'TWN'].includes(id)) {
+    if (['CHN', 'HKG', 'TWN'].includes(abbr)) {
       ;['China', 'Hong Kong', 'Taiwan'].forEach(pl => {
         const el = document.getElementById(`world-${pl}`)
         if (el != null) el.classList.add('places-geo-hover')
       })
     }
+
+    this.markersHoverEffect(abbr, true)
   }
 
-  handleMouseLeave = id => {
-    if (['CHN', 'HKG', 'TWN'].includes(id)) {
+  handleMouseLeave = abbr => {
+    if (['CHN', 'HKG', 'TWN'].includes(abbr)) {
       ;['China', 'Hong Kong', 'Taiwan'].forEach(pl => {
         const el = document.getElementById(`world-${pl}`)
         if (el != null) el.classList.remove('places-geo-hover')
       })
     }
+
+    this.markersHoverEffect(abbr, false)
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -114,6 +141,7 @@ class Places extends Component {
               delay={100}
               reset={this.state.resetSpring}
               onStart={() => this.setState({ resetSpring: false })}
+              duration={500}
             >
               {styles => (
                 <ComposableMap
@@ -140,81 +168,64 @@ class Places extends Component {
                       disableOptimization
                     >
                       {(geographies, projection) =>
-                        geographies.map(
-                          (geography, i) =>
-                            geography.id !== 'ATA' && (
-                              <Geography
-                                className={
-                                  currentMap !== 'world' ||
-                                  Object.keys(places).includes(geography.id) ||
-                                  ['HKG', 'TWN'].includes(geography.id)
-                                    ? 'places-geo-pointer'
-                                    : ''
+                        geographies.map((geography, i) => {
+                          const abbr =
+                            currentMap === 'world'
+                              ? geography.id
+                              : geography.properties[
+                                  places[currentMap].abbr_key
+                                ]
+                          const name =
+                            geography.properties[places[currentMap].name_key]
+                          if (abbr === 'ATA') return <div />
+
+                          return (
+                            <Geography
+                              className={
+                                currentMap !== 'world' ||
+                                Object.keys(places).includes(abbr) ||
+                                ['HKG', 'TWN'].includes(abbr)
+                                  ? 'places-geo-pointer'
+                                  : ''
+                              }
+                              key={i}
+                              id={`${currentMap}-${name}`}
+                              cacheId={`${currentMap}-${name}`}
+                              data-tip={
+                                // Chinese political correctness
+                                currentMap === 'world' &&
+                                ['Hong Kong', 'Taiwan'].includes(name)
+                                  ? 'China'
+                                  : name
+                              }
+                              geography={geography}
+                              projection={projection}
+                              onClick={() => this.switchPaths(abbr)}
+                              onMouseEnter={() => this.handleMouseEnter(abbr)}
+                              onMouseLeave={() => this.handleMouseLeave(abbr)}
+                              style={{
+                                default: {
+                                  fill: this.isVisited(abbr) ? '#aaa' : '#eee',
+                                  stroke: '#aaa',
+                                  strokeWidth: 0.5,
+                                  outline: 'none'
+                                },
+                                hover: {
+                                  fill: '#0d8aba',
+                                  stroke: '#0d8aba',
+                                  strokeWidth: 0.5,
+                                  outline: 'none'
+                                },
+                                pressed: {
+                                  fill: '#0d8aba',
+                                  stroke: '#aaa',
+                                  strokeWidth: 0.5,
+                                  outline: 'none'
                                 }
-                                key={i}
-                                id={`${currentMap}-${
-                                  geography.properties[
-                                    places[currentMap].name_key
-                                  ]
-                                }`}
-                                cacheId={`${currentMap}-${
-                                  geography.properties[
-                                    places[currentMap].name_key
-                                  ]
-                                }`}
-                                data-tip={
-                                  // Chinese political correctness
-                                  currentMap === 'world' &&
-                                  ['Hong Kong', 'Taiwan'].includes(
-                                    geography.properties[
-                                      places[currentMap].name_key
-                                    ]
-                                  )
-                                    ? 'China'
-                                    : geography.properties[
-                                        places[currentMap].name_key
-                                      ]
-                                }
-                                geography={geography}
-                                projection={projection}
-                                onClick={() => this.switchPaths(geography.id)}
-                                onMouseEnter={() =>
-                                  this.handleMouseEnter(geography.id)
-                                }
-                                onMouseLeave={() =>
-                                  this.handleMouseLeave(geography.id)
-                                }
-                                style={{
-                                  default: {
-                                    fill: this.isVisited(
-                                      currentMap === 'world'
-                                        ? geography.id
-                                        : geography.properties[
-                                            places[currentMap].abbr_key
-                                          ]
-                                    )
-                                      ? '#aaa'
-                                      : '#eee',
-                                    stroke: '#aaa',
-                                    strokeWidth: 0.5,
-                                    outline: 'none'
-                                  },
-                                  hover: {
-                                    fill: '#0d8aba',
-                                    stroke: '#0d8aba',
-                                    strokeWidth: 0.5,
-                                    outline: 'none'
-                                  },
-                                  pressed: {
-                                    fill: '#0d8aba',
-                                    stroke: '#aaa',
-                                    strokeWidth: 0.5,
-                                    outline: 'none'
-                                  }
-                                }}
-                              />
-                            )
-                        )
+                              }}
+                            />
+                          )
+                        })
                       }
                     </Geographies>
                     <Markers>
@@ -229,10 +240,11 @@ class Places extends Component {
                           }}
                         >
                           <circle
+                            id={`marker-${marker.id}`}
+                            className="places-marker"
                             cx={0}
                             cy={0}
                             r={3}
-                            className="places-marker"
                           />
                           <text
                             textAnchor="start"

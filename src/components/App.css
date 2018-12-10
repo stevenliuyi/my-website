@@ -2010,6 +2010,10 @@ a .pgp-text:hover {
   stroke-width: 1px;
 }
 
+.place-marker-hover {
+  fill: #fff;
+}
+
 /* for small screens */
 @media (max-width: 964px) {
   .about-links {
