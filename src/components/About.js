@@ -487,11 +487,11 @@ class About extends Component {
             number={places.USA.places.length - 1}
             detail={
               <span>
-                ...{' '}
+                ... and Washington, D.C.! Check out{' '}
                 <Link to={{ pathname: 'places', backId: 'about-page' }}>
-                  and Washington, D.C.
-                </Link>
-                !
+                  my traveler map
+                </Link>{' '}
+                to see all the states I have visited.
               </span>
             }
           />
