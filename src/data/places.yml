@@ -15,7 +15,7 @@ world:
 
 CHN:
   filename: china.json
-  center: 105, 38
+  center: 105, 36
   scale: 450
   abbr_key: latinName
   name_key: latinName
@@ -30,7 +30,7 @@ CHN:
 
 CAN:
   filename: canada.json
-  center: -105, 70
+  center: -100, 70
   scale: 200
   abbr_key: NAME
   name_key: FULLNAME
@@ -40,7 +40,7 @@ CAN:
 
 USA:
   filename: usa.json
-  center: -95, 40
+  center: -98, 38
   scale: 600
   abbr_key: STUSPS10
   name_key: NAME10
