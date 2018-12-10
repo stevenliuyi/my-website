@@ -1987,6 +1987,11 @@ a .pgp-text:hover {
   cursor: pointer;
 }
 
+.places-geo-hover {
+  fill: #0d8aba !important;
+  stroke: #0d8aba !important;
+}
+
 .places-marker-text {
   fill: #555;
   font-size: 10px;

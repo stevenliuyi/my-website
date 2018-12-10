@@ -39,14 +39,46 @@ class Places extends Component {
   }
 
   isVisited = abbr => {
+    // Chinese political correctness
+    if (['HKG', 'TWN'].includes(abbr)) return true
+
     return places[this.state.currentMap].places.includes(abbr)
   }
 
   switchPaths = id => {
     if (this.state.currentMap === 'world') {
-      if (id === 'USA') this.setState({ currentMap: 'USA', resetSpring: true })
+      if (Object.keys(places).includes(id))
+        this.setState({ currentMap: id, resetSpring: true })
+      // Chinese political correctness
+      if (['HKG', 'TWN'].includes(id))
+        this.setState({ currentMap: 'CHN', resetSpring: true })
     } else {
       this.setState({ currentMap: 'world', resetSpring: true })
+    }
+  }
+
+  handleMouseEnter = id => {
+    // Chinese political correctness
+    if (['CHN', 'HKG', 'TWN'].includes(id)) {
+      document.getElementById('world-China').classList.add('places-geo-hover')
+      document
+        .getElementById('world-Hong Kong')
+        .classList.add('places-geo-hover')
+      document.getElementById('world-Taiwan').classList.add('places-geo-hover')
+    }
+  }
+
+  handleMouseLeave = id => {
+    if (['CHN', 'HKG', 'TWN'].includes(id)) {
+      document
+        .getElementById('world-China')
+        .classList.remove('places-geo-hover')
+      document
+        .getElementById('world-Hong Kong')
+        .classList.remove('places-geo-hover')
+      document
+        .getElementById('world-Taiwan')
+        .classList.remove('places-geo-hover')
     }
   }
 
@@ -119,24 +151,44 @@ class Places extends Component {
                               <Geography
                                 className={
                                   currentMap !== 'world' ||
-                                  Object.keys(places).includes(geography.id)
+                                  Object.keys(places).includes(geography.id) ||
+                                  ['HKG', 'TWN'].includes(geography.id)
                                     ? 'places-geo-pointer'
                                     : ''
                                 }
                                 key={i}
+                                id={`${currentMap}-${
+                                  geography.properties[
+                                    places[currentMap].name_key
+                                  ]
+                                }`}
                                 cacheId={`${currentMap}-${
                                   geography.properties[
                                     places[currentMap].name_key
                                   ]
                                 }`}
                                 data-tip={
-                                  geography.properties[
-                                    places[currentMap].name_key
-                                  ]
+                                  // Chinese political correctness
+                                  currentMap === 'world' &&
+                                  ['Hong Kong', 'Taiwan'].includes(
+                                    geography.properties[
+                                      places[currentMap].name_key
+                                    ]
+                                  )
+                                    ? 'China'
+                                    : geography.properties[
+                                        places[currentMap].name_key
+                                      ]
                                 }
                                 geography={geography}
                                 projection={projection}
                                 onClick={() => this.switchPaths(geography.id)}
+                                onMouseEnter={() =>
+                                  this.handleMouseEnter(geography.id)
+                                }
+                                onMouseLeave={() =>
+                                  this.handleMouseLeave(geography.id)
+                                }
                                 style={{
                                   default: {
                                     fill: this.isVisited(

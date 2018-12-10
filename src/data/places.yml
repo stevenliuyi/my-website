@@ -3,7 +3,6 @@ world:
   center: 10, 20
   scale: 160
   rotation: -11, 0, 0
-  zoom: 1
   name_key: name
   places:
     - CHN
@@ -17,7 +16,6 @@ USA:
   filename: usa.json
   center: -95, 40
   scale: 600
-  zoom: 4
   abbr_key: STUSPS10
   name_key: NAME10
   places:
@@ -48,3 +46,18 @@ USA:
     - VA
     - WI
     - WY
+
+CHN:
+  filename: china.json
+  center: 105, 38
+  scale: 450
+  abbr_key: latinName
+  name_key: latinName
+  places:
+    - Beijing
+    - Shanghai
+    - Fujian
+    - Jiangsu
+    - Jiangxi
+    - Zhejiang
+    - Anhui
