@@ -115,6 +115,19 @@ class Places extends Component {
     setTimeout(() => {
       ReactTooltip.rebuild()
     }, 100)
+
+    // cache map files
+    Object.keys(places)
+      .slice(1)
+      .forEach(p => {
+        if (!localStorage.hasOwnProperty(`map-${p}`))
+          fetch(`/maps/${places[p].filename}`)
+            .then(res => res.json())
+            .then(data =>
+              localStorage.setItem(`map-${p}`, JSON.stringify(data))
+            )
+            .catch(error => {})
+      })
   }
 
   render() {
@@ -138,7 +151,6 @@ class Places extends Component {
               from={{ zoom: currentMap === 'world' ? 2 : 0.5 }}
               to={{ zoom: 1 }}
               config={config.stiff}
-              delay={100}
               reset={this.state.resetSpring}
               onStart={() => this.setState({ resetSpring: false })}
               duration={500}
@@ -164,7 +176,13 @@ class Places extends Component {
                     zoom={styles.zoom}
                   >
                     <Geographies
-                      geography={`/maps/${places[currentMap].filename}`}
+                      geography={
+                        localStorage.hasOwnProperty(`map-${places[currentMap]}`)
+                          ? JSON.parse(
+                              localStorage.getItem(`map-${places[currentMap]}`)
+                            )
+                          : `/maps/${places[currentMap].filename}`
+                      }
                       disableOptimization
                     >
                       {(geographies, projection) =>
@@ -177,7 +195,7 @@ class Places extends Component {
                                 ]
                           const name =
                             geography.properties[places[currentMap].name_key]
-                          if (abbr === 'ATA') return <div />
+                          if (abbr === 'ATA') return <div key="none" />
 
                           return (
                             <Geography
