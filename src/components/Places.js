@@ -60,25 +60,19 @@ class Places extends Component {
   handleMouseEnter = id => {
     // Chinese political correctness
     if (['CHN', 'HKG', 'TWN'].includes(id)) {
-      document.getElementById('world-China').classList.add('places-geo-hover')
-      document
-        .getElementById('world-Hong Kong')
-        .classList.add('places-geo-hover')
-      document.getElementById('world-Taiwan').classList.add('places-geo-hover')
+      ;['China', 'Hong Kong', 'Taiwan'].forEach(pl => {
+        const el = document.getElementById(`world-${pl}`)
+        if (el != null) el.classList.add('places-geo-hover')
+      })
     }
   }
 
   handleMouseLeave = id => {
     if (['CHN', 'HKG', 'TWN'].includes(id)) {
-      document
-        .getElementById('world-China')
-        .classList.remove('places-geo-hover')
-      document
-        .getElementById('world-Hong Kong')
-        .classList.remove('places-geo-hover')
-      document
-        .getElementById('world-Taiwan')
-        .classList.remove('places-geo-hover')
+      ;['China', 'Hong Kong', 'Taiwan'].forEach(pl => {
+        const el = document.getElementById(`world-${pl}`)
+        if (el != null) el.classList.remove('places-geo-hover')
+      })
     }
   }
 
@@ -117,6 +111,7 @@ class Places extends Component {
               from={{ zoom: currentMap === 'world' ? 2 : 0.5 }}
               to={{ zoom: 1 }}
               config={config.stiff}
+              delay={100}
               reset={this.state.resetSpring}
               onStart={() => this.setState({ resetSpring: false })}
             >
