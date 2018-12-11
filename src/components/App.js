@@ -31,7 +31,8 @@ class App extends Component {
 
   componentDidMount() {
     // scroll to specific position
-    const backId = this.props.location.backId
+    const backId =
+      this.props.location.backId || sessionStorage.getItem('backId')
     if (backId != null) {
       const backElem = document.getElementById(backId)
       if (backElem != null) {

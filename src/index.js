@@ -40,3 +40,4 @@ ReactDOM.render(
   document.getElementById('root')
 )
 unregister()
+sessionStorage.removeItem('backId')

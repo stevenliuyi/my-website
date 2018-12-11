@@ -93,6 +93,10 @@ class Page extends Component {
     }
 
     gaConfig()
+
+    if (this.props.location.backId != null)
+      sessionStorage.setItem('backId', this.props.location.backId)
+    else sessionStorage.removeItem('backId')
   }
 
   componentWillUnmount() {
