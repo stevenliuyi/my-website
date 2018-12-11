@@ -144,7 +144,18 @@ class Places extends Component {
           {...this.props}
         >
           <div className="cover-text">
-            This is a map marking all the places I've been.
+            <span>
+              This is a map marking all the places I've been on Earth. Beyond
+              Earth? I also{' '}
+              <a
+                href="https://mars.nasa.gov/participate/send-your-name/frequent/?cn=540001918444"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                traveled to Mars two times
+              </a>{' '}
+              . ᕕ( ᐛ )ᕗ
+            </span>
           </div>
           <div className="places-map-wrap">
             <Spring
@@ -177,9 +188,13 @@ class Places extends Component {
                   >
                     <Geographies
                       geography={
-                        sessionStorage.hasOwnProperty(`map-${places[currentMap]}`)
+                        sessionStorage.hasOwnProperty(
+                          `map-${places[currentMap]}`
+                        )
                           ? JSON.parse(
-                              sessionStorage.getItem(`map-${places[currentMap]}`)
+                              sessionStorage.getItem(
+                                `map-${places[currentMap]}`
+                              )
                             )
                           : `/maps/${places[currentMap].filename}`
                       }

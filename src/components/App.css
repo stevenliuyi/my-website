@@ -1394,7 +1394,17 @@ a .pgp-text:hover {
   margin: 60px 20px -50px 20px;
   display: flex;
   justify-content: center;
-  color: #aaa;
+  color: #999;
+}
+
+.cover-text a {
+  color: #999;
+  border-bottom: dashed 1px #999;
+}
+
+.cover-text a:hover {
+  border-bottom: dashed 1px #555;
+  color: #555;
 }
 
 .cover-footer {
