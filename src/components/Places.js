@@ -10,6 +10,7 @@ import {
   Markers,
   Marker
 } from 'react-simple-maps'
+import { geoConicConformal, geoConicEqualArea } from 'd3-geo'
 import ReactTooltip from 'react-tooltip'
 import { Spring, config } from 'react-spring'
 import places from '../data/places.yml'
@@ -30,7 +31,7 @@ const markers = [
     id: 'southbend',
     info: 'where I currently live',
     coordinates: [-86.25023, 41.6764],
-    markerOffsets: [6, 0]
+    markerOffsets: [5, 10]
   }
 ]
 
@@ -62,6 +63,29 @@ class Places extends Component {
     } else {
       this.setState({ currentMap: 'world', resetSpring: true })
       this.markersHoverEffect(abbr, false)
+    }
+  }
+
+  getConfig = (config, defaultConfig) =>
+    config != null ? config.split(',').map(d => parseInt(d, 10)) : defaultConfig
+
+  getProjection = projection => {
+    if (projection === 'conformalConic') {
+      const conformalConicProjection = (width, height, config) =>
+        geoConicConformal()
+          .parallels(config.parallels)
+          .rotate(config.rotation)
+          .scale(config.scale)
+      return conformalConicProjection
+    } else if (projection === 'equalAreaConic') {
+      const equalAreaConic = (width, height, config) =>
+        geoConicEqualArea()
+          .parallels(config.parallels)
+          .rotate(config.rotation)
+          .scale(config.scale)
+      return equalAreaConic
+    } else {
+      return projection
     }
   }
 
@@ -170,15 +194,18 @@ class Places extends Component {
               {styles => (
                 <ComposableMap
                   className="places-map"
-                  projection={currentMap === 'world' ? 'times' : 'mercator'}
+                  projection={this.getProjection(places[currentMap].projection)}
                   projectionConfig={{
                     scale: places[currentMap].scale,
-                    rotation:
-                      places[currentMap].rotation != null
-                        ? places[currentMap].rotation
-                            .split(',')
-                            .map(d => parseInt(d, 10))
-                        : [0, 0, 0]
+                    rotation: this.getConfig(places[currentMap].rotation, [
+                      0,
+                      0,
+                      0
+                    ]),
+                    parallels: this.getConfig(places[currentMap].parallels, [
+                      0,
+                      0
+                    ])
                   }}
                 >
                   <ZoomableGroup

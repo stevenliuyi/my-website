@@ -4,6 +4,7 @@ world:
   scale: 160
   rotation: -11, 0, 0
   name_key: name
+  proection: times
   places:
     - CHN
     - USA
@@ -15,10 +16,13 @@ world:
 
 CHN:
   filename: china.json
-  center: 105, 36
-  scale: 450
+  center: 118, 22
+  scale: 550
+  rotation: -110, 0, 0
+  parallels: 25, 47
   abbr_key: latinName
   name_key: latinName
+  projection: conformalConic
   places:
     - Beijing
     - Shanghai
@@ -30,20 +34,26 @@ CHN:
 
 CAN:
   filename: canada.json
-  center: -100, 70
-  scale: 200
+  center: -91.5, 30
+  scale: 500
+  rotation: 100, 0, 0
+  parallels: 49, 77
   abbr_key: NAME
   name_key: FULLNAME
+  projection: conformalConic
   places:
     - ON
     - QC
 
 USA:
   filename: usa.json
-  center: -98, 38
-  scale: 600
+  center: -81, -35
+  scale: 700
+  rotation: 96, 0, 0
+  parallels: 29.5, 45.5
   abbr_key: NAME
   name_key: NAME
+  projection: equalAreaConic
   places:
     - California
     - Colorado
