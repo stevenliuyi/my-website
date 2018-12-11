@@ -11,8 +11,9 @@ import {
   Marker
 } from 'react-simple-maps'
 import ReactTooltip from 'react-tooltip'
-import places from '../data/places.yml'
 import { Spring, config } from 'react-spring'
+import places from '../data/places.yml'
+import cities from '../data/cities.yml'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -261,6 +262,36 @@ class Places extends Component {
                         })
                       }
                     </Geographies>
+                    <Markers>
+                      {currentMap !== 'world' &&
+                        cities[currentMap] != null &&
+                        cities[currentMap]
+                          .map(city => ({
+                            name: city.city,
+                            coordinates: city.coordinates
+                              .split(',')
+                              .map(c => parseFloat(c))
+                          }))
+                          .map((city, i) => (
+                            <Marker
+                              key={`city-${i}`}
+                              marker={city}
+                              style={{
+                                default: { fill: '#fff' },
+                                hover: { fill: '#fff' },
+                                pressed: { fill: '0fff' }
+                              }}
+                            >
+                              <circle
+                                className="places-marker"
+                                cx={0}
+                                cy={0}
+                                r={3}
+                                data-tip={city.name}
+                              />
+                            </Marker>
+                          ))}
+                    </Markers>
                     <Markers>
                       {markers.map((marker, i) => (
                         <Marker

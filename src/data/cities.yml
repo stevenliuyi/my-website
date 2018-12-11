@@ -1,0 +1,103 @@
+CAN:
+  - city: Montréal
+    coordinates: -73.8707, 45.5582
+  - city: Niagara Falls
+    coordinates: -79.2285, 43.0541
+  - city: Québec
+    coordinates: -71.4821, 46.8565
+  - city: Toronto
+    coordinates: -79.6017, 43.6570
+  - city: Waterloo
+    coordinates: -80.6169, 43.4823
+
+CHN:
+  - city: Beijing
+    coordinates: 116.1166, 39.9391
+  - city: Changzhou
+    coordinates: 119.8042, 31.8147
+  - city: Hangzhou
+    coordinates: 119.8910, 30.2617
+  - city: Huangshan
+    coordinates: 117.8099, 30.2566
+  - city: Jiujiang
+    coordinates: 115.9193, 29.7062
+  - city: Nanjing
+    coordinates: 118.4569, 32.0995
+  - city: Nanping
+    coordinates: 118.1022, 26.6422
+  - city: Suzhou
+    coordinates: 120.5039, 31.3286
+  - city: Wuxi
+    coordinates: 120.1722, 31.5705
+  - city: Yangzhou
+    coordinates: 119.3490, 32.4177
+
+USA:
+  - city: Atlanta
+    coordinates: -84.5610, 33.7679
+  - city: Baltimore
+    coordinates: -76.6907, 39.2848
+  - city: Buffalo
+    coordinates: -78.9291, 42.8932
+  - city: Boston
+    coordinates: -71.1107, 42.3145
+  - city: Chicago
+    coordinates: -88.0128, 41.8339
+  - city: Cleveland
+    coordinates: -81.8463, 41.4977
+  - city: Columbus
+    coordinates: -85.5127, 39.6356
+  - city: Dayton
+    coordinates: -84.3426, 39.8115
+  - city: Denver
+    coordinates: -104.9955, 39.7645
+  - city: Erie
+    coordinates: -80.1061, 42.1154
+  - city: Grand Rapids
+    coordinates: -85.7303, 42.9565
+  - city: Indianapolis
+    coordinates: -86.2732, 39.7800
+  - city: Iowa City
+    coordinates: -91.6096, 41.6472
+  - city: Jackson
+    coordinates: -110.8107, 43.4746
+  - city: Lafayette
+    coordinates: -86.7950, 40.2737
+  - city: Las Vegas
+    coordinates: -115.3154, 36.1252
+  - city: Lincoln
+    coordinates: -96.8312, 40.8008
+  - city: Los Angeles
+    coordinates: -118.6926, 34.0207
+  - city: Mackinac City
+    coordinates: -84.7755, 45.7860
+  - city: Madison
+    coordinates: -89.5468, 43.0852
+  - city: Miami
+    coordinates: -80.2997, 25.7825
+  - city: Nashville
+    coordinates: -87.0661, 36.1869
+  - city: New York City
+    coordinates: -74.2606, 40.6977
+  - city: Philadelphia
+    coordinates: -75.2585, 40.0027
+  - city: Rochester
+    coordinates: -77.6866, 43.1863
+  - city: Salt Lake City
+    coordinates: -112.0609, 40.7768
+  - city: San Diego
+    coordinates: -117.1297, 32.7693
+  - city: San Francisco
+    coordinates: -122.5078, 37.7578
+  - city: San Jose
+    coordinates: -121.9578, 37.2972
+  - city: Santa Maria
+    coordinates: -120.5016, 34.9324
+  - city: Springfield
+    coordinates: -72.6166, 42.1129
+  - city: Syracuse
+    coordinates: -76.2095, 43.0353
+  - city: Traverse City
+    coordinates: -85.6401, 44.7489
+  - city: Washington, D.C.
+    coordinates: -77.1550, 38.8938

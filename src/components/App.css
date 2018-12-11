@@ -2014,12 +2014,14 @@ a .pgp-text:hover {
   font-size: 10px;
   font-weight: bold;
   font-family: Oswald, sans-serif;
+  pointer-events: none;
 }
 
 .places-marker-info {
   fill: #555;
   font-size: 8px;
   font-weight: bold;
+  pointer-events: none;
 }
 
 .places-marker {
