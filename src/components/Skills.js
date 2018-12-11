@@ -423,7 +423,13 @@ class Skills extends Component {
     showSwitchButton: false
   }
 
-  getWidth = () => Math.max(window.innerWidth * 0.8 - 450, 400)
+  getWidth = () =>
+    !this.state.github
+      ? Math.max(window.innerWidth * 0.8 - 450, 400)
+      : Math.min(
+          Math.max(window.innerWidth * 0.8 - 450, 400),
+          Math.round(45 * (languages.length * 1.2))
+        )
 
   onResize = () => {
     // only update chart after the initial animation is performed

@@ -1407,6 +1407,12 @@ a .pgp-text:hover {
   color: #555;
 }
 
+.cover-content {
+  min-height: calc(100vh - 70px);
+  width: 100%;
+  overflow: hidden;
+}
+
 .cover-footer {
   font-size: 12px;
   display: flex;
@@ -1415,6 +1421,7 @@ a .pgp-text:hover {
   white-space: nowrap;
   padding-top: 25px;
   padding-bottom: 25px;
+  height: 70px;
 }
 
 .reading-list {

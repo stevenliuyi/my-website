@@ -152,9 +152,9 @@ class Places extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                traveled to Mars two times
+                traveled to Mars two times.
               </a>{' '}
-              . ᕕ( ᐛ )ᕗ
+              <span style={{ whiteSpace: 'nowrap' }}>ᕕ( ᐛ )ᕗ</span>
             </span>
           </div>
           <div className="places-map-wrap">

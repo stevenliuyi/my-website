@@ -68,7 +68,7 @@ class Footer extends Component {
             me@yliu.io
           </Texty>
         </a>
-        <div className="footer">
+        <footer className="footer">
           <div className="footer-left">
             <TweenOne
               component="span"
@@ -189,7 +189,7 @@ class Footer extends Component {
               {rightText}
             </Texty>
           </div>
-        </div>
+        </footer>
       </ScrollOverPack>
     )
   }

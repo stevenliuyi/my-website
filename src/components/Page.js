@@ -259,15 +259,12 @@ class Page extends Component {
             </div>
           </TweenOne>
         </div>
-        <div
-          ref={el => (this.content = el)}
-          style={{ minHeight: '100vh', width: '100%', overflow: 'hidden' }}
-        >
+        <div ref={el => (this.content = el)} className="cover-content">
           {this.props.children}
-          {(this.props.showFooter == null || this.props.showFooter) && (
-            <PageFooter footerStyle={this.props.footerStyle} />
-          )}
         </div>
+        {(this.props.showFooter == null || this.props.showFooter) && (
+          <PageFooter footerStyle={this.props.footerStyle} />
+        )}
       </div>
     )
   }
