@@ -42,34 +42,34 @@ USA:
   filename: usa.json
   center: -98, 38
   scale: 600
-  abbr_key: STUSPS10
-  name_key: NAME10
+  abbr_key: NAME
+  name_key: NAME
   places:
-    - CA
-    - CO
-    - CT
-    - DC
-    - FL
-    - GA
-    - IA
-    - IL
-    - IN
-    - KY
-    - MA
-    - MD
-    - MI
-    - MT
-    - NC
-    - NE
-    - NJ
-    - NV
-    - NY
-    - OH
-    - PA
-    - SC
-    - TN
-    - TX
-    - UT
-    - VA
-    - WI
-    - WY
+    - California
+    - Colorado
+    - Connecticut
+    - District of Columbia
+    - Florida
+    - Georgia
+    - Iowa
+    - Illinois
+    - Indiana
+    - Kentucky
+    - Massachusetts
+    - Maryland
+    - Michigan
+    - Montana
+    - North Carolina
+    - Nebraska
+    - New Jersey
+    - Nevada
+    - New York
+    - Ohio
+    - Pennsylvania
+    - South Carolina
+    - Tennessee
+    - Texas
+    - Utah
+    - Virginia
+    - Wisconsin
+    - Wyoming

@@ -240,19 +240,19 @@ class Places extends Component {
                               style={{
                                 default: {
                                   fill: this.isVisited(abbr) ? '#aaa' : '#eee',
-                                  stroke: '#aaa',
+                                  stroke: '#fff',
                                   strokeWidth: 0.5,
                                   outline: 'none'
                                 },
                                 hover: {
                                   fill: '#0d8aba',
-                                  stroke: '#0d8aba',
+                                  stroke: '#fff',
                                   strokeWidth: 0.5,
                                   outline: 'none'
                                 },
                                 pressed: {
                                   fill: '#0d8aba',
-                                  stroke: '#aaa',
+                                  stroke: '#fff',
                                   strokeWidth: 0.5,
                                   outline: 'none'
                                 }
