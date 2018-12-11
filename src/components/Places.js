@@ -120,11 +120,11 @@ class Places extends Component {
     Object.keys(places)
       .slice(1)
       .forEach(p => {
-        if (!localStorage.hasOwnProperty(`map-${p}`))
+        if (!sessionStorage.hasOwnProperty(`map-${p}`))
           fetch(`/maps/${places[p].filename}`)
             .then(res => res.json())
             .then(data =>
-              localStorage.setItem(`map-${p}`, JSON.stringify(data))
+              sessionStorage.setItem(`map-${p}`, JSON.stringify(data))
             )
             .catch(error => {})
       })
@@ -177,9 +177,9 @@ class Places extends Component {
                   >
                     <Geographies
                       geography={
-                        localStorage.hasOwnProperty(`map-${places[currentMap]}`)
+                        sessionStorage.hasOwnProperty(`map-${places[currentMap]}`)
                           ? JSON.parse(
-                              localStorage.getItem(`map-${places[currentMap]}`)
+                              sessionStorage.getItem(`map-${places[currentMap]}`)
                             )
                           : `/maps/${places[currentMap].filename}`
                       }
