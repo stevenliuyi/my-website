@@ -108,15 +108,21 @@ class Portfolio extends Component {
   }
 
   lightboxCaption = photo => {
-    if (photo.link == null) return photo.name
+    const linkString =
+      photo.link == null
+        ? ''
+        : renderToString(
+            <a href={photo.link} target="_blank" rel="noopener noreferrer">
+              <GoLinkExternal className="portfolio-link portfolio-link-lightbox" />
+            </a>
+          )
 
-    const linkString = renderToString(
-      <a href={photo.link} target="_blank" rel="noopener noreferrer">
-        <GoLinkExternal className="portfolio-link portfolio-link-lightbox" />
-      </a>
-    )
+    const infoString =
+      photo.info == null
+        ? ''
+        : renderToString(<span className="portfolio-info">{photo.info}</span>)
 
-    return `<span>${photo.name}</span>${linkString}`
+    return `${photo.name}${linkString}${infoString}`
   }
 
   getPortfolio = () =>

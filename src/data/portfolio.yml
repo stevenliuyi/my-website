@@ -157,3 +157,10 @@
   height: 2048
   time: 2018
   white: true
+
+- name: Fox
+  info: original work by Gugeli
+  filename: fox.jpg
+  width: 1465
+  height: 2048
+  time: 2018

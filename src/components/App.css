@@ -1980,6 +1980,13 @@ a .pgp-text:hover {
   transform: translateY(1px) !important;
 }
 
+.portfolio-info {
+  font-size: 12px;
+  font-weight: normal;
+  font-variant: normal;
+  margin-left: 15px;
+}
+
 #lightboxBackdrop svg {
   vertical-align: inherit;
 }
