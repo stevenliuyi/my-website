@@ -173,12 +173,12 @@ class Places extends Component {
               This is a map marking all the places I've been on Earth. Beyond
               Earth? I also{' '}
               <a
-                href="https://mars.nasa.gov/participate/send-your-name/frequent/?cn=540001918444"
+                href="https://yliu.io/mars"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                traveled to Mars two times.
-              </a>{' '}
+                traveled to Mars two times
+              </a>.{' '}
               <span style={{ whiteSpace: 'nowrap' }}>ᕕ( ᐛ )ᕗ</span>
             </span>
           </div>

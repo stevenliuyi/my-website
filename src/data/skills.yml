@@ -133,8 +133,9 @@ Data Mining:
   - skill: Pytorch
     value: 0.3
     logo: pytorch.svg
-  - skill: placeholder5
-    value: 0
+  - skill: FastAI
+    value: 0.5
+    logo: fastai.png
   - skill: placeholder6
     value: 0
   - skill: placeholder7

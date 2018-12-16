@@ -46,7 +46,7 @@ USA:
   - city: Cleveland
     coordinates: -81.8463, 41.4977
   - city: Columbus
-    coordinates: -85.5127, 39.6356
+    coordinates: -83.1313, 39.9831
   - city: Dayton
     coordinates: -84.3426, 39.8115
   - city: Denver
@@ -69,6 +69,8 @@ USA:
     coordinates: -96.8312, 40.8008
   - city: Los Angeles
     coordinates: -118.6926, 34.0207
+  - city: Louisville
+    coordinates: -85.9576, 38.1890
   - city: Mackinac City
     coordinates: -84.7755, 45.7860
   - city: Madison
