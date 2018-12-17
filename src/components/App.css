@@ -148,10 +148,75 @@ a {
   color: #fff;
 }
 
-.nav-list:hover {
+.nav-list:hover,
+.nav-mobile:hover {
   color: #ccc;
 }
 
+.nav-mobile {
+  line-height: 50px;
+  color: #fff;
+  display: none;
+  margin: auto;
+}
+
+.nav-burger {
+  display: none;
+}
+
+/* burger menu styles */
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 24px;
+  height: 20px;
+  right: 15px;
+  top: 15px;
+  z-index: 1001 !important;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #fff;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #aaa;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #555;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #fff;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  padding-top: .25em;
+  padding-bottom: .25em;
+  cursor: pointer;
+}
+
+.bm-item-list > svg {
+  margin-left: 80px;
+  margin-bottom: 30px;
+}
 
 .nav-bar {
   width: 100px;
@@ -2058,9 +2123,12 @@ a .pgp-text:hover {
 
 @media (max-width: 500px) {
   .nav-list {
-    font-size: 80%;
-    padding-left: 10px;
-    padding-right: 10px;
+    display: none;
+  }
+
+  .nav-mobile,
+  .nav-burger {
+    display: inherit;
   }
 }
 

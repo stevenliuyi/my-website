@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { FaAngleDoubleUp } from 'react-icons/fa'
 import scrollToComponent from 'react-scroll-to-component'
 import { isMobile } from 'react-device-detect'
+import { stack as Menu } from 'react-burger-menu'
 import Front from './Front'
 import About from './About'
 import Skills from './Skills'
@@ -13,6 +14,7 @@ import Research from './Research'
 import Projects from './Projects'
 import More from './More'
 import Footer from './Footer'
+import Logo from './Logo'
 import '../iconfont.css'
 import { setVhs, gaConfig } from '../utils/utils.js'
 
@@ -22,11 +24,9 @@ const EventListener = ScrollAnim.Event
 class App extends Component {
   state = {
     delay: 150,
-    width: 0
-  }
-
-  setWidth = () => {
-    this.setState({ width: document.documentElement.clientWidth })
+    width: 0,
+    menuOpen: false,
+    currentSection: ''
   }
 
   componentDidMount() {
@@ -43,6 +43,8 @@ class App extends Component {
     } else {
       scrollToComponent(this.top, { align: 'top' })
     }
+
+    this.handleScroll()
 
     EventListener.addEventListener('resize.userResize', this.barAnimate)
 
@@ -67,21 +69,31 @@ class App extends Component {
     if (isMobile) window.removeEventListener('deviceorientation', setVhs)
   }
 
+  setWidth = () => {
+    this.setState({ width: document.documentElement.clientWidth })
+  }
+
+  onMenuItemClick = () => this.setState({ menuOpen: false })
+
   handleScroll() {
     let nav = document.querySelector('.nav')
-    if (nav == null) return
+    let burger = document.querySelector('.nav-burger')
+    if (nav == null || burger == null) return
     let el = document.scrollingElement || document.documentElement
-    if (el.scrollTop > window.innerHeight) {
+    if (el.scrollTop >= window.innerHeight) {
       nav.style.position = 'fixed'
       nav.style.top = 0
+      burger.style.visibility = 'visible'
     } else {
       nav.style.position = 'absolute'
       nav.style.top = 'auto'
+      burger.style.visibility = 'hidden'
     }
   }
 
   onFocus = e => {
     this.dom = e.target
+    if (this.dom) this.setState({ currentSection: this.dom.innerText })
     this.barAnimate()
   }
 
@@ -144,6 +156,27 @@ class App extends Component {
               More
             </Link>
             <div ref={el => (this.bar = el)} className="nav-bar" />
+            <div className="nav-mobile">{this.state.currentSection}</div>
+            <div className="nav-burger">
+              <Menu right noOverlay isOpen={this.state.menuOpen}>
+                <Logo radius={30} colors={['#aaa', '#aaa']} />
+                <Link to="about-page" onClick={this.onMenuItemClick}>
+                  About
+                </Link>
+                <Link to="skill-page" onClick={this.onMenuItemClick}>
+                  Skills
+                </Link>
+                <Link to="research-page" onClick={this.onMenuItemClick}>
+                  Research
+                </Link>
+                <Link to="project-page" onClick={this.onMenuItemClick}>
+                  Projects
+                </Link>
+                <Link to="more-page" onClick={this.onMenuItemClick}>
+                  More
+                </Link>
+              </Menu>
+            </div>
           </div>
         </div>
         <About {...this.state} />
