@@ -185,6 +185,10 @@ a {
 .bm-cross-button {
   height: 24px;
   width: 24px;
+  right: auto;
+  left: 10px;
+  top: 10px;
+  transform: scale(1.2);
 }
 
 /* Color/shape of close button cross */
@@ -192,11 +196,16 @@ a {
   background: #aaa;
 }
 
+.bm-cross-button:hover .bm-cross {
+  background: #eee;
+}
+
 /* General sidebar styles */
 .bm-menu {
-  background: #555;
+  background: rgba(0, 0, 0, 0.8);
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
+  backdrop-filter: blur(10px);
 }
 
 /* Wrapper for item list */
@@ -213,7 +222,21 @@ a {
   cursor: pointer;
 }
 
-.bm-item-list > svg {
+.bm-item:hover {
+  color: #aaa;
+}
+
+.bm-item:hover path {
+  fill: #eee;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.1);
+  right: 0px;
+}
+
+.nav-logo {
   margin-left: 80px;
   margin-bottom: 30px;
 }

@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { FaAngleDoubleUp } from 'react-icons/fa'
 import scrollToComponent from 'react-scroll-to-component'
 import { isMobile } from 'react-device-detect'
-import { stack as Menu } from 'react-burger-menu'
+import Menu from 'react-burger-menu/lib/menus/stack'
 import Front from './Front'
 import About from './About'
 import Skills from './Skills'
@@ -108,6 +108,10 @@ class App extends Component {
     scrollToComponent(this.nav, { align: 'top' })
   }
 
+  scrollToTop = () => {
+    scrollToComponent(this.top, { align: 'top', duration: 500 })
+  }
+
   render() {
     const radiusSVG = (
       <svg width={this.state.width * 0.5} height="27">
@@ -158,8 +162,10 @@ class App extends Component {
             <div ref={el => (this.bar = el)} className="nav-bar" />
             <div className="nav-mobile">{this.state.currentSection}</div>
             <div className="nav-burger">
-              <Menu right noOverlay isOpen={this.state.menuOpen}>
-                <Logo radius={30} colors={['#aaa', '#aaa']} />
+              <Menu right isOpen={this.state.menuOpen}>
+                <div className="nav-logo" onClick={this.scrollToTop}>
+                  <Logo radius={30} colors={['#aaa', '#aaa']} />
+                </div>
                 <Link to="about-page" onClick={this.onMenuItemClick}>
                   About
                 </Link>
@@ -184,12 +190,7 @@ class App extends Component {
         <Research {...this.state} />
         <Projects {...this.state} />
         <More {...this.state} />
-        <div
-          className="scroll-to-top"
-          onClick={() =>
-            scrollToComponent(this.top, { align: 'top', duration: 500 })
-          }
-        >
+        <div className="scroll-to-top" onClick={this.scrollToTop}>
           <div className="scroll-arrow">
             <FaAngleDoubleUp size={24} />
           </div>
