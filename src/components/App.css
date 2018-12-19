@@ -2177,6 +2177,10 @@ a .pgp-text:hover {
   .nav-burger {
     display: inherit;
   }
+
+  .portfolio-info {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
