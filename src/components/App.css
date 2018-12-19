@@ -2140,6 +2140,18 @@ a .pgp-text:hover {
   margin-right: 10px;
 }
 
+.flight-toggle .react-toggle-track {
+  background-color: #ddd !important;
+}
+
+.flight-toggle:hover .react-toggle-track {
+  background-color: #aaa !important;
+}
+
+.flight-toggle .react-toggle-thumb {
+  border-color: #ddd !important;
+}
+
 .flight-toggle.react-toggle--checked .react-toggle-track {
   background-color: #0d8aba !important;
 }
