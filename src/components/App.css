@@ -2128,6 +2128,30 @@ a .pgp-text:hover {
   fill: #fff;
 }
 
+.flight-toggle-wrap {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  transform: translateX(-50%) translateY(-60px);
+  left: 50%;
+}
+
+.flight-toggle {
+  margin-right: 10px;
+}
+
+.flight-toggle.react-toggle--checked .react-toggle-track {
+  background-color: #0d8aba !important;
+}
+
+.flight-toggle.react-toggle--checked:hover .react-toggle-track {
+  background-color: #0a678a !important;
+}
+
+.flight-toggle.react-toggle--checked .react-toggle-thumb {
+  border-color: #0d8aba !important;
+}
+
 /* for small screens */
 @media (max-width: 964px) {
   .about-links {
@@ -2152,6 +2176,10 @@ a .pgp-text:hover {
   .nav-mobile,
   .nav-burger {
     display: inherit;
+  }
+  
+  .flight-toggle-wrap {
+    transform: translateX(-50%);
   }
 }
 

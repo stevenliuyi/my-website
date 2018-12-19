@@ -1,0 +1,440 @@
+- date: 2013-08-12
+  flight: AA288
+  from: PVG
+  to: ORD
+  from_region: CHN
+  to_region: USA
+
+- date: 2013-08-12
+  flight: AA3078
+  from: ORD
+  to: SYR
+  from_region: USA
+  to_region: USA
+
+- date: 2013-08-30
+  flight: B61815
+  from: SYR
+  to: JFK
+  from_region: USA
+  to_region: USA
+
+- date: 2013-09-02
+  flight: B61816
+  from: JFK
+  to: SYR
+  from_region: USA
+  to_region: USA
+
+- date: 2013-12-19
+  flight: US3998
+  from: SYR
+  to: PHL
+  from_region: USA
+  to_region: USA
+
+- date: 2013-12-19
+  flight: US711
+  from: PHL
+  to: SFO
+  from_region: USA
+  to_region: USA
+
+- date: 2013-12-23
+  flight: VX924
+  from: SFO
+  to: LAX
+  from_region: USA
+  to_region: USA
+
+- date: 2013-12-26
+  flight: AA1063
+  from: LAX
+  to: ORD
+  from_region: USA
+  to_region: USA
+
+- date: 2013-12-27
+  flight: AA289
+  from: ORD
+  to: PVG
+  from_region: USA
+  to_region: CHN
+
+- date: 2014-01-11
+  flight: JL872
+  from: PVG
+  to: NRT
+  from_region: CHN
+  to_region: JPN
+
+- date: 2014-01-11
+  flight: AA170
+  from: NRT
+  to: LAX
+  from_region: JPN
+  to_region: USA
+
+- date: 2014-01-11
+  flight: AA1657
+  from: LAX
+  to: ORD
+  from_region: USA
+  to_region: USA
+
+- date: 2014-01-12
+  flight: AA2753
+  from: ORD
+  to: SYR
+  from_region: USA
+  to_region: USA
+
+- date: 2014-03-10
+  flight: B6421
+  from: JFK
+  to: NAS
+  from_region: USA
+  to_region: BHS
+
+- date: 2014-03-15
+  flight: B6622
+  from: NAS
+  to: JFK
+  from_region: BHS
+  to_region: USA
+
+- date: 2014-06-18
+  flight: US4164
+  from: SYR
+  to: PHL
+  from_region: USA
+  to_region: USA
+
+- date: 2014-06-18
+  flight: US1848
+  from: PHL
+  to: DFW
+  from_region: USA
+  to_region: USA
+
+- date: 2014-06-18
+  flight: AA1437
+  from: DFW
+  to: JAC
+  from_region: USA
+  to_region: USA
+
+- date: 2014-06-24
+  flight: AA1270
+  from: JAC
+  to: DFW
+  from_region: USA
+  to_region: USA
+
+- date: 2014-06-24
+  flight: US750
+  from: DFW
+  to: PHL
+  from_region: USA
+  to_region: USA
+
+- date: 2014-06-24
+  flight: US4016
+  from: PHL
+  to: SYR
+  from_region: USA
+  to_region: USA
+
+- date: 2014-08-13
+  flight: US1782
+  from: SFO
+  to: CLT
+  from_region: USA
+  to_region: USA
+
+- date: 2014-08-13
+  flight: US1971
+  from: CLT
+  to: SYR
+  from_region: USA
+  to_region: USA
+
+- date: 2015-04-17
+  flight: AA3046
+  from: SYR
+  to: ORD
+  from_region: USA
+  to_region: USA
+
+- date: 2015-04-19
+  flight: AA4380
+  from: ORD
+  to: SYR
+  from_region: USA
+  to_region: USA
+  
+- date: 2015-12-11
+  flight: DL2003
+  from: SYR
+  to: ATL
+  from_region: USA
+  to_region: USA
+
+- date: 2015-12-11
+  flight: DL2160
+  from: ATL
+  to: MIA
+  from_region: USA
+  to_region: USA
+
+- date: 2015-12-14
+  flight: DL412
+  from: MIA
+  to: JFK
+  from_region: USA
+  to_region: USA
+
+- date: 2015-12-14
+  flight: DL4242
+  from: JFK
+  to: SYR
+  from_region: USA
+  to_region: USA
+
+- date: 2016-01-09
+  flight: AA5184
+  from: SYR
+  to: CLT
+  from_region: USA
+  to_region: USA
+
+- date: 2016-01-09
+  flight: AA668
+  from: CLT
+  to: DFW
+  from_region: USA
+  to_region: USA
+
+- date: 2016-01-10
+  flight: AA159
+  from: DFW
+  to: SFO
+  from_region: USA
+  to_region: USA
+
+- date: 2016-01-13
+  flight: DL833
+  from: SAN
+  to: DTW
+  from_region: USA
+  to_region: USA
+
+- date: 2016-01-13
+  flight: DL3959
+  from: DTW
+  to: SYR
+  from_region: USA
+  to_region: USA
+
+- date: 2016-02-11
+  flight: DL6236
+  from: SYR
+  to: JFK
+  from_region: USA
+  to_region: USA
+
+- date: 2016-02-11
+  flight: DL4225
+  from: JFK
+  to: BWI
+  from_region: USA
+  to_region: USA
+
+- date: 2016-02-13
+  flight: DL748
+  from: BWI
+  to: DTW
+  from_region: USA
+  to_region: USA
+
+- date: 2016-02-14
+  flight: DL3655
+  from: DTW
+  to: SYR
+  from_region: USA
+  to_region: USA
+
+- date: 2016-05-28
+  flight: DL2166
+  from: SYR
+  to: DTW
+  from_region: USA
+  to_region: USA
+
+- date: 2016-05-28
+  flight: DL4027
+  from: DTW
+  to: ORD
+  from_region: USA
+  to_region: USA
+
+- date: 2016-05-30
+  flight: DL1775
+  from: ORD
+  to: DTW
+  from_region: USA
+  to_region: USA
+
+- date: 2016-05-30
+  flight: DL783
+  from: DTW
+  to: SYR
+  from_region: USA
+  to_region: USA
+
+- date: 2016-06-03
+  flight: AC7293
+  from: SYR
+  to: YYZ
+  from_region: USA
+  to_region: CAN
+
+- date: 2016-06-08
+  flight: AC31
+  from: YYZ
+  to: PEK
+  from_region: CAN
+  to_region: CHN
+
+- date: 2016-06-09
+  flight: CA1883
+  from: PEK
+  to: PVG
+  from_region: CHN
+  to_region: CHN
+
+- date: 2016-07-13
+  flight: OZ368
+  from: PVG
+  to: ICN
+  from_region: CHN
+  to_region: KOR
+
+- date: 2016-07-13
+  flight: AC62
+  from: ICN
+  to: YYZ
+  from_region: KOR
+  to_region: CAN
+
+- date: 2016-07-13
+  flight: AC7286
+  from: YYZ
+  to: SYR
+  from_region: CAN
+  to_region: USA
+
+- date: 2017-01-17
+  flight: F91263
+  from : ORD
+  to: LAS
+  from_region: USA
+  to_region: USA
+
+- date: 2017-01-10
+  flight: F91262
+  from: LAS
+  to: ORD
+  from_region: USA
+  to_region: USA
+
+- date: 2017-06-08
+  flight: UA4104
+  from: SBN
+  to: ORD
+  from_region: USA
+  to_region: USA
+
+- date: 2017-06-08
+  flight: UA881
+  from: ORD
+  to: NRT
+  from_region: USA
+  to_region: JPN
+
+- date: 2017-06-09
+  flight: UA79
+  from: NRT
+  to: ICN
+  from_region: JPN
+  to_region: KOR
+
+- date: 2017-06-12
+  flight: OZ365
+  from: ICN
+  to: PVG
+  from_region: KOR
+  to_region: CHN
+
+- date: 2017-06-30
+  flight: NH968
+  from: PVG
+  to: HND
+  from_region: CHN
+  to_region: JPN
+
+- date: 2017-06-30
+  flight: UA838
+  from: NRT
+  to: SFO
+  from_region: JPN
+  to_region: USA
+
+- date: 2017-07-04
+  flight: UA1267
+  from: SFO
+  to: CLE
+  from_region: USA
+  to_region: USA
+
+- date: 2017-07-05
+  flight: UA1875
+  from: CLE
+  to: ORD
+  from_region: USA
+  to_region: USA
+
+- date: 2017-07-05
+  flight: UA5878
+  from: ORD
+  to: SBN
+  from_region: USA
+  to_region: USA
+
+- date: 2018-07-21
+  flight: AC7592
+  from: ORD
+  to: YUL
+  from_region: USA
+  to_region: CAN
+
+- date: 2018-07-26
+  flight: AC7595
+  from: YUL
+  to: ORD
+  from_region: CAN
+  to_region: USA
+
+- date: 2018-11-17
+  flight: DL3414
+  from: SBN
+  to: ATL
+  from_region: USA
+  to_region: USA
+
+- date: 2018-11-21
+  flight: DL3464
+  from: ATL
+  to: SBN
+  from_region: USA
+  to_region: USA

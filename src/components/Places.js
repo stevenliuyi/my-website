@@ -8,13 +8,18 @@ import {
   Geographies,
   Geography,
   Markers,
-  Marker
+  Marker,
+  Lines,
+  Line
 } from 'react-simple-maps'
-import { geoConicConformal, geoConicEqualArea } from 'd3-geo'
+import { geoConicConformal, geoConicEqualArea, geoPath } from 'd3-geo'
 import ReactTooltip from 'react-tooltip'
 import { Spring, config } from 'react-spring'
+import Toggle from 'react-toggle'
+import 'react-toggle/style.css'
 import places from '../data/places.yml'
 import cities from '../data/cities.yml'
+import flights from '../data/flights_coord.yml'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -39,7 +44,8 @@ class Places extends Component {
   state = {
     currentMap: 'world',
     resetSpring: false,
-    delay: 150
+    delay: 150,
+    showFlights: false
   }
 
   isVisited = abbr => {
@@ -128,6 +134,22 @@ class Places extends Component {
     this.markersHoverEffect(abbr, false)
   }
 
+  buildCurves = (start, end, line) => {
+    if (this.zoomableGroup == null) return
+
+    const projection = this.zoomableGroup.props.projection
+    const path = geoPath().projection(projection)
+    const pathString = path({
+      type: 'LineString',
+      coordinates: [line.coordinates.start, line.coordinates.end]
+    })
+    return pathString
+  }
+
+  handleToggleChange = e => {
+    this.setState({ showFlights: !this.state.showFlights })
+  }
+
   componentDidUpdate(prevProps, prevState) {
     if (this.state.currentMap !== prevState.currentMap)
       setTimeout(() => {
@@ -213,6 +235,7 @@ class Places extends Component {
                       .split(',')
                       .map(d => parseInt(d, 10))}
                     zoom={styles.zoom}
+                    ref={el => (this.zoomableGroup = el)}
                   >
                     <Geographies
                       geography={
@@ -289,6 +312,50 @@ class Places extends Component {
                         })
                       }
                     </Geographies>
+                    <Lines>
+                      {styles.zoom === 1 &&
+                        this.state.showFlights &&
+                        flights
+                          .filter(
+                            flight =>
+                              flight.from_region === currentMap ||
+                              flight.to_region === currentMap ||
+                              currentMap === 'world'
+                          )
+                          .map((flight, i) => (
+                            <Line
+                              key={i}
+                              line={{
+                                coordinates: {
+                                  start: flight.from_coord
+                                    .split(',')
+                                    .map(c => parseFloat(c)),
+                                  end: flight.to_coord
+                                    .split(',')
+                                    .map(c => parseFloat(c))
+                                }
+                              }}
+                              style={{
+                                default: {
+                                  stroke: 'rgba(0, 0, 0, 0.2)',
+                                  strokeWidth: 1,
+                                  fill: 'none'
+                                },
+                                hover: {
+                                  stroke: '#0d8aba',
+                                  strokeWidth: 1,
+                                  fill: 'none'
+                                },
+                                pressed: {
+                                  stroke: '#0d8aba',
+                                  strokeWidth: 1,
+                                  fill: 'none'
+                                }
+                              }}
+                              buildPath={this.buildCurves}
+                            />
+                          ))}
+                    </Lines>
                     <Markers>
                       {currentMap !== 'world' &&
                         cities[currentMap] != null &&
@@ -360,6 +427,14 @@ class Places extends Component {
                 </ComposableMap>
               )}
             </Spring>
+            <label className="flight-toggle-wrap">
+              <Toggle
+                className="flight-toggle"
+                checked={this.state.showFlights}
+                onChange={this.handleToggleChange}
+              />
+              <span> Show my flights</span>
+            </label>
             <ReactTooltip type="light" />
           </div>
         </Page>

@@ -58,5 +58,25 @@ module.exports = {
         }
       }
     )
+  },
+
+  fetchWikidata: function(query) {
+    return fetch(
+      `https://query.wikidata.org/sparql?query=${encodeURIComponent(
+        query
+      )}&format=json`
+    )
+      .then(res => res.json())
+      .catch(err => {
+        console.log(err)
+        return null
+      })
+  },
+
+  fetchAirportLocation: function(code) {
+    const query = `SELECT ?coord WHERE { ?airport wdt:P238 "${code}"; wdt:P625 ?coord }`
+    return this.fetchWikidata(query).then(data => {
+      return data != null ? data.results.bindings[0].coord : null
+    })
   }
 }
