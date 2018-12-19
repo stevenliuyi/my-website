@@ -2177,10 +2177,6 @@ a .pgp-text:hover {
   .nav-burger {
     display: inherit;
   }
-  
-  .flight-toggle-wrap {
-    transform: translateX(-50%);
-  }
 }
 
 @media (max-width: 600px) {
@@ -2269,5 +2265,11 @@ a .pgp-text:hover {
 @media (hover: none) {
   .skill-switch:hover {
     transform: translateX(-72px);
+  }
+}
+
+@media (orientation: portrait) {
+  .flight-toggle-wrap {
+    transform: translateX(-50%) translateY(30px);
   }
 }
