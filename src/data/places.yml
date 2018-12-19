@@ -31,6 +31,9 @@ CHN:
     - Jiangxi
     - Zhejiang
     - Anhui
+    - Shandong
+    - Hebei
+    - Tianjin
 
 CAN:
   filename: canada.json
