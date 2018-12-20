@@ -1,3 +1,59 @@
+- name: The Book of Why
+  authors:
+    - Judea Pearl
+    - Dana Mackenzie
+  language: en
+  image: the-book-of-why.jpg
+  time: 2018
+  douban: 30224985
+  goodreads: 36204378
+  tags:
+    - computer science
+    - maths
+  quotes:
+    - "The calculus of causation consists of two languages: causal diagrams, to express what we know, and a symbolic language, resembling algebra, to express what we want to know."
+    - Note that P(L | D) may be totally different from P(L | do(D)). This difference between seeing and doing is fundamental and explains why we do not regard the falling barometer to be a cause of the coming storm. Seeing the barometer fall increases the probability of the storm, while forcing it to fall does not affect this probability.
+    - Another advantage causal models have that data mining and deep learning lack is adaptability.
+    - If I could sum up the message of this book in one pithy phrase, it would be that you are smarter than your data. Data do not understand causes and effects; humans do.
+    - In his book Sapiens, historian Yuval Harari posits that our ancestors’ capacity to imagine nonexistent things was the key to everything, for it allowed them to communicate better.
+    - It is useless to ask for the causes of things unless you can imagine their consequences.
+    - "A causal learner must master at least three distinct levels of cognitive ability: seeing, doing, and imagining."
+    - Intervention ranks higher than association because it involves not just seeing but changing what is.
+    - It is because of this robustness, I conjecture, that human intuition is organized around causal, not statistical, relations.
+    - "The proper way to rescue the probability-raising idea is with the do-operator: we can say that X causes Y if P(Y | do(X)) > P(Y)."
+    - "The main point is this: while probabilities encode our beliefs about a static world, causality tells us whether and how probabilities change when the world changes, be it by intervention or by act of imagination."
+    - As Daniel Kahneman summarizes it in his book Thinking, Fast and Slow, “Success = talent + luck. Great success = a little more talent + a lot of luck.”
+    - “Whig history” was the epithet used to mock the hindsighted style of history writing, which focused on successful theories and experiments and gave little credit to failed theories and dead ends.
+    - He (Karl Pearson) explains that a genuine correlation indicates an “organic relationship” between the variables, while a spurious correlation does not.
+    - He (Sewall Wright) showed that if we knew the causal quantities in Figure 2.7, we could predict correlations in the data (not shown in the diagram) by a simple graphical rule. This rule sets up a bridge from the deep, hidden world of causation to the surface world of correlations. It was the first bridge ever built between causality and probability, the first crossing of the barrier between rung two and rung one on the Ladder of Causation.
+    - This heretical idea of marrying qualitative “arrow-information” to quantitative “data-information” (two foreign languages!) was one of the miracles that first attracted me, as a computer scientist, to this enterprise.
+    - Sociologists renamed path analysis as structural equation modeling (SEM), embraced diagrams, and used them extensively until 1970.
+    - In economics, the algebraic part of path analysis became known as simultaneous equation models (no acronym).
+    - "If Pearson were alive today, living in the era of Big Data, he would say exactly this: the answers are all in the data."
+    - Unlike correlation and most of the other tools of mainstream statistics, causal analysis requires the user to make a subjective commitment. She must draw a causal diagram that reflects her qualitative belief—or, better yet, the consensus belief of researchers in her field of expertise—about the topology of the causal processes at work. She must abandon the centuries-old dogma of objectivity for objectivity’s sake. Where causation is concerned, a grain of wise subjectivity tells us more about the real world than any amount of objectivity.
+    - "The prototype of Bayesian analysis goes like this: Prior Belief + New Evidence Revised Belief."
+    - A causal diagram is a Bayesian network in which every arrow signifies a direct causal relation, or at least the possibility of one, in the direction of that arrow.
+    - We will now see that this collider pattern works in exactly the opposite way from chains or forks when we condition on the variable in the middle. If A and C are independent to begin with, conditioning on B will make them dependent.
+    - These three junctions—chains, forks, and colliders—are like keyholes through the door that separates the first and second levels of the Ladder of Causation.
+    - If our conception of causal effects had anything to do with randomized experiments, the latter would have been invented 500 years before Fisher.
+    - Thus, randomization actually brings two benefits. First, it eliminates confounder bias (it asks Nature the right question). Second, it enables the researcher to quantify his uncertainty.
+    - "Confounding, then, should simply be defined as anything that leads to a discrepancy between the two: P(Y | X) ≠ P(Y | do(X))."
+    - X and Y are unconfounded if we do not control for B. B only becomes a confounder when you control for it!
+    - The sad truth is that unattractive people are just as mean as attractive people—but you’ll never realize it, because you’ll never date somebody who is both mean and unattractive.
+    - The coefficient a in the equation of that plane, Y = aX + bZ + c, will automatically adjust the observed trend of Y on X to account for the confounder Z. If Z is the only confounder, then a is the average causal effect of X on Y.
+    - Instrumental variables were known before the Causal Revolution, but causal diagrams have brought new clarity to how they work.
+    - "Instrumental variable methods have continued to develop since 1984, and one particular version has become extremely popular: Mendelian randomization."
+    - The first law says that the potential outcome Y<sub>x</sub>(u) can be imputed by going to the model M<sub>x</sub> (with arrows into X deleted) and computing the outcome Y(u) there.
+    - I can still remember my student at the time, Danny Geiger, asking incredulously, “Deterministic equations? Truly deterministic?” It was as if Steve Jobs had just told him to buy a PC instead of a Mac. (This was 1990!)
+    - Symbolically, the probability we want to evaluate is P(Y<sub>X = 0</sub> = 0 | X = 1, Y = 1). Because this expression is rather cumbersome, I will later abbreviate it as “PN,” the probability of necessity.
+    - In fact, hindsight (knowing what happened in the actual world) is a critical distinction between counterfactuals (rung three of the Ladder of Causation) and interventions (rung two).
+    - Using counterfactual notation, we can define the probability of sufficiency, or PS, to be P(Y<sub>X = 1</sub> = 1 | X = 0, Y = 0).
+    - We have seen that PN captures the rationale behind the “but-for” criterion in a legal setting. But should PS enter legal considerations in criminal and tort law? I believe that it should, because attention to sufficiency implies attention to the consequences of one’s action.
+    - I cannot stress enough how often this blunder has been repeated over the years—conditioning on the mediator instead of holding the mediator constant. For that reason I call it the Mediation Fallacy. Admittedly, the blunder is harmless if there is no confounding of the mediator and the outcome. However, if there is confounding, it can completely reverse the analysis, as Kruskal’s numerical example showed.
+    - The indirect effect of X on Y is the increase we would see in Y while holding X constant and increasing M to whatever value M would attain under a unit increase in X.
+    - For the direct effect, we let the mediator choose the value it would have—for each individual—in the absence of treatment, and we fix it there. Now we wiggle the treatment and register the difference. This is different from the controlled direct effect I discussed earlier, where the mediator is fixed at one value for everyone. Because we let the mediator choose its “natural” value, I called it the natural direct effect. Similarly, for the natural indirect effect I first deny treatment to everyone, and then I let the mediator choose the value it would have, for each individual, in the presence of treatment. Finally I record the difference.
+    - Like the prisoners in Plato’s famous cave, deep-learning systems explore the shadows on the cave wall and learn to accurately predict their movements. They lack the understanding that the observed shadows are mere projections of three-dimensional objects moving in a three-dimensional space. Strong AI requires this understanding.
+
 - name: The Truth of Food III
   original_name: 吃的真相3
   authors:
@@ -422,6 +478,44 @@
     - 我在匹兹堡大学的老师许倬云教授曾说，中国人先把科学当作洪水猛兽，后把它当作呼风唤雨的巫术，直到现在，多数学习科学的人还把它看成宗教来顶礼膜拜；而他自己终于体会到，科学是个不断学习的过程。
     - 按照许倬云教授的意见， 中国人在科学面前，很容易失去平常心。
     - 维特根斯坦临终时说：告诉他们，我度过了美好的一生。
+
+- name: The Martian
+  authors:
+    - Andy Weir
+  language: en
+  image: the-martian.jpg
+  time: 2015
+  douban: 24768136
+  goodreads: 18007564
+  wikidata: Q17111624
+  tags:
+    - fiction
+
+- name: History of Korea
+  original_name: 不可不知的朝韩史
+  authors:
+    - Yang Yi
+    - Zheng Jiawei
+  language: zh
+  image: history-of-korea.jpg
+  time: 2017
+  douban: 10792223
+  tags:
+    - history
+  quotes:
+    - “朝鲜”这个国名，意思是“朝日之鲜”，因为半岛位于大陆东部，能更早地看到朝阳，故有此美名。这个名字出现在箕子时代，后来又被明太祖朱元璋钦定为李氏王朝的国名。而“韩国”的“韩”（读音Han），源自半岛南部的三韩部落，据考证是东亚通古斯语系“广大”、“宽阔”的意思。朝鲜半岛的“汉江”，以及蒙古、鲜卑等部族首领“可汗”，也都是同源词汇。
+    - 微子、比干和箕子三位，被后世的孔夫子尊为殷商的“仁人志士三巨头”。
+    - 马韩，辰韩，弁韩，合称“三韩”，其得名则是由于朝鲜半岛南部的大河韩水（就是汉江，Han，意即广大。）
+    - 西汉末年，从扶余国出走的王子高朱蒙建立了高句丽国，高朱蒙的儿子出走建立了百济国，半岛南部的部族联盟建立了新罗国，从此展开长达七百年的三国鼎立。历经汉、魏晋南北朝、隋唐之后，新罗国在唐朝大军的支持下，成为朝鲜半岛上唯一的统治者。
+    - 而“花郎道”中练习的武艺，则逐渐发展为跆拳道的前身。
+    - 当时的日本（就是倭国）积极插手朝鲜半岛争端，与百济国的关系一向都不错，过去也曾经在百济内乱的时候出兵帮助他们的国王回国继任。于是数万日军远渡重洋来到了白江口。中国历史上第一次与日军的大规模作战——白江口之战就此展开。
+    - 公元874年（唐僖宗乾符元年，景文王十四年），朝鲜文学的开山鼻祖崔致远在唐朝科举考试中金榜题名，轰动了整个朝鲜半岛。
+    - 王建的这次“被造反”，比宋太祖赵匡胤的“陈桥兵变”早了四十多年。他改国号为“高丽”，自称是高句丽国的继承人。这个国家，不久后统一了整个朝鲜半岛。王建也因此被史书称为“太祖”。
+    - 高句丽和高丽，是历史上两个完全不同的国家。高句丽对应的是中国的汉朝到唐朝，高丽则是五代到明朝。高句丽王室来自中国吉林的扶余国，姓高；高丽王室则是朝鲜半岛土生土长的新罗人，姓王。从领土拓展上，高句丽从中国东北部分地区逐步南下占据朝鲜半岛北部，高丽则是从朝鲜半岛中部起家，先吞并半岛南部，然后逐步向北扩张。
+    - 国家的最高行政机关称为“都评议司”，相当于明朝的内阁、今天的正副总理；下属兵、户、刑、礼、吏、工六曹，相当于明朝的六部、今天的政府各部门。国政的执行流程是：都评议司商量决定，上报国王批准，然后下达各部门执行。军队则专门设立了“三军府”，与政权分离。除了军政分家之外，还设立了弘文馆、司宪府和司谏院，对都评议司和三军府进行监察。这样一来，三权分立，减少过于集中的权力产生谋逆的可能。同时，国王理论上只有对都评议司的决议进行审批，而不应该直接干涉内政；国王还应该时时听从三司的劝谏。这就使得君权也受到了制约。
+    - 而在大臣中，郑道传所代表的儒家士大夫，和他所要抑制的王氏宗亲、功勋武将这两大集团，即“儒林派”和“勋旧派”也是斗争不断。
+    - 东人党和西人党都是属于士林集团。大致来说，东人党的源头是在明宗时代依附于尹氏外戚的一群后辈儒生，其代表人物是金孝元。西人党的源头则是明宗时代对抗尹氏的一群前辈儒生，其代表人物是沈义谦。
+    - 李滉认为理学核心在于“主理说”，李珥则认为核心在于“主气说”。东人党支持“主理说”，西人党支持“主气说”，从人事之争又发展到了思想之争。
 
 - name: On China
   original_name: 论中国
