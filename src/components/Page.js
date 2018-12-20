@@ -185,7 +185,7 @@ class Page extends Component {
             />
           )}
           {this.props.background}
-          <div
+          <h1
             className="cover-title noselect"
             onClick={this.props.onTitleClick}
             style={this.props.titleStyle}
@@ -220,7 +220,7 @@ class Page extends Component {
             >
               {this.props.title}
             </Texty>
-          </div>
+          </h1>
           <div className="cover-quote">
             <TweenOne
               animation={{

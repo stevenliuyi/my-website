@@ -191,18 +191,21 @@ class Front extends Component {
           />
           {this.state.backgroundLoaded && (
             <div>
-              <Typist
-                className="title noselect"
-                startDelay={1200}
-                avgTypingDelay={100}
-                onCharacterTyped={() => {
-                  if (!this.state.linkShown) this.setState({ linkShown: true })
-                }}
-              >
-                <span>Hello, I'm Yi Liu.</span>
-                <Typist.Backspace count={11} delay={1000} />
-                <span>World!</span>
-              </Typist>
+              <h1>
+                <Typist
+                  className="title noselect"
+                  startDelay={1200}
+                  avgTypingDelay={100}
+                  onCharacterTyped={() => {
+                    if (!this.state.linkShown)
+                      this.setState({ linkShown: true })
+                  }}
+                >
+                  <span>Hello, I'm Yi Liu.</span>
+                  <Typist.Backspace count={11} delay={1000} />
+                  <span>World!</span>
+                </Typist>
+              </h1>
               <div className="main-links noselect">
                 <a href="https://github.com/stevenliuyi">
                   <span className="main-link">
