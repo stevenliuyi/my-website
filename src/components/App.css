@@ -2152,6 +2152,10 @@ a .pgp-text:hover {
   border-color: #ddd !important;
 }
 
+.flight-toggle:hover .react-toggle-thumb {
+  border-color: #aaa !important;
+}
+
 .flight-toggle.react-toggle--checked .react-toggle-track {
   background-color: #0d8aba !important;
 }
@@ -2162,6 +2166,10 @@ a .pgp-text:hover {
 
 .flight-toggle.react-toggle--checked .react-toggle-thumb {
   border-color: #0d8aba !important;
+}
+
+.flight-toggle.react-toggle--checked:hover .react-toggle-thumb {
+  border-color: #0a678a !important;
 }
 
 /* for small screens */
