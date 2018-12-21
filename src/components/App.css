@@ -1732,10 +1732,6 @@ a .pgp-text:hover {
   position: relative;
 }
 
-.book-quote:hover {
-  font-weight: bold;
-}
-
 .book-quote-left {
   position: absolute;
   left: 0;
