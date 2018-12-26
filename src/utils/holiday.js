@@ -1,4 +1,5 @@
 import ifEmoji from 'if-emoji'
+import { solarToLunar } from 'lunar-calendar'
 
 const data = {
   1: {
@@ -62,11 +63,75 @@ const data = {
   }
 }
 
+const lunarData = {
+  正月: {
+    14: ['\ud83c\udfee', 'Happy Latern Festival!'],
+    15: ['\ud83c\udfee', 'Happy Latern Festival!'],
+    16: ['\ud83c\udfee', 'Happy Latern Festival!']
+  },
+  五月: {
+    4: ['\ud83d\udc32', 'Happy Dragon Boat Festival!'],
+    5: ['\ud83d\udc32', 'Happy Dragon Boat Festival!'],
+    6: ['\ud83d\udc32', 'Happy Dragon Boat Festival!']
+  },
+  八月: {
+    14: ['\ud83e\udd6e', 'Happy Mid-Autumn Festival!'],
+    15: ['\ud83e\udd6e', 'Happy Mid-Autumn Festival!'],
+    16: ['\ud83e\udd6e', 'Happy Mid-Autumn Festival!']
+  }
+}
+
+const zodiacEmoji = {
+  鼠: ['\ud83d\udc00', 'Rat'],
+  牛: ['\ud83d\udc02', 'Ox'],
+  虎: ['\ud83d\udc05', 'Tigger'],
+  兔: ['\ud83d\udc07', 'Rabbit'],
+  龙: ['\ud83d\udc09', 'Dragon'],
+  蛇: ['\ud83d\udc0d', 'Snake'],
+  马: ['\ud83d\udc0e', 'Horse'],
+  羊: ['\ud83d\udc11', 'Goat'],
+  猴: ['\ud83d\udc12', 'Monkey'],
+  鸡: ['\ud83d\udc13', 'Rooster'],
+  狗: ['\ud83d\udc15', 'Dog'],
+  猪: ['\ud83d\udc16', 'Pig']
+}
+
 export const holidayEmoji = () => {
   let day = new Date()
-  day.setDate(day.getDate() - 2)
+  day.setDate(day.getDate())
 
-  let emoji = ['', '']
+  let emoji = null
   if (data[day.getMonth() + 1]) emoji = data[day.getMonth() + 1][day.getDate()]
-  return emoji != null && ifEmoji(emoji[0]) ? emoji : ['', '']
+  if (emoji != null) return ifEmoji(emoji[0]) ? emoji : ['', '']
+
+  // lunar calendar
+  if (day.getFullYear() > 2100) return ['', '']
+  let { lunarMonthName, lunarDay, zodiac } = solarToLunar(
+    day.getFullYear(),
+    day.getMonth() + 1,
+    day.getDate()
+  )
+  if (lunarData[lunarMonthName])
+    emoji = lunarData[lunarMonthName][Math.round(lunarDay).toString()]
+  if (emoji != null) return ifEmoji(emoji[0]) ? emoji : ['', '']
+
+  // lunar New Year
+  if (lunarMonthName === '十二月' && [29, 30].includes(lunarDay)) {
+    const newLunar = solarToLunar(
+      day.getFullYear(),
+      day.getMonth() + 1,
+      day.getDate() + 2
+    )
+    lunarMonthName = newLunar.lunarMonthName
+    lunarDay = newLunar.lunarDay
+    zodiac = newLunar.zodiac
+  }
+  if (lunarMonthName === '正月' && [1, 2, 3, 4, 5, 6, 7].includes(lunarDay))
+    emoji = [
+      zodiacEmoji[zodiac][0],
+      `Happy Lunar New Year of the ${zodiacEmoji[zodiac][1]}!`
+    ]
+  if (emoji != null) return ifEmoji(emoji[0]) ? emoji : ['', '']
+
+  return ['', '']
 }
