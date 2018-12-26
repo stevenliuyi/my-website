@@ -13,7 +13,7 @@ class Front extends Component {
   state = {
     linkShown: false,
     backgroundLoaded: false,
-    holidayEmoji: ['', '']
+    holidayEmoji: null
   }
 
   // reference: https://codepen.io/tmrDevelops/pen/PPgjwz
@@ -210,12 +210,16 @@ class Front extends Component {
                   <Typist.Backspace count={11} delay={1000} />
                   <span>
                     World!
-                    <SimpleTooltip
-                      id="tt-emoji"
-                      text={this.state.holidayEmoji[1]}
-                    >
-                      {this.state.holidayEmoji[0]}
-                    </SimpleTooltip>
+                    {this.state.holidayEmoji != null ? (
+                      <SimpleTooltip
+                        id="tt-emoji"
+                        text={this.state.holidayEmoji[1]}
+                      >
+                        {this.state.holidayEmoji[0]}
+                      </SimpleTooltip>
+                    ) : (
+                      ''
+                    )}
                   </span>
                 </Typist>
               </h1>
