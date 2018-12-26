@@ -63,6 +63,10 @@
   font-weight: 500;
 }
 
+#tt-emoji {
+  margin-left: 10px;
+}
+
 .main-links {
   position: absolute;
   left: calc(35% + 20px);

@@ -6,11 +6,14 @@ import { TiCode } from 'react-icons/ti'
 import { IoIosArrowDown } from 'react-icons/io'
 import { isMobileOnly } from 'react-device-detect'
 import { getImageURL } from '../utils/utils'
+import { holidayEmoji } from '../utils/holiday'
+import SimpleTooltip from './SimpleTooltip'
 
 class Front extends Component {
   state = {
     linkShown: false,
-    backgroundLoaded: false
+    backgroundLoaded: false,
+    holidayEmoji: ['', '']
   }
 
   // reference: https://codepen.io/tmrDevelops/pen/PPgjwz
@@ -133,6 +136,8 @@ class Front extends Component {
     if (!isMobileOnly) this.snowy()
 
     window.addEventListener('scroll', this.handleScroll)
+
+    this.setState({ holidayEmoji: holidayEmoji() })
   }
 
   componentWillUnmount() {
@@ -203,7 +208,15 @@ class Front extends Component {
                 >
                   <span>Hello, I'm Yi Liu.</span>
                   <Typist.Backspace count={11} delay={1000} />
-                  <span>World!</span>
+                  <span>
+                    World!
+                    <SimpleTooltip
+                      id="tt-emoji"
+                      text={this.state.holidayEmoji[1]}
+                    >
+                      {this.state.holidayEmoji[0]}
+                    </SimpleTooltip>
+                  </span>
                 </Typist>
               </h1>
               <div className="main-links noselect">

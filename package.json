@@ -9,6 +9,7 @@
     "d3-geo": "^1.11.3",
     "d3-geo-projection": "^2.5.0",
     "html-react-parser": "^0.4.7",
+    "if-emoji": "^0.1.0",
     "rc-animate": "^2.4.4",
     "rc-queue-anim": "^1.6.5",
     "rc-scroll-anim": "^2.5.5",
