@@ -32,7 +32,8 @@ const data = {
     25: ['\ud83e\uddec', 'Happy DNA Day!']
   },
   6: {
-    1: ['\ud83e\udd5b', 'Happy World Milk Day!'],
+    1: ['\ud83c\udf08', 'LGBT Pride Month begins!'],
+    2: ['\ud83c\udf08', 'LGBT Pride Month begins!'],
     8: ['\ud83c\udf0a', 'Happy World Oceans Day!'],
     18: ['\ud83c\udf63', 'Happy International Sushi Day!'],
     20: [
@@ -88,6 +89,41 @@ const data = {
   }
 }
 
+const data2 = {
+  5: {
+    2: {
+      0: ['\ud83d\udc69', "Happy Mother's Day!"],
+      6: ['\ud83d\udc69', "Happy Mother's Day!"]
+    },
+    3: {
+      1: ['\ud83d\udc69', "Happy Mother's Day!"]
+    }
+  },
+  6: {
+    3: {
+      0: ['\ud83e\uddd4', "Happy Father's Day!"],
+      6: ['\ud83e\uddd4', "Happy Father's Day!"]
+    },
+    4: {
+      1: ['\ud83e\uddd4', "Happy Father's Day!"]
+    }
+  },
+  8: {
+    1: {
+      5: ['\ud83c\udf7a', 'Happy International Beer Day!']
+    }
+  },
+  11: {
+    4: {
+      2: ['\ud83e\udd83', 'Happy Thanksgiving!'],
+      3: ['\ud83e\udd83', 'Happy Thanksgiving!'],
+      4: ['\ud83e\udd83', 'Happy Thanksgiving!'],
+      5: ['\ud83e\udd83', 'Happy Thanksgiving!'],
+      6: ['\ud83e\udd83', 'Happy Thanksgiving!']
+    }
+  }
+}
+
 const lunarData = {
   正月: {
     14: ['\ud83c\udfee', 'Happy Latern Festival!'],
@@ -125,12 +161,48 @@ const zodiacEmoji = {
   猪: ['\ud83d\udc16', 'Pig']
 }
 
+// calculate Easter
+// script from https://gist.github.com/johndyer/0dffbdd98c2046f41180c051f378f343
+const getEaster = year => {
+  var f = Math.floor,
+    // Golden Number - 1
+    G = year % 19,
+    C = f(year / 100),
+    // related to Epact
+    H = (C - f(C / 4) - f((8 * C + 13) / 25) + 19 * G + 15) % 30,
+    // number of days from 21 March to the Paschal full moon
+    I = H - f(H / 28) * (1 - f(29 / (H + 1)) * f((21 - G) / 11)),
+    // weekday for the Paschal full moon
+    J = (year + f(year / 4) + I + 2 - C + f(C / 4)) % 7,
+    // number of days from 21 March to the Sunday on or before the Paschal full moon
+    L = I - J,
+    month = 3 + f((L + 40) / 44),
+    day = L + 28 - 31 * f(month / 4)
+
+  return [month, day]
+}
+
 export const holidayEmoji = () => {
   let day = new Date()
   day.setDate(day.getDate())
 
   let emoji = null
   if (data[day.getMonth() + 1]) emoji = data[day.getMonth() + 1][day.getDate()]
+  if (emoji != null) return ifEmoji(emoji[0]) ? emoji : null
+
+  const weekDay = day.getDay().toString()
+  const numOfWeeks = parseInt((day.getDate() - 1) / 7 + 1, 10).toString()
+  if (data2[day.getMonth() + 1] && data2[day.getMonth() + 1][numOfWeeks])
+    emoji = data2[day.getMonth() + 1][numOfWeeks][weekDay]
+  if (emoji != null) return ifEmoji(emoji[0]) ? emoji : null
+
+  // Easter
+  const easter = getEaster(day.getFullYear())
+  const easterDay = new Date(day.getFullYear(), easter[0] - 1, easter[1])
+  const diff = Math.round(
+    (easterDay.getTime() - day.getTime()) / (24 * 60 * 60 * 1000)
+  )
+  if (diff >= 0 && diff <= 3) emoji = ['\ud83d\udc30', 'Happy Easter!']
   if (emoji != null) return ifEmoji(emoji[0]) ? emoji : null
 
   // lunar calendar
