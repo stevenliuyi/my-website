@@ -44,6 +44,12 @@
     - In other words, the planar vane of the feather might have evolved through aesthetic selection to create a two-dimensional canvas upon which to depict complex pigment patterns—including stripes, spots, dots, and spangles.
     - Of course, we now know that the dinosaurs did not go extinct. Rather, three dinosaur lineages survived the mass extinction at the end of the Cretaceous; they were the flying ancestors of the three main lineages of living birds.
     - Thus, the potentially aesthetic innovation of planar feathers facilitated the evolution of flight and the avian dinosaur survival of the Cretaceous-Paleogene extinction. It’s harder to imagine a bigger possible impact for the role of beauty and desire in the history of life.
+    - What is at stake in these attempts at forced fertilization is more than just the direct cost to a female’s health and well-being; forced fertilizations will also create indirect, genetic costs to the female that may be even more important to the female.
+    - In a 2001 paper in the prestigious journal <i>Nature</i>, the ornithologist Kevin McCracken and colleagues described the penis of the diminutive Argentine Lake Duck (<i>Oxyura vittata</i>). A duck that was itself only about twelve inches long and a little over a pound in weight had a forty-two-centimeter penis (about sixteen inches). The <i>Nature</i> paper, now cited in the Guinness World Records, was titled “Are Ducks Impressed by Drakes’ Display?”
+    - For ducks, the erection of the penis and its entry into the vagina are the same event.
+    - The evolutionary advantages of obtaining the mates they prefer—male offspring that will possess the traits they and other females have agreed are attractive—are so strong that they have reshaped female internal anatomy.
+    - The irreversible advance in avian female sexual autonomy that occurred because of the disappearance of the penis may be the most powerful explanation of the aesthetic evolutionary extravaganza among birds.
+    - An organism’s complete phenotype includes all of the consequences of its genome’s interacting with its environment, including its impact on the environment.
 
 - name: The Language Instinct
   original_name: 语言本能
@@ -798,6 +804,240 @@
     - 明治中期到大正期间，像山中定次郎这样的日本古董商纷纷从事国际贸易，因为日本人具有了解中国艺术的审美眼光，加上略通中文，让他们取得了欧美人士所缺乏的语言优势，日本古董商从明治中期到大正期间在世界的中国艺术收藏领域，建立了他们的时代。
     - 中野美代子认为：“对西洋的士兵们来说，对十二生肖动物这样的东西应该没有兴趣”，因而推定掠夺并不是发生在1860年，而是七十年以后的20世纪30年代之后，某些人切下十二生肖像的头部，带到国外去。
     - 中华政治十分重视文化。然而这与其他国家提倡的“文化重视”，内涵并不相同。在中华历史上，文化几乎等同于政治。文化是用来证明政治权力的道具，也是权力与社会、权力与历史的指标。
+
+- name: I Am a Strange Loop
+  original_name: 我是个怪圈
+  authors:
+    - Douglas Hofstadter
+  language: zh
+  image: i-am-a-strange-loop.jpg
+  time: 2018
+  douban: 30335756
+  goodreads: 123471
+  wikidata: Q3616600
+  tags:
+    - philosophy
+    - science
+    - maths
+  quotes:
+    - 热力学可由统计力学来解释。但是也许把这个观念倒转过来，它反而会多多少少变得更加清晰一些，这样一来：在热力学层面进行讨论时，统计力学可以被绕过不提。
+    - 思考力学可由统计思维学来解释。同样还有它的倒转版本：在思考力学层面进行讨论时，统计思维学可以被绕过不提。
+    - 人脑中的概念具备了一种属性，令它们得以与其他概念糅合在一起，形成更大的概念包，而这种更大的概念包本身，随后又会成为一个新的概念。换言之，概念可以等级化地相互嵌套于彼此之中，而这种嵌套可以发展到任意的程度之上。这不免让我想起——且我不认为这纯属偶然——在视频反馈里，一条无穷无尽的长廊与一段截断式的走廊之间所存在的巨大差异。
+    - 在罗素和怀特海眼中看起来精妙而复杂的符号调度，在库尔特·哥德尔的眼中看来则是大量的直白的数字运算处理。
+    - 事实上，在哥德尔那个朴素严谨的数学怪圈与人类对于一个有意识的自我的概念之间，存在着一种深刻的联系，而正是这次对于“我”的颇不正式且几乎懒散的使用，才让我们得以首次一窥其中的关联。
+    - 在随后的几个世纪里，人们对于世界不同方面的数学化获得了伟大的成功，可尽管如此，在哥德尔之前还从未有人意识到，数学本身的行为也是数学可以模仿的范畴之一。
+    - 这种奇怪的情况完全是史无前例的，而且相当悖于常理。它当面挑衅了数学家的信条；后者主张，真实与可证性乃是同一枚硬币的两面——它们总是如影随形，因为它们离不开彼此。而我们刚刚遭遇的情况恰恰与此相反，令人吃惊的是，真实竟然与不可证性同流合污。这真是太尴尬了！
+    - 任何扩大或丰富PM的方式都无法助你躲过哥德尔的黑带杀技，这一事实被称为“本质上的不完全性”（essential incompleteness）——伯特兰·罗素的第二个噩梦。
+    - 要想对拥有符号的大脑进行思考，最有效率的方式——而且在大多数情况下，最真实的方式——就是认定是观念和欲望在使唤其内部的微观之物，而并非相反。
+    - 丹尼尔·丹尼特（Daniel Dennett）曾在驳斥约翰·塞尔令人生厌的“正确的材料”时机智地评论道：“无关肉体，重在动作。”（It ain’t the meat, it’s the motion.）
+    - 自然数的丰富性赐予PM表征具有无限复杂性的现象之力，因而得以经由哥德尔的建构（construction）而扭转回头并吞食自身；同样，我们可扩展的符号集合也赋予我们的大脑表征具有无限复杂性的现象之力，因而得以经由一个怪圈而扭转回头并吞食自身。
+    - 我感受最强烈的地方是，虽然它们是唱给一对新人的歌词，但是却使用了单数代词——德语里的du，dir和dich，和我在英译版本中启用的古代词“thou”和“thee”。
+    - 实际上，这正是计算机革命的全部要义：当某个明确定义的阈限——我把它称作“哥德尔-图灵阈限”——被跨越之后，一台计算机就可以模拟任何一种机器了。
+    - 哥德尔把PM映射到了它自己的身上，而阿兰·图灵正是在他的启发下，意识到这种计算机通用性的关键阈限之精确所在，即一台机器能否灵活到足以阅读并正确解释一套描述其自身结构的数据。
+    - 表征通用性及其创造的那种对于他者经历的近乎难以满足的渴求，距离同情只有一步之遥；而同情，正是在我看来第一可敬的人类品质。
+    - 在一个大脑内部的细胞不是意识的承载者；意识的承载者是模式。真正至关重要的是组织的模式，而不是物质材料。无关肉体，重在动作！否则，我们就不得不给我们大脑内部的分子赋予它们在大脑外部并不具备的属性。
+    - 哥德尔的怪圈，是在足够强大的数论形式系统中自动浮现出来的；同样，自我的怪圈，也将在任何一个足够精密的范畴库中自动生成。而一旦你得到了自我，你也就拥有了意识。并不需要什么心灵活力。
+    - 倒置波谱之谜的提出依赖于这样一种观念，即我们都生来具有一套特定的“纯粹的体验”，它们没有物理基础，却随着我们的成长附着在特定的外部刺激之上，于是特定的体验便与特定的刺激联姻了，从此以后一辈子都亲密地绑定在一起。但是这些“纯粹的体验”并非大脑的物理状态。倒不如说，它们是一个人单纯“拥有”的主观感觉，不需要存在任何物理学上的解释。
+    - 关于“我”的认识，当且仅当与这个自我存在情感联系的其他自我伴随这个自我存在时，它才会存在。简言之，有宽容，才有自我。
+
+- name: Green Jade Lion Censer
+  original_name: 青玉狮子香炉
+  authors:
+    - Chin Shunshin
+  language: zh
+  image: green-jade-lion-censer.jpg
+  time: 2018
+  douban: 4212247
+  goodreads: 30037134
+  tags:
+    - novel
+
+- name: Sigh of Yuling
+  original_name: 玉岭的叹息
+  authors:
+    - Chin Shunshin
+  language: zh
+  image: sigh-of-yuling.jpg
+  time: 2018
+  douban: 4191724
+  goodreads: 30037133
+  tags:
+    - novel
+
+- name: Story of Plant Names
+  original_name: 植物名字的故事
+  authors:
+    - Liu Su
+  language: zh
+  image: story-of-plant-names.jpg
+  time: 2015
+  douban: 24698961
+  goodreads: 24345551
+  tags:
+    - biology
+    - linguistics
+  quotes:
+    - “夕者，冥也。冥不相见，故从口自名。”这意思是说，白天人们彼此能够看见，所以不需要称呼自己的名字也能让人知道你是谁；可是到了太阳落山之后，彼此就看不见了，要想让别人知道你是谁，就只能从嘴里喊出自己的名字。所以，“名”就是在“夕”阳落山后从“口”中说出的东西。
+    - 植物可以分为绿藻、苔藓植物、石松植物、蕨类植物和种子植物5大类，其中以能够结出种子的种子植物数目最多，全世界有20多万种。
+    - 德国著名的运动用品公司“阿迪达斯”（Adidas），就是以其创始人阿道夫·达斯勒（Adolf Dassler）的名字命名的。
+    - 东晋道士葛洪曾著有《神仙传》，书中记载了三国时吴国神医董奉的事迹。传说董奉隐居山林，每天为人治病，分文不取，只有一个条件：如果是重病患者被治愈，要在山上种杏树五棵；病不重的患者被治愈，则种一棵。这样过了几年，山上的杏树已经多达十万多棵，成了一片郁郁葱葱的林子。自此以后，“杏林”就成了医学界的美称。
+    - “四川”这一名称的真正由来，在于它是“川峡四路”的简称。所谓“川峡四路”，是北宋年间设置的益州路、利州路、梓州路、夔州路四“路”（大体相当于今天的省）的合称。
+    - 除了麋鹿和大熊猫，谭卫道还“发现”了川金丝猴这种漂亮的猴类。一生能够发现三种大名鼎鼎的珍稀动物，已经足以使他名垂史册了。然而，四川西南部那茂密秀美的森林还将另一种美丽树木的发现权送给了谭卫道——这就是珙桐。
+    - 因为后来全球气候转冷，这些维京移民在15世纪全部死绝了，他们的存在因此成了人类文明发展中一段失落的历史。对了，也许你曾听说过，这次全球性的气候变冷，据信也是导致原先在草原上游牧的蒙古族为了生存被迫南下入侵农业文明，从而建立横跨欧亚大陆的蒙古帝国的根本原因。
+    - 1932年，胡先骕发现了中国植物的一个新属，起名为<i>Rehderodendron</i>。这个词中的dendron是古希腊语“树木”之意，而Rehder是胡先骕在哈佛的老朋友雷德尔的姓氏，所以这个属名的意思是“雷德尔家的树”，汉语名为“木瓜红属”。有趣的是，3年之后，雷德尔也命名了一个新属，起名为<i>Huodendron</i>，那意思自然就是“胡家的树”，汉语名为“山茉莉属”。
+    - 上餐馆点菜，要一道名为“茄科植物大全”，其实就是地三鲜，其主料是土豆、青椒、茄子和西红柿，正好都是茄科植物。
+    - 英语里表示“兰花”的词是orchid，这个词来自拉丁语的<i>orchis</i>。Orchis本身也是一类叫做“红门兰”的兰花的属名。再往前追溯，拉丁语的<i>orchis</i>又是来自希腊语的<i>orkhis</i>，这个词的本义，竟然是睾丸！
+    - 除了枳和金橘，剩下的所有柑橘类也许都只是3个野生种的后代！这3个野生种是枸（jǔ）橼（yuán）、野生柚和野生宽皮橘。
+
+- name: My Two Worlds
+  original_name: 我的两个世界
+  authors:
+    - Fang Zhouzi
+  language: zh
+  image: my-two-worlds.jpg
+  time: 2017
+  douban: 10749931
+  goodreads: 19407513
+  tags:
+    - history
+    - culture
+  quotes:
+    - 鲁迅有谓：历史人物的大小，恰与物理规律相反，愈近愈小，愈远愈大。被同时代人视为卑劣小人、独裁奸相的张居正，其伟大，只有后人才能仰见。
+    - 也许可以这样说，刻意、做作的爱迪生电影开创的是电影艺术的技巧主义流派，而自然、生动的卢米埃尔电影开创的则是写实主义流派。直到今日，美国电影的主流仍然是技巧主义的，而欧洲电影的主流则是写实主义的。
+    - 到了二十世纪二十年代，苏联的爱森斯坦等人通过对格里菲斯电影的具体分析，才最终建立了电影艺术的经典理论体系。
+    - 但有声电影的出现，却导致了电影艺术的大倒退。
+    - 他（斯特劳亨）甚至要求扮演奥地利轻骑兵的演员们必须穿军队规定的内裤，尽管这些轻骑兵在影片中并不会脱下制服让观众看到内裤。
+    - 在电影喜剧形象中，也只有他（迪士尼）的米老鼠可与查理流浪汉相媲美，苏联大导演爱森斯坦称之为“美国对世界文化的唯一一个贡献”。
+    - 但是这种平庸的生活实质上是最不正常的，其中的一个标志就是美国人对看电影的热衷，而这实际上体现了美国人的窥视狂倾向。窥视狂成了希区柯克五十年代电影的一个主题，在《后窗》一片中得到了最为彻底的表现。
+    - 二十世纪五十年代美国电影艺术的重要变革，是突破电影类型的束缚，兴起了现实主义流派。主导这个新潮流的，是两位受意大利新现实主义流派影响的导演：弗雷德·晋内曼（Fred Zinnemann）和埃利亚·卡赞（Elia Kazan）。
+    - 如果说四五十年代是意大利新现实主义电影的年代，六十年代是法国新浪潮电影的年代，那么从1967年到1977年的这十年，则是美国新电影的年代，以一系列难以超越的杰作奠定了美国在世界电影艺术中的领导地位。
+    - 从这个意义上说，美国的缔造者们，也都可视为无神论者。他们包括独立战争时期最重要的启蒙思想家之一托马斯·潘恩，美国最早的四位总统：乔治·华盛顿、约翰·亚当斯、托马斯·杰斐逊和詹姆斯·麦迪逊。
+    - 在美国政治史上，这五个人可能是最伟大的人物：潘恩第一个主张美国独立，他的《常识》一书成了美国革命的圣经，是最主要的革命宣传家。杰斐逊起草《独立宣言》，撰写了一大批影响深远的政治思想论著，是美国的总设计师。富兰克林被视为美国的圣人。华盛顿是独立战争的总司令和美国的首任总统。林肯重新统一了美国和废除了奴隶制，用中国的传统说法，叫做“中兴之主”。所有这些美国伟人，都有一个共同点：都是自然神论者，都不信基督教。
+
+- name: "Making Our Democracy Work: A Judge's View"
+  original_name: 法官能为民主做什么
+  authors:
+    - Stephen Breyer
+  image: making-our-democracy-work.jpg
+  time: 2015
+  douban: 10749394
+  goodreads: 8289966
+  tags:
+    - law
+    - politics
+  quotes:
+    - 为保护非主流的少数人的权益，设置司法审查权是必要的；司法审查主要是一项法律技术工作，法官是最适合承担这项工作的群体；将司法审查权赋予司法部门，要比交给其他部门威胁更小，效率更高。人们可以发现，开创美国的那一代人，多数支持上述观点。
+    - 今天，在距离中央中学一英里远的地方，人们可以看到切诺基族大酋长罗斯的妻子的墓地。墓碑上镌刻着她去世的地点：通往俄克拉荷马州的“眼泪之路”上——政府将她和她的切诺基族人，集体从佐治亚地区驱逐之后。这座墓碑和这所学校，共同承载着一段如何在美国实现法治的往事。
+    - 参议院多数党领袖，民主党人哈里·里德后来说，公众将最高法院的判决，作为法律自觉遵守，这一现象尽管很少被人提起，却是这起案件最了不起的特点。
+    - 以文本为导向的法官解释法律时，格外强调语言、历史、传统和先例的作用，不注重以立法意图和预期后果为手段。与之相反，以立法意图为导向的法官，会把揣摩立法意图和预期后果视为行之有效的解释方法。
+    - 由于独立机构相对脱离总统控制，有一定自治权，有人把他们称为政府中“没有首长的第四部门”(headless fourth branch)。
+    - 法院发现，对行政决定进行司法审查时，相对专长(comparative expertise)这一概念非常有用，确有必要予以重视。
+    - 判断法院审查行政机关的法律解释性决定时的司法态度，是一个非常困难，也非常重要的问题。对于行政机关对法律含义和适用范围的解释，法院是否应给予一定程度的尊重？还是可以自顾自地解释法律，完全不考虑行政机关的解释？也许，人们会惊讶地发现，法院有时采取的是前一种态度。
+    - 我们有合理理由相信，如果同时具备下列情形，国会(如果他们考虑过这些问题)赞成负责审查的法院遵从行政机关的观点：对相关法律问题，行政机关拥有特殊的专业技能优势；相关问题涉及行政机关的具体职能与工作细节；相关法律问题牵涉面不广，不是特别重要；行政机关对相关问题的思考更为审慎；法律语言模棱两可。
+    - 如果存在下列情形，国会(如果他们考虑过这些问题)会认同负责审查的法院拥有相关专门技能(至少相比较而言)，无须尊重行政机关的观点：行政机关对相关问题缺乏充分考虑；相关问题牵涉甚广，事关重大；相关问题在法律领域已经有明确、清晰、稳定的定论。
+    - 法院通常将相对专长作为试金石，在一般情况下，如果行政机关更具备解决问题的能力，法院会遵从他们的决定。
+    - 根据辅从原则，处理特定类别事务的政府权力，应集中于最适合处理这类问题的，规模最小的政府组织之手。
+    - 总之，这起与第二修正案相关的事例说明，我们在解释宪法时，应如何通过使用价值观判断和比例原则，促使宪法保护的恒久价值适应社会变化的需要。
+    - 沃伦成为首席大法官后，一直致力于维护公民自由——还主笔撰写了“布朗诉教育委员会案”的判决意见——可是，在1942年，他却告诉州治安官们，目前“我们没有发现第五纵队活动的迹象”或“破坏行为”，这正说明加州的日本人“深谋远虑”，“打算在进攻日来临之际再浮出水面”。他还指出，之所以没出现“破坏行为”，本身就说明许多日裔居民是不忠诚的。
+    - 当最高法院面临不同领域的棘手问题时，以下这些方法分别发挥了重要作用，具体包括：(1)对于国会立法，要合理推断理性立法者的立法意图，确定立法意图和预期后果。(2)对于行政行为，既要充分考虑相关法律的立法目的，也要兼顾行政分支的相对专长。(3)解释与联邦主义相关的法律时，应注重辅从原则。(4)处理与下级法院职能有关的问题时，应考虑专门分工。(5)处理最高法院与本院既往先例的关系时，应强调稳定性。
+
+- name: "Life 3.0: Being Human in the Age of Artificial Intelligence"
+  authors:
+    - Max Tegmark
+  language: en
+  image: life-3.0.jpg
+  time: 2017
+  douban: 27125413
+  goodreads: 34272565
+  wikidata: Q48093278
+  tags:
+    - science
+    - philosophy
+  quotes:
+    - Let’s instead define life very broadly, simply as a process that can retain its complexity and replicate.
+    - In other words, we can think of life as a self-replicating information-processing system whose information (software) determines both its behavior and the blueprints for its hardware.
+    - Your synapses store all your knowledge and skills as roughly 100 terabytes’ worth of information, while your DNA stores merely about a gigabyte, barely enough to store a single movie download.
+    - All this requires life to undergo a final upgrade, to Life 3.0, which can design not only its software but also its hardware. In other words, Life 3.0 is the master of its own destiny, finally fully free from its evolutionary shackles.
+    - What will affect us humans is what superintelligent AI does, not how it subjectively feels.
+    - This critical sea level is the one corresponding to machines becoming able to perform AI design. Before this tipping point is reached, the sea-level rise is caused by humans improving machines; afterward, the rise can be driven by machines improving machines, potentially much faster than humans could have done, rapidly submerging all land. This is the fascinating and controversial idea of the singularity.
+    - Such memory systems are called auto-associative, since they recall by association rather than by address.
+    - In a famous 1982 paper, the physicist John Hopfield showed how a network of interconnected neurons could function as an auto-associative memory. I find the basic idea very beautiful, and it works for any physical system with multiple stable states.
+    - A computation is a transformation of one memory state into another.
+    - MIT researchers Norman Margolus and Tommaso Toffoli coined the name computronium for any substance that can perform arbitrary computations.
+    - "In short, computation is a pattern in the spacetime arrangement of particles, and it’s not the particles but the pattern that really matters! Matter doesn’t matter. In other words, the hardware is the matter and the software is the pattern. This substrate independence of computation implies that AI is possible: intelligence doesn’t require flesh, blood or carbon atoms."
+    - Quantum computing pioneer David Deutsch controversially argues that “quantum computers share information with huge numbers of versions of themselves throughout the multiverse,” and can get answers faster here in our Universe by in a sense getting help from these other versions.
+    - The ability to learn is arguably the most fascinating aspect of general intelligence.
+    - Analogously, the network of neurons in your brain is recurrent, letting information input from your eyes, ears and other senses affect its ongoing computation, which in turn determines information output to your muscles.
+    - The pilots entered “33” on a keypad because they wanted to descend at an angle of 3.3 degrees, but the autopilot interpreted this as 3,300 feet per minute because it was in a different mode—and the display screen was too small to show the mode and allow the pilots to realize their mistake.
+    - "For example, a controversial 2012 study of Israeli judges claimed that they delivered significantly harsher verdicts when they were hungry: whereas they denied about 35% of parole cases right after breakfast, they denied over 85% right before lunch."
+    - For example, once AI becomes able to generate fully realistic fake videos of you committing crimes, will you vote for a system where the government tracks everyone’s whereabouts at all times and can provide you with an ironclad alibi if needed?
+    - This physics-imposed speed limit on information transfer therefore poses an obvious challenge for any AI wishing to take over our world, let alone our Universe.
+    - This is analogous to the situation featured in the movie <i>The Imitation Game</i>, where Alan Turing and his fellow British code crackers at Bletchley Park had advance knowledge of German submarine attacks against Allied naval convoys, but chose to only intervene in a fraction of the cases in order to avoid revealing their secret power. It’s interesting to compare this with the so-called theodicy problem of why a good god would allow suffering.
+    - "As the famous economist John Maynard Keynes said: “In the long run we are all dead.”"
+    - How could the goal change from dissipation to replication when the laws of physics stayed the same? The answer is that the fundamental goal (dissipation) didn’t change, but led to a different instrumental goal, that is, a subgoal that helped accomplish the fundamental goal.
+    - In summary, a living organism is an agent of bounded rationality that doesn’t pursue a single goal, but instead follows rules of thumb for what to pursue and avoid.
+    - A currently popular approach to the second challenge is known in geek-speak as inverse reinforcement learning, which is the main focus of a new Berkeley research center that Stuart Russell has launched.
+    - "Kant argued that he could derive from first principles (which he called “categorical imperatives”) conclusions that many contemporary philosophers disagree with: that masturbation is worse than suicide, that homosexuality is abhorrent, that it’s OK to kill bastards, and that wives, servants and children are owned in a way similar to objects."
+    - "Nick Bostrom argues strongly against the ethical destiny hypothesis in his book <i>Superintelligence</i>, presenting a counterpoint that he terms the orthogonality thesis: that the ultimate goals of a system can be independent of its intelligence."
+    - Giulio had developed the most mathematically precise consciousness theory to date, integrated information theory (IIT).
+    - If consciousness is the way that information feels when it’s processed in certain ways, then it must be substrate-independent; it’s only the structure of the information processing that matters, not the structure of the matter doing the information processing.
+    - If the information processing itself obeys certain principles, it can give rise to the higher-level emergent phenomenon that we call consciousness. This places your conscious experience not one but two levels up from the matter.
+
+- name: Our Mathematical Universe
+  original_name: 穿越平行宇宙
+  authors:
+    - Max Tegmark
+  language: zh
+  image: our-mathematical-universe.jpg
+  time: 2017
+  douban: 27045352
+  goodreads: 19395553
+  wikidata: Q18358743
+  tags:
+    - physics
+    - maths
+  quotes:
+    - 每次，当我们使用科技去窥探人类尺度之外的实在时，进化带来的直觉都会被打破。
+    - 阿里斯塔克斯早在天文学家哥白尼之前许多年，就提出了日心说：他认为，太阳比地球大那么多，应该是地球绕着太阳转更合理，而不是太阳绕着地球转。
+    - 量化我们测量的不确定性有多么重要。
+    - 如果温度足够高，撞击会变得极其猛烈，以至于原子都被撞碎了，电子和质子分道扬镳、各走各路——氢等离子体就是一锅由自由电子和质子熬成的粥。
+    - 这开启了一种测量我们宇宙的全新方式——只需要测量一下宇宙微波背景频谱曲线中的第一个峰值！如果峰值的位置表明宇宙是平的，那根据爱因斯坦的方程，宇宙的平均密度就是10-26kg/m<sup>3</sup>，相当于每个地球大小的体积内包含10毫克物质，或者每立方米包含6个氢原子。如果第一个峰值非常靠左，密度就会变大，反之亦然。
+    - 望远镜本质上就是一个傅里叶变换器。
+    - 根据爱因斯坦的引力理论，这样一团不可稀释的物质可能会经历最震撼人心的爆炸，也就是阿兰所说的暴胀，这样，大爆炸应运而生！爱因斯坦的方程有一个解，其中，这团不可稀释的物质中的每个地方每次膨胀到两倍所花费的时间间隔都相同，这种类型的增长被数学家称为“指数级增长”。
+    - 宇宙中相隔甚远的区域拥有相同的特征，因为它们也有一个共同的起源——它们都来自最初那一小团暴胀物质的不断翻倍。
+    - 暴胀物质产生的反引力把自身炸开了花，与此同时，膨胀所消耗的能量创造出了足够的新质量，使这些物质保持着恒定的密度。
+    - 如果要认真对待暴胀理论，那么我们就需要纠正那些声称暴胀发生在宇宙大爆炸之后不久的人，因为它其实发生在大爆炸之前，并创造了大爆炸。
+    - 综合来看，我认为，我们最好不要把暴胀的早期阶段看作一次热大爆炸，而应该看作一场“冷小旋风”（Cold Little Swoosh），因为那时候我们的宇宙并没有那么热（到暴胀终止时，温度升高了1000倍），也没有那么大（还没有一个苹果重，尺度为质子的1/109），甚至也算不上一个爆炸（膨胀的速度比暴胀后慢了1万亿、万亿倍）。
+    - 安德烈·林德创造出了“永恒暴胀”（eternal inflation）这个术语。他发现，在他提出的暴胀模型中，即使是最简单的那个，也将通过一种优雅的机制永恒暴胀下去，这种机制与撒下宇宙涨落种子的量子涨落有关。
+    - 为了让暴胀开始发生，暴胀物质的膨胀速度必须大于衰变的速度，这会让暴胀物质总量不停地增长，没有上限。
+    - 我们称之为“大爆炸”的事件，并不是宇宙的终极开端，而只是一个结束，它为我们这部分空间中的暴胀画上了句号。
+    - 栖居于第一层平行宇宙中的观察者眼中的物理定律与我们是相同的，但是他们的初始条件与我们不同。
+    - 除了暴胀，还可能存在另一种宇宙创生机制。这个想法最初是由理查德·托尔曼（Richard Tolman）和约翰·惠勒（John Wheeler）提出的，由保罗·斯坦哈特和尼尔·图罗克（Neil Turok）进行了详细的阐述。他们认为，我们宇宙的历史是循环往复的，经历着一系列永无止境的大爆炸。
+    - 还有一个宇宙创生机制是由物理学家李·斯莫林（Lee Smolin）提出来的。他认为，新的宇宙会萌芽于黑洞中，而非暴胀中。他的理论也会产生第二层多重宇宙，其自然选择会更加青睐那些拥有最多黑洞的宇宙。
+    - 在更技术的层面，如果你问“粒子是什么”，一些物理学家可能会油嘴滑舌地回答道：“它是拉格朗日量对称群不可约表示的一个元素。”
+    - 正如相对论先驱罗杰·彭罗斯（Roger Penrose）嘲笑的那样：“对量子力学有许多不同的态度。这些态度数量之多，恐怕比量子物理学家的数量还多。这并不矛盾，因为许多量子物理学家同时持有多种不同的观点。”
+    - 埃弗雷特意识到，尽管只存在一个波函数和一个量子实在（在其中，我们宇宙中的许多粒子都同时处在两个位置），但这一切看起来就好像我们的宇宙分裂成了两个平行宇宙一样！实验结束的时候，将出现有两个不同版本的你，每一个你主观上都觉得很真实，但对另一个你的存在毫不知情。
+    - 它与我们的分离发生在所谓的“希尔伯特空间”（Hilbert space）中，这是一种抽象的空间，拥有无限多的维数，波函数就栖身于其中。
+    - 经典物理学同时预测了两个事实：我们正在围着太阳转；我们丝毫感觉不到这件事。与之类似，埃弗雷特告诉我们，永不坍缩的量子物理学也同时预测了两个事实：我们正在分裂；我们丝毫感觉不到这件事。
+    - 量子力学里所说的观测并不是指人类有意识的观测，而仅仅是指信息的交换。最后，我终于理解了为什么我们永远看不到宏观物体同时处在两个位置，即使它们实际上确实同时位于两个位置：这并不是因为它们个头很大，而是因为它们很难被分离成孤立的系统！
+    - 正如量子计算先驱大卫·多伊奇（David Deutsch）所说，“量子计算机能与无数个平行宇宙中的自己分享信息”，在其他宇宙的“自己”的帮助下，就能迅速获得自己栖身的这个宇宙的答案。
+    - 神经元退相干的速度远远超过了它们处理信息的速度，这个事实意味着，假如意识真的与你大脑中复杂的神经放电模式有关，那大脑中超快的退相干也会让你感知不到任何怪诞的叠加态。
+    - 当我们从主观上察觉到外部世界时，所有事物都已经退相干了，以保证我们永远无法感知到量子怪诞性，这也解释了我们为何只能感知到那些强健的惯常状态。
+    - 只要第一层多重宇宙所栖身的空间是无限大的，你就可以忽略所有的第三层平行宇宙，因为它们实际上是完全相同的，没有丝毫差别。
+    - 我们对实在的追寻可以分为两部分，这两部分可以分别解决：一是认知科学的大挑战，二是物理学的大挑战。认知科学旨在将共识实在与内部实在连接起来，而物理学旨在将共识实在与外部实在连接起来。
+    - 因此，你的空间实在模型让你产生了一种主观感觉，好像你正在观察一个三维的空间，但实际上你的思维只是在观察你脑中的一个关于实在的模型；同样，你的时间实在模型也一样，它的一连串记忆序列让你产生了一种对时间的主观感觉，仿佛时间在一系列事件中流淌向前，但实际上，你的思维只是在观察大脑中一个观察者时刻的实在模型而已。换句话说，你对时间流逝的主观感觉来自你现在所拥有的记忆之间的关系。
+    - 复杂性是在描述一个物体有多复杂，而信息含量表示的是它对外部世界的描述程度。也就是说，信息含量是对复杂性拥有多少含义的度量。
+    - 神经科学家朱利奥·托诺尼（Giulio Tononi）提出了一种迷人的观点，他的核心观点是，一个信息处理系统要产生意识，必须集合入一个不会分崩离析的统一整体。
+    - 它（强自我抽样假设）意味着，不管存在多么广袤无垠、超乎想象的多重宇宙，我们人类在所有追寻着类似问题的观察者中可能是相当典型的一种！
+    - 前三层平行宇宙相当于同一个数学结构中无法相互交流的平行宇宙：第一层平行宇宙，简单地说就是遥远的区域，光线没有足够的时间来赶上我们；第二层平行宇宙覆盖的区域，由于我们与它们之间的空间发生了宇宙学暴胀而永远遥不可及；第三层平行宇宙，也就是埃弗雷特所说的“多世界”，讨论的是量子力学的希尔伯特空间内无法交流的各部分。
+    - 哥德尔告诉人们，不管一个形式系统多么强大，我们都无法用它本身来证明它的一致性，但这并不意味着它就是不一致的，也不意味着我们遇到了大麻烦。
+    - 我们在第6章讨论过的所有守恒量都对应着这样的对称性。比如，能量对应着时间平移对称性（即随着时间的推移，关于能量的物理定律保持不变），动量对应着空间平移对称性（即不管在空间中的哪一点，关于动量的物理定律保持不变），角动量对应着旋转对称性（即空荡的空间中不存在一个特殊的“上”方向），电荷对应着量子力学中一种特殊的对称。
+    - 传统物理学拥抱初始条件，而数学宇宙假说拒绝接受它们。
+    - 由于数学宇宙假说要求万事万物都是被定义好的，所以它抛弃了另一个在物理学中占据中心地位的概念——随机性。
+    - 初始条件的信息与我们物理实在的本质无关，而只与我们在其中的位置有关。
+    - 看似任意的初始条件是由多重宇宙引起的，而表面上的随机性是由于存在多个你而引起的。
+    - 在哲学领域内，与第四层多重宇宙理论最接近的理论是已故哲学家大卫·里维斯（David Lewis）所提出的模态实在论（modal realism）。他提出，“所有可能的世界都与实际的世界一样真实”。
+    - 或者，他们为了自保或其他原因而保持低调，或者以一种我们难以察觉的方式殖民太空——这被美国天文学家约翰·波尔（John A.Ball）称为“动物园假说”（Zoo Hypothesis），并在一些经典科幻作品中有详细描写，例如奥拉夫·斯塔普雷顿（Olaf Stapleton）所著的《造星者》（Star Maker）。
 
 - name: On China
   original_name: 论中国
