@@ -1516,6 +1516,30 @@ a .pgp-text:hover {
   height: 70px;
 }
 
+.book-search {
+  justify-self: end;
+  flex-basis: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.book-searchbox {
+  padding-left: 10px;
+  padding-right: 20px;
+  width: 200px;
+  border: none;
+  outline: none;
+}
+
+.book-searchbox:focus {
+  border: none;
+}
+
+.book-searchbox::placeholder {
+  color: #aaa;
+}
+
 .reading-list {
   padding-top: 100px;
   display: flex;

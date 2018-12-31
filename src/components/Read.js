@@ -6,6 +6,7 @@ import BookDetail from './BookDetail'
 import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import InfiniteScroll from 'react-infinite-scroller'
+import { IoIosSearch } from 'react-icons/io'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -16,7 +17,8 @@ class Read extends Component {
     readingList: [],
     nBooksLoaded: 10,
     allLoaded: false,
-    delay: 150
+    delay: 150,
+    searchText: ''
   }
 
   calcListWidth = () => {
@@ -70,6 +72,9 @@ class Read extends Component {
         })
       }
     }
+
+    if (this.state.searchText !== prevState.searchText)
+      this.setState({ nBooksLoaded: 10, allLoaded: false })
   }
 
   onSelectBook = idx => {
@@ -133,17 +138,39 @@ class Read extends Component {
                 hasMore: !this.state.allLoaded
               }}
             >
+              <div className="book-search">
+                <IoIosSearch color={'#aaa'} />
+                <input
+                  type="text"
+                  value={this.state.searchText}
+                  onChange={e => this.setState({ searchText: e.target.value })}
+                  placeholder="Search..."
+                  className="book-searchbox"
+                />
+              </div>
               {this.state.readingList
                 .slice(0, this.state.nBooksLoaded)
-                .map((book, idx) => (
-                  <Book
-                    id={`book-${idx}`}
-                    key={idx}
-                    onSelectBook={this.onSelectBook}
-                    idx={idx}
-                    {...book}
-                  />
-                ))}
+                .map(
+                  (book, idx) =>
+                    this.state.searchText === '' ||
+                    book.name
+                      .toLowerCase()
+                      .includes(this.state.searchText.toLowerCase()) ||
+                    (book.original_name != null &&
+                      book.original_name
+                        .toLowerCase()
+                        .includes(this.state.searchText.toLowerCase())) ? (
+                      <Book
+                        id={`book-${idx}`}
+                        key={idx}
+                        onSelectBook={this.onSelectBook}
+                        idx={idx}
+                        {...book}
+                      />
+                    ) : (
+                      <div key={idx} />
+                    )
+                )}
             </TweenOne>
           )}
           {this.state.currentIdx >= 0 && (
