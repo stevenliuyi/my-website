@@ -1,3 +1,23 @@
+- name: Programmer Pangtoucong (WeChat Stickers)
+  filename: programmer_pangtoucong.png
+  width: 800
+  height: 800
+  time: 2019
+
+- name: Fox
+  info: original work by Gugeli
+  filename: fox.jpg
+  width: 1465
+  height: 2048
+  time: 2018
+
+- name: Lion
+  filename: lion.png
+  width: 2048
+  height: 2048
+  time: 2018
+  white: true
+
 - name: uNDefeated Season
   info: celebrating Fighting Irish's 12-0 regular season
   filename: undefeated_season.png
@@ -155,17 +175,3 @@
   height: 2077
   time: 2011
   white: true
-
-- name: Lion
-  filename: lion.png
-  width: 2048
-  height: 2048
-  time: 2018
-  white: true
-
-- name: Fox
-  info: original work by Gugeli
-  filename: fox.jpg
-  width: 1465
-  height: 2048
-  time: 2018
