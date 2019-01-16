@@ -438,3 +438,31 @@
   to: SBN
   from_region: USA
   to_region: USA
+
+- date: 2019-01-04
+  flight: AA2915
+  from: SBN
+  to: CLT
+  from_region: USA
+  to_region: USA
+  
+- date: 2019-01-04
+  flight: AA561
+  from: CLT
+  to: MCO
+  from_region: USA
+  to_region: USA
+
+- date: 2019-01-09
+  flight: AA461
+  from: MCO
+  to: CLT
+  from_region: USA
+  to_region: USA
+
+- date: 2019-01-09
+  flight: AA3283
+  from: CLT
+  to: SBN
+  from_region: USA
+  to_region: USA

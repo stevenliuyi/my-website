@@ -81,6 +81,8 @@ USA:
     coordinates: -87.0661, 36.1869
   - city: New York City
     coordinates: -74.2606, 40.6977
+  - city: Orlando
+    coordinates: -81.5125, 28.4907
   - city: Philadelphia
     coordinates: -75.2585, 40.0027
   - city: Rochester

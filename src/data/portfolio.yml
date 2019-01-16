@@ -1,8 +1,17 @@
+- name: Kalendae
+  info: website for displaying calendars
+  filename: kalendae.jpg
+  width: 2500
+  height: 1875
+  time: 2019
+  link: https://kalendae.yliu.io
+
 - name: Programmer Pangtoucong (WeChat Stickers)
   filename: programmer_pangtoucong.png
   width: 800
   height: 800
   time: 2019
+  link: https://yliu.io/pangtoucong2
 
 - name: Fox
   info: original work by Gugeli
