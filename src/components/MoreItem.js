@@ -47,7 +47,7 @@ class MoreItem extends Component {
             component="circle"
             animation={{
               SVGDraw: 0,
-              delay: this.props.delay + 500,
+              delay: this.props.delay + 200,
               duration: 1000
             }}
             cx="130"

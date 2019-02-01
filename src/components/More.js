@@ -20,6 +20,8 @@ class More extends Component {
   }
 
   render() {
+    const color = '#f5f5f5'
+
     return (
       <ScrollOverPack
         id="more-page"
@@ -40,7 +42,7 @@ class More extends Component {
           animation={{
             opacity: 1,
             translateX: 0,
-            delay: this.props.delay + 250,
+            delay: this.props.delay + 100,
             duration: 1000
           }}
         />
@@ -56,7 +58,7 @@ class More extends Component {
                 className="iconfont icon-pen"
                 style={{
                   fontSize: 64,
-                  color: '#eee',
+                  color,
                   transform: 'translateY(32px)',
                   clipPath: 'polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%)',
                   WebkitClipPath: 'polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%)',
@@ -75,7 +77,7 @@ class More extends Component {
             logo={
               <FaBookOpen
                 size={50}
-                color="#eee"
+                color={color}
                 style={{ transform: 'translateY(5px)' }}
               />
             }
@@ -90,7 +92,7 @@ class More extends Component {
             logo={
               <MdPalette
                 size={55}
-                color="#eee"
+                color={color}
                 style={{ transform: 'translateY(5px)' }}
               />
             }

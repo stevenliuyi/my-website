@@ -23,7 +23,7 @@ const EventListener = ScrollAnim.Event
 
 class App extends Component {
   state = {
-    delay: 150,
+    delay: 50,
     width: 0,
     menuOpen: false,
     currentSection: ''

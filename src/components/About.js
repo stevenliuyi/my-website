@@ -104,7 +104,7 @@ class About extends Component {
           animation={{
             opacity: 1,
             translateX: 0,
-            delay: this.props.delay + 250,
+            delay: this.props.delay + 100,
             duration: 1000
           }}
         />
@@ -121,7 +121,7 @@ class About extends Component {
               opacity: 0,
               scale: 0,
               type: 'from',
-              delay: this.props.delay + 750,
+              delay: this.props.delay + 200,
               duration: 1000,
               ease: 'easeOutBack'
             }}
@@ -135,7 +135,7 @@ class About extends Component {
               animation={{
                 opacity: 1,
                 translateX: 0,
-                delay: this.props.delay + 1000,
+                delay: this.props.delay + 500,
                 duration: 1000
               }}
             >
@@ -155,7 +155,7 @@ class About extends Component {
               animation={{
                 opacity: 1,
                 translateX: 0,
-                delay: this.props.delay + 1200,
+                delay: this.props.delay + 600,
                 duration: 1000,
                 ease: 'easeOutBack'
               }}
@@ -179,7 +179,7 @@ class About extends Component {
               animation={{
                 opacity: 1,
                 translateX: 0,
-                delay: this.props.delay + 1400,
+                delay: this.props.delay + 700,
                 duration: 1000,
                 ease: 'easeOutBack'
               }}
@@ -225,7 +225,7 @@ class About extends Component {
                     designing
                   </SimpleTooltip>
                 </Link>
-                , photographing, stargazing, playing contract bridge,
+                , photographing, stargazing, playing contract bridge,{' '}
                 <Link to={{ pathname: 'places', backId: 'about-page' }}>
                   <SimpleTooltip
                     id="tt-places"
@@ -243,7 +243,7 @@ class About extends Component {
             animation={{
               opacity: 1,
               translateY: 0,
-              delay: this.props.delay + 1200,
+              delay: this.props.delay + 500,
               duration: 1000
             }}
           >
@@ -441,7 +441,7 @@ class About extends Component {
             opacity: 0,
             type: 'from',
             duration: 1000,
-            delay: this.props.delay + 2000
+            delay: this.props.delay + 1000
           }}
         >
           <div
@@ -458,7 +458,7 @@ class About extends Component {
             opacity: 1,
             translateY: 0,
             duration: 1000,
-            delay: this.props.delay + 2000
+            delay: this.props.delay + 1000
           }}
         >
           <NumberCard

@@ -325,7 +325,7 @@ const updateSkillD3Node = (data, width, height, delay = 0) => {
     .on('mouseleave', handleMouseLeave)
     .transition()
     .duration(interval)
-    .delay((d, i) => delay + 500 + interval * i)
+    .delay((d, i) => delay + 250 + interval * i)
     .attr('width', d => (d.value > 0 ? 100 : 0))
 
   bars
@@ -341,7 +341,7 @@ const updateSkillD3Node = (data, width, height, delay = 0) => {
     .on('mouseleave', handleMouseLeave)
     .transition()
     .duration(interval * 5)
-    .delay((d, i) => delay + 500 + interval * (1 + i))
+    .delay((d, i) => delay + 250 + interval * (1 + i))
     .attr('width', d => x(d.value))
 
   bars
@@ -355,7 +355,7 @@ const updateSkillD3Node = (data, width, height, delay = 0) => {
     .on('mouseleave', handleMouseLeave)
     .transition()
     .duration(interval * 5)
-    .delay((d, i) => delay + 500 + interval * (6 + i))
+    .delay((d, i) => delay + 250 + interval * (6 + i))
     .attr(
       'width',
       d => (!d.skill.startsWith('placeholder') ? width - 100 - x(d.value) : 0)
@@ -374,7 +374,7 @@ const updateSkillD3Node = (data, width, height, delay = 0) => {
     .on('mouseleave', handleMouseLeave)
     .transition()
     .duration(interval * 2)
-    .delay((d, i) => delay + 500 + interval * i)
+    .delay((d, i) => delay + 250 + interval * i)
     .style('opacity', 1)
 
   function handleMouseEnter(d, i) {
@@ -526,7 +526,7 @@ class Skills extends Component {
                     animation={{
                       opacity: 1,
                       translateY: 0,
-                      delay: this.props.delay + 500 + i * 100
+                      delay: this.props.delay + 250 + i * 100
                     }}
                     onClick={() => {
                       updateSkillD3Node(
@@ -562,7 +562,7 @@ class Skills extends Component {
               animation={{
                 opacity: 1,
                 scale: 1,
-                delay: this.props.delay + 500,
+                delay: this.props.delay + 250,
                 duration: 1000,
                 ease: 'easeOutBack'
               }}
@@ -643,7 +643,7 @@ class Skills extends Component {
               href="https://github.com/stevenliuyi"
               rel="noopener noreferrer"
             >
-              <MoreButton title={'My Github'} delay={500} />
+              <MoreButton title={'My Github'} delay={250} />
             </a>
           )}
         </ScrollOverPack>

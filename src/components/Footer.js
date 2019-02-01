@@ -53,7 +53,7 @@ class Footer extends Component {
           animation={{
             opacity: 1,
             translateX: 0,
-            delay: this.props.delay + 250,
+            delay: this.props.delay + 100,
             duration: 1000
           }}
         />
@@ -62,7 +62,7 @@ class Footer extends Component {
             key="3"
             className="contact-email"
             enter={textEnter}
-            delay={this.props.delay + 500}
+            delay={this.props.delay + 200}
             interval={100}
           >
             me@yliu.io
@@ -76,7 +76,7 @@ class Footer extends Component {
               animation={{
                 opacity: 0,
                 type: 'from',
-                delay: this.props.delay + 500
+                delay: this.props.delay + 300
               }}
               className="footer-icon"
             >
@@ -94,7 +94,7 @@ class Footer extends Component {
               animation={{
                 opacity: 0,
                 type: 'from',
-                delay: this.props.delay + 500
+                delay: this.props.delay + 300
               }}
               className="footer-icon"
             >
@@ -124,7 +124,7 @@ class Footer extends Component {
               animation={{
                 opacity: 0,
                 type: 'from',
-                delay: this.props.delay + 500
+                delay: this.props.delay + 300
               }}
               className="footer-icon"
             >
@@ -161,7 +161,7 @@ class Footer extends Component {
               key="0"
               type="right"
               mode="smooth"
-              delay={this.props.delay + 500}
+              delay={this.props.delay + 300}
             >
               {leftText}
             </Texty>
@@ -172,7 +172,7 @@ class Footer extends Component {
                 opacity: 0,
                 scale: 0,
                 type: 'from',
-                delay: this.props.delay + 600 + 50 * leftText.length,
+                delay: this.props.delay + 400 + 50 * leftText.length,
                 duration: 200
               }}
             >
@@ -184,7 +184,7 @@ class Footer extends Component {
               key="2"
               type="right"
               mode="smooth"
-              delay={this.props.delay + 800 + 50 * leftText.length}
+              delay={this.props.delay + 500 + 50 * leftText.length}
             >
               {rightText}
             </Texty>

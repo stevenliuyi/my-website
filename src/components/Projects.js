@@ -88,7 +88,7 @@ class Projects extends Component {
           animation={{
             opacity: 1,
             translateX: 0,
-            delay: this.props.delay + 250,
+            delay: this.props.delay + 100,
             duration: 1000
           }}
         />
@@ -97,8 +97,8 @@ class Projects extends Component {
           animation={{
             opacity: 1,
             translateY: 0,
-            delay: this.props.delay + 1000,
-            duration: 2000,
+            delay: this.props.delay + 300,
+            duration: 1500,
             onComplete: e => {
               this.setState({ projectsLoaded: true })
             }

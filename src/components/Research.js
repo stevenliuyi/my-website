@@ -30,7 +30,7 @@ class Research extends Component {
           animation={{
             opacity: 1,
             translateX: 0,
-            delay: this.props.delay + 250,
+            delay: this.props.delay + 100,
             duration: 1000
           }}
         />
@@ -40,7 +40,7 @@ class Research extends Component {
             animation={{
               opacity: 1,
               translateX: 0,
-              delay: this.props.delay + 500
+              delay: this.props.delay + 200
             }}
             className="keywords-title"
           >
@@ -48,7 +48,7 @@ class Research extends Component {
           </TweenOne>
           <TweenOne
             key="1"
-            animation={{ opacity: 1, delay: this.props.delay + 700 }}
+            animation={{ opacity: 1, delay: this.props.delay + 300 }}
             component={Badge}
             color="secondary"
             className="keyword"
@@ -57,7 +57,7 @@ class Research extends Component {
           </TweenOne>
           <TweenOne
             key="2"
-            animation={{ opacity: 1, delay: this.props.delay + 900 }}
+            animation={{ opacity: 1, delay: this.props.delay + 400 }}
             component={Badge}
             color="secondary"
             className="keyword"
@@ -66,7 +66,7 @@ class Research extends Component {
           </TweenOne>
           <TweenOne
             key="3"
-            animation={{ opacity: 1, delay: this.props.delay + 1100 }}
+            animation={{ opacity: 1, delay: this.props.delay + 500 }}
             component={Badge}
             color="secondary"
             className="keyword"
@@ -81,7 +81,7 @@ class Research extends Component {
             animation={{
               opacity: 1,
               translateX: 0,
-              delay: this.props.delay + 1000,
+              delay: this.props.delay + 400,
               duration: 1000
             }}
           >
@@ -124,7 +124,7 @@ class Research extends Component {
             animation={{
               opacity: 1,
               translateX: 0,
-              delay: this.props.delay + 1500,
+              delay: this.props.delay + 600,
               duration: 1000
             }}
           >
