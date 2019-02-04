@@ -6,6 +6,7 @@ import 'rc-texty/assets/index.css'
 import { TiHeart } from 'react-icons/ti'
 import { FaFacebookF, FaWeixin, FaKey } from 'react-icons/fa'
 import { MdLock } from 'react-icons/md'
+import { IoIosCube } from 'react-icons/io'
 import { Tooltip } from 'reactstrap'
 import textEnter from '../utils/textEnter'
 import { getImageURL } from '../utils/utils'
@@ -15,7 +16,8 @@ const ScrollOverPack = ScrollAnim.OverPack
 class Footer extends Component {
   state = {
     wechatOpen: false,
-    pgpOpen: false
+    pgpOpen: false,
+    ipfsOpen: false
   }
 
   render() {
@@ -111,7 +113,7 @@ class Footer extends Component {
                 autohide={false}
               >
                 <img
-                  src="/images/wechat-qrcode.png"
+                  src="images/wechat-qrcode.png"
                   alt="QR code"
                   width={120}
                   height={120}
@@ -135,7 +137,7 @@ class Footer extends Component {
                 isOpen={this.state.pgpOpen}
                 target="pgp-icon"
                 toggle={() => this.setState({ pgpOpen: !this.state.pgpOpen })}
-                innerClassName="footer-tooltip pgp-tooltip"
+                innerClassName="footer-tooltip"
                 arrowClassName="footer-tooltip-arrow"
               >
                 <div style={{ padding: '10px' }}>
@@ -143,13 +145,60 @@ class Footer extends Component {
                   <div style={{ textAlign: 'left', marginTop: '10px' }}>
                     If you are security-paranoid (which is a good thing of
                     course), you can send me encrypted messages using my PGP key{' '}
-                    <a href="https://pgp.mit.edu/pks/lookup?op=get&search=0x3B2DB4E7">
-                      <span className="pgp-text">0x3B2DB4E7</span>
+                    <a
+                      href="https://pgp.mit.edu/pks/lookup?op=get&search=0x3B2DB4E7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="footer-dotted-text">0x3B2DB4E7</span>
                     </a>
                     . The fingerprint is{' '}
-                    <span className="pgp-text">
+                    <span className="footer-dotted-text">
                       0403 2E39 8D6D 01AD B94B E122 E8FA DCBE 3B2D B4E7
                     </span>
+                    .
+                  </div>
+                </div>
+              </Tooltip>
+            </TweenOne>
+            <TweenOne
+              component="span"
+              key="3"
+              animation={{
+                opacity: 0,
+                type: 'from',
+                delay: this.props.delay + 300
+              }}
+              className="footer-icon"
+            >
+              <IoIosCube id="ipfs-icon" size={18} />
+              <Tooltip
+                placement="top"
+                autohide={false}
+                isOpen={this.state.ipfsOpen}
+                target="ipfs-icon"
+                toggle={() => this.setState({ ipfsOpen: !this.state.ipfsOpen })}
+                innerClassName="footer-tooltip"
+                arrowClassName="footer-tooltip-arrow"
+              >
+                <div style={{ padding: '10px' }}>
+                  <div
+                    style={{ color: '#ccc', fontSize: 32, fontWeight: 'bold' }}
+                  >
+                    IPFS
+                  </div>
+                  <div style={{ textAlign: 'left' }}>
+                    This site is also distributed on IPFS (InterPlanetary File
+                    System) with permanent link{' '}
+                    <a
+                      href="https://cloudflare-ipfs.com/ipns/QmZ6pqHr35ppWXAF6v72PG8Q3rWuDH6jVw4AZALcwA2rUZ"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="footer-dotted-text">
+                        /ipns/QmZ6pqHr35ppWXAF6v72PG8Q3rWuDH6jVw4AZALcwA2rUZ
+                      </span>
+                    </a>
                     .
                   </div>
                 </div>

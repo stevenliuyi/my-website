@@ -168,7 +168,7 @@ class Places extends Component {
       .slice(1)
       .forEach(p => {
         if (!sessionStorage.hasOwnProperty(`map-${p}`))
-          fetch(`/maps/${places[p].filename}`)
+          fetch(`maps/${places[p].filename}`)
             .then(res => res.json())
             .then(data =>
               sessionStorage.setItem(`map-${p}`, JSON.stringify(data))
@@ -247,7 +247,7 @@ class Places extends Component {
                                 `map-${places[currentMap]}`
                               )
                             )
-                          : `/maps/${places[currentMap].filename}`
+                          : `maps/${places[currentMap].filename}`
                       }
                       disableOptimization
                     >

@@ -88,7 +88,7 @@ class Research extends Component {
             <div className="research-image-wrap noselect">
               <img
                 className="research-image"
-                src="/images/gulf_stream.png"
+                src="images/gulf_stream.png"
                 alt="gulf strem coherent structures"
               />
             </div>
@@ -131,7 +131,7 @@ class Research extends Component {
             <div className="research-image-wrap noselect">
               <img
                 className="research-image"
-                src="/images/channel_flow_q.png"
+                src="images/channel_flow_q.png"
                 alt="channel flow q criterion"
               />
             </div>

@@ -213,7 +213,7 @@ class BookDetail extends Component {
                   >
                     <img
                       alt="wikidata"
-                      src="/images/wikidata.svg"
+                      src="images/wikidata.svg"
                       width={16}
                       height={16}
                     />

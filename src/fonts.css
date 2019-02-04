@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Domaine Display';
+  src: url("/fonts/DomaineDisplayMedium.eot");
+  src: url("/fonts/DomaineDisplayMedium.eot?#font-spider") format('embedded-opentype'),
+  url("/fonts/DomaineDisplayMedium.woff") format('woff'),
+  url("/fonts/DomaineDisplayMedium.ttf") format('truetype'),
+  url("/fonts/DomaineDisplayMedium.svg") format('svg');
+  font-weight: 500;
+}
 
 @font-face {font-family: "iconfont";
   src: url('/fonts/iconfont.eot?t=1540318749356'); /* IE9*/

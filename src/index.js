@@ -14,7 +14,13 @@ const Portfolio = asyncComponent(() => import('./components/Portfolio'))
 const Places = asyncComponent(() => import('./components/Places'))
 
 ReactDOM.render(
-  <Router>
+  <Router
+    basename={
+      process.env.REACT_APP_IPFS === 'true'
+        ? '/ipns/QmZ6pqHr35ppWXAF6v72PG8Q3rWuDH6jVw4AZALcwA2rUZ'
+        : '/'
+    }
+  >
     <div>
       <Switch>
         <Route exact path="/" component={App} />

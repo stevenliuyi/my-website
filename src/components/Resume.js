@@ -150,7 +150,7 @@ class Resume extends Component {
                   <div className="cv-photo">
                     <div className="cv-photo-background" />
                     <img
-                      src="/images/headshot.png"
+                      src="images/headshot.png"
                       width={200}
                       height={200}
                       alt="avatar"
@@ -163,7 +163,7 @@ class Resume extends Component {
                     <div className="cv-nickname bold">STEVEN</div>
                   </div>
                   <div className="cv-download">
-                    <a href="/resume.pdf" download="Yi_Liu_Resume">
+                    <a href="resume.pdf" download="Yi_Liu_Resume">
                       <MdPictureAsPdf size={24} color={'#555'} />
                       <span className="cv-download-text">Download PDF</span>
                     </a>

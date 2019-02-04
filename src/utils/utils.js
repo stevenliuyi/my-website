@@ -31,6 +31,7 @@ export const getBlogCount = () =>
 
 // get image URL
 export const getImageURL = (path, options) => {
+  if (process.env.REACT_APP_IPFS === 'true') return `images/${path}`
   const options_str = Object.keys(options)
     .map(
       o =>

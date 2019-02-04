@@ -15,7 +15,7 @@ import Projects from './Projects'
 import More from './More'
 import Footer from './Footer'
 import Logo from './Logo'
-import '../iconfont.css'
+import '../fonts.css'
 import { setVhs, gaConfig } from '../utils/utils.js'
 
 const Link = ScrollAnim.Link

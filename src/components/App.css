@@ -1319,6 +1319,7 @@ a:hover > .contact-email {
   background-color: #fff !important;
   border-radius: 15px !important;
   color: #222 !important;
+  font-size: 12px !important;
 }
 
 .footer-tooltip-arrow::before {
@@ -1333,17 +1334,13 @@ a:hover > .contact-email {
   align-items: center;
 }
 
-.pgp-tooltip {
-  font-size: 12px !important;
-}
-
-.pgp-text {
+.footer-dotted-text {
   font-family: monospace;
   border-bottom: 1px dotted #222;
   color: #222;
 }
 
-a .pgp-text:hover {
+a .footer-dotted-text:hover {
   color: #999;
   border-bottom: 1px dotted #999;
 }

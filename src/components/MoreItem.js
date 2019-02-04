@@ -58,7 +58,7 @@ class MoreItem extends Component {
         </svg>
         <div
           className="more-item-pic"
-          style={{ backgroundImage: `url(/images/${this.props.pic})` }}
+          style={{ backgroundImage: `url(images/${this.props.pic})` }}
         />
         <TweenOne
           key="0"
