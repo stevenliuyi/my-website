@@ -1,0 +1,20 @@
+language: nix
+
+before_install:
+    - openssl aes-256-cbc -K $encrypted_5b140a50e3ee_key -iv $encrypted_5b140a50e3ee_iv -in ipfs/key.enc -out ipfs/key -d
+
+install:
+    - nix-env -i ipfs
+    - nvm install node
+    - node -v
+    - npm i -g yarn
+    - yarn install
+
+script:
+    - chmod 700 ./ipfs/pin.sh
+    - mkdir -p ./ipfs-repo
+    - export IPFS_PATH="$PWD/ipfs-repo"
+    - ./ipfs/pin.sh
+
+notifications:
+    email: false

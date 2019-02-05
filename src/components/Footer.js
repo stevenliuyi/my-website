@@ -188,10 +188,10 @@ class Footer extends Component {
                     IPFS
                   </div>
                   <div style={{ textAlign: 'left' }}>
-                    This site is also distributed on IPFS (InterPlanetary File
-                    System) with permanent link{' '}
+                    This site is also distributed on the decentralized IPFS
+                    (InterPlanetary File System) with permanent link{' '}
                     <a
-                      href="https://cloudflare-ipfs.com/ipns/QmZ6pqHr35ppWXAF6v72PG8Q3rWuDH6jVw4AZALcwA2rUZ"
+                      href="https://ipfs.io/ipns/QmZ6pqHr35ppWXAF6v72PG8Q3rWuDH6jVw4AZALcwA2rUZ"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

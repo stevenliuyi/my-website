@@ -30,3 +30,6 @@ src/data/flights_coord.yml
 # copied from submodule
 src/data/resume.yml
 public/resume.pdf
+
+# IPFS key
+ipfs/key
