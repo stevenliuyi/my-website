@@ -21,6 +21,7 @@ const data = {
   },
   3: {
     8: ['\ud83d\udc69', "Happy International Women's Day!"],
+    12: ['\ud83c\udf10', "Happy birthday to the World Wide Web!"],
     14: ['\ud83e\udd67', 'Happy Pi Day!'],
     16: ['\u2618', "Happy St. Patrick's Day!"],
     17: ['\u2618', "Happy St. Patrick's Day!"],
