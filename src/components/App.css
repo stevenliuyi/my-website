@@ -2055,9 +2055,12 @@ a .footer-dotted-text:hover {
 .photography-work:hover .photography-img
 {
   transform: scale(1.05);
-  transform-origin: center bottom;
   box-shadow: inset 0px 0px 30px rgba(0,0,0,.1);
-  transition: all .5s ease;
+  transition: transform .5s ease;
+}
+
+.portfolio-work:hover .portfolio-img {
+  transform-origin: center bottom;
 }
 
 .portfolio-work:hover .portfolio-year {
