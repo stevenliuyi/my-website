@@ -470,7 +470,7 @@ class About extends Component {
           <NumberCard
             description="number of Wikipedia articles I created"
             number="20,000"
-            detail="These articles have been viewed 15 million times since 2015."
+            detail="After 9 years as a volunteer of the Wikimedia movement, I've now made 1.5 million edits accoss Wikimedia projects."
           />
           <NumberCard
             description="my Erdős number"

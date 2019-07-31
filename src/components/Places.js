@@ -199,7 +199,7 @@ class Places extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                traveled to Mars two times
+                traveled to Mars three times
               </a>
               . <span style={{ whiteSpace: 'nowrap' }}>ᕕ( ᐛ )ᕗ</span>
             </span>

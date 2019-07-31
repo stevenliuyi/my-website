@@ -466,3 +466,24 @@
   to: SBN
   from_region: USA
   to_region: USA
+
+- date: 2019-05-24
+  flight: CX807
+  from: ORD
+  to: HKG
+  from_region: USA
+  to_region: CHN
+
+- date: 2019-05-29
+  flight: KA890
+  from: HKG
+  to: PVG
+  from_region: CHN
+  to_region: CHN
+
+- date: 2019-06-28
+  flight: MU255
+  from: PVG
+  to: ORD
+  from_region: CHN
+  to_region: USA
