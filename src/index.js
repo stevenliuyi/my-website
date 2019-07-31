@@ -12,6 +12,7 @@ const Read = asyncComponent(() => import('./components/Read'))
 const Resume = asyncComponent(() => import('./components/Resume'))
 const Portfolio = asyncComponent(() => import('./components/Portfolio'))
 const Places = asyncComponent(() => import('./components/Places'))
+const Photography = asyncComponent(() => import('./components/Photography'))
 
 ReactDOM.render(
   <Router
@@ -28,6 +29,7 @@ ReactDOM.render(
         <Route exact path="/resume" component={Resume} />
         <Route exact path="/portfolio" component={Portfolio} />
         <Route exact path="/places" component={Places} />
+        <Route exact path="/photos" component={Photography} />
         {/* redirect to https://go.yliu.io for shortened URLs */}
         <Route
           path="/:id"

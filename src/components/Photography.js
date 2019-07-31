@@ -5,13 +5,11 @@ import ScrollAnim from 'rc-scroll-anim'
 import Gallery from 'react-photo-gallery'
 import Measure from 'react-measure'
 import Lightbox from 'react-images'
-import { GoLinkExternal } from 'react-icons/go'
 import { isMobile } from 'react-device-detect'
-import { Link } from 'react-router-dom'
+//import { GoLinkExternal } from 'react-icons/go'
 import Page from './Page'
-import PortfolioWork from './PortfolioWork'
-import { getImageURL } from '../utils/utils'
-import portfolio from '../data/portfolio.yml'
+import Photo from './Photo'
+import { fetchUnsplashPhotos } from '../utils/unsplash'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -51,8 +49,6 @@ const lightboxTheme = {
   },
   footer: {
     color: '#222',
-    fontWeight: 'bold',
-    fontVariant: 'small-caps',
     marginLeft: '5px',
     marginRight: '5px'
   },
@@ -61,13 +57,14 @@ const lightboxTheme = {
     alignItems: 'center'
   },
   footerCount: {
-    color: '#222'
+    color: '#222',
+    display: 'none'
   }
 }
 
-class Portfolio extends Component {
+class Photography extends Component {
   state = {
-    portfolio: [],
+    photos: [],
     width: -1,
     currentImage: 0,
     lightboxIsOpen: false,
@@ -76,6 +73,15 @@ class Portfolio extends Component {
 
   componentDidMount() {
     scrollToComponent(this.page, { align: 'top', duration: 1 })
+
+    fetchUnsplashPhotos().then(photos =>
+      this.setState({
+        photos: photos.map(p => ({
+          caption: this.lightboxCaption(p),
+          ...p
+        }))
+      })
+    )
   }
 
   openLightbox = (event, obj) => {
@@ -105,44 +111,24 @@ class Portfolio extends Component {
   }
 
   onClickImage = e => {
-    window.open(e.target.src.replace('f_auto/', ''), '_blank')
+    window.open(this.state.photos[this.state.currentImage].link, '_blank')
   }
 
   lightboxCaption = photo => {
-    const linkString =
-      photo.link == null
-        ? ''
-        : renderToString(
-            <a href={photo.link} target="_blank" rel="noopener noreferrer">
-              <GoLinkExternal className="portfolio-link portfolio-link-lightbox" />
-            </a>
-          )
-
-    const infoString =
-      photo.info == null
-        ? ''
-        : renderToString(<span className="portfolio-info">{photo.info}</span>)
-
-    return `${photo.name}${linkString}${infoString}`
-  }
-
-  getPortfolio = () =>
-    portfolio.sort((a, b) => a.name.localeCompare(b.name)).map(
-      p =>
-        process.env.NODE_ENV === 'development'
-          ? {
-              src: `/images/portfolio/${p.filename}`,
-              originalWidth: p.width,
-              caption: this.lightboxCaption(p),
-              ...p
-            }
-          : {
-              src: getImageURL(`portfolio/${p.filename}`, { f: 'auto' }),
-              originalWidth: p.width,
-              caption: this.lightboxCaption(p),
-              ...p
-            }
+    //const linkString = renderToString(<a href={photo.link} target="_blank" rel="noopener noreferrer"><GoLinkExternal className="photography-link photography-link-lightbox" /></a>)
+    const unsplashString = renderToString(
+      <a
+        className="photography-link unsplash-profile-link"
+        href="https://unsplash.com/@stevenliuyi?utm_source=yliu&utm_medium=referral"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        (my Unsplash profile)
+      </a>
     )
+
+    return `<span>${photo.description}${unsplashString}</span>`
+  }
 
   render() {
     const width = this.state.width
@@ -151,18 +137,25 @@ class Portfolio extends Component {
       <ScrollOverPack scale={0.5} always={false}>
         <Page
           ref={el => (this.page = el)}
-          title="PORTFOLIO"
-          quote="Creativity takes courage."
-          author="Henri Matisse"
-          backgroundFilename="plush-design-studio-483666-unsplash"
+          title="PHOTOGRAPHY"
+          quote="All photographs are accurate. None of them is the truth."
+          author="Richard Avedon"
+          backgroundFilename="adrian-pelletier-6dOpTj_KYc4-unsplash"
           delay={this.state.delay}
           {...this.props}
         >
           <div className="cover-text">
             <span>
-              This portfolio displays some of my sketches, drawings and designs.
-              It is still under construction. For my photographs, check out{' '}
-              <Link to="photos">here</Link>.
+              All the photographs here are published on{' '}
+              <a
+                href="https://unsplash.com/?utm_source=yliu&utm_medium=referral"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Unsplash
+              </a>
+              &nbsp;under a CC0-like license which allows everyone to use them
+              freely.
             </span>
           </div>
           <div className="portfolio-list">
@@ -181,8 +174,8 @@ class Portfolio extends Component {
                 return (
                   <div ref={measureRef}>
                     <Gallery
-                      photos={this.getPortfolio()}
-                      ImageComponent={PortfolioWork}
+                      photos={this.state.photos}
+                      ImageComponent={Photo}
                       columns={columns}
                       margin={8}
                       onClick={this.openLightbox}
@@ -192,7 +185,7 @@ class Portfolio extends Component {
               }}
             </Measure>
             <Lightbox
-              images={this.getPortfolio()}
+              images={this.state.photos}
               onClose={this.closeLightbox}
               onClickPrev={this.gotoPrevious}
               onClickNext={this.gotoNext}
@@ -211,4 +204,4 @@ class Portfolio extends Component {
   }
 }
 
-export default Portfolio
+export default Photography
