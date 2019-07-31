@@ -2012,7 +2012,8 @@ a .footer-dotted-text:hover {
   transition: all .2s ease;
 }
 
-.portfolio-list {
+.portfolio-list,
+.photography-list {
   margin: 100px 50px 100px 50px;
 }
 
