@@ -356,9 +356,8 @@ const updateSkillD3Node = (data, width, height, delay = 0) => {
     .transition()
     .duration(interval * 5)
     .delay((d, i) => delay + 250 + interval * (6 + i))
-    .attr(
-      'width',
-      d => (!d.skill.startsWith('placeholder') ? width - 100 - x(d.value) : 0)
+    .attr('width', d =>
+      !d.skill.startsWith('placeholder') ? width - 100 - x(d.value) : 0
     )
 
   bars

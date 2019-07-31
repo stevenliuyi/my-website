@@ -18,8 +18,8 @@ module.exports = {
   },
 
   fetchGithubLanguages: function(repo) {
-    return this.fetchGithub(`repos/stevenliuyi/${repo}/languages`).then(
-      data => (data.message == null ? data : {})
+    return this.fetchGithub(`repos/stevenliuyi/${repo}/languages`).then(data =>
+      data.message == null ? data : {}
     )
   },
 

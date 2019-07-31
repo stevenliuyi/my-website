@@ -10,8 +10,8 @@ export const fetchUnsplashPhotos = function() {
     .then(res => res.json())
     .then(photos =>
       photos.map(p => ({
-        src: p.urls.regular,
-        src_full: p.urls.full,
+        src: p.urls.full,
+        src_small: p.urls.regular,
         description: p.description,
         link: p.links.html,
         width: p.width,

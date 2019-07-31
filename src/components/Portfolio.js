@@ -127,8 +127,9 @@ class Portfolio extends Component {
   }
 
   getPortfolio = () =>
-    portfolio.sort((a, b) => a.name.localeCompare(b.name)).map(
-      p =>
+    portfolio
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .map(p =>
         process.env.NODE_ENV === 'development'
           ? {
               src: `/images/portfolio/${p.filename}`,
@@ -142,7 +143,7 @@ class Portfolio extends Component {
               caption: this.lightboxCaption(p),
               ...p
             }
-    )
+      )
 
   render() {
     const width = this.state.width

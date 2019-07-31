@@ -105,14 +105,14 @@ class Read extends Component {
               this.state.currentIdx === -1
                 ? '#fff'
                 : this.state.readingList[this.state.currentIdx].quotes == null
-                  ? '#eee'
-                  : '#555',
+                ? '#eee'
+                : '#555',
             color:
               this.state.currentIdx === -1
                 ? '#000'
                 : this.state.readingList[this.state.currentIdx].quotes == null
-                  ? '#000'
-                  : '#fff'
+                ? '#000'
+                : '#fff'
           }}
           {...this.props}
         >
@@ -150,26 +150,25 @@ class Read extends Component {
               </div>
               {this.state.readingList
                 .slice(0, this.state.nBooksLoaded)
-                .map(
-                  (book, idx) =>
-                    this.state.searchText === '' ||
-                    book.name
+                .map((book, idx) =>
+                  this.state.searchText === '' ||
+                  book.name
+                    .toLowerCase()
+                    .includes(this.state.searchText.toLowerCase()) ||
+                  (book.original_name != null &&
+                    book.original_name
                       .toLowerCase()
-                      .includes(this.state.searchText.toLowerCase()) ||
-                    (book.original_name != null &&
-                      book.original_name
-                        .toLowerCase()
-                        .includes(this.state.searchText.toLowerCase())) ? (
-                      <Book
-                        id={`book-${idx}`}
-                        key={idx}
-                        onSelectBook={this.onSelectBook}
-                        idx={idx}
-                        {...book}
-                      />
-                    ) : (
-                      <div key={idx} />
-                    )
+                      .includes(this.state.searchText.toLowerCase())) ? (
+                    <Book
+                      id={`book-${idx}`}
+                      key={idx}
+                      onSelectBook={this.onSelectBook}
+                      idx={idx}
+                      {...book}
+                    />
+                  ) : (
+                    <div key={idx} />
+                  )
                 )}
             </TweenOne>
           )}

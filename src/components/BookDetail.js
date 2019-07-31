@@ -154,9 +154,7 @@ class BookDetail extends Component {
                   className="book-detail-link"
                 >
                   <a
-                    href={`https://book.douban.com/subject/${
-                      this.props.douban
-                    }`}
+                    href={`https://book.douban.com/subject/${this.props.douban}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -179,9 +177,7 @@ class BookDetail extends Component {
                   className="book-detail-link"
                 >
                   <a
-                    href={`https://www.goodreads.com/book/show/${
-                      this.props.goodreads
-                    }`}
+                    href={`https://www.goodreads.com/book/show/${this.props.goodreads}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -204,9 +200,7 @@ class BookDetail extends Component {
                   className="book-detail-link noselect"
                 >
                   <a
-                    href={`https://www.wikidata.org/wiki/${
-                      this.props.wikidata
-                    }`}
+                    href={`https://www.wikidata.org/wiki/${this.props.wikidata}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ display: 'flex' }}

@@ -19,7 +19,7 @@ class Photo extends Component {
           style={{
             width: photo.width,
             height: photo.height,
-            backgroundImage: `url(${photo.src_full})`
+            backgroundImage: `url(${photo.src_small})`
           }}
         />
       </div>

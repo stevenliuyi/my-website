@@ -328,9 +328,7 @@ class Resume extends Component {
                               {course.title}
                               {course.github != null && (
                                 <a
-                                  href={`https://github.com/stevenliuyi/${
-                                    course.github
-                                  }`}
+                                  href={`https://github.com/stevenliuyi/${course.github}`}
                                   target="_blank"
                                   title="Github repository"
                                   rel="noopener noreferrer"

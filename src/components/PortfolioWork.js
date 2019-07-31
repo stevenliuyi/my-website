@@ -40,15 +40,15 @@ class PortfolioWork extends Component {
               process.env.NODE_ENV === 'development'
                 ? `url(/images/portfolio/${photo.filename})`
                 : // set the width ratio if the expect image size is smaller than the original size
-                  this.calcRatio() < 1
-                  ? `url(${getImageURL(`portfolio/${photo.filename}`, {
-                      f: 'auto',
-                      c: 'scale',
-                      w: this.calcRatio()
-                    })})`
-                  : `url(${getImageURL(`portfolio/${photo.filename}`, {
-                      f: 'auto'
-                    })})`
+                this.calcRatio() < 1
+                ? `url(${getImageURL(`portfolio/${photo.filename}`, {
+                    f: 'auto',
+                    c: 'scale',
+                    w: this.calcRatio()
+                  })})`
+                : `url(${getImageURL(`portfolio/${photo.filename}`, {
+                    f: 'auto'
+                  })})`
           }}
         >
           <div className="portfolio-year">{photo.time}</div>
