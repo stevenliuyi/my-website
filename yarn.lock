@@ -9120,10 +9120,10 @@ react-helmet@^5.2.0:
     react-fast-compare "^2.0.2"
     react-side-effect "^1.1.0"
 
-react-icons@3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.0.5.tgz#9f22a319a48b562e052af2255a3dda8ded363d1c"
-  integrity sha512-gNOTMhB3QCFsDnBkO0psdcz84BjprjT95pX6SSJ9pNARQozTsBqOKeVl+uw8zMIBGGDX9GpdY9TflnRjiX4z1A==
+react-icons@3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.6.0.tgz#229ba896ea110c431c9f6dd811babdd31866390f"
+  integrity sha512-oburoiCTdEZm7SSph9qnvqneCRF9+hv7UqbsWASnZeIne4ztiGFPzOdM5py1hq0q84gk5M2cZjqgOs8Dvfrvgg==
 
 react-images@^0.5.19:
   version "0.5.19"
