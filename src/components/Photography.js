@@ -74,14 +74,15 @@ class Photography extends Component {
   componentDidMount() {
     scrollToComponent(this.page, { align: 'top', duration: 1 })
 
-    fetchUnsplashPhotos().then(photos =>
-      this.setState({
-        photos: photos.map(p => ({
-          caption: this.lightboxCaption(p),
-          ...p
-        }))
-      })
-    )
+    fetchUnsplashPhotos().then(photos => {
+      if (photos != null)
+        this.setState({
+          photos: photos.map(p => ({
+            caption: this.lightboxCaption(p),
+            ...p
+          }))
+        })
+    })
   }
 
   openLightbox = (event, obj) => {

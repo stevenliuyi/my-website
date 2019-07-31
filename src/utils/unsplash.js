@@ -3,8 +3,7 @@ export const fetchUnsplashPhotos = function() {
     `https://api.unsplash.com/users/stevenliuyi/photos?per_page=100&order_by=popular`,
     {
       headers: {
-        Authorization:
-          'Client-ID e9270d7d6548e2e3c21ca415ad6a3d0522d2b5da885e380a814d1a40b7c29a5a'
+        Authorization: `Client-ID ${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}`
       }
     }
   )
