@@ -106,9 +106,29 @@ class Photography extends Component {
                 rel="noopener noreferrer"
               >
                 Unsplash
+              </a>{' '}
+              under{' '}
+              <a
+                href="https://unsplash.com/license"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                a CC0-like license
+              </a>{' '}
+              which allows everyone to use them freely. Most of the photos are
+              also dual-licensed under{' '}
+              <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+                CC BY-SA 4.0
+              </a>{' '}
+              on{' '}
+              <a
+                href="https://commons.wikimedia.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Wikimedia Commons
               </a>
-              &nbsp;under a CC0-like license which allows everyone to use them
-              freely.
+              .
             </span>
           </div>
           <div className="photography-list">
