@@ -70,14 +70,26 @@ class Photography extends Component {
   lightboxCaption = photo => {
     //const linkString = renderToString(<a href={photo.link} target="_blank" rel="noopener noreferrer"><GoLinkExternal className="photography-link photography-link-lightbox" /></a>)
     const unsplashString = renderToString(
-      <a
-        className="photography-link unsplash-profile-link"
-        href="https://unsplash.com/@stevenliuyi?utm_source=yliu&utm_medium=referral"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        (my Unsplash profile)
-      </a>
+      <span style={{ marginLeft: '20px', fontSize: 'smaller', color: '#999' }}>
+        Photo by{' '}
+        <a
+          classname="unsplash-profile-link"
+          href="https://unsplash.com/@stevenliuyi?utm_source=yliu&utm_medium=referral"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Yi Liu
+        </a>{' '}
+        on{' '}
+        <a
+          classname="unsplash-profile-link"
+          href="https://unsplash.com/?utm_source=yliu&utm_medium=referral"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Unsplash
+        </a>
+      </span>
     )
 
     return `<span>${photo.description}${unsplashString}</span>`

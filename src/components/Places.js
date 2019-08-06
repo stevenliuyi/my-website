@@ -195,13 +195,28 @@ class Places extends Component {
               This is a map marking all the places I've been on Earth. Beyond
               Earth? I also{' '}
               <a
-                href="https://yliu.io/mars"
+                href="https://yliu.io/orion"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                traveled to Mars three times
-              </a>
-              . <span style={{ whiteSpace: 'nowrap' }}>ᕕ( ᐛ )ᕗ</span>
+                traveled
+              </a>{' '}
+              <a
+                href="https://yliu.io/insight"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                to
+              </a>{' '}
+              <a
+                href="https://yliu.io/mars2020"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Mars
+              </a>{' '}
+              three times .{' '}
+              <span style={{ whiteSpace: 'nowrap' }}>ᕕ( ᐛ )ᕗ</span>
             </span>
           </div>
           <div className="places-map-wrap">
