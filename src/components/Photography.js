@@ -73,7 +73,7 @@ class Photography extends Component {
       <span style={{ marginLeft: '20px', fontSize: 'smaller', color: '#999' }}>
         Photo by{' '}
         <a
-          classname="unsplash-profile-link"
+          className="unsplash-profile-link"
           href="https://unsplash.com/@stevenliuyi?utm_source=yliu&utm_medium=referral"
           target="_blank"
           rel="noopener noreferrer"
@@ -82,7 +82,7 @@ class Photography extends Component {
         </a>{' '}
         on{' '}
         <a
-          classname="unsplash-profile-link"
+          className="unsplash-profile-link"
           href="https://unsplash.com/?utm_source=yliu&utm_medium=referral"
           target="_blank"
           rel="noopener noreferrer"
@@ -158,7 +158,7 @@ class Photography extends Component {
                       photos={this.state.photos}
                       ImageComponent={Photo}
                       columns={numOfColumns(width)}
-                      margin={8}
+                      margin={4}
                       onClick={this.openLightbox}
                     />
                   </div>

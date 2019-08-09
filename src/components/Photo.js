@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { MdPageview, MdOpenInNew, MdFileDownload } from 'react-icons/md'
 
 class Photo extends Component {
   state = {
@@ -8,20 +9,40 @@ class Photo extends Component {
 
   render() {
     const { index, onClick, photo, margin } = this.props
+    const emptyLink = '#0' // get around the anchor-is-valid warning
     return (
       <div
         className="photography-work"
-        style={{ margin: margin }}
+        style={{ margin: margin, width: photo.width, height: photo.height }}
         onClick={e => onClick(e, { index, photo })}
       >
-        <div
-          className="photography-img"
-          style={{
-            width: photo.width,
-            height: photo.height,
-            backgroundImage: `url(${photo.src_small})`
-          }}
-        />
+        <div className="photography-hover">
+          <img
+            className="photography-img"
+            alt={photo.description}
+            src={photo.src_small}
+            style={{
+              width: photo.width,
+              height: photo.height
+            }}
+          />
+          <div className="photography-overlay">
+            <a
+              onClick={e => e.stopPropagation()}
+              href={photo.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MdOpenInNew size={18} />
+            </a>
+            <a onClick={e => e.stopPropagation()} href={photo.download_link}>
+              <MdFileDownload size={18} />
+            </a>
+            <a onClick={e => onClick(e, { index, photo })} href={emptyLink}>
+              <MdPageview size={18} />
+            </a>
+          </div>
+        </div>
       </div>
     )
   }

@@ -3,20 +3,22 @@ import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import { FaBookOpen } from 'react-icons/fa'
-import { MdPalette } from 'react-icons/md'
+import { MdPalette, MdCameraAlt } from 'react-icons/md'
 import MoreItem from './MoreItem'
-import { getBlogCount } from '../utils/utils'
+import { getBlogCount, getPhotoCount } from '../utils/utils'
 import counts from '../data/counts.yml'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
 class More extends Component {
   state = {
-    blogCount: '40+'
+    blogCount: '40+',
+    photoCount: '30+'
   }
 
   componentDidMount() {
     getBlogCount().then(blogCount => this.setState({ blogCount }))
+    getPhotoCount().then(photoCount => this.setState({ photoCount }))
   }
 
   render() {
@@ -92,6 +94,21 @@ class More extends Component {
             logo={
               <MdPalette
                 size={55}
+                color={color}
+                style={{ transform: 'translateY(5px)' }}
+              />
+            }
+            {...this.props}
+          />
+          <MoreItem
+            title="photography"
+            number={this.state.photoCount}
+            description="Photos"
+            pic="paul-skorupskas-7KLa-xLbSXA-unsplash-small.jpg"
+            link={{ pathname: '/photos', backId: 'more-page' }}
+            logo={
+              <MdCameraAlt
+                size={50}
                 color={color}
                 style={{ transform: 'translateY(5px)' }}
               />

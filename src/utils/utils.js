@@ -1,3 +1,5 @@
+import { fetchUnsplash } from './unsplash'
+
 // set vh-related css styles
 export const setVhs = (isHomepage = true) => {
   const vh = window.innerHeight
@@ -27,6 +29,12 @@ export const setVhs = (isHomepage = true) => {
 export const getBlogCount = () =>
   fetch('https://blog.yliu.io/post-count')
     .then(data => data.text())
+    .catch(err => 0)
+
+// get number of photos
+export const getPhotoCount = () =>
+  fetchUnsplash()
+    .then(photos => photos.length.toString())
     .catch(err => 0)
 
 // get image URL

@@ -2017,8 +2017,7 @@ a .footer-dotted-text:hover {
   margin: 100px 50px 100px 50px;
 }
 
-.portfolio-img,
-.photography-img {
+.portfolio-img {
   background-size: cover;
   border-radius: 5px;
   transition: all .5s ease;
@@ -2053,7 +2052,6 @@ a .footer-dotted-text:hover {
 }
 
 .portfolio-work:hover .portfolio-img,
-.photography-work:hover .photography-img
 {
   transform: scale(1.05);
   box-shadow: inset 0px 0px 30px rgba(0,0,0,.1);
@@ -2106,6 +2104,83 @@ a .footer-dotted-text:hover {
   font-weight: normal;
   font-variant: normal;
   margin-left: 15px;
+}
+
+.photography-hover {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.photography-hover .photography-overlay {
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: auto;
+  bottom: 0;
+  padding: 5px;
+  height: 40px;
+  background: rgba(255,255,255,0.7);
+  transition: transform .3s;
+  transform: translate3d(0,100%,0);
+  visibility: hidden;
+  cursor: default;
+}
+
+.photography-hover .photography-overlay svg {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.photography-hover .photography-overlay a {
+  float: right;
+  transform: translate3d(0,200%,0);
+  transition: transform .3s;
+  cursor: pointer;
+  color: #555 !important;
+  visibility: visible;
+}
+
+.photography-hover:hover .photography-overlay a {
+  transform: translate3d(0,0,0);
+}
+
+.photography-hover:hover .photography-overlay a:nth-child(3) {
+  transition-delay: .05s;
+}
+
+.photography-hover:hover .photography-overlay a:nth-child(2) {
+  transition-delay: .1s;
+}
+
+.photography-hover:hover .photography-overlay a:nth-child(1) {
+  transition-delay: .15s;
+}
+
+.photography-hover .photography-overlay a:hover {
+  color: #222 !important;
+}
+
+.photography-hover:hover .photography-overlay {
+  transform: translate3d(0,0,0);
+  visibility: visible;
+}
+
+.photography-hover img {
+  display: block;
+  position: relative;
+  transition: all .3s ease-in;
+  cursor: pointer;
+}
+
+.photography-hover:hover img {
+  transform: translate3d(0,-10%,0) scale(1.2);
+  filter: brightness(80%);
 }
 
 .unsplash-profile-link {
