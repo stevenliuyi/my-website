@@ -31,6 +31,8 @@ CHN:
     coordinates: 120.1722, 31.5705
   - city: Yangzhou
     coordinates: 119.3490, 32.4177
+  - city: Hong Kong
+    coordinates: 113.8468, 22.3531
 
 USA:
   - city: Atlanta
