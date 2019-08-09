@@ -34,7 +34,7 @@ export const lightboxTheme = {
   container: {
     background: 'rgba(255, 255, 255, .9)'
   },
-  figure: {
+  image: {
     boxShadow: '0px 0px 50px rgba(0, 0, 0, .2)'
   },
   close: {

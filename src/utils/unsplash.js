@@ -17,8 +17,8 @@ export const fetchUnsplashPhotos = function() {
   return fetchUnsplash()
     .then(photos =>
       photos.map(p => ({
-        src: p.urls.full,
-        src_small: p.urls.regular,
+        src: `${p.urls.raw}&q=80&auto=format`,
+        src_small: `${p.urls.raw}&h=300&dpi=${window.devicePixelRatio}&fit=max&q=80&auto=format`,
         description: p.description,
         link: p.links.html,
         download_link: p.links.download,
