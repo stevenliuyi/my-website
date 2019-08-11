@@ -37,7 +37,12 @@ class Photo extends Component {
               >
                 <MdOpenInNew size={18} />
               </a>
-              <a onClick={e => e.stopPropagation()} href={photo.download_link}>
+              <a
+                onClick={e => e.stopPropagation()}
+                href={photo.download_link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <MdFileDownload size={18} />
               </a>
               <a onClick={e => onClick(e, { index, photo })} href={emptyLink}>
