@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { MdPageview, MdOpenInNew, MdFileDownload } from 'react-icons/md'
+import { isMobile } from 'react-device-detect'
 
 class Photo extends Component {
   state = {
@@ -26,22 +27,24 @@ class Photo extends Component {
               height: photo.height
             }}
           />
-          <div className="photography-overlay">
-            <a
-              onClick={e => e.stopPropagation()}
-              href={photo.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <MdOpenInNew size={18} />
-            </a>
-            <a onClick={e => e.stopPropagation()} href={photo.download_link}>
-              <MdFileDownload size={18} />
-            </a>
-            <a onClick={e => onClick(e, { index, photo })} href={emptyLink}>
-              <MdPageview size={18} />
-            </a>
-          </div>
+          {!isMobile && (
+            <div className="photography-overlay">
+              <a
+                onClick={e => e.stopPropagation()}
+                href={photo.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MdOpenInNew size={18} />
+              </a>
+              <a onClick={e => e.stopPropagation()} href={photo.download_link}>
+                <MdFileDownload size={18} />
+              </a>
+              <a onClick={e => onClick(e, { index, photo })} href={emptyLink}>
+                <MdPageview size={18} />
+              </a>
+            </div>
+          )}
         </div>
       </div>
     )
