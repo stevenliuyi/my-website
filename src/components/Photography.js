@@ -5,6 +5,7 @@ import ScrollAnim from 'rc-scroll-anim'
 import Gallery from 'react-photo-gallery'
 import Measure from 'react-measure'
 import Lightbox from 'react-images'
+import InfiniteScroll from 'react-infinite-scroller'
 import { isMobile } from 'react-device-detect'
 //import { GoLinkExternal } from 'react-icons/go'
 import Page from './Page'
@@ -19,22 +20,35 @@ class Photography extends Component {
     photos: [],
     width: -1,
     currentImage: 0,
+    currentPage: 1,
+    hasMorePhotos: true,
     lightboxIsOpen: false,
     delay: 150
   }
 
+  fetchPhotos = page => {
+    fetchUnsplashPhotos(page).then(photos => {
+      if (photos != null && photos.length > 0) {
+        // add new photos to the array
+        this.setState({
+          photos: [
+            ...this.state.photos,
+            ...photos.map(p => ({
+              caption: this.lightboxCaption(p),
+              ...p
+            }))
+          ]
+        })
+      } else {
+        // no more new photos
+        this.setState({ hasMorePhotos: false })
+      }
+    })
+  }
+
   componentDidMount() {
     scrollToComponent(this.page, { align: 'top', duration: 1 })
-
-    fetchUnsplashPhotos().then(photos => {
-      if (photos != null)
-        this.setState({
-          photos: photos.map(p => ({
-            caption: this.lightboxCaption(p),
-            ...p
-          }))
-        })
-    })
+    this.fetchPhotos(this.state.currentPage)
   }
 
   openLightbox = (event, obj) => {
@@ -156,13 +170,24 @@ class Photography extends Component {
                 if (width < 1) return <div ref={measureRef} />
                 return (
                   <div ref={measureRef}>
-                    <Gallery
-                      photos={this.state.photos}
-                      ImageComponent={Photo}
-                      columns={numOfColumns(width)}
-                      margin={4}
-                      onClick={this.openLightbox}
-                    />
+                    <InfiniteScroll
+                      loadMore={() => {
+                        this.fetchPhotos(this.state.currentPage + 1)
+                        this.setState({
+                          currentPage: this.state.currentPage + 1
+                        })
+                      }}
+                      hasMore={this.state.hasMorePhotos}
+                      initialLoad={false}
+                    >
+                      <Gallery
+                        photos={this.state.photos}
+                        ImageComponent={Photo}
+                        columns={numOfColumns(width)}
+                        margin={4}
+                        onClick={this.openLightbox}
+                      />
+                    </InfiniteScroll>
                   </div>
                 )
               }}

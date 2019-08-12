@@ -34,7 +34,7 @@ export const getBlogCount = () =>
 // get number of photos
 export const getPhotoCount = () =>
   fetchUnsplash()
-    .then(photos => photos.length.toString())
+    .then(profile => profile.total_photos)
     .catch(err => 0)
 
 // get image URL
