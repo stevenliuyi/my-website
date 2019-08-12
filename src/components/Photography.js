@@ -92,7 +92,9 @@ class Photography extends Component {
       </span>
     )
 
-    return `<span>${photo.description}${unsplashString}</span>`
+    return `<span>${
+      photo.description ? photo.description : ''
+    }${unsplashString}</span>`
   }
 
   render() {
