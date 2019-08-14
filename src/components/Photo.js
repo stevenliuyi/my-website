@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { MdPageview, MdOpenInNew, MdFileDownload } from 'react-icons/md'
 import { isMobile } from 'react-device-detect'
+import { triggerUnsplashDownload } from '../utils/unsplash'
 
 class Photo extends Component {
   state = {
@@ -32,20 +33,30 @@ class Photo extends Component {
               <a
                 onClick={e => e.stopPropagation()}
                 href={photo.link}
+                title="Check the photo on Unsplash"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <MdOpenInNew size={18} />
               </a>
               <a
-                onClick={e => e.stopPropagation()}
+                onClick={e => {
+                  e.stopPropagation()
+                  // send request to unsplash download endpoint
+                  triggerUnsplashDownload(photo.download_location)
+                }}
                 href={photo.download_link}
+                title="Download the photo"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <MdFileDownload size={18} />
               </a>
-              <a onClick={e => onClick(e, { index, photo })} href={emptyLink}>
+              <a
+                onClick={e => onClick(e, { index, photo })}
+                href={emptyLink}
+                title="View the photo"
+              >
                 <MdPageview size={18} />
               </a>
             </div>
