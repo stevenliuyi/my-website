@@ -160,6 +160,43 @@
     - For the direct effect, we let the mediator choose the value it would have—for each individual—in the absence of treatment, and we fix it there. Now we wiggle the treatment and register the difference. This is different from the controlled direct effect I discussed earlier, where the mediator is fixed at one value for everyone. Because we let the mediator choose its “natural” value, I called it the natural direct effect. Similarly, for the natural indirect effect I first deny treatment to everyone, and then I let the mediator choose the value it would have, for each individual, in the presence of treatment. Finally I record the difference.
     - Like the prisoners in Plato’s famous cave, deep-learning systems explore the shadows on the cave wall and learn to accurately predict their movements. They lack the understanding that the observed shadows are mere projections of three-dimensional objects moving in a three-dimensional space. Strong AI requires this understanding.
 
+- name: A Concise History of Hong Kong
+  original_name: 香港簡史
+  authors:
+    - John M. Carroll
+  language: zh
+  image: a-concise-history-of-hong-kong.jpg
+  time: 2019
+  goodreads: 42951964
+  wikidata: Q28417145
+  tags:
+    - history
+  quotes:
+    - 然而，正因為香港在政治上不屬於中國的一部分，才會在過去一百五十年成為堪稱對中國最重要的地方。領導1911年辛亥革命推翻中國最後一個王朝的孫中山，是在香港這個殖民地接受教育。香港人多稱他伍叙的伍廷芳，是在香港成長和受教育。香港自殖民時代早期起，都是內地逃難百姓的庇護所，如太平天國時期（1851年至1864年）、1911年辛亥革命後和整個動盪的1920年代、1937年中國抗日戰爭爆發後，以及1949年中國共產黨建立政權後。
+    - 香港是自絲路和蒙古人之後，中國與世界聯繫的最重要紐帶。
+    - 不過，英國攫取香港絕非無心抽柳，而是「英國自由貿易商為擴大對華貿易長期爭取的結果」。
+    - 政府以精心設計的專賣制度（通常是以公開拍賣方式出售）來管制鴉片、鹽、酒和香煙等商品。諷刺的是，根據英國的說法，第一次鴉片戰爭和「自由貿易帝國主義」，就是要把中國從這種管制和專賣中解放出來。
+    - 太平天國起事加上華人移民，以及海外華人社群的成長，加起來對香港經濟有重要的影響。這把香港從邊遠的殖民前哨站變為海外華人跨國貿易網絡的中心，這個貿易網絡由中國沿岸伸延到東南亞，再一路遠至澳洲和美洲。
+    - 不過，若論對香港經濟繁榮的貢獻，以上因素無一能與鴉片和華人移民海外相比。
+    - 事實上，歷史學家文基賢（Christopher Munn）寫道：「鴉片貿易和香港顯然密不可分，探討這個殖民地早期的歷史，幾乎不能不提這種毒品：這個殖地民之所以建立，就是因為鴉片；它能撐過早期的艱難歲月，也全仗鴉片；此地的重要商人全靠鴉片致富；政府也依賴高地租和其他由鴉片貿易造就的收入來維持運作。」
+    - 香港主要靠着鴉片和華工出洋，成為五個互相交疊的貿易網絡的樞紐，這五個貿易網絡是中國、東南亞、印度、英國（由此伸延至歐洲）和南北美洲。
+    - 這個殖民地的華人得到兩個世界的糟粕。警政手段嚴苛，還有令人莫名其妙的法例交織而成的大網，專門設計來規管一些在中國會以其他方式規管的行為，這令在港華人與官府接觸的次數，比起他們在中國時要頻繁得多。」
+    - 到了1850年代，香港成為了著名的賣淫中心和性病溫床（尤其是梅毒）。1876年的人口普查顯示，香港二萬五千名華人女性中，六分之五是娼妓。巡理府在1877年估計，香港華人女性每六人只有一人已婚或為妾，其餘都是娼妓。
+    - 華人女性沒有嫁人或被納為妾，就被認定是妓女，與其說顯示娼妓的實際數目，不如說反映歐籍人對於華人的態度。
+    - 在1880年，港督軒尼詩向殖民地大臣說：「香港制定妓院法例的真正目的，非為保護娼妓，而是提供潔淨的華人婦女，供殖民地上的英國士兵和皇家海軍水手取樂。」
+    - 1923年孫中山在香港大學演講，宣稱他的革命思想發源地「即為香港」。
+    - 在1896年3月，港督羅便臣拒絕廣州當局要求，不把一名孫中山追隨者引渡到中國。但在1896年3月，羅便臣向孫中山發出驅逐令，限制他五年內不得進入香港，那時孫中山去了夏威夷籌款，正在返港中。
+    - 香港所孕育的，似乎反而是一種保守的中國民族主義，而這種民族主義受香港的英國殖民地地位所塑造。
+    - 一位在二次大戰前夕訪港的西方政治學者觀察到：「中國多年以來一直動盪不安，是造就一種視香港為家的華人階級的因素之一。」
+    - 學者弗蘭克·利明（Frank Leeming）指出，香港工業的「轉型並非發生在四十年代末一兩年間，而是早在第二次世界大戰前已為轉型準備就緒，而其基礎是此前一百年來在勞工技術和資金方面的工業傳承」。
+    - 反諷的是，在1949年中國共產主義革命後的歲月，對香港經濟最大的威脅並非來自中國共產黨，而是來自最堅決要遏止共產主義散播的國家──美國。雖然香港因支援英國出兵韓國獲得一些經濟利益，但香港經濟因為兩個禁運而受害：聯合國以中國介入韓戰為由對中國實施的戰略物資禁運，以及美國對中國實施的全面貿易禁運。
+    - 禁運迫使香港步上從轉口貿易改為製造業的轉型，如果沒有禁運，香港在戰後可能不會達到如此高度的經濟繁榮。
+    - 雖然到了1960年代，超過百分之三十的香港人口住在政府房屋，但這些新的徙置政策也顯示，香港在社會福利方面，遠遠落後於其他工業化地區。
+    - 因此，1949年後的「香港一代一代的華人學子成長起來，通過中國文化科目認識到自己中國人的身份，但這種身份卻與當代中國或香港本土無關。那是一種抽象的中國人身份，屬於移居海外華人的一種愛國情操。另外，由於這種情操與中國這個有形實體的善惡美醜毫無關係，他們因而可能更無所保留地堅持」。
+    - 對大部分香港人來說，這場動亂賦予了港府新的聲望和合法性。六七暴動似乎證明了香港的生活比大陸好，也顯示任何形式的反英運動對香港人都沒有好處。
+    - 過去「大部分華人」對香港沒有歸屬感，但「自從共產黨統治中國後，情況有所改變，現在很少香港華人打算返回這個他們出生的國家，而逐漸成為永久定居香港的市民」。香港人把香港的政治穩定和經濟自由，對照於內地的壓迫和混亂，尤其是在大躍進和文化大革命時期。因此，在1960和1970年代，更多本地出生的華人開始視香港為家。
+    - 但是，1989年春天北京發生的事件，令許多香港人對中國政府的信心蕩然無存，並且「有意識地……重新思索自己的身份認同，以及對於未來的選擇」。
+
 - name: The Truth of Food III
   original_name: 吃的真相3
   authors:
@@ -850,7 +887,7 @@
   douban: 4212247
   goodreads: 30037134
   tags:
-    - novel
+    - fiction
 
 - name: Sigh of Yuling
   original_name: 玉岭的叹息
@@ -862,7 +899,46 @@
   douban: 4191724
   goodreads: 30037133
   tags:
-    - novel
+    - fiction
+
+- name: Dune
+  original_name: 沙丘
+  authors:
+    - Frank Herbert
+  language: zh
+  image: dune.jpg
+  time: 2019
+  douban: 26836970
+  goodreads: 34203805
+  wikidata: Q190192
+  tags:
+    - fiction
+
+- name: Dune Messiah
+  orignal_name: 沙丘2：沙丘救世主
+  authors:
+    - Frank Herbert
+  language: zh
+  image: dune-messiah.jpg
+  time: 2019
+  douban: 27098887
+  goodreads: 44492285
+  wikidata: Q437383
+  tags:
+    - fiction
+
+- name: Children of Dune
+  original_name: 沙丘3：沙丘之子
+  authors:
+    - Frank Herbert
+  language: zh
+  image: children-of-dune.jpg
+  time: 2019
+  douban: 27130074
+  goodreads: 44492286
+  wikidata: Q437365
+  tags:
+    - fiction
 
 - name: Story of Plant Names
   original_name: 植物名字的故事
