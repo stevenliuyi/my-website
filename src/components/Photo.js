@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { MdPageview, MdOpenInNew, MdFileDownload } from 'react-icons/md'
 import { isMobile } from 'react-device-detect'
 import { triggerUnsplashDownload } from '../utils/unsplash'
+import SimpleTooltip from './SimpleTooltip'
 
 class Photo extends Component {
   state = {
@@ -33,11 +34,15 @@ class Photo extends Component {
               <a
                 onClick={e => e.stopPropagation()}
                 href={photo.link}
-                title="Check the photo on Unsplash"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MdOpenInNew size={18} />
+                <SimpleTooltip
+                  id={`tt-unsplash-${photo.id}`}
+                  text="view the photo on Unsplash"
+                >
+                  <MdOpenInNew size={18} />
+                </SimpleTooltip>
               </a>
               <a
                 onClick={e => {
@@ -46,18 +51,20 @@ class Photo extends Component {
                   triggerUnsplashDownload(photo.download_location)
                 }}
                 href={photo.download_link}
-                title="Download the photo"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MdFileDownload size={18} />
+                <SimpleTooltip
+                  id={`tt-download-${photo.id}`}
+                  text="download the photo"
+                >
+                  <MdFileDownload size={18} />
+                </SimpleTooltip>
               </a>
-              <a
-                onClick={e => onClick(e, { index, photo })}
-                href={emptyLink}
-                title="View the photo"
-              >
-                <MdPageview size={18} />
+              <a onClick={e => onClick(e, { index, photo })} href={emptyLink}>
+                <SimpleTooltip id={`tt-view-${photo.id}`} text="view the photo">
+                  <MdPageview size={18} />
+                </SimpleTooltip>
               </a>
             </div>
           )}

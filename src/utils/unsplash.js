@@ -15,6 +15,7 @@ export const fetchUnsplashPhotos = function(page = 1) {
   return fetchUnsplash(`photos?order_by=popular&per_page=30&page=${page}`).then(
     photos =>
       photos.map(p => ({
+        id: p.id,
         src: `${p.urls.raw}&w=${window.innerWidth}&h=${window.innerHeight}&dpr=${window.devicePixelRatio}&fit=max&q=80&auto=format`,
         src_small: `${p.urls.raw}&h=300&dpr=${window.devicePixelRatio}&fit=max&q=80&auto=format`,
         description: p.description,
