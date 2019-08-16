@@ -8,9 +8,11 @@ import scrollToComponent from 'react-scroll-to-component'
 import { Tooltip } from 'reactstrap'
 import { isMobile } from 'react-device-detect'
 import Texty from 'rc-texty'
+import 'rc-texty/assets/index.css'
 import TweenOne from 'rc-tween-one'
 import Logo from './Logo'
 import PageFooter from './PageFooter'
+import { textEnterRandom } from '../utils/textEnter'
 import { setVhs, getImageURL, gaConfig } from '../utils/utils'
 
 class Page extends Component {
@@ -84,6 +86,19 @@ class Page extends Component {
 
   // set vh-related styles on mobile devices
   setVhStyles = () => setVhs(false)
+
+  // split text into words for animation
+  getSplit = e => {
+    const t = e.split(' ')
+    const c = []
+    t.forEach((str, i) => {
+      c.push(<span key={`${str}-${i}`}>{str}</span>)
+      if (i < t.length - 1) {
+        c.push(<span key={` -${i}`}> </span>)
+      }
+    })
+    return c
+  }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
@@ -222,27 +237,23 @@ class Page extends Component {
             </Texty>
           </h1>
           <div className="cover-quote">
-            <TweenOne
-              animation={{
-                opacity: 0,
-                translateY: 100,
-                type: 'from',
-                delay: this.props.delay + 500
-              }}
+            <Texty
+              enter={textEnterRandom}
+              interval={0}
+              delay={this.props.delay + 500}
+              split={this.getSplit}
             >
               {this.props.quote}
-            </TweenOne>
-            <TweenOne
-              animation={{
-                opacity: 0,
-                translateY: 100,
-                type: 'from',
-                delay: this.props.delay + 750
-              }}
+            </Texty>
+            <Texty
               className="cover-author"
+              enter={textEnterRandom}
+              interval={30}
+              delay={this.props.delay + 500}
+              split={this.getSplit}
             >
               {this.props.author !== '' ? `— ${this.props.author}` : ''}
-            </TweenOne>
+            </Texty>
           </div>
           <TweenOne
             animation={{

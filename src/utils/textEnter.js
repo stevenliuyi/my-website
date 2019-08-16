@@ -1,4 +1,4 @@
-const textEnter = e => {
+export const textEnter = e => {
   switch (e.index) {
     case 0:
       return {
@@ -74,4 +74,14 @@ const textEnter = e => {
   }
 }
 
-export default textEnter
+const random = (min, max) => Math.random() * (max - min) + min
+
+export const textEnterRandom = e => {
+  return {
+    scale: 3,
+    x: random(-100, 100),
+    y: random(-100, 100),
+    opacity: 0,
+    duration: 1000
+  }
+}

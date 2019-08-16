@@ -7,7 +7,7 @@ import { TiHeart } from 'react-icons/ti'
 import { FaFacebookF, FaWeixin, FaKey } from 'react-icons/fa'
 import { MdLock } from 'react-icons/md'
 import { Tooltip } from 'reactstrap'
-import textEnter from '../utils/textEnter'
+import { textEnter } from '../utils/textEnter'
 import { getImageURL } from '../utils/utils'
 
 const ScrollOverPack = ScrollAnim.OverPack
