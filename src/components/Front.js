@@ -165,6 +165,19 @@ class Front extends Component {
       <div>
         <div className="background">
           <canvas id="snow" />
+          {/* flying bird reference: https://codepen.io/matchboxhero/pen/RLebOY */}
+          <div className="bird-container bird-container--one">
+            <div className="bird bird--one" />
+          </div>
+          <div className="bird-container bird-container--two">
+            <div className="bird bird--two" />
+          </div>
+          <div className="bird-container bird-container--three">
+            <div className="bird bird--three" />
+          </div>
+          <div className="bird-container bird-container--four">
+            <div className="bird bird--four" />
+          </div>
           <ProgressiveImage
             preview={
               process.env.NODE_ENV === 'development'

@@ -79,16 +79,21 @@ class App extends Component {
   handleScroll() {
     let nav = document.querySelector('.nav')
     let burger = document.querySelector('.nav-burger')
+    let birds = document.querySelectorAll('.bird-container')
     if (nav == null || burger == null) return
     let el = document.scrollingElement || document.documentElement
     if (el.scrollTop > window.innerHeight) {
       nav.style.position = 'fixed'
       nav.style.top = 0
       burger.style.visibility = 'visible'
+      // stop bird animation
+      if (birds != null) birds.forEach(b => (b.style.display = 'none'))
     } else {
       nav.style.position = 'absolute'
       nav.style.top = 'auto'
       burger.style.visibility = 'hidden'
+      // resume bird aniimation
+      if (birds != null) birds.forEach(b => (b.style.display = 'inherit'))
     }
   }
 
