@@ -10,6 +10,7 @@ import { isMobile } from 'react-device-detect'
 import { MdFileDownload } from 'react-icons/md'
 import Page from './Page'
 import Photo from './Photo'
+import MoreButton from './MoreButton'
 import { fetchUnsplashPhotos, triggerUnsplashDownload } from '../utils/unsplash'
 import { lightboxTheme, numOfColumns } from '../utils/gallery'
 
@@ -156,7 +157,7 @@ class Photography extends Component {
             <span>
               All the photographs here are published on{' '}
               <a
-                href="https://unsplash.com/@stevenliuyi?utm_source=yliu&utm_medium=referral"
+                href="https://unsplash.com/?utm_source=yliu&utm_medium=referral"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -232,6 +233,15 @@ class Photography extends Component {
               showCloseButton={isMobile}
               backdropClosesModal={true}
             />
+            {!this.state.hasMorePhotos && (
+              <a
+                href="https://unsplash.com/@stevenliuyi?utm_source=yliu&utm_medium=referral"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MoreButton title="My Unsplash profile" delay={500} />
+              </a>
+            )}
           </div>
         </Page>
       </ScrollOverPack>
