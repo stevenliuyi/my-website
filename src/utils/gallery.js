@@ -47,10 +47,6 @@ export const lightboxTheme = {
     marginLeft: '5px',
     marginRight: '5px'
   },
-  footerCaption: {
-    display: 'inline-flex',
-    alignItems: 'center'
-  },
   footerCount: {
     color: '#222',
     display: 'none'

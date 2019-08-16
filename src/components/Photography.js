@@ -7,10 +7,10 @@ import Measure from 'react-measure'
 import Lightbox from 'react-images'
 import InfiniteScroll from 'react-infinite-scroller'
 import { isMobile } from 'react-device-detect'
-//import { GoLinkExternal } from 'react-icons/go'
+import { MdFileDownload } from 'react-icons/md'
 import Page from './Page'
 import Photo from './Photo'
-import { fetchUnsplashPhotos } from '../utils/unsplash'
+import { fetchUnsplashPhotos, triggerUnsplashDownload } from '../utils/unsplash'
 import { lightboxTheme, numOfColumns } from '../utils/gallery'
 
 const ScrollOverPack = ScrollAnim.OverPack
@@ -82,33 +82,60 @@ class Photography extends Component {
   }
 
   lightboxCaption = photo => {
-    //const linkString = renderToString(<a href={photo.link} target="_blank" rel="noopener noreferrer"><GoLinkExternal className="photography-link photography-link-lightbox" /></a>)
-    const unsplashString = renderToString(
-      <span style={{ marginLeft: '20px', fontSize: 'smaller', color: '#999' }}>
-        Photo by{' '}
-        <a
-          className="unsplash-profile-link"
-          href="https://unsplash.com/@stevenliuyi?utm_source=yliu&utm_medium=referral"
-          target="_blank"
-          rel="noopener noreferrer"
+    const unsplashButton = renderToString(
+      <a
+        className="unsplash-link"
+        href={photo.link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span
+          style={{
+            display: 'inline-block'
+          }}
         >
-          Yi Liu
-        </a>{' '}
-        on{' '}
-        <a
-          className="unsplash-profile-link"
-          href="https://unsplash.com/?utm_source=yliu&utm_medium=referral"
-          target="_blank"
-          rel="noopener noreferrer"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="unsplash-logo"
+            viewBox="0 0 32 32"
+          >
+            <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path>
+          </svg>
+        </span>
+        <span
+          className="photography-btn-text no-select"
+          style={{ padding: '0px 1px 0px 7px' }}
         >
           Unsplash
-        </a>
-      </span>
+        </span>
+      </a>
     )
 
-    return `<span>${
+    const downloadButton = renderToString(
+      <a
+        onClick={e => {
+          e.stopPropagtaion()
+          // send request to unsplash download endpoint
+          triggerUnsplashDownload(photo.download_location)
+        }}
+        className="unsplash-download-link"
+        href={photo.download_link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <MdFileDownload size={16} style={{ transform: 'translateY(1px)' }} />
+        <span
+          className="photography-btn-text no-select"
+          style={{ padding: '0px 3px' }}
+        >
+          Download
+        </span>
+      </a>
+    )
+
+    return `<span className="photography-caption"><span>${
       photo.description ? photo.description : ''
-    }${unsplashString}</span>`
+    }</span><span className="photography-btns">${unsplashButton} ${downloadButton}</span></span>`
   }
 
   render() {
@@ -129,7 +156,7 @@ class Photography extends Component {
             <span>
               All the photographs here are published on{' '}
               <a
-                href="https://unsplash.com/?utm_source=yliu&utm_medium=referral"
+                href="https://unsplash.com/@stevenliuyi?utm_source=yliu&utm_medium=referral"
                 target="_blank"
                 rel="noopener noreferrer"
               >

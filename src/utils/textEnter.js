@@ -82,6 +82,7 @@ export const textEnterRandom = e => {
     x: random(-100, 100),
     y: random(-100, 100),
     opacity: 0,
-    duration: 1000
+    duration: 1000,
+    ease: 'easeOutQuart'
   }
 }

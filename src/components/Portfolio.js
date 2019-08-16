@@ -22,6 +22,10 @@ const portfolioLightboxTheme = {
     ...lightboxTheme.footer,
     fontWeight: 'bold',
     fontVariant: 'small-caps'
+  },
+  footerCaption: {
+    display: 'inline-flex',
+    alignItems: 'center'
   }
 }
 
