@@ -104,7 +104,8 @@ class Page extends Component {
     window.addEventListener('scroll', this.handleScroll)
     if (isMobile) {
       this.setVhStyles()
-      window.addEventListener('deviceorientation', this.setVhStyles)
+      // deviceorientation has been disabled by default since iOS 12.2
+      window.addEventListener('resize', this.setVhStyles)
     }
 
     gaConfig()
@@ -116,8 +117,7 @@ class Page extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
-    if (isMobile)
-      window.removeEventListener('deviceorientation', this.setVhStyles)
+    if (isMobile) window.removeEventListener('resize', this.setVhStyles)
   }
 
   render() {

@@ -48,7 +48,7 @@ class About extends Component {
       document.documentElement.scrollTop || document.scrollingElement.scrollTop
     const offset = document.querySelector('.about-page').offsetTop - scrollTop
     if (!isMobile) logo.style.transform = `rotate(${offset}deg)`
-    if (!this.state.logoLoaded) {
+    if (!isMobile && !this.state.logoLoaded) {
       const opacity = Math.min(1 - offset / window.innerHeight, 1)
       logo.style.opacity = opacity
       if (opacity === 1) this.setState({ logoLoaded: true })

@@ -55,7 +55,8 @@ class App extends Component {
     // set vh-related styles on mobile devices
     if (isMobile) {
       setVhs()
-      window.addEventListener('deviceorientation', setVhs)
+      // deviceorientation has been disabled by default since iOS 12.2
+      window.addEventListener('resize', setVhs)
     }
 
     gaConfig()
@@ -66,7 +67,7 @@ class App extends Component {
 
     window.removeEventListener('scroll', this.handleScroll)
     window.removeEventListener('resize', this.setWidth)
-    if (isMobile) window.removeEventListener('deviceorientation', setVhs)
+    if (isMobile) window.removeEventListener('resize', setVhs)
   }
 
   setWidth = () => {
@@ -80,7 +81,7 @@ class App extends Component {
     let burger = document.querySelector('.nav-burger')
     if (nav == null || burger == null) return
     let el = document.scrollingElement || document.documentElement
-    if (el.scrollTop >= window.innerHeight) {
+    if (el.scrollTop > window.innerHeight) {
       nav.style.position = 'fixed'
       nav.style.top = 0
       burger.style.visibility = 'visible'
