@@ -144,16 +144,20 @@ class Footer extends Component {
                     If you are security-paranoid (which is a good thing of
                     course), you can send me encrypted messages using my PGP key{' '}
                     <a
-                      href="https://pgp.mit.edu/pks/lookup?op=get&search=0x3B2DB4E7"
+                      href="https://keybase.io/stevenliuyi/pgp_keys.asc"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <span className="footer-dotted-text">0x3B2DB4E7</span>
                     </a>
-                    . The fingerprint is{' '}
-                    <span className="footer-dotted-text">
-                      0403 2E39 8D6D 01AD B94B E122 E8FA DCBE 3B2D B4E7
-                    </span>
+                    . My Keybase profile is{' '}
+                    <a
+                      href="https://keybase.io/stevenliuyi"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="footer-dotted-text">stevenliuyi</span>
+                    </a>
                     .
                   </div>
                 </div>
