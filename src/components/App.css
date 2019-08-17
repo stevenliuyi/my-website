@@ -516,8 +516,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: rgba(0, 0, 0, 0.5) !important;
 }
 
-/* fix transition glitch on Chrome */
+/* fix transition glitch on Chrome and scrolling glitch on mobile Safari */
 #page-wrap {
+  -webkit-overflow-scrolling: touch;
   transform-origin: left center !important;
 }
 
