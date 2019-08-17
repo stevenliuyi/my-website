@@ -168,7 +168,13 @@ class App extends Component {
             <div ref={el => (this.bar = el)} className="nav-bar" />
             <div className="nav-mobile">{this.state.currentSection}</div>
             <div className="nav-burger">
-              <Menu right isOpen={this.state.menuOpen}>
+              <Menu
+                right
+                isOpen={this.state.menuOpen}
+                onStateChange={state =>
+                  this.setState({ menuOpen: state.isOpen })
+                }
+              >
                 <div className="nav-logo" onClick={this.scrollToTop}>
                   <Logo radius={30} colors={['#aaa', '#aaa']} />
                 </div>
