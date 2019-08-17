@@ -803,9 +803,42 @@ Note: Beware of modifying this element as it can break the animations - you shou
   }
 }
 
-.number-card {
-  display: inline;
+.number-cards .number-card {
   margin: -1px 0 0 -1px;
+}
+
+.number-card-slider-wrap {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.number-card-slider {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.number-card-slider .number-card {
+  margin: 0 auto;
+  transform: scale(.9);
+}
+
+
+.slick-next {
+  right: 30px !important;
+}
+
+.slick-prev {
+  left: 30px !important;
+}
+
+.slick-next,
+.slick-prev {
+  width: 32px !important;
+  height: 32px !important;
+  z-index: 10 !important;
+}
+
+.number-card {
   width: 250px;
   height: 200px;
   position: relative;

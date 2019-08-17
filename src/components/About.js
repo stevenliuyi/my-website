@@ -3,7 +3,12 @@ import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
 import NumberCard from './NumberCard'
-import { TiPencil, TiDocumentText } from 'react-icons/ti'
+import {
+  TiPencil,
+  TiDocumentText,
+  TiChevronLeft,
+  TiChevronRight
+} from 'react-icons/ti'
 import { FaGithub, FaAt, FaWikipediaW } from 'react-icons/fa'
 import { Tooltip } from 'reactstrap'
 import { isMobile } from 'react-device-detect'
@@ -11,8 +16,81 @@ import { Link, withRouter } from 'react-router-dom'
 import Logo from './Logo'
 import SimpleTooltip from './SimpleTooltip'
 import places from '../data/places.yml'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 const ScrollOverPack = ScrollAnim.OverPack
+
+const numberCards = [
+  <NumberCard
+    key="number-card-1"
+    description="number of Wikipedia articles I created"
+    number="20,000"
+    detail="After 9 years as a volunteer of the Wikimedia movement, I've now made 1.5 million edits accoss Wikimedia projects."
+  />,
+  <NumberCard
+    key="number-card-2"
+    description="my Erdős number"
+    number="6"
+    detail={
+      <span>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://en.wikipedia.org/wiki/Erdős_number"
+        >
+          Erdős number
+        </a>{' '}
+        is one's collabration distance to mathematican Paul Erdös.
+      </span>
+    }
+  />,
+  <NumberCard
+    key="number-card-3"
+    description="number of U.S. states I've set foot on"
+    number={places.USA.places.length - 1}
+    detail={
+      <span>
+        ... and Washington, D.C.! Check out{' '}
+        <Link to={{ pathname: 'places', backId: 'about-page' }}>
+          my traveler map
+        </Link>{' '}
+        to see all the states I have visited.
+      </span>
+    }
+  />,
+  <NumberCard
+    key="number-card-4"
+    description="my favorite number"
+    number="42"
+    detail={
+      <span>
+        Because it's{' '}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy#Answer_to_the_Ultimate_Question_of_Life,_the_Universe,_and_Everything_(42)"
+        >
+          the Answer to the Ultimate Question of Life, the Universe, and
+          Everything
+        </a>
+        !
+      </span>
+    }
+  />
+]
+const sliderSettings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  adapativeHeight: true,
+  swipe: false,
+  nextArrow: <TiChevronRight size={32} color={'#222'} />,
+  prevArrow: <TiChevronLeft size={32} color={'#222'} />
+}
 
 class About extends Component {
   state = {
@@ -457,69 +535,35 @@ class About extends Component {
           <div>just some fun numbers</div>
           <div className="number-cards-title-line" style={{ marginLeft: 20 }} />
         </TweenOne>
-        <TweenOne
-          key="3"
-          className="number-cards"
-          animation={{
-            opacity: 1,
-            translateY: 0,
-            duration: 1000,
-            delay: this.props.delay + 1000
-          }}
-        >
-          <NumberCard
-            description="number of Wikipedia articles I created"
-            number="20,000"
-            detail="After 9 years as a volunteer of the Wikimedia movement, I've now made 1.5 million edits accoss Wikimedia projects."
-          />
-          <NumberCard
-            description="my Erdős number"
-            number="6"
-            detail={
-              <span>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://en.wikipedia.org/wiki/Erdős_number"
-                >
-                  Erdős number
-                </a>{' '}
-                is one's collabration distance to mathematican Paul Erdös.
-              </span>
-            }
-          />
-          <NumberCard
-            description="number of U.S. states I've set foot on"
-            number={places.USA.places.length - 1}
-            detail={
-              <span>
-                ... and Washington, D.C.! Check out{' '}
-                <Link to={{ pathname: 'places', backId: 'about-page' }}>
-                  my traveler map
-                </Link>{' '}
-                to see all the states I have visited.
-              </span>
-            }
-          />
-          <NumberCard
-            description="my favorite number"
-            number="42"
-            detail={
-              <span>
-                Because it's{' '}
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy#Answer_to_the_Ultimate_Question_of_Life,_the_Universe,_and_Everything_(42)"
-                >
-                  the Answer to the Ultimate Question of Life, the Universe, and
-                  Everything
-                </a>
-                !
-              </span>
-            }
-          />
-        </TweenOne>
+        {window.innerWidth > 560 ? (
+          <TweenOne
+            key="3"
+            className="number-cards"
+            animation={{
+              opacity: 1,
+              translateY: 0,
+              duration: 1000,
+              delay: this.props.delay + 1000
+            }}
+          >
+            {numberCards}
+          </TweenOne>
+        ) : (
+          <TweenOne
+            key="4"
+            className="number-card-slider-wrap"
+            animation={{
+              opacity: 1,
+              translateY: 0,
+              duration: 1000,
+              delay: this.props.delay + 1000
+            }}
+          >
+            <Slider className="number-card-slider" {...sliderSettings}>
+              {numberCards}
+            </Slider>
+          </TweenOne>
+        )}
       </ScrollOverPack>
     )
   }
