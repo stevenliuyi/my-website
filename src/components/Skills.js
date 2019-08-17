@@ -424,7 +424,10 @@ class Skills extends Component {
 
   getWidth = () =>
     !this.state.github
-      ? Math.max(window.innerWidth * 0.8 - 450, 400)
+      ? Math.min(
+          Math.max(window.innerWidth * 0.8 - 450, 400),
+          window.innerWidth
+        )
       : Math.min(
           Math.max(window.innerWidth * 0.8 - 450, 400),
           Math.round(45 * (languages.length * 1.2))
