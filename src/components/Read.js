@@ -135,7 +135,8 @@ class Read extends Component {
               component={InfiniteScroll}
               componentProps={{
                 loadMore: this.loadMoreBooks,
-                hasMore: !this.state.allLoaded
+                hasMore: !this.state.allLoaded,
+                useWindow: false // see comments on Page.js for the scrolling element
               }}
             >
               <div className="book-search">

@@ -310,10 +310,10 @@ a {
   display: none;
 }
 
-/* burger menu styles */
+/* main page burger menu styles */
 
 /* Position and sizing of burger button */
-.bm-burger-button {
+.nav .bm-burger-button {
   position: fixed;
   width: 24px;
   height: 20px;
@@ -323,12 +323,12 @@ a {
 }
 
 /* Color/shape of burger icon bars */
-.bm-burger-bars {
+.nav .bm-burger-bars {
   background: #fff;
 }
 
 /* Position and sizing of clickable cross button */
-.bm-cross-button {
+.nav .bm-cross-button {
   height: 24px;
   width: 24px;
   right: auto;
@@ -338,16 +338,16 @@ a {
 }
 
 /* Color/shape of close button cross */
-.bm-cross {
+.nav .bm-cross {
   background: #aaa;
 }
 
-.bm-cross-button:hover .bm-cross {
+.nav .bm-cross-button:hover .bm-cross {
   background: #eee;
 }
 
 /* General sidebar styles */
-.bm-menu {
+.nav .bm-menu {
   background: rgba(0, 0, 0, 0.8);
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
@@ -355,31 +355,170 @@ a {
 }
 
 /* Wrapper for item list */
-.bm-item-list {
+.nav .bm-item-list {
   color: #fff;
   padding: 0.8em;
 }
 
 /* Individual item */
-.bm-item {
+.nav .bm-item {
   display: inline-block;
   padding-top: .25em;
   padding-bottom: .25em;
   cursor: pointer;
 }
 
-.bm-item:hover {
+.nav .bm-item:hover {
   color: #aaa;
 }
 
-.bm-item:hover path {
+.nav .bm-item:hover path {
   fill: #eee;
 }
 
 /* Styling of overlay */
-.bm-overlay {
+.nav .bm-overlay {
   background: rgba(0, 0, 0, 0.1);
   right: 0px;
+}
+
+
+/* subpage burger menu styles */
+
+#outer-container .bm-logo {
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+}
+
+
+#outer-container .bm-logo svg {
+  transform: rotate(0deg);
+  transition: transform 2s ease;
+}
+
+#outer-container .bm-logo:hover svg {
+  transform: rotate(180deg);
+  transition: transform 2s ease;
+}
+
+/* Position and sizing of burger button */
+#outer-container .bm-burger-button {
+  position: fixed;
+  z-index: 100;
+  padding: 6px;
+  margin: 12px;
+  transform-origin: center;
+  background-color: rgba(255, 255, 255, .8);
+  border-radius: 9999px;
+  transition: all .5s ease;
+}
+
+#outer-container .bm-burger-button:hover {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+#outer-container .bm-burger-button:hover path {
+  fill: #eee;
+}
+
+#outer-container .menu-text {
+  position: fixed;
+  z-index: 101;
+  left: 80px;
+  top: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  opacity: 0;
+  visibility: hidden;
+  text-shadow: -1px -1px 0 rgba(255, 255, 255, .5),
+                0   -1px 0 rgba(255, 255, 255, .5),
+                1px -1px 0 rgba(255, 255, 255, .5),
+                1px  0   0 rgba(255, 255, 255, .5),
+                1px  1px 0 rgba(255, 255, 255, .5),
+                0    1px 0 rgba(255, 255, 255, .5),
+               -1px  1px 0 rgba(255, 255, 255, .5),
+               -1px  0   0 rgba(255, 255, 255, .5);
+  transition: all .5s ease;
+}
+
+#outer-container .menu-wrap:hover .menu-text {
+  left: 60px;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Position and sizing of clickable cross button */
+#outer-container .bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+#outer-container .bm-cross {
+  background: #555;
+}
+
+#outer-container .bm-cross-button:hover .bm-cross {
+  background: #aaa;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+#outer-container .bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+#outer-container .bm-menu {
+  background: #eee;
+  background: linear-gradient(90deg, #ddd 0%, #eee 20%, #eee 100%);
+  font-size: 1.15em;
+}
+
+/* Wrapper for item list */
+#outer-container .bm-item-list {
+  color: #fff;
+}
+
+/* Individual item */
+#outer-container .bm-item {
+  color: #555;
+  display: flex !important;
+  justify-content: center;
+}
+
+#outer-container .bm-menu-wrap a {
+  padding-top: .25em;
+  padding-bottom: .25em;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  transition: all .3s ease;
+}
+
+#outer-container .bm-current-item {
+  background-color: rgba(0, 0, 0, .05);
+  cursor: default;
+}
+
+#outer-container .bm-menu-wrap a:not(.bm-current-item):hover {
+  color: #eee;
+  background-color: #0d8aba;
+  letter-spacing: 3px;
+}
+
+/* Styling of overlay */
+#outer-container .bm-overlay {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* fix transition glitch on Chrome */
+#page-wrap {
+  transform-origin: left center !important;
 }
 
 .nav-logo {
@@ -1581,48 +1720,6 @@ a .footer-dotted-text:hover {
   padding-top: 10px;
 }
 
-.cover-logo {
-  position: fixed;
-  z-index: 100;
-  padding: 6px;
-  margin: 12px;
-  transform-origin: 50% 50%;
-  background-color: rgba(255, 255, 255, .8);
-  border-radius: 9999px;
-}
-
-.cover-back-home-wrap {
-  position: fixed;
-  z-index: 10;
-}
-
-.cover-back-home {
-  position: fixed;
-  padding: 6px;
-  margin: 11px 0px 11px 12px;
-  z-index: 101;
-  display: flex;
-  align-items: center;
-  transform: translate(10px);
-  opacity: 0;
-  animation: back-home-anim .5s ease-in forwards;
-}
-
-@keyframes back-home-anim {
-  to {
-    opacity: 1;
-    transform: translate(0px);
-  }
-}
-
-.cover-back-home > span {
-  margin-left: 20px;
-  color: #000;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  transform: translateY(1px);
-}
-
 .cover-text {
   margin: 60px 50px -50px 50px;
   display: flex;
@@ -2411,6 +2508,7 @@ a .footer-dotted-text:hover {
 
 .places-map-wrap {
   margin: 100px 50px 0px 50px;
+  position: relative;
 }
 
 .places-map {

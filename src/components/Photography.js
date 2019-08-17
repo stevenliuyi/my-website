@@ -104,7 +104,7 @@ class Photography extends Component {
           </svg>
         </span>
         <span
-          className="photography-btn-text no-select"
+          className="photography-btn-text noselect"
           style={{ padding: '0px 1px 0px 7px' }}
         >
           Unsplash
@@ -126,7 +126,7 @@ class Photography extends Component {
       >
         <MdFileDownload size={16} style={{ transform: 'translateY(1px)' }} />
         <span
-          className="photography-btn-text no-select"
+          className="photography-btn-text noselect"
           style={{ padding: '0px 3px' }}
         >
           Download
@@ -187,7 +187,7 @@ class Photography extends Component {
               .
             </span>
           </div>
-          <div className="photography-list">
+          <div className="photography-list" style={{ height: '100%' }}>
             <Measure
               bounds
               onResize={contentRect =>
@@ -198,6 +198,7 @@ class Photography extends Component {
                 if (width < 1) return <div ref={measureRef} />
                 return (
                   <div ref={measureRef}>
+                    {/* see comments on Page.js for the scrolling element */}
                     <InfiniteScroll
                       loadMore={() => {
                         this.fetchPhotos(this.state.currentPage + 1)
@@ -207,6 +208,12 @@ class Photography extends Component {
                       }}
                       hasMore={this.state.hasMorePhotos}
                       initialLoad={false}
+                      useWindow={isMobile}
+                      getScrollElement={
+                        isMobile
+                          ? null
+                          : () => document.getElementById('cover-content')
+                      }
                     >
                       <Gallery
                         photos={this.state.photos}

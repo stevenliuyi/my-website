@@ -3,28 +3,54 @@ import ProgressiveImage from 'react-progressive-image-loading'
 import { Link } from 'react-router-dom'
 import { FiX } from 'react-icons/fi'
 import { FaAngleDoubleDown } from 'react-icons/fa'
-import { MdArrowBack } from 'react-icons/md'
 import scrollToComponent from 'react-scroll-to-component'
-import { Tooltip } from 'reactstrap'
 import { isMobile } from 'react-device-detect'
+import pushRotateMenu from 'react-burger-menu/lib/menus/pushRotate'
+import stackMenu from 'react-burger-menu/lib/menus/stack'
 import Texty from 'rc-texty'
-import 'rc-texty/assets/index.css'
 import TweenOne from 'rc-tween-one'
 import Logo from './Logo'
 import PageFooter from './PageFooter'
 import { textEnterRandom } from '../utils/textEnter'
 import { setVhs, getImageURL, gaConfig } from '../utils/utils'
 
+const menuList = [
+  {
+    pathname: '/resume',
+    title: 'Resume'
+  },
+  {
+    pathname: '/read',
+    title: 'Reading List'
+  },
+  {
+    pathname: '/portfolio',
+    title: 'Portfolio'
+  },
+  {
+    pathname: '/photos',
+    title: 'Photography'
+  },
+  {
+    pathname: '/places',
+    title: 'Places'
+  }
+]
+
 class Page extends Component {
   state = {
-    fontSize: 36,
-    logoTooltip: false,
-    showLogo: true
+    fontSize: 36
   }
 
   handleScroll = e => {
-    const scrollTop =
-      document.documentElement.scrollTop || document.scrollingElement.scrollTop
+    // For the "push-rotate" menu, window cannot be used as scrolling element because the menu requires
+    // that the outer container has 100vh height and therefore is not scrollable.
+    // It also affects the infinite scrollers on some pages (i.e. Photography, Read).
+    // "Stack" menu instead of "push-rotate" menu is used on mobile devices because of the scrolling glitches.
+    const scrollTop = isMobile
+      ? document.documentElement.scrollTop ||
+        document.scrollingElement.scrollTop
+      : document.getElementById('page-wrap').scrollTop
 
     // blur
     const ratio = 1
@@ -78,7 +104,7 @@ class Page extends Component {
     }
 
     // logo
-    const logo = document.getElementById('cover-logo')
+    const logo = document.querySelector('.bm-burger-button')
     if (logo != null) {
       logo.style.transform = `rotate(${scrollTop}deg)`
     }
@@ -101,11 +127,14 @@ class Page extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
+    let scrollingElement = isMobile
+      ? window
+      : document.getElementById('page-wrap')
+    scrollingElement.addEventListener('scroll', this.handleScroll)
     if (isMobile) {
       this.setVhStyles()
       // deviceorientation has been disabled by default since iOS 12.2
-      window.addEventListener('resize', this.setVhStyles)
+      scrollingElement.addEventListener('resize', this.setVhStyles)
     }
 
     gaConfig()
@@ -116,166 +145,179 @@ class Page extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
-    if (isMobile) window.removeEventListener('resize', this.setVhStyles)
+    let scrollingElement = isMobile
+      ? window
+      : document.getElementById('page-wrap')
+    scrollingElement.removeEventListener('scroll', this.handleScroll)
+    if (isMobile)
+      scrollingElement.removeEventListener('resize', this.setVhStyles)
   }
 
   render() {
+    const Menu = isMobile ? stackMenu : pushRotateMenu
     return (
-      <div style={{ overflowX: 'hidden' }}>
-        <div className="cover">
-          <div
-            onMouseEnter={() => this.setState({ showLogo: false })}
-            onMouseLeave={() => this.setState({ showLogo: true })}
-          >
-            {this.state.showLogo && (
-              <div id="cover-logo" className="cover-logo">
-                <Link
-                  to={{ pathname: '/', backId: this.props.location.backId }}
-                >
-                  <Logo radius={12} colors={['#555', '#555']} />
-                </Link>
+      <div
+        style={{ overflowX: 'hidden', height: isMobile ? 'auto' : '100vh' }}
+        id="outer-container"
+      >
+        <div className="menu-wrap">
+          <Menu
+            className="noselect"
+            pageWrapId="page-wrap"
+            outerContainerId="outer-container"
+            customBurgerIcon={
+              <div>
+                <Logo radius={12} colors={['#555', '#555']} />
               </div>
-            )}
-            {!this.state.showLogo && (
-              <div className="cover-back-home-wrap">
-                <div className="cover-logo">
-                  <div style={{ visibility: 'hidden' }}>
-                    <Logo radius={12} colors={['#555', '#555']} />
-                  </div>
-                </div>
-                <div className="cover-back-home">
-                  <Link
-                    to={{ pathname: '/', backId: this.props.location.backId }}
-                  >
-                    <MdArrowBack size={24} color="#555" />
-                  </Link>
-                  <span>HOME</span>
-                </div>
-              </div>
-            )}
-          </div>
-          {this.state.showLogo && (
-            <Tooltip
-              placement="right"
-              target="cover-logo"
-              isOpen={this.state.logoTooltip}
-              toggle={() =>
-                this.setState({ logoTooltip: !this.state.logoTooltip })
-              }
-            >
-              back to homepage
-            </Tooltip>
-          )}
-          {this.props.backgroundFilename != null && (
-            <ProgressiveImage
-              preview={
-                process.env.NODE_ENV === 'development'
-                  ? `/images/${this.props.backgroundFilename}.jpg`
-                  : getImageURL(`${this.props.backgroundFilename}.jpg`, {
-                      f: 'auto',
-                      c: 'fill',
-                      w: Math.min(window.innerWidth * 0.3, 800),
-                      h: Math.min(window.innerHeight * 0.3, 800)
-                    })
-              }
-              src={
-                process.env.NODE_ENV === 'development'
-                  ? `/images/${this.props.backgroundFilename}.jpg`
-                  : getImageURL(`${this.props.backgroundFilename}.jpg`, {
-                      f: 'auto',
-                      c: 'fill',
-                      w: window.innerWidth * window.devicePixelRatio,
-                      h: window.innerHeight * window.devicePixelRatio
-                    })
-              }
-              render={(src, style) => (
-                <div
-                  className="cover-image"
-                  style={Object.assign(style, {
-                    backgroundImage: `url(${src})`
-                  })}
-                />
-              )}
-            />
-          )}
-          {this.props.background}
-          <h1
-            className="cover-title noselect"
-            onClick={this.props.onTitleClick}
-            style={this.props.titleStyle}
+            }
           >
-            <Texty
-              component="span"
-              className="cover-title-text"
-              type="scaleBig"
-              mode="smooth"
-              delay={this.props.delay}
+            <div className="bm-logo">
+              <Logo radius={30} colors={['#555', '#555']} />
+            </div>
+            <Link
+              to={{ pathname: '/', backId: this.props.location.backId }}
+              style={{ fontWeight: 'bold', marginBottom: '20px' }}
             >
-              YI
-            </Texty>
+              Back To Home
+            </Link>
+            {menuList.map(item => (
+              <Link
+                className={
+                  item.pathname === this.props.location.pathname
+                    ? 'bm-current-item'
+                    : ''
+                }
+                key={item.title}
+                to={{
+                  pathname: item.pathname,
+                  backId: this.props.location.backId
+                }}
+              >
+                {item.title}
+              </Link>
+            ))}
+          </Menu>
+          <span className="menu-text noselect">MENU</span>
+        </div>
+        <div
+          id="page-wrap"
+          style={isMobile ? {} : { height: '100%', overflow: 'auto' }}
+        >
+          <div className="cover">
+            {this.props.backgroundFilename != null && (
+              <ProgressiveImage
+                preview={
+                  process.env.NODE_ENV === 'development'
+                    ? `/images/${this.props.backgroundFilename}.jpg`
+                    : getImageURL(`${this.props.backgroundFilename}.jpg`, {
+                        f: 'auto',
+                        c: 'fill',
+                        w: Math.min(window.innerWidth * 0.3, 800),
+                        h: Math.min(window.innerHeight * 0.3, 800)
+                      })
+                }
+                src={
+                  process.env.NODE_ENV === 'development'
+                    ? `/images/${this.props.backgroundFilename}.jpg`
+                    : getImageURL(`${this.props.backgroundFilename}.jpg`, {
+                        f: 'auto',
+                        c: 'fill',
+                        w: window.innerWidth * window.devicePixelRatio,
+                        h: window.innerHeight * window.devicePixelRatio
+                      })
+                }
+                render={(src, style) => (
+                  <div
+                    className="cover-image"
+                    style={Object.assign(style, {
+                      backgroundImage: `url(${src})`
+                    })}
+                  />
+                )}
+              />
+            )}
+            {this.props.background}
+            <h1
+              className="cover-title noselect"
+              onClick={this.props.onTitleClick}
+              style={this.props.titleStyle}
+            >
+              <Texty
+                component="span"
+                className="cover-title-text"
+                type="scaleBig"
+                mode="smooth"
+                delay={this.props.delay}
+              >
+                YI
+              </Texty>
+              <TweenOne
+                component="span"
+                className="cover-title-cross"
+                animation={{
+                  opacity: 0,
+                  scale: 2,
+                  type: 'from',
+                  delay: this.props.delay + 1000
+                }}
+              >
+                <FiX size={this.state.fontSize} color="#0d8aba" />
+              </TweenOne>
+              <Texty
+                component="span"
+                className="cover-title-text"
+                type="scaleBig"
+                mode="smooth"
+                delay={this.props.delay + 150}
+              >
+                {this.props.title}
+              </Texty>
+            </h1>
+            <div className="cover-quote">
+              <Texty
+                enter={textEnterRandom}
+                interval={0}
+                delay={this.props.delay + 500}
+                split={this.getSplit}
+              >
+                {this.props.quote}
+              </Texty>
+              <Texty
+                className="cover-author"
+                enter={textEnterRandom}
+                interval={30}
+                delay={this.props.delay + 500}
+                split={this.getSplit}
+              >
+                {this.props.author !== '' ? `— ${this.props.author}` : ''}
+              </Texty>
+            </div>
             <TweenOne
-              component="span"
-              className="cover-title-cross"
               animation={{
                 opacity: 0,
-                scale: 2,
+                translateY: 100,
                 type: 'from',
                 delay: this.props.delay + 1000
               }}
+              className="scroll-to-content"
+              onClick={() => scrollToComponent(this.content, { align: 'top' })}
             >
-              <FiX size={this.state.fontSize} color="#0d8aba" />
+              <div className="cover-scroll-arrow">
+                <FaAngleDoubleDown size={24} />
+              </div>
             </TweenOne>
-            <Texty
-              component="span"
-              className="cover-title-text"
-              type="scaleBig"
-              mode="smooth"
-              delay={this.props.delay + 150}
-            >
-              {this.props.title}
-            </Texty>
-          </h1>
-          <div className="cover-quote">
-            <Texty
-              enter={textEnterRandom}
-              interval={0}
-              delay={this.props.delay + 500}
-              split={this.getSplit}
-            >
-              {this.props.quote}
-            </Texty>
-            <Texty
-              className="cover-author"
-              enter={textEnterRandom}
-              interval={30}
-              delay={this.props.delay + 500}
-              split={this.getSplit}
-            >
-              {this.props.author !== '' ? `— ${this.props.author}` : ''}
-            </Texty>
           </div>
-          <TweenOne
-            animation={{
-              opacity: 0,
-              translateY: 100,
-              type: 'from',
-              delay: this.props.delay + 1000
-            }}
-            className="scroll-to-content"
-            onClick={() => scrollToComponent(this.content, { align: 'top' })}
+          <div
+            ref={el => (this.content = el)}
+            className="cover-content"
+            id="cover-content"
           >
-            <div className="cover-scroll-arrow">
-              <FaAngleDoubleDown size={24} />
-            </div>
-          </TweenOne>
+            {this.props.children}
+          </div>
+          {(this.props.showFooter == null || this.props.showFooter) && (
+            <PageFooter footerStyle={this.props.footerStyle} />
+          )}
         </div>
-        <div ref={el => (this.content = el)} className="cover-content">
-          {this.props.children}
-        </div>
-        {(this.props.showFooter == null || this.props.showFooter) && (
-          <PageFooter footerStyle={this.props.footerStyle} />
-        )}
       </div>
     )
   }
