@@ -58,6 +58,7 @@ USA:
   name_key: NAME
   projection: equalAreaConic
   places:
+    - Arizona
     - California
     - Colorado
     - Connecticut
