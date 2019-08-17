@@ -209,11 +209,9 @@ class Photography extends Component {
                       }}
                       hasMore={this.state.hasMorePhotos}
                       initialLoad={false}
-                      useWindow={isMobile}
-                      getScrollElement={
-                        isMobile
-                          ? null
-                          : () => document.getElementById('cover-content')
+                      useWindow={false}
+                      getScrollParent={() =>
+                        document.getElementById('page-wrap') || window
                       }
                     >
                       <Gallery

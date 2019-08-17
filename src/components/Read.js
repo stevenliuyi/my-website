@@ -136,7 +136,9 @@ class Read extends Component {
               componentProps={{
                 loadMore: this.loadMoreBooks,
                 hasMore: !this.state.allLoaded,
-                useWindow: false // see comments on Page.js for the scrolling element
+                useWindow: false,
+                getScrollParent: () =>
+                  document.getElementById('page-wrap') || window
               }}
             >
               <div className="book-search">

@@ -5,8 +5,7 @@ import { FiX } from 'react-icons/fi'
 import { FaAngleDoubleDown } from 'react-icons/fa'
 import scrollToComponent from 'react-scroll-to-component'
 import { isMobile } from 'react-device-detect'
-import pushRotateMenu from 'react-burger-menu/lib/menus/pushRotate'
-import stackMenu from 'react-burger-menu/lib/menus/stack'
+import Menu from 'react-burger-menu/lib/menus/pushRotate'
 import Texty from 'rc-texty'
 import TweenOne from 'rc-tween-one'
 import Logo from './Logo'
@@ -46,11 +45,8 @@ class Page extends Component {
     // For the "push-rotate" menu, window cannot be used as scrolling element because the menu requires
     // that the outer container has 100vh height and therefore is not scrollable.
     // It also affects the infinite scrollers on some pages (i.e. Photography, Read).
-    // "Stack" menu instead of "push-rotate" menu is used on mobile devices because of the scrolling glitches.
-    const scrollTop = isMobile
-      ? document.documentElement.scrollTop ||
-        document.scrollingElement.scrollTop
-      : document.getElementById('page-wrap').scrollTop
+    const pageElement = document.getElementById('page-wrap')
+    const scrollTop = pageElement != null ? pageElement.scrollTop : 0
 
     // blur
     const ratio = 1
@@ -127,14 +123,15 @@ class Page extends Component {
   }
 
   componentDidMount() {
-    let scrollingElement = isMobile
-      ? window
-      : document.getElementById('page-wrap')
-    scrollingElement.addEventListener('scroll', this.handleScroll)
-    if (isMobile) {
-      this.setVhStyles()
-      // deviceorientation has been disabled by default since iOS 12.2
-      scrollingElement.addEventListener('resize', this.setVhStyles)
+    let scrollingElement = document.getElementById('page-wrap')
+
+    if (scrollingElement != null) {
+      scrollingElement.addEventListener('scroll', this.handleScroll)
+      if (isMobile) {
+        this.setVhStyles()
+        // deviceorientation has been disabled by default since iOS 12.2
+        scrollingElement.addEventListener('resize', this.setVhStyles)
+      }
     }
 
     gaConfig()
@@ -145,19 +142,18 @@ class Page extends Component {
   }
 
   componentWillUnmount() {
-    let scrollingElement = isMobile
-      ? window
-      : document.getElementById('page-wrap')
-    scrollingElement.removeEventListener('scroll', this.handleScroll)
-    if (isMobile)
-      scrollingElement.removeEventListener('resize', this.setVhStyles)
+    let scrollingElement = document.getElementById('page-wrap')
+    if (scrollingElement != null) {
+      scrollingElement.removeEventListener('scroll', this.handleScroll)
+      if (isMobile)
+        scrollingElement.removeEventListener('resize', this.setVhStyles)
+    }
   }
 
   render() {
-    const Menu = isMobile ? stackMenu : pushRotateMenu
     return (
       <div
-        style={{ overflowX: 'hidden', height: isMobile ? 'auto' : '100vh' }}
+        style={{ overflowX: 'hidden', height: '100vh' }}
         id="outer-container"
       >
         <div className="menu-wrap">
@@ -199,10 +195,7 @@ class Page extends Component {
           </Menu>
           <span className="menu-text noselect">MENU</span>
         </div>
-        <div
-          id="page-wrap"
-          style={isMobile ? {} : { height: '100%', overflow: 'auto' }}
-        >
+        <div id="page-wrap" style={{ height: '100%', overflow: 'auto' }}>
           <div className="cover">
             {this.props.backgroundFilename != null && (
               <ProgressiveImage
