@@ -147,6 +147,7 @@ class Photography extends Component {
         <Page
           ref={el => (this.page = el)}
           title="PHOTOGRAPHY"
+          shortTitle="PHOTO"
           quote="All photographs are accurate. None of them is the truth."
           author="Richard Avedon"
           backgroundFilename="adrian-pelletier-6dOpTj_KYc4-unsplash"

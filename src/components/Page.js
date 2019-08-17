@@ -270,7 +270,9 @@ class Page extends Component {
                 mode="smooth"
                 delay={this.props.delay + 150}
               >
-                {this.props.title}
+                {window.innerWidth < 500 && this.props.shortTitle != null
+                  ? this.props.shortTitle
+                  : this.props.title}
               </Texty>
             </h1>
             <div className="cover-quote">
