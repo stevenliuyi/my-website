@@ -99,11 +99,11 @@ class Page extends Component {
       }
     }
 
-    // logo
-    const logo = document.querySelector('.bm-burger-button')
-    if (logo != null) {
-      logo.style.transform = `rotate(${scrollTop}deg)`
-    }
+    // rotate logo (commented due to performance issue)
+    // const logo = document.querySelector('.bm-burger-button')
+    // if (logo != null) {
+    //   logo.style.transform = `rotate(${scrollTop}deg)`
+    // }
   }
 
   // set vh-related styles on mobile devices
