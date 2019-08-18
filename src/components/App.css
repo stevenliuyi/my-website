@@ -515,7 +515,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* Styling of overlay */
 #outer-container .bm-overlay {
-  background: rgba(0, 0, 0, 0.5) !important;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .2)) !important;
 }
 
 /* fix transition glitch on Chrome and scrolling glitch on mobile Safari */
