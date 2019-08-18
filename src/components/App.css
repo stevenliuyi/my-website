@@ -2532,6 +2532,10 @@ a .footer-dotted-text:hover {
   transition: all ease .5s;
 }
 
+#lightboxBackdrop {
+  backdrop-filter: blur(3px);
+}
+
 #lightboxBackdrop svg {
   vertical-align: inherit;
 }
