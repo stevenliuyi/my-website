@@ -366,6 +366,7 @@ a {
   padding-top: .25em;
   padding-bottom: .25em;
   cursor: pointer;
+  outline: none;
 }
 
 .nav .bm-item:hover {
@@ -488,6 +489,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   color: #555;
   display: flex !important;
   justify-content: center;
+  outline: none;
 }
 
 #outer-container .bm-menu-wrap a {

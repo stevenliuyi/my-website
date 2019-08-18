@@ -268,7 +268,7 @@ class Page extends Component {
                   : this.props.title}
               </Texty>
             </h1>
-            <div className="cover-quote">
+            <div className="cover-quote noselect">
               <Texty
                 enter={textEnterRandom}
                 interval={0}
