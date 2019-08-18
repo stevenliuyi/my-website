@@ -141,6 +141,19 @@ class About extends Component {
     this.setState({ logoRotation: this.state.logoRotation + 180 })
   }
 
+  // work around to always show front side of number card
+  resetNumberCard = () => {
+    let front = document.querySelector('.slick-active .number-card-front')
+    let back = document.querySelector('.slick-active .number-card-back')
+    if (front == null || back == null) return
+    setTimeout(() => {
+      front.style.opacity = 1
+      front.style.transform = 'scaleY(1)'
+      back.style.opacity = 0
+      back.style.transform = 'scaleY(0)'
+    }, 500)
+  }
+
   componentDidMount() {
     this.updateTooltipPlacement()
     window.addEventListener('resize', this.updateTooltipPlacement)
@@ -559,7 +572,11 @@ class About extends Component {
               delay: this.props.delay + 1000
             }}
           >
-            <Slider className="number-card-slider" {...sliderSettings}>
+            <Slider
+              className="number-card-slider"
+              beforeChange={this.resetNumberCard}
+              {...sliderSettings}
+            >
               {numberCards}
             </Slider>
           </TweenOne>
