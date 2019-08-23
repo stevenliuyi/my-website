@@ -12,6 +12,7 @@ const Resume = asyncComponent(() => import('./components/Resume'))
 const Portfolio = asyncComponent(() => import('./components/Portfolio'))
 const Places = asyncComponent(() => import('./components/Places'))
 const Photography = asyncComponent(() => import('./components/Photography'))
+const PageNotFound = asyncComponent(() => import('./components/PageNotFound'))
 
 ReactDOM.render(
   <Router>
@@ -23,7 +24,7 @@ ReactDOM.render(
         <Route exact path="/portfolio" component={Portfolio} />
         <Route exact path="/places" component={Places} />
         <Route exact path="/photos" component={Photography} />
-        <Route path="/" component={App} />
+        <Route path="/" component={PageNotFound} />
       </Switch>
     </div>
   </Router>,
