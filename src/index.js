@@ -4,6 +4,7 @@ import './index.css'
 import App from './components/App'
 import asyncComponent from './components/AsyncComponent'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 import 'react-app-polyfill/ie11'
 import { unregister } from './registerServiceWorker'
 
@@ -24,6 +25,18 @@ ReactDOM.render(
         <Route exact path="/portfolio" component={Portfolio} />
         <Route exact path="/places" component={Places} />
         <Route exact path="/photos" component={Photography} />
+        {/* redirect to blog */}
+        <Route
+          path="/blog"
+          component={({ match }) => (
+            <Helmet>
+              <meta
+                http-equiv="refresh"
+                content={`0;URL=https://blog.yliu.io`}
+              />
+            </Helmet>
+          )}
+        />
         <Route path="/" component={PageNotFound} />
       </Switch>
     </div>
