@@ -195,21 +195,21 @@ class Places extends Component {
               This is a map marking all the places I've been on Earth. Beyond
               Earth? I also{' '}
               <a
-                href="https://yliu.io/orion"
+                href="https://go.yliu.io/orion"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 traveled
               </a>{' '}
               <a
-                href="https://yliu.io/insight"
+                href="https://go.yliu.io/insight"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 to
               </a>{' '}
               <a
-                href="https://yliu.io/mars2020"
+                href="https://go.yliu.io/mars2020"
                 target="_blank"
                 rel="noopener noreferrer"
               >
