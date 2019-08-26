@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import scrollToComponent from 'react-scroll-to-component'
 import Page from './Page'
 import { Container, Row, Col, Badge, Tooltip } from 'reactstrap'
 import ScrollAnim from 'rc-scroll-anim'
@@ -81,7 +80,6 @@ class Resume extends Component {
   }
 
   componentDidMount() {
-    scrollToComponent(this.page, { align: 'top', duration: 1 })
     this.setPhotoSize()
     window.addEventListener('scroll', this.handleScroll)
     window.addEventListener('resize', this.updateSize)

@@ -4,7 +4,11 @@ import 'babel-polyfill'
 import ScrollAnim from 'rc-scroll-anim'
 import 'bootstrap/dist/css/bootstrap.css'
 import { FaAngleDoubleUp } from 'react-icons/fa'
-import scrollToComponent from 'react-scroll-to-component'
+import {
+  animateScroll as scroll,
+  Element as ScrollElement,
+  scroller
+} from 'react-scroll'
 import { isMobile } from 'react-device-detect'
 import Menu from 'react-burger-menu/lib/menus/stack'
 import Front from './Front'
@@ -38,10 +42,10 @@ class App extends Component {
       if (backElem != null) {
         backElem.scrollIntoView()
       } else {
-        scrollToComponent(this.top, { align: 'top' })
+        scroll.scrollToTop()
       }
     } else {
-      scrollToComponent(this.top, { align: 'top' })
+      scroll.scrollToTop()
     }
 
     this.handleScroll()
@@ -111,11 +115,11 @@ class App extends Component {
   }
 
   scrollToNav = () => {
-    scrollToComponent(this.nav, { align: 'top' })
+    scroller.scrollTo('nav', { duration: 800, smooth: 'easeInOutQuad' })
   }
 
   scrollToTop = () => {
-    scrollToComponent(this.top, { align: 'top', duration: 500 })
+    scroll.scrollToTop({ duration: 1000, smooth: 'easeInOutQuad' })
   }
 
   render() {
@@ -138,13 +142,12 @@ class App extends Component {
         }}
       >
         <Front
-          ref={el => (this.top = el)}
           scrollToNav={this.scrollToNav}
           onTyped={() => {
             if (!this.state.linkShown) this.setState({ linkShown: true })
           }}
         />
-        <div className="nav" ref={el => (this.nav = el)}>
+        <ScrollElement name="nav" className="nav">
           <div className="nav-wrap noselect">
             <Link className="nav-list" to="about-page" onFocus={this.onFocus}>
               About
@@ -196,7 +199,7 @@ class App extends Component {
               </Menu>
             </div>
           </div>
-        </div>
+        </ScrollElement>
         <About {...this.state} />
         <Skills {...this.state} />
         <Research {...this.state} />

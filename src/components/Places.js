@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import scrollToComponent from 'react-scroll-to-component'
 import ScrollAnim from 'rc-scroll-anim'
 import Page from './Page'
 import {
@@ -158,7 +157,6 @@ class Places extends Component {
   }
 
   componentDidMount() {
-    scrollToComponent(this.page, { align: 'top', duration: 1 })
     setTimeout(() => {
       ReactTooltip.rebuild()
     }, 100)

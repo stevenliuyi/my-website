@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { renderToString } from 'react-dom/server'
-import scrollToComponent from 'react-scroll-to-component'
 import ScrollAnim from 'rc-scroll-anim'
 import Gallery from 'react-photo-gallery'
 import Measure from 'react-measure'
@@ -36,10 +35,6 @@ class Portfolio extends Component {
     currentImage: 0,
     lightboxIsOpen: false,
     delay: 150
-  }
-
-  componentDidMount() {
-    scrollToComponent(this.page, { align: 'top', duration: 1 })
   }
 
   openLightbox = (event, obj) => {

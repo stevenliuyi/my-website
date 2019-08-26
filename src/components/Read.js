@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import scrollToComponent from 'react-scroll-to-component'
 import Page from './Page'
 import Book from './Book'
 import BookDetail from './BookDetail'
@@ -7,6 +6,7 @@ import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import InfiniteScroll from 'react-infinite-scroller'
 import { IoIosSearch } from 'react-icons/io'
+import { scroller } from 'react-scroll'
 
 const ScrollOverPack = ScrollAnim.OverPack
 
@@ -50,7 +50,6 @@ class Read extends Component {
       .then(m => m.default)
       .then(data => this.setState({ readingList: data }))
 
-    scrollToComponent(this.page, { align: 'top', duration: 1 })
     this.calcListWidth()
     window.addEventListener('resize', this.calcListWidth)
   }
@@ -65,10 +64,9 @@ class Read extends Component {
       if (bookElem != null) {
         bookElem.scrollIntoView()
       } else {
-        scrollToComponent(this.page, {
-          align: 'top',
-          duration: 1,
-          offset: window.innerHeight
+        scroller.scrollTo('cover-content', {
+          smooth: false,
+          containerId: 'page-wrap'
         })
       }
     }
@@ -79,10 +77,9 @@ class Read extends Component {
 
   onSelectBook = idx => {
     this.setState({ currentIdx: idx })
-    scrollToComponent(this.page, {
-      align: 'top',
-      offset: window.innerHeight,
-      duration: 1
+    scroller.scrollTo('cover-content', {
+      smooth: false,
+      containerId: 'page-wrap'
     })
   }
 

@@ -3,7 +3,7 @@ import ProgressiveImage from 'react-progressive-image-loading'
 import { Link } from 'react-router-dom'
 import { FiX } from 'react-icons/fi'
 import { FaAngleDoubleDown } from 'react-icons/fa'
-import scrollToComponent from 'react-scroll-to-component'
+import { Element as ScrollElement, scroller } from 'react-scroll'
 import { isMobile } from 'react-device-detect'
 import Menu from 'react-burger-menu/lib/menus/pushRotate'
 import Texty from 'rc-texty'
@@ -295,20 +295,27 @@ class Page extends Component {
                 delay: this.props.delay + 1000
               }}
               className="scroll-to-content"
-              onClick={() => scrollToComponent(this.content, { align: 'top' })}
+              onClick={() =>
+                scroller.scrollTo('cover-content', {
+                  duration: 800,
+                  smooth: 'easeInOutQuad',
+                  offset: -50,
+                  containerId: 'page-wrap'
+                })
+              }
             >
               <div className="cover-scroll-arrow">
                 <FaAngleDoubleDown size={24} />
               </div>
             </TweenOne>
           </div>
-          <div
-            ref={el => (this.content = el)}
+          <ScrollElement
+            name="cover-content"
             className="cover-content"
             id="cover-content"
           >
             {this.props.children}
-          </div>
+          </ScrollElement>
           {(this.props.showFooter == null || this.props.showFooter) && (
             <PageFooter footerStyle={this.props.footerStyle} />
           )}
