@@ -154,40 +154,42 @@ class Photography extends Component {
           delay={this.state.delay}
           {...this.props}
         >
-          <div className="cover-text">
-            <span>
-              All the photographs here are published on{' '}
-              <a
-                href="https://unsplash.com/?utm_source=yliu&utm_medium=referral"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Unsplash
-              </a>{' '}
-              under{' '}
-              <a
-                href="https://unsplash.com/license"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                a CC0-like license
-              </a>{' '}
-              which allows everyone to use them freely. Most of the photos are
-              also dual-licensed under{' '}
-              <a href="https://creativecommons.org/licenses/by-sa/4.0/">
-                CC BY-SA 4.0
-              </a>{' '}
-              on{' '}
-              <a
-                href="https://commons.wikimedia.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Wikimedia Commons
-              </a>
-              .
-            </span>
-          </div>
+          {this.state.photos.length > 0 && (
+            <div className="cover-text">
+              <span>
+                All the photographs here are published on{' '}
+                <a
+                  href="https://unsplash.com/?utm_source=yliu&utm_medium=referral"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Unsplash
+                </a>{' '}
+                under{' '}
+                <a
+                  href="https://unsplash.com/license"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  a CC0-like license
+                </a>{' '}
+                which allows everyone to use them freely. Most of the photos are
+                also dual-licensed under{' '}
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  CC BY-SA 4.0
+                </a>{' '}
+                on{' '}
+                <a
+                  href="https://commons.wikimedia.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Wikimedia Commons
+                </a>
+                .
+              </span>
+            </div>
+          )}
           <div className="photography-list" style={{ height: '100%' }}>
             <Measure
               bounds
@@ -239,6 +241,28 @@ class Photography extends Component {
               showCloseButton={isMobile}
               backdropClosesModal={true}
             />
+            {this.state.photos.length === 0 && (
+              <div className="unsplash-error">
+                <div
+                  style={{ marginTop: '20px' }}
+                  className="unsplash-error-title"
+                >
+                  Oops!
+                </div>
+                <div style={{ marginTop: '20px' }}>
+                  Failed to load photos. Try refresh the page or check the link
+                  below for my photos on{' '}
+                  <a
+                    href="https://unsplash.com/?utm_source=yliu&utm_medium=referral"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Unsplash
+                  </a>
+                  .
+                </div>
+              </div>
+            )}
             {!this.state.hasMorePhotos && (
               <a
                 href="https://unsplash.com/@stevenliuyi?utm_source=yliu&utm_medium=referral"

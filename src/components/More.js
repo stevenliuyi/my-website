@@ -12,13 +12,17 @@ const ScrollOverPack = ScrollAnim.OverPack
 
 class More extends Component {
   state = {
-    blogCount: '40+',
-    photoCount: '30+'
+    blogCount: '60+',
+    photoCount: '40+'
   }
 
   componentDidMount() {
-    getBlogCount().then(blogCount => this.setState({ blogCount }))
-    getPhotoCount().then(photoCount => this.setState({ photoCount }))
+    getBlogCount().then(blogCount => {
+      if (blogCount != null) this.setState({ blogCount })
+    })
+    getPhotoCount().then(photoCount => {
+      if (photoCount != null) this.setState({ photoCount })
+    })
   }
 
   render() {

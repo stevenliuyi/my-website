@@ -29,13 +29,13 @@ export const setVhs = (isHomepage = true) => {
 export const getBlogCount = () =>
   fetch('https://blog.yliu.io/post-count')
     .then(data => data.text())
-    .catch(err => 0)
+    .catch(err => null)
 
 // get number of photos
 export const getPhotoCount = () =>
   fetchUnsplash()
     .then(profile => profile.total_photos)
-    .catch(err => 0)
+    .catch(err => null)
 
 // get image URL
 export const getImageURL = (path, options) => {

@@ -2477,6 +2477,31 @@ a .footer-dotted-text:hover {
   color: #555;
 }
 
+.unsplash-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #555;
+}
+
+.unsplash-error a {
+  color: #555;
+  border-bottom: dashed 1px #555;
+}
+
+.unsplash-error a:hover {
+  border-bottom: dashed 1px #999;
+  color: #999;
+}
+
+.unsplash-error-title {
+  font-size: 48px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+}
+
 .unsplash-link {
   background-color: #fff;
   padding: 2px 6px;

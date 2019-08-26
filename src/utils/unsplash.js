@@ -12,8 +12,8 @@ export const fetchUnsplash = function(requestString = '') {
 }
 
 export const fetchUnsplashPhotos = function(page = 1) {
-  return fetchUnsplash(`photos?order_by=popular&per_page=30&page=${page}`).then(
-    photos =>
+  return fetchUnsplash(`photos?order_by=popular&per_page=30&page=${page}`)
+    .then(photos =>
       photos.map(p => ({
         id: p.id,
         src: `${p.urls.raw}&w=${window.innerWidth}&h=${window.innerHeight}&dpr=${window.devicePixelRatio}&fit=max&q=80&auto=format`,
@@ -25,7 +25,8 @@ export const fetchUnsplashPhotos = function(page = 1) {
         width: p.width,
         height: p.height
       }))
-  )
+    )
+    .catch(err => null)
 }
 
 export const triggerUnsplashDownload = function(downloadLocation) {
