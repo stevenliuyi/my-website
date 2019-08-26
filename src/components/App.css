@@ -377,12 +377,15 @@ a {
   fill: #eee;
 }
 
+.nav button {
+  outline: none;
+}
+
 /* Styling of overlay */
 .nav .bm-overlay {
   background: rgba(0, 0, 0, 0.1);
   right: 0px;
 }
-
 
 /* subpage burger menu styles */
 
@@ -511,6 +514,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
   color: #eee;
   background-color: #0d8aba;
   letter-spacing: 3px;
+}
+
+#outer-container button {
+  outline: none;
 }
 
 /* Styling of overlay */
