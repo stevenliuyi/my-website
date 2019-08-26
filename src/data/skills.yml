@@ -18,9 +18,6 @@ Languages:
   - skill: Fortran
     value: 0.8
     logo: fortran.svg
-  - skill: MATLAB
-    value: 0.65
-    logo: matlab.png
   - skill: Java
     value: 0.25
     logo: java.svg
@@ -36,6 +33,9 @@ Languages:
   - skill: Wolfram
     value: 0.75
     logo: wolfram.png
+  - skill: Julia
+    value: 0.4
+    logo: julia.svg
 
 Web Development:
   - skill: CSS
@@ -204,33 +204,6 @@ Math/Engineering Softwares:
   - skill: placeholder10
     value: 0 
 
-Markup Languages:
-  - skill: HTML
-    value: 0.75
-    logo: html5.png
-  - skill: LaTeX
-    value: 0.8
-    logo: latex.svg
-  - skill: XML
-    value: 0.5
-    logo: xml.png
-  - skill: JSON
-    value: 0.6
-    logo: json.svg
-  - skill: YAML
-    value: 0.4
-    logo: yaml.png
-  - skill: placeholder6
-    value: 0
-  - skill: placeholder7
-    value: 0
-  - skill: placeholder8
-    value: 0
-  - skill: placeholder9
-    value: 0
-  - skill: placeholder10
-    value: 0 
-
 Design:
   - skill: Photoshop
     value: 0.8
@@ -260,6 +233,9 @@ Design:
     value: 0 
 
 Miscellaneous:
+  - skill: LaTeX
+    value: 0.8
+    logo: latex.svg
   - skill: Vim
     value: 0.65
     logo: vim.png
@@ -275,13 +251,11 @@ Miscellaneous:
   - skill: Jupyter
     value: 0.75
     logo: jupyter.svg
-  - skill: placeholder6
-    value: 0
   - skill: placeholder7
     value: 0
   - skill: placeholder8
     value: 0
-  - skill: placeholder10
-    value: 0
   - skill: placeholder9
+    value: 0
+  - skill: placeholder10
     value: 0 
