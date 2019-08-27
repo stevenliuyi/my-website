@@ -3,7 +3,7 @@ import './App.css'
 import 'babel-polyfill'
 import ScrollAnim from 'rc-scroll-anim'
 import 'bootstrap/dist/css/bootstrap.css'
-import { FaAngleDoubleUp } from 'react-icons/fa'
+import { FaAngleDoubleUp, FaCaretRight } from 'react-icons/fa'
 import {
   animateScroll as scroll,
   Element as ScrollElement,
@@ -24,6 +24,14 @@ import { setVhs, gaConfig } from '../utils/utils.js'
 
 const Link = ScrollAnim.Link
 const EventListener = ScrollAnim.Event
+
+const pageIds = {
+  About: 'about-page',
+  Skills: 'skill-page',
+  Research: ' research-page',
+  Projects: 'project-page',
+  More: 'more-page'
+}
 
 class App extends Component {
   state = {
@@ -78,7 +86,20 @@ class App extends Component {
     this.setState({ width: document.documentElement.clientWidth })
   }
 
-  onMenuItemClick = () => this.setState({ menuOpen: false })
+  onMenuItemClick = section => {
+    this.setState({ menuOpen: false, currentSection: section })
+
+    // hack to navigate to the correct poisition
+    scroller.scrollTo(pageIds[section], { smooth: false })
+    setTimeout(() => {
+      scroller.scrollTo(pageIds[section], { smooth: false })
+    }, 10)
+  }
+
+  activeMenuItem = section =>
+    this.state.currentSection === section
+      ? 'nav-burger-item'
+      : 'nav-burger-item nav-burger-inactive-item'
 
   handleScroll() {
     let nav = document.querySelector('.nav')
@@ -181,21 +202,18 @@ class App extends Component {
                 <div className="nav-logo" onClick={this.scrollToTop}>
                   <Logo radius={30} colors={['#aaa', '#aaa']} />
                 </div>
-                <Link to="about-page" onClick={this.onMenuItemClick}>
-                  About
-                </Link>
-                <Link to="skill-page" onClick={this.onMenuItemClick}>
-                  Skills
-                </Link>
-                <Link to="research-page" onClick={this.onMenuItemClick}>
-                  Research
-                </Link>
-                <Link to="project-page" onClick={this.onMenuItemClick}>
-                  Projects
-                </Link>
-                <Link to="more-page" onClick={this.onMenuItemClick}>
-                  More
-                </Link>
+                {Object.keys(pageIds).map(section => (
+                  <div
+                    key={section}
+                    className="nav-burger-item-wrap"
+                    onClick={() => this.onMenuItemClick(section)}
+                  >
+                    <span className={this.activeMenuItem(section)}>
+                      <FaCaretRight />
+                    </span>
+                    <span>{section}</span>
+                  </div>
+                ))}
               </Menu>
             </div>
           </div>
