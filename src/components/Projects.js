@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import ScrollAnim from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import Texty from 'rc-texty'
+import { TiChevronLeft, TiChevronRight } from 'react-icons/ti'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import ProjectCard from './ProjectCard'
 
 const ScrollOverPack = ScrollAnim.OverPack
@@ -52,6 +56,18 @@ const projects = [
   }
 ]
 
+const sliderSettings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  adapativeHeight: true,
+  swipe: true,
+  nextArrow: <TiChevronRight size={32} color={'#222'} />,
+  prevArrow: <TiChevronLeft size={32} color={'#222'} />
+}
+
 class Projects extends Component {
   state = {
     cardExpanded: false,
@@ -73,6 +89,16 @@ class Projects extends Component {
   }
 
   render() {
+    const projectCards = projects.map((project, idx) => (
+      <ProjectCard
+        key={idx}
+        expandCard={this.expandCard}
+        collapseCard={this.collapseCard}
+        {...project}
+        {...this.state}
+      />
+    ))
+
     return (
       <ScrollOverPack
         id="project-page"
@@ -92,28 +118,39 @@ class Projects extends Component {
             duration: 1000
           }}
         />
-        <TweenOne
-          className="projects"
-          animation={{
-            opacity: 1,
-            translateY: 0,
-            delay: this.props.delay + 300,
-            duration: 1500,
-            onComplete: e => {
-              this.setState({ projectsLoaded: true })
-            }
-          }}
-        >
-          {projects.map((project, idx) => (
-            <ProjectCard
-              key={idx}
-              expandCard={this.expandCard}
-              collapseCard={this.collapseCard}
-              {...project}
-              {...this.state}
-            />
-          ))}
-        </TweenOne>
+        {window.innerWidth > 645 ? (
+          <TweenOne
+            className="projects"
+            animation={{
+              opacity: 1,
+              translateY: 0,
+              delay: this.props.delay + 300,
+              duration: 1500,
+              onComplete: e => {
+                this.setState({ projectsLoaded: true })
+              }
+            }}
+          >
+            {projectCards}
+          </TweenOne>
+        ) : (
+          <TweenOne
+            className="projects-slider-wrap"
+            animation={{
+              opacity: 1,
+              translateY: 0,
+              delay: this.props.delay + 300,
+              duration: 1500,
+              onComplete: e => {
+                this.setState({ projectsLoaded: true })
+              }
+            }}
+          >
+            <Slider className="projects-slider" {...sliderSettings}>
+              {projectCards}
+            </Slider>
+          </TweenOne>
+        )}
       </ScrollOverPack>
     )
   }
