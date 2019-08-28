@@ -161,6 +161,7 @@ class Page extends Component {
             className="noselect"
             pageWrapId="page-wrap"
             outerContainerId="outer-container"
+            width={Math.min(300, window.innerWidth*.6)}
             customBurgerIcon={
               <div>
                 <Logo radius={12} colors={['#555', '#555']} />

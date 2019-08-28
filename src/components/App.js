@@ -10,7 +10,7 @@ import {
   scroller
 } from 'react-scroll'
 import { isMobile } from 'react-device-detect'
-import Menu from 'react-burger-menu/lib/menus/stack'
+import Menu from 'react-burger-menu/lib/menus/slide'
 import Front from './Front'
 import About from './About'
 import Skills from './Skills'
@@ -194,9 +194,18 @@ class App extends Component {
             <div className="nav-burger">
               <Menu
                 right
+                width={Math.min(300, window.innerWidth*.6)}
                 isOpen={this.state.menuOpen}
-                onStateChange={state =>
+                onStateChange={state => {
                   this.setState({ menuOpen: state.isOpen })
+                  const menu = document.querySelector('.bm-menu')
+                  if (menu == null) return
+                  if (state.isOpen) {
+                     menu.classList.add('bm-menu-active')
+                  } else {
+                     menu.classList.remove('bm-menu-active')
+                  }
+                }
                 }
               >
                 <div className="nav-logo" onClick={this.scrollToTop}>
