@@ -42,7 +42,8 @@ const numberCards = [
         >
           Erdős number
         </a>{' '}
-        is one's collabration distance to mathematican Paul Erdös.
+        is one's collabration distance to Paul Erdős, one of my favorite
+        mathematicans.
       </span>
     }
   />,
