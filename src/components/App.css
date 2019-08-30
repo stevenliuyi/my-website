@@ -554,7 +554,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 #outer-container .bm-current-item {
   background-color: rgba(0, 0, 0, .05);
-  cursor: default;
+  cursor: default !important;
 }
 
 #outer-container .bm-menu-wrap a:not(.bm-current-item):hover {

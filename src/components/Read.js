@@ -93,6 +93,7 @@ class Read extends Component {
           author="Oscar Wilde"
           backgroundFilename="olia-gozha-678463-unsplash"
           onTitleClick={() => this.setState({ currentIdx: -1 })}
+          menuLinkActive={this.state.currentIdx !== -1}
           delay={this.state.delay}
           titleStyle={{
             cursor: this.state.currentIdx === -1 ? 'inherit' : 'pointer'

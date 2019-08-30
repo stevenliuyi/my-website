@@ -38,7 +38,8 @@ const menuList = [
 
 class Page extends Component {
   state = {
-    fontSize: 36
+    fontSize: 36,
+    isMenuOpen: false
   }
 
   handleScroll = e => {
@@ -161,7 +162,9 @@ class Page extends Component {
             className="noselect"
             pageWrapId="page-wrap"
             outerContainerId="outer-container"
-            width={Math.min(300, window.innerWidth*.6)}
+            isOpen={this.state.isMenuOpen}
+            onStateChange={state => this.setState({ isMenuOpen: state.isOpen })}
+            width={Math.min(300, window.innerWidth * 0.6)}
             customBurgerIcon={
               <div>
                 <Logo radius={12} colors={['#555', '#555']} />
@@ -180,7 +183,8 @@ class Page extends Component {
             {menuList.map(item => (
               <Link
                 className={
-                  item.pathname === this.props.location.pathname
+                  item.pathname === this.props.location.pathname &&
+                  !this.props.menuLinkActive
                     ? 'bm-current-item'
                     : ''
                 }
@@ -189,6 +193,15 @@ class Page extends Component {
                   pathname: item.pathname,
                   backId: this.props.location.backId
                 }}
+                onClick={
+                  item.pathname === this.props.location.pathname &&
+                  this.props.menuLinkActive
+                    ? () => {
+                        this.props.onTitleClick()
+                        this.setState({ isMenuOpen: false })
+                      }
+                    : null
+                }
               >
                 {item.title}
               </Link>
