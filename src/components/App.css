@@ -1970,7 +1970,7 @@ a .footer-dotted-text:hover {
 }
 
 .book-detail-img:hover > img {
-  transition: all .5s;
+  transition: all .5s ease !important;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, .2);
 }
 
