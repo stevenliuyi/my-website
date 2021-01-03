@@ -5,7 +5,7 @@ const api = require('./api')
 function writeCounts(read, portfolio, github, commits) {
   const text = `read: ${read}\r\nportfolio: ${portfolio}\r\ngithub: ${github}\r\ncommits: ${commits}`
   const filename = 'src/data/counts.yml'
-  fs.writeFile(filename, text, function(e) {
+  fs.writeFile(filename, text, function (e) {
     if (e) {
       console.log(e)
     } else {
@@ -27,10 +27,10 @@ try {
 
   let githubCommitCount = 0
   let promises = []
-  api.fetchGithub('user/repos').then(data => {
-    data.forEach(repo => {
+  api.fetchGithub('user/repos').then((data) => {
+    data.forEach((repo) => {
       promises.push(
-        api.fetchGithubCommitCount(repo.name).then(count => {
+        api.fetchGithubCommitCount(repo.name).then((count) => {
           if (count > 0) githubCommitCount += count
         })
       )
@@ -38,7 +38,7 @@ try {
 
     let githubRepoCount = 0
     promises.push(
-      api.fetchGithubCount().then(count => (githubRepoCount = count))
+      api.fetchGithubCount().then((count) => (githubRepoCount = count))
     )
 
     Promise.all(promises).then(() =>

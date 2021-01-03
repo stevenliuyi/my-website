@@ -10,7 +10,7 @@ class MoreButton extends Component {
           opacity: 0,
           translateY: 50,
           type: 'from',
-          delay: this.props.delay
+          delay: this.props.delay,
         }}
         className="more-button noselect"
       >

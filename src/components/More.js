@@ -13,14 +13,14 @@ const ScrollOverPack = ScrollAnim.OverPack
 class More extends Component {
   state = {
     blogCount: '60+',
-    photoCount: '40+'
+    photoCount: '40+',
   }
 
   componentDidMount() {
-    getBlogCount().then(blogCount => {
+    getBlogCount().then((blogCount) => {
       if (blogCount != null) this.setState({ blogCount })
     })
-    getPhotoCount().then(photoCount => {
+    getPhotoCount().then((photoCount) => {
       if (photoCount != null) this.setState({ photoCount })
     })
   }
@@ -49,7 +49,7 @@ class More extends Component {
             opacity: 1,
             translateX: 0,
             delay: this.props.delay + 100,
-            duration: 1000
+            duration: 1000,
           }}
         />
         <div className="more-items">
@@ -68,7 +68,7 @@ class More extends Component {
                   transform: 'translateY(32px)',
                   clipPath: 'polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%)',
                   WebkitClipPath: 'polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%)',
-                  display: 'inline-block'
+                  display: 'inline-block',
                 }}
               />
             }

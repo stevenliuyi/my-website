@@ -8,16 +8,16 @@ const data = {
     3: ['\ud83c\udf8a', `Happy New Year ${new Date().getFullYear()}!`],
     4: [
       '\ud83c\udf4e',
-      "Today is Issac Newton's Birthday! (or Dec 25 under the Julian calendar)"
+      "Today is Issac Newton's Birthday! (or Dec 25 under the Julian calendar)",
     ],
     17: ['\ud83c\udf82', 'Tomorrow is my birthday!'],
-    18: ['\ud83c\udf82', 'Today is my birthday!']
+    18: ['\ud83c\udf82', 'Today is my birthday!'],
   },
   2: {
     2: ['\ud83d\udc3f', 'Happy Groundhog Day!'],
     14: ['\ud83c\udf39', 'Happy Valentine’s Day!'],
     15: ['\ud83c\udf39', 'Happy Valentine’s Day!'],
-    16: ['\ud83c\udf39', 'Happy Valentine’s Day!']
+    16: ['\ud83c\udf39', 'Happy Valentine’s Day!'],
   },
   3: {
     8: ['\ud83d\udc69', "Happy International Women's Day!"],
@@ -26,11 +26,11 @@ const data = {
     16: ['\u2618', "Happy St. Patrick's Day!"],
     17: ['\u2618', "Happy St. Patrick's Day!"],
     18: ['\u2618', "Happy St. Patrick's Day!"],
-    22: ['\ud83d\udca7', 'Happy World Water Day!']
+    22: ['\ud83d\udca7', 'Happy World Water Day!'],
   },
   4: {
     22: ['\ud83c\udf0d', 'Happy Earth Day!'],
-    25: ['\ud83e\uddec', 'Happy DNA Day!']
+    25: ['\ud83e\uddec', 'Happy DNA Day!'],
   },
   6: {
     1: ['\ud83c\udf08', 'LGBT Pride Month begins!'],
@@ -39,46 +39,46 @@ const data = {
     18: ['\ud83c\udf63', 'Happy International Sushi Day!'],
     20: [
       '\ud83c\udfd6',
-      'Happy Summer Solstice! (or Winter Solstice for those who live in the Southern Hemisphere)'
+      'Happy Summer Solstice! (or Winter Solstice for those who live in the Southern Hemisphere)',
     ],
     21: [
       '\ud83c\udfd6',
-      'Happy Summer Solstice! (or Winter Solstice for those who live in the Southern Hemisphere)'
+      'Happy Summer Solstice! (or Winter Solstice for those who live in the Southern Hemisphere)',
     ],
     22: [
       '\ud83c\udfd6',
-      'Happy Summer Solstice! (or Winter Solstice for those who live in the Southern Hemisphere)'
-    ]
+      'Happy Summer Solstice! (or Winter Solstice for those who live in the Southern Hemisphere)',
+    ],
   },
   7: {
-    7: ['\ud83c\udf6b', 'Happy World Chocolate Day!']
+    7: ['\ud83c\udf6b', 'Happy World Chocolate Day!'],
   },
   9: {
     12: ['\ud83d\udcbb', "Happy International Programmers' Day!"],
     13: ['\ud83d\udcbb', "Happy International Programmers' Day!"],
-    21: ['\ud83d\udd4a', 'Happy International Day of Peace!']
+    21: ['\ud83d\udd4a', 'Happy International Day of Peace!'],
   },
   10: {
     16: ['\ud83c\udf5a', 'Happy World Food Day!'],
     25: ['\ud83c\udf5d', 'Happy World Pasta Day!'],
     30: ['\ud83c\udf83', 'Happy Halloween!'],
-    31: ['\ud83c\udf83', 'Happy Halloween!']
+    31: ['\ud83c\udf83', 'Happy Halloween!'],
   },
   11: {
-    1: ['\ud83c\udf83', 'Happy Halloween!']
+    1: ['\ud83c\udf83', 'Happy Halloween!'],
   },
   12: {
     20: [
       '\u26c4',
-      'Happy Winter Solstice! (or Summer Solstice for those who live in the Southern Hemisphere)'
+      'Happy Winter Solstice! (or Summer Solstice for those who live in the Southern Hemisphere)',
     ],
     21: [
       '\u26c4',
-      'Happy Winter Solstice! (or Summer Solstice for those who live in the Southern Hemisphere)'
+      'Happy Winter Solstice! (or Summer Solstice for those who live in the Southern Hemisphere)',
     ],
     22: [
       '\u26c4',
-      'Happy Winter Solstice! (or Summer Solstice for those who live in the Southern Hemisphere)'
+      'Happy Winter Solstice! (or Summer Solstice for those who live in the Southern Hemisphere)',
     ],
     23: ['\ud83c\udf84', 'Merry Christmas!'],
     24: ['\ud83c\udf84', 'Merry Christmas!'],
@@ -86,33 +86,33 @@ const data = {
     26: ['\ud83c\udf84', 'Merry Christmas!'],
     27: ['\ud83c\udf84', 'Merry Christmas!'],
     30: ['\ud83c\udf8a', `Happy New Year ${new Date().getFullYear() + 1}!`],
-    31: ['\ud83c\udf8a', `Happy New Year ${new Date().getFullYear() + 1}!`]
-  }
+    31: ['\ud83c\udf8a', `Happy New Year ${new Date().getFullYear() + 1}!`],
+  },
 }
 
 const data2 = {
   5: {
     2: {
       0: ['\ud83d\udc69', "Happy Mother's Day!"],
-      6: ['\ud83d\udc69', "Happy Mother's Day!"]
+      6: ['\ud83d\udc69', "Happy Mother's Day!"],
     },
     3: {
-      1: ['\ud83d\udc69', "Happy Mother's Day!"]
-    }
+      1: ['\ud83d\udc69', "Happy Mother's Day!"],
+    },
   },
   6: {
     3: {
       0: ['\ud83e\uddd4', "Happy Father's Day!"],
-      6: ['\ud83e\uddd4', "Happy Father's Day!"]
+      6: ['\ud83e\uddd4', "Happy Father's Day!"],
     },
     4: {
-      1: ['\ud83e\uddd4', "Happy Father's Day!"]
-    }
+      1: ['\ud83e\uddd4', "Happy Father's Day!"],
+    },
   },
   8: {
     1: {
-      5: ['\ud83c\udf7a', 'Happy International Beer Day!']
-    }
+      5: ['\ud83c\udf7a', 'Happy International Beer Day!'],
+    },
   },
   11: {
     4: {
@@ -120,31 +120,31 @@ const data2 = {
       3: ['\ud83e\udd83', 'Happy Thanksgiving!'],
       4: ['\ud83e\udd83', 'Happy Thanksgiving!'],
       5: ['\ud83e\udd83', 'Happy Thanksgiving!'],
-      6: ['\ud83e\udd83', 'Happy Thanksgiving!']
-    }
-  }
+      6: ['\ud83e\udd83', 'Happy Thanksgiving!'],
+    },
+  },
 }
 
 const lunarData = {
   正月: {
     14: ['\ud83c\udfee', 'Happy Latern Festival!'],
     15: ['\ud83c\udfee', 'Happy Latern Festival!'],
-    16: ['\ud83c\udfee', 'Happy Latern Festival!']
+    16: ['\ud83c\udfee', 'Happy Latern Festival!'],
   },
   五月: {
     4: ['\ud83d\udc32', 'Happy Dragon Boat Festival!'],
     5: ['\ud83d\udc32', 'Happy Dragon Boat Festival!'],
-    6: ['\ud83d\udc32', 'Happy Dragon Boat Festival!']
+    6: ['\ud83d\udc32', 'Happy Dragon Boat Festival!'],
   },
   八月: {
     14: ['\ud83e\udd6e', 'Happy Mid-Autumn Festival!'],
     15: ['\ud83e\udd6e', 'Happy Mid-Autumn Festival!'],
-    16: ['\ud83e\udd6e', 'Happy Mid-Autumn Festival!']
+    16: ['\ud83e\udd6e', 'Happy Mid-Autumn Festival!'],
   },
   十二月: {
     10: ['\ud83c\udf82', 'Tomorrow is my lunar birthday!'],
-    11: ['\ud83c\udf82', 'Today is my lunar birthday!']
-  }
+    11: ['\ud83c\udf82', 'Today is my lunar birthday!'],
+  },
 }
 
 const zodiacEmoji = {
@@ -159,12 +159,12 @@ const zodiacEmoji = {
   猴: ['\ud83d\udc12', 'Monkey'],
   鸡: ['\ud83d\udc13', 'Rooster'],
   狗: ['\ud83d\udc15', 'Dog'],
-  猪: ['\ud83d\udc16', 'Pig']
+  猪: ['\ud83d\udc16', 'Pig'],
 }
 
 // calculate Easter
 // script from https://gist.github.com/johndyer/0dffbdd98c2046f41180c051f378f343
-const getEaster = year => {
+const getEaster = (year) => {
   var f = Math.floor,
     // Golden Number - 1
     G = year % 19,
@@ -231,7 +231,7 @@ export const holidayEmoji = () => {
   if (lunarMonthName === '正月' && [1, 2, 3, 4, 5, 6, 7].includes(lunarDay))
     emoji = [
       zodiacEmoji[zodiac][0],
-      `Happy Lunar New Year of the ${zodiacEmoji[zodiac][1]}!`
+      `Happy Lunar New Year of the ${zodiacEmoji[zodiac][1]}!`,
     ]
   if (emoji != null) return ifEmoji(emoji[0]) ? emoji : null
 

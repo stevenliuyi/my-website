@@ -16,33 +16,33 @@ import { setVhs, getImageURL, gaConfig } from '../utils/utils'
 const menuList = [
   {
     pathname: '/resume',
-    title: 'Resume'
+    title: 'Resume',
   },
   {
     pathname: '/read',
-    title: 'Reading List'
+    title: 'Reading List',
   },
   {
     pathname: '/portfolio',
-    title: 'Portfolio'
+    title: 'Portfolio',
   },
   {
     pathname: '/photos',
-    title: 'Photography'
+    title: 'Photography',
   },
   {
     pathname: '/places',
-    title: 'Places'
-  }
+    title: 'Places',
+  },
 ]
 
 class Page extends Component {
   state = {
     fontSize: 36,
-    isMenuOpen: false
+    isMenuOpen: false,
   }
 
-  handleScroll = e => {
+  handleScroll = (e) => {
     // For the "push-rotate" menu, window cannot be used as scrolling element because the menu requires
     // that the outer container has 100vh height and therefore is not scrollable.
     // It also affects the infinite scrollers on some pages (i.e. Photography, Read).
@@ -65,9 +65,9 @@ class Page extends Component {
       document.querySelector('.cover-image'),
       document.querySelector('.cover-quote'),
       document.querySelector('.scroll-to-content'),
-      document.querySelector('.cover-canvas')
+      document.querySelector('.cover-canvas'),
     ]
-    blurElements.forEach(el => {
+    blurElements.forEach((el) => {
       if (el != null) {
         el.style.opacity = opacity
         el.style.filter = `blur(${blur}px)`
@@ -111,7 +111,7 @@ class Page extends Component {
   setVhStyles = () => setVhs(false)
 
   // split text into words for animation
-  getSplit = e => {
+  getSplit = (e) => {
     const t = e.split(' ')
     const c = []
     t.forEach((str, i) => {
@@ -163,7 +163,9 @@ class Page extends Component {
             pageWrapId="page-wrap"
             outerContainerId="outer-container"
             isOpen={this.state.isMenuOpen}
-            onStateChange={state => this.setState({ isMenuOpen: state.isOpen })}
+            onStateChange={(state) =>
+              this.setState({ isMenuOpen: state.isOpen })
+            }
             width={Math.min(300, window.innerWidth * 0.6)}
             customBurgerIcon={
               <div>
@@ -180,7 +182,7 @@ class Page extends Component {
             >
               Back To Home
             </Link>
-            {menuList.map(item => (
+            {menuList.map((item) => (
               <Link
                 className={
                   item.pathname === this.props.location.pathname &&
@@ -191,7 +193,7 @@ class Page extends Component {
                 key={item.title}
                 to={{
                   pathname: item.pathname,
-                  backId: this.props.location.backId
+                  backId: this.props.location.backId,
                 }}
                 onClick={
                   item.pathname === this.props.location.pathname &&
@@ -220,7 +222,7 @@ class Page extends Component {
                         f: 'auto',
                         c: 'fill',
                         w: Math.min(window.innerWidth * 0.3, 800),
-                        h: Math.min(window.innerHeight * 0.3, 800)
+                        h: Math.min(window.innerHeight * 0.3, 800),
                       })
                 }
                 src={
@@ -230,14 +232,14 @@ class Page extends Component {
                         f: 'auto',
                         c: 'fill',
                         w: window.innerWidth * window.devicePixelRatio,
-                        h: window.innerHeight * window.devicePixelRatio
+                        h: window.innerHeight * window.devicePixelRatio,
                       })
                 }
                 render={(src, style) => (
                   <div
                     className="cover-image"
                     style={Object.assign(style, {
-                      backgroundImage: `url(${src})`
+                      backgroundImage: `url(${src})`,
                     })}
                   />
                 )}
@@ -265,7 +267,7 @@ class Page extends Component {
                   opacity: 0,
                   scale: 2,
                   type: 'from',
-                  delay: this.props.delay + 1000
+                  delay: this.props.delay + 1000,
                 }}
               >
                 <FiX size={this.state.fontSize} color="#0d8aba" />
@@ -306,7 +308,7 @@ class Page extends Component {
                 opacity: 0,
                 translateY: 100,
                 type: 'from',
-                delay: this.props.delay + 1000
+                delay: this.props.delay + 1000,
               }}
               className="scroll-to-content"
               onClick={() =>
@@ -314,7 +316,7 @@ class Page extends Component {
                   duration: 800,
                   smooth: 'easeInOutQuad',
                   offset: -50,
-                  containerId: 'page-wrap'
+                  containerId: 'page-wrap',
                 })
               }
             >

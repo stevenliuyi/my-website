@@ -19,7 +19,7 @@ class Book extends Component {
                   f: 'auto',
                   c: 'scale',
                   w: 285 * window.devicePixelRatio,
-                  h: 399 * window.devicePixelRatio
+                  h: 399 * window.devicePixelRatio,
                 })})`
         }}
       >
@@ -34,12 +34,12 @@ class Book extends Component {
                   f: 'auto',
                   c: 'scale',
                   w: 143 * window.devicePixelRatio,
-                  h: 200 * window.devicePixelRatio
+                  h: 200 * window.devicePixelRatio,
                 })
           }
           width={143}
           height={200}
-          onError={e => {
+          onError={(e) => {
             e.target.src =
               'https://imgplaceholder.com/143x200/f5f5f5/757575/ion-ios-book-outline?font-size=64'
           }}

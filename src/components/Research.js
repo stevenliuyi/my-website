@@ -31,7 +31,7 @@ class Research extends Component {
             opacity: 1,
             translateX: 0,
             delay: this.props.delay + 100,
-            duration: 1000
+            duration: 1000,
           }}
         />
         <div className="keywords-wrap noselect">
@@ -40,7 +40,7 @@ class Research extends Component {
             animation={{
               opacity: 1,
               translateX: 0,
-              delay: this.props.delay + 200
+              delay: this.props.delay + 200,
             }}
             className="keywords-title"
           >
@@ -82,7 +82,7 @@ class Research extends Component {
               opacity: 1,
               translateX: 0,
               delay: this.props.delay + 400,
-              duration: 1000
+              duration: 1000,
             }}
           >
             <div className="research-image-wrap noselect">
@@ -125,7 +125,7 @@ class Research extends Component {
               opacity: 1,
               translateX: 0,
               delay: this.props.delay + 600,
-              duration: 1000
+              duration: 1000,
             }}
           >
             <div className="research-image-wrap noselect">

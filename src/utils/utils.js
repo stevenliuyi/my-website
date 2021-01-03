@@ -28,21 +28,21 @@ export const setVhs = (isHomepage = true) => {
 // get number of blog posts
 export const getBlogCount = () =>
   fetch('https://blog.yliu.io/post-count')
-    .then(data => data.text())
-    .catch(err => null)
+    .then((data) => data.text())
+    .catch((err) => null)
 
 // get number of photos
 export const getPhotoCount = () =>
   fetchUnsplash()
-    .then(profile => profile.total_photos)
-    .catch(err => null)
+    .then((profile) => profile.total_photos)
+    .catch((err) => null)
 
 // get image URL
 export const getImageURL = (path, options) => {
   if (process.env.REACT_APP_IPFS === 'true') return `images/${path}`
   const options_str = Object.keys(options)
     .map(
-      o =>
+      (o) =>
         `${o}_${
           typeof options[o] === 'number'
             ? options[o] < 1
@@ -61,7 +61,7 @@ export const gaConfig = () => {
   if (typeof gtag === 'function') {
     gtag('config', 'UA-127965994-1', {
       page_location: window.location.href,
-      page_path: window.location.pathname
+      page_path: window.location.pathname,
     })
   }
 }

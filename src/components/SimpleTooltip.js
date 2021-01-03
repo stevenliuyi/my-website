@@ -3,7 +3,7 @@ import { Tooltip } from 'reactstrap'
 
 class SimpleTooltip extends Component {
   state = {
-    tooltipOpen: false
+    tooltipOpen: false,
   }
 
   render() {

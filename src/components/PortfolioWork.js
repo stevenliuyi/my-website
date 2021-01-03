@@ -6,7 +6,7 @@ import { getImageURL } from '../utils/utils'
 class PortfolioWork extends Component {
   state = {
     titleWidth: -1,
-    imageWidth: -1
+    imageWidth: -1,
   }
 
   calcRatio = () => {
@@ -27,7 +27,7 @@ class PortfolioWork extends Component {
       <div
         className="portfolio-work"
         style={{ margin: margin }}
-        onClick={e => onClick(e, { index, photo })}
+        onClick={(e) => onClick(e, { index, photo })}
       >
         <div
           className={`portfolio-img ${
@@ -44,11 +44,11 @@ class PortfolioWork extends Component {
                 ? `url(${getImageURL(`portfolio/${photo.filename}`, {
                     f: 'auto',
                     c: 'scale',
-                    w: this.calcRatio()
+                    w: this.calcRatio(),
                   })})`
                 : `url(${getImageURL(`portfolio/${photo.filename}`, {
-                    f: 'auto'
-                  })})`
+                    f: 'auto',
+                  })})`,
           }}
         >
           <div className="portfolio-year">{photo.time}</div>
@@ -56,7 +56,7 @@ class PortfolioWork extends Component {
         <div className="portfolio-title-wrap">
           <Measure
             bounds
-            onResize={contentRect => {
+            onResize={(contentRect) => {
               this.setState({ titleWidth: contentRect.bounds.width })
             }}
           >
@@ -72,7 +72,7 @@ class PortfolioWork extends Component {
                     href={photo.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={e => e.stopPropagation()}
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <GoLinkExternal className="portfolio-link" />
                   </a>

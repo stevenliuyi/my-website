@@ -7,7 +7,7 @@ import {
   TiPencil,
   TiDocumentText,
   TiChevronLeft,
-  TiChevronRight
+  TiChevronRight,
 } from 'react-icons/ti'
 import { FaGithub, FaAt, FaWikipediaW } from 'react-icons/fa'
 import { Tooltip } from 'reactstrap'
@@ -79,7 +79,7 @@ const numberCards = [
         !
       </span>
     }
-  />
+  />,
 ]
 const sliderSettings = {
   dots: true,
@@ -90,7 +90,7 @@ const sliderSettings = {
   adapativeHeight: true,
   swipe: false,
   nextArrow: <TiChevronRight size={32} color={'#222'} />,
-  prevArrow: <TiChevronLeft size={32} color={'#222'} />
+  prevArrow: <TiChevronLeft size={32} color={'#222'} />,
 }
 
 class About extends Component {
@@ -102,14 +102,14 @@ class About extends Component {
       wikipedia: false,
       zhihu: false,
       blog: false,
-      resume: false
+      resume: false,
     },
     placement: 'right',
     logoLoaded: false,
-    logoRotation: 0
+    logoRotation: 0,
   }
 
-  tooltipToggle = link => {
+  tooltipToggle = (link) => {
     let tooltipOpen = this.state.tooltipOpen
     tooltipOpen[link] = !tooltipOpen[link]
     this.setState({ tooltipOpen })
@@ -119,7 +119,7 @@ class About extends Component {
     this.setState({ placement: window.innerWidth > 964 ? 'right' : 'bottom' })
   }
 
-  handleScroll = e => {
+  handleScroll = (e) => {
     const logo = document.querySelector('.logo')
     if (logo == null) return
 
@@ -197,7 +197,7 @@ class About extends Component {
             opacity: 1,
             translateX: 0,
             delay: this.props.delay + 100,
-            duration: 1000
+            duration: 1000,
           }}
         />
         {/* no rotation on mobile devices due to performance issue */}
@@ -215,7 +215,7 @@ class About extends Component {
               type: 'from',
               delay: this.props.delay + 200,
               duration: 1000,
-              ease: 'easeOutBack'
+              ease: 'easeOutBack',
             }}
           >
             <Logo radius={40} colors={['#0d8aba', '#222']} />
@@ -228,7 +228,7 @@ class About extends Component {
                 opacity: 1,
                 translateX: 0,
                 delay: this.props.delay + 500,
-                duration: 1000
+                duration: 1000,
               }}
             >
               <div className="about-text-paragraph">
@@ -249,7 +249,7 @@ class About extends Component {
                 translateX: 0,
                 delay: this.props.delay + 600,
                 duration: 1000,
-                ease: 'easeOutBack'
+                ease: 'easeOutBack',
               }}
             >
               <div className="about-text-paragraph">
@@ -273,7 +273,7 @@ class About extends Component {
                 translateX: 0,
                 delay: this.props.delay + 700,
                 duration: 1000,
-                ease: 'easeOutBack'
+                ease: 'easeOutBack',
               }}
             >
               <div className="about-text-paragraph">
@@ -342,7 +342,7 @@ class About extends Component {
               opacity: 1,
               translateY: 0,
               delay: this.props.delay + 500,
-              duration: 1000
+              duration: 1000,
             }}
           >
             <div
@@ -450,7 +450,7 @@ class About extends Component {
               onClick={() =>
                 this.props.history.push({
                   pathname: '/resume',
-                  backId: 'about-page'
+                  backId: 'about-page',
                 })
               }
             >
@@ -539,7 +539,7 @@ class About extends Component {
             opacity: 0,
             type: 'from',
             duration: 1000,
-            delay: this.props.delay + 1000
+            delay: this.props.delay + 1000,
           }}
         >
           <div
@@ -557,7 +557,7 @@ class About extends Component {
               opacity: 1,
               translateY: 0,
               duration: 1000,
-              delay: this.props.delay + 1000
+              delay: this.props.delay + 1000,
             }}
           >
             {numberCards}
@@ -570,7 +570,7 @@ class About extends Component {
               opacity: 1,
               translateY: 0,
               duration: 1000,
-              delay: this.props.delay + 1000
+              delay: this.props.delay + 1000,
             }}
           >
             <Slider

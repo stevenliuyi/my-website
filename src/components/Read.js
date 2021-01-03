@@ -18,7 +18,7 @@ class Read extends Component {
     nBooksLoaded: 10,
     allLoaded: false,
     delay: 150,
-    searchText: ''
+    searchText: '',
   }
 
   calcListWidth = () => {
@@ -47,8 +47,8 @@ class Read extends Component {
   componentDidMount() {
     // dynamically import reading list
     import('../data/read.yml')
-      .then(m => m.default)
-      .then(data => this.setState({ readingList: data }))
+      .then((m) => m.default)
+      .then((data) => this.setState({ readingList: data }))
 
     this.calcListWidth()
     window.addEventListener('resize', this.calcListWidth)
@@ -66,7 +66,7 @@ class Read extends Component {
       } else {
         scroller.scrollTo('cover-content', {
           smooth: false,
-          containerId: 'page-wrap'
+          containerId: 'page-wrap',
         })
       }
     }
@@ -75,11 +75,11 @@ class Read extends Component {
       this.setState({ nBooksLoaded: 10, allLoaded: false })
   }
 
-  onSelectBook = idx => {
+  onSelectBook = (idx) => {
     this.setState({ currentIdx: idx })
     scroller.scrollTo('cover-content', {
       smooth: false,
-      containerId: 'page-wrap'
+      containerId: 'page-wrap',
     })
   }
 
@@ -87,7 +87,7 @@ class Read extends Component {
     return (
       <ScrollOverPack scale={0.5} always={false}>
         <Page
-          ref={el => (this.page = el)}
+          ref={(el) => (this.page = el)}
           title="READ"
           quote="It is what you read when you don't have to that determines what you will be when you can't help it."
           author="Oscar Wilde"
@@ -96,7 +96,7 @@ class Read extends Component {
           menuLinkActive={this.state.currentIdx !== -1}
           delay={this.state.delay}
           titleStyle={{
-            cursor: this.state.currentIdx === -1 ? 'inherit' : 'pointer'
+            cursor: this.state.currentIdx === -1 ? 'inherit' : 'pointer',
           }}
           footerStyle={{
             backgroundColor:
@@ -110,7 +110,7 @@ class Read extends Component {
                 ? '#000'
                 : this.state.readingList[this.state.currentIdx].quotes == null
                 ? '#000'
-                : '#fff'
+                : '#fff',
           }}
           {...this.props}
         >
@@ -128,7 +128,7 @@ class Read extends Component {
                 opacity: 0,
                 type: 'from',
                 delay: this.state.delay,
-                duration: 1000
+                duration: 1000,
               }}
               component={InfiniteScroll}
               componentProps={{
@@ -136,7 +136,7 @@ class Read extends Component {
                 hasMore: !this.state.allLoaded,
                 useWindow: false,
                 getScrollParent: () =>
-                  document.getElementById('page-wrap') || window
+                  document.getElementById('page-wrap') || window,
               }}
             >
               <div className="book-search">
@@ -144,7 +144,9 @@ class Read extends Component {
                 <input
                   type="text"
                   value={this.state.searchText}
-                  onChange={e => this.setState({ searchText: e.target.value })}
+                  onChange={(e) =>
+                    this.setState({ searchText: e.target.value })
+                  }
                   placeholder="Search..."
                   className="book-searchbox"
                 />

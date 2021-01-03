@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 import React, { Component } from 'react'
 import ScrollAnim from 'rc-scroll-anim'
 import Page from './Page'
@@ -9,7 +10,7 @@ import {
   Markers,
   Marker,
   Lines,
-  Line
+  Line,
 } from 'react-simple-maps'
 import { geoConicConformal, geoConicEqualArea, geoPath } from 'd3-geo'
 import ReactTooltip from 'react-tooltip'
@@ -28,15 +29,15 @@ const markers = [
     id: 'shanghai',
     info: 'my hometown',
     coordinates: [121.4667, 31.1667],
-    markerOffsets: [5, 10]
+    markerOffsets: [5, 10],
   },
   {
     name: 'South Bend',
     id: 'southbend',
     info: 'where I currently live',
     coordinates: [-86.25023, 41.6764],
-    markerOffsets: [5, 10]
-  }
+    markerOffsets: [5, 10],
+  },
 ]
 
 class Places extends Component {
@@ -44,17 +45,17 @@ class Places extends Component {
     currentMap: 'world',
     resetSpring: false,
     delay: 150,
-    showFlights: false
+    showFlights: false,
   }
 
-  isVisited = abbr => {
+  isVisited = (abbr) => {
     // Chinese political correctness
     if (['HKG', 'TWN'].includes(abbr)) return true
 
     return places[this.state.currentMap].places.includes(abbr)
   }
 
-  switchPaths = abbr => {
+  switchPaths = (abbr) => {
     if (this.state.currentMap === 'world') {
       if (Object.keys(places).includes(abbr)) {
         this.setState({ currentMap: abbr, resetSpring: true })
@@ -72,9 +73,11 @@ class Places extends Component {
   }
 
   getConfig = (config, defaultConfig) =>
-    config != null ? config.split(',').map(d => parseInt(d, 10)) : defaultConfig
+    config != null
+      ? config.split(',').map((d) => parseInt(d, 10))
+      : defaultConfig
 
-  getProjection = projection => {
+  getProjection = (projection) => {
     if (projection === 'conformalConic') {
       const conformalConicProjection = (width, height, config) =>
         geoConicConformal()
@@ -104,16 +107,16 @@ class Places extends Component {
       const el = document.getElementById('marker-southbend')
       elements.push(el)
     }
-    elements.forEach(el => {
+    elements.forEach((el) => {
       if (el != null && enter) el.classList.add('place-marker-hover')
       if (el != null && !enter) el.classList.remove('place-marker-hover')
     })
   }
 
-  handleMouseEnter = abbr => {
+  handleMouseEnter = (abbr) => {
     // Chinese political correctness
     if (['CHN', 'HKG', 'TWN'].includes(abbr)) {
-      ;['China', 'Hong Kong', 'Taiwan'].forEach(pl => {
+      ;['China', 'Hong Kong', 'Taiwan'].forEach((pl) => {
         const el = document.getElementById(`world-${pl}`)
         if (el != null) el.classList.add('places-geo-hover')
       })
@@ -122,9 +125,9 @@ class Places extends Component {
     this.markersHoverEffect(abbr, true)
   }
 
-  handleMouseLeave = abbr => {
+  handleMouseLeave = (abbr) => {
     if (['CHN', 'HKG', 'TWN'].includes(abbr)) {
-      ;['China', 'Hong Kong', 'Taiwan'].forEach(pl => {
+      ;['China', 'Hong Kong', 'Taiwan'].forEach((pl) => {
         const el = document.getElementById(`world-${pl}`)
         if (el != null) el.classList.remove('places-geo-hover')
       })
@@ -140,12 +143,12 @@ class Places extends Component {
     const path = geoPath().projection(projection)
     const pathString = path({
       type: 'LineString',
-      coordinates: [line.coordinates.start, line.coordinates.end]
+      coordinates: [line.coordinates.start, line.coordinates.end],
     })
     return pathString
   }
 
-  handleToggleChange = e => {
+  handleToggleChange = (e) => {
     this.setState({ showFlights: !this.state.showFlights })
   }
 
@@ -164,14 +167,14 @@ class Places extends Component {
     // cache map files
     Object.keys(places)
       .slice(1)
-      .forEach(p => {
+      .forEach((p) => {
         if (!sessionStorage.hasOwnProperty(`map-${p}`))
           fetch(`maps/${places[p].filename}`)
-            .then(res => res.json())
-            .then(data =>
+            .then((res) => res.json())
+            .then((data) =>
               sessionStorage.setItem(`map-${p}`, JSON.stringify(data))
             )
-            .catch(error => {})
+            .catch((error) => {})
       })
   }
 
@@ -180,7 +183,7 @@ class Places extends Component {
     return (
       <ScrollOverPack scale={0.5} always={false}>
         <Page
-          ref={el => (this.page = el)}
+          ref={(el) => (this.page = el)}
           title="PLACES"
           quote="Travel is fatal to prejudice, bigotry and narrow-mindedness."
           author="Mark Twain"
@@ -226,7 +229,7 @@ class Places extends Component {
               onStart={() => this.setState({ resetSpring: false })}
               duration={500}
             >
-              {styles => (
+              {(styles) => (
                 <ComposableMap
                   className="places-map"
                   projection={this.getProjection(places[currentMap].projection)}
@@ -235,20 +238,20 @@ class Places extends Component {
                     rotation: this.getConfig(places[currentMap].rotation, [
                       0,
                       0,
-                      0
+                      0,
                     ]),
                     parallels: this.getConfig(places[currentMap].parallels, [
                       0,
-                      0
-                    ])
+                      0,
+                    ]),
                   }}
                 >
                   <ZoomableGroup
                     center={places[currentMap].center
                       .split(',')
-                      .map(d => parseInt(d, 10))}
+                      .map((d) => parseInt(d, 10))}
                     zoom={styles.zoom}
-                    ref={el => (this.zoomableGroup = el)}
+                    ref={(el) => (this.zoomableGroup = el)}
                   >
                     <Geographies
                       geography={
@@ -305,20 +308,20 @@ class Places extends Component {
                                   fill: this.isVisited(abbr) ? '#aaa' : '#eee',
                                   stroke: '#fff',
                                   strokeWidth: 0.5,
-                                  outline: 'none'
+                                  outline: 'none',
                                 },
                                 hover: {
                                   fill: '#0d8aba',
                                   stroke: '#fff',
                                   strokeWidth: 0.5,
-                                  outline: 'none'
+                                  outline: 'none',
                                 },
                                 pressed: {
                                   fill: '#0d8aba',
                                   stroke: '#fff',
                                   strokeWidth: 0.5,
-                                  outline: 'none'
-                                }
+                                  outline: 'none',
+                                },
                               }}
                             />
                           )
@@ -330,7 +333,7 @@ class Places extends Component {
                         this.state.showFlights &&
                         flights
                           .filter(
-                            flight =>
+                            (flight) =>
                               flight.from_region === currentMap ||
                               flight.to_region === currentMap ||
                               currentMap === 'world'
@@ -342,28 +345,28 @@ class Places extends Component {
                                 coordinates: {
                                   start: flight.from_coord
                                     .split(',')
-                                    .map(c => parseFloat(c)),
+                                    .map((c) => parseFloat(c)),
                                   end: flight.to_coord
                                     .split(',')
-                                    .map(c => parseFloat(c))
-                                }
+                                    .map((c) => parseFloat(c)),
+                                },
                               }}
                               style={{
                                 default: {
                                   stroke: 'rgba(0, 0, 0, 0.2)',
                                   strokeWidth: 1,
-                                  fill: 'none'
+                                  fill: 'none',
                                 },
                                 hover: {
                                   stroke: '#0d8aba',
                                   strokeWidth: 1,
-                                  fill: 'none'
+                                  fill: 'none',
                                 },
                                 pressed: {
                                   stroke: '#0d8aba',
                                   strokeWidth: 1,
-                                  fill: 'none'
-                                }
+                                  fill: 'none',
+                                },
                               }}
                               buildPath={this.buildCurves}
                             />
@@ -373,11 +376,11 @@ class Places extends Component {
                       {currentMap !== 'world' &&
                         cities[currentMap] != null &&
                         cities[currentMap]
-                          .map(city => ({
+                          .map((city) => ({
                             name: city.city,
                             coordinates: city.coordinates
                               .split(',')
-                              .map(c => parseFloat(c))
+                              .map((c) => parseFloat(c)),
                           }))
                           .map((city, i) => (
                             <Marker
@@ -386,7 +389,7 @@ class Places extends Component {
                               style={{
                                 default: { fill: '#fff' },
                                 hover: { fill: '#fff' },
-                                pressed: { fill: '0fff' }
+                                pressed: { fill: '0fff' },
                               }}
                             >
                               <circle
@@ -407,7 +410,7 @@ class Places extends Component {
                           style={{
                             default: { fill: '#0d8aba' },
                             hover: { fill: '#fff' },
-                            pressed: { fill: '0d8aba' }
+                            pressed: { fill: '0d8aba' },
                           }}
                         >
                           <circle

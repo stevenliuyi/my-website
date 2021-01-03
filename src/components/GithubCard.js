@@ -12,7 +12,7 @@ class GithubCard extends Component {
           translateX: 200,
           delay: 200,
           duration: 1000,
-          type: 'from'
+          type: 'from',
         }}
       >
         <Card body>

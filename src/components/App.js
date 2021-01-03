@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import './App.css'
-import 'babel-polyfill'
+import 'react-app-polyfill/ie11'
+import 'react-app-polyfill/stable'
 import ScrollAnim from 'rc-scroll-anim'
 import 'bootstrap/dist/css/bootstrap.css'
 import { FaAngleDoubleUp, FaCaretRight } from 'react-icons/fa'
 import {
   animateScroll as scroll,
   Element as ScrollElement,
-  scroller
+  scroller,
 } from 'react-scroll'
 import { isMobile } from 'react-device-detect'
 import Menu from 'react-burger-menu/lib/menus/slide'
@@ -30,7 +31,7 @@ const pageIds = {
   Skills: 'skill-page',
   Research: ' research-page',
   Projects: 'project-page',
-  More: 'more-page'
+  More: 'more-page',
 }
 
 class App extends Component {
@@ -38,7 +39,7 @@ class App extends Component {
     delay: 50,
     width: 0,
     menuOpen: false,
-    currentSection: ''
+    currentSection: '',
   }
 
   componentDidMount() {
@@ -86,7 +87,7 @@ class App extends Component {
     this.setState({ width: document.documentElement.clientWidth })
   }
 
-  onMenuItemClick = section => {
+  onMenuItemClick = (section) => {
     this.setState({ menuOpen: false, currentSection: section })
 
     // hack to navigate to the correct poisition
@@ -96,7 +97,7 @@ class App extends Component {
     }, 10)
   }
 
-  activeMenuItem = section =>
+  activeMenuItem = (section) =>
     this.state.currentSection === section
       ? 'nav-burger-item'
       : 'nav-burger-item nav-burger-inactive-item'
@@ -112,17 +113,17 @@ class App extends Component {
       nav.style.top = 0
       burger.style.visibility = 'visible'
       // stop bird animation
-      if (birds != null) birds.forEach(b => (b.style.display = 'none'))
+      if (birds != null) birds.forEach((b) => (b.style.display = 'none'))
     } else {
       nav.style.position = 'absolute'
       nav.style.top = 'auto'
       burger.style.visibility = 'hidden'
       // resume bird aniimation
-      if (birds != null) birds.forEach(b => (b.style.display = 'inherit'))
+      if (birds != null) birds.forEach((b) => (b.style.display = 'inherit'))
     }
   }
 
-  onFocus = e => {
+  onFocus = (e) => {
     this.dom = e.target
     if (this.dom) this.setState({ currentSection: this.dom.innerText })
     this.barAnimate()
@@ -147,10 +148,13 @@ class App extends Component {
     const radiusSVG = (
       <svg width={this.state.width * 0.5} height="27">
         <path
-          d={`M ${25 / Math.sqrt(2)} ${25 / Math.sqrt(2) + 2} C ${25 *
-            Math.sqrt(2)} 2, ${25 * Math.sqrt(2)} 2, ${25 / Math.sqrt(2) +
-            25 * Math.sqrt(2)} 2 H 1500 V 0 H 0 V 27 A 25 25 0 0 0 ${25 /
-            Math.sqrt(2)} ${25 / Math.sqrt(2) + 2}`}
+          d={`M ${25 / Math.sqrt(2)} ${25 / Math.sqrt(2) + 2} C ${
+            25 * Math.sqrt(2)
+          } 2, ${25 * Math.sqrt(2)} 2, ${
+            25 / Math.sqrt(2) + 25 * Math.sqrt(2)
+          } 2 H 1500 V 0 H 0 V 27 A 25 25 0 0 0 ${25 / Math.sqrt(2)} ${
+            25 / Math.sqrt(2) + 2
+          }`}
           fill="#fff"
         />
       </svg>
@@ -159,7 +163,7 @@ class App extends Component {
     return (
       <div
         style={{
-          overflowX: 'hidden' // avoid horizontal scroll, which is especially annoying on mobile phones
+          overflowX: 'hidden', // avoid horizontal scroll, which is especially annoying on mobile phones
         }}
       >
         <Front
@@ -189,14 +193,14 @@ class App extends Component {
             <Link className="nav-list" to="more-page" onFocus={this.onFocus}>
               More
             </Link>
-            <div ref={el => (this.bar = el)} className="nav-bar" />
+            <div ref={(el) => (this.bar = el)} className="nav-bar" />
             <div className="nav-mobile">{this.state.currentSection}</div>
             <div className="nav-burger">
               <Menu
                 right
                 width={Math.min(300, window.innerWidth * 0.6)}
                 isOpen={this.state.menuOpen}
-                onStateChange={state => {
+                onStateChange={(state) => {
                   this.setState({ menuOpen: state.isOpen })
                   const menu = document.querySelector('.bm-menu')
                   if (menu == null) return
@@ -210,7 +214,7 @@ class App extends Component {
                 <div className="nav-logo" onClick={this.scrollToTop}>
                   <Logo radius={30} colors={['#aaa', '#aaa']} />
                 </div>
-                {Object.keys(pageIds).map(section => (
+                {Object.keys(pageIds).map((section) => (
                   <div
                     key={section}
                     className="nav-burger-item-wrap"

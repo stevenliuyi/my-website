@@ -7,7 +7,7 @@ import SimpleTooltip from './SimpleTooltip'
 class Photo extends Component {
   state = {
     titleWidth: -1,
-    imageWidth: -1
+    imageWidth: -1,
   }
 
   render() {
@@ -17,7 +17,7 @@ class Photo extends Component {
       <div
         className="photography-work"
         style={{ margin: margin, width: photo.width, height: photo.height }}
-        onClick={e => onClick(e, { index, photo })}
+        onClick={(e) => onClick(e, { index, photo })}
       >
         <div className="photography-hover">
           <img
@@ -26,13 +26,13 @@ class Photo extends Component {
             src={photo.src_small}
             style={{
               width: photo.width,
-              height: photo.height
+              height: photo.height,
             }}
           />
           {!isMobile && (
             <div className="photography-overlay">
               <a
-                onClick={e => e.stopPropagation()}
+                onClick={(e) => e.stopPropagation()}
                 href={photo.link}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -45,7 +45,7 @@ class Photo extends Component {
                 </SimpleTooltip>
               </a>
               <a
-                onClick={e => {
+                onClick={(e) => {
                   e.stopPropagation()
                   // send request to unsplash download endpoint
                   triggerUnsplashDownload(photo.download_location)
@@ -61,7 +61,7 @@ class Photo extends Component {
                   <MdFileDownload size={18} />
                 </SimpleTooltip>
               </a>
-              <a onClick={e => onClick(e, { index, photo })} href={emptyLink}>
+              <a onClick={(e) => onClick(e, { index, photo })} href={emptyLink}>
                 <SimpleTooltip id={`tt-view-${photo.id}`} text="view the photo">
                   <MdPageview size={18} />
                 </SimpleTooltip>

@@ -6,7 +6,7 @@ import {
   CardTitle,
   CardText,
   Badge,
-  Tooltip
+  Tooltip,
 } from 'reactstrap'
 import TweenOne from 'rc-tween-one'
 import { MdArrowForward } from 'react-icons/md'
@@ -15,7 +15,7 @@ import { getImageURL } from '../utils/utils'
 class ProjectCard extends Component {
   state = {
     cardExpanded: false,
-    tooltipOpen: false
+    tooltipOpen: false,
   }
 
   render() {
@@ -30,7 +30,7 @@ class ProjectCard extends Component {
               : getImageURL(`projects/${this.props.image}`, {
                   f: 'auto',
                   c: 'scale',
-                  w: 250 * window.devicePixelRatio
+                  w: 250 * window.devicePixelRatio,
                 })
           }
           className="noselect"
@@ -38,15 +38,15 @@ class ProjectCard extends Component {
         <TweenOne
           component={CardBody}
           componentProps={{
-            onMouseEnter: e => {
+            onMouseEnter: (e) => {
               this.props.expandCard(e)
               this.setState({ cardExpanded: true })
             },
-            onMouseLeave: e => {
+            onMouseLeave: (e) => {
               this.props.collapseCard(e)
               this.setState({ cardExpanded: false })
             },
-            onTouchStart: e => {
+            onTouchStart: (e) => {
               if (this.props.cardExpanded) {
                 this.props.collapseCard(e)
                 this.setState({ cardExpanded: false })
@@ -54,14 +54,14 @@ class ProjectCard extends Component {
                 this.props.expandCard(e)
                 this.setState({ cardExpanded: true })
               }
-            }
+            },
           }}
           animation={{
             opacity: 1,
             x: 0,
             duration: 1000,
             ease: 'easeOutQuart',
-            delay: this.props.delay + 500
+            delay: this.props.delay + 500,
           }}
         >
           <CardTitle className="project-card-title">
@@ -71,7 +71,7 @@ class ProjectCard extends Component {
           <div
             className="project-card-expanded"
             style={{
-              opacity: this.state.cardExpanded ? 1 : 0
+              opacity: this.state.cardExpanded ? 1 : 0,
             }}
           >
             {this.props.tools.map((tool, i) => (
@@ -100,7 +100,7 @@ class ProjectCard extends Component {
                   autohide={true}
                   toggle={() =>
                     this.setState({
-                      tooltipOpen: !this.state.tooltipOpen
+                      tooltipOpen: !this.state.tooltipOpen,
                     })
                   }
                 >

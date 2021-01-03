@@ -11,7 +11,7 @@ import {
   FaBookReader,
   FaIntegral,
   FaAward,
-  FaChalkboardTeacher
+  FaChalkboardTeacher,
 } from 'react-icons/fa'
 import { FiGithub } from 'react-icons/fi'
 import { IoIosDocument } from 'react-icons/io'
@@ -28,15 +28,15 @@ class Resume extends Component {
     delay: 150,
     width: window.innerWidth,
     height: window.innerHeight,
-    tooltipOpen: false
+    tooltipOpen: false,
   }
 
-  removeUrlProtocol = url => url.replace(/(^\w+:|^)\/\//, '')
+  removeUrlProtocol = (url) => url.replace(/(^\w+:|^)\/\//, '')
 
   updateSize = () => {
     this.setState({
       width: window.innerWidth,
-      height: window.innerHeight
+      height: window.innerHeight,
     })
     this.setPhotoSize()
     this.handleScroll()
@@ -55,7 +55,7 @@ class Resume extends Component {
       background.style.width = background.style.height = `${newSize}px`
   }
 
-  handleScroll = e => {
+  handleScroll = (e) => {
     const sidebar = document.querySelector('.cv-sidebar')
     if (window.innerWidth < 768 && sidebar != null) {
       sidebar.style.position = 'inherit'
@@ -99,7 +99,7 @@ class Resume extends Component {
           <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js" />
         </Helmet>
         <Page
-          ref={el => (this.page = el)}
+          ref={(el) => (this.page = el)}
           title="RÉSUMÉ"
           quote=""
           author=""
@@ -114,27 +114,27 @@ class Resume extends Component {
                     value: parseInt(
                       (this.state.width * this.state.height) / 2e4,
                       10
-                    )
+                    ),
                   },
                   color: {
-                    value: '#aaa'
+                    value: '#aaa',
                   },
                   size: {
-                    value: 3
+                    value: 3,
                   },
                   line_linked: {
                     distance: 200,
-                    color: '#aaa'
-                  }
+                    color: '#aaa',
+                  },
                 },
                 interactivity: {
                   events: {
                     onhover: {
                       enable: true,
-                      mode: 'grab'
-                    }
-                  }
-                }
+                      mode: 'grab',
+                    },
+                  },
+                },
               }}
             />
           }
@@ -225,7 +225,7 @@ class Resume extends Component {
                             <Col xs={8} md={9} className="cv-item-subtitle">
                               <span
                                 dangerouslySetInnerHTML={{
-                                  __html: study.title
+                                  __html: study.title,
                                 }}
                               />
                             </Col>
@@ -375,7 +375,7 @@ class Resume extends Component {
                         <Col xs={12} className="cv-item-title">
                           <span
                             dangerouslySetInnerHTML={{
-                              __html: publication.authors
+                              __html: publication.authors,
                             }}
                           />
                           <span>. </span>
@@ -392,7 +392,7 @@ class Resume extends Component {
                           <span>. </span>
                           <span
                             dangerouslySetInnerHTML={{
-                              __html: publication.detail
+                              __html: publication.detail,
                             }}
                           />
                           <span>. </span>
@@ -411,7 +411,7 @@ class Resume extends Component {
                         <Col xs={12} className="cv-item-title">
                           <span
                             dangerouslySetInnerHTML={{
-                              __html: presentation.authors
+                              __html: presentation.authors,
                             }}
                           />
                           <span>. </span>
@@ -432,7 +432,7 @@ class Resume extends Component {
                           <span>. </span>
                           <span
                             dangerouslySetInnerHTML={{
-                              __html: presentation.detail
+                              __html: presentation.detail,
                             }}
                           />
                           <span>. </span>
@@ -468,7 +468,7 @@ class Resume extends Component {
                     autohide={true}
                     toggle={() =>
                       this.setState({
-                        tooltipOpen: !this.state.tooltipOpen
+                        tooltipOpen: !this.state.tooltipOpen,
                       })
                     }
                   >

@@ -6,14 +6,14 @@ class NumberCard extends Component {
   state = {
     front: true,
     paused: true,
-    reverse: false
+    reverse: false,
   }
 
   switch = () => {
     this.setState({
       paused: false,
       reverse: !this.state.front,
-      front: !this.state.front
+      front: !this.state.front,
     })
   }
 

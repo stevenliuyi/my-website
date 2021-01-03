@@ -23,21 +23,21 @@ class Photography extends Component {
     currentPage: 1,
     hasMorePhotos: true,
     lightboxIsOpen: false,
-    delay: 150
+    delay: 150,
   }
 
-  fetchPhotos = page => {
-    fetchUnsplashPhotos(page).then(photos => {
+  fetchPhotos = (page) => {
+    fetchUnsplashPhotos(page).then((photos) => {
       if (photos != null && photos.length > 0) {
         // add new photos to the array
         this.setState({
           photos: [
             ...this.state.photos,
-            ...photos.map(p => ({
+            ...photos.map((p) => ({
               caption: this.lightboxCaption(p),
-              ...p
-            }))
-          ]
+              ...p,
+            })),
+          ],
         })
       } else {
         // no more new photos
@@ -53,34 +53,34 @@ class Photography extends Component {
   openLightbox = (event, obj) => {
     this.setState({
       currentImage: obj.index,
-      lightboxIsOpen: true
+      lightboxIsOpen: true,
     })
   }
 
   closeLightbox = () => {
     this.setState({
       currentImage: 0,
-      lightboxIsOpen: false
+      lightboxIsOpen: false,
     })
   }
 
   gotoPrevious = () => {
     this.setState({
-      currentImage: this.state.currentImage - 1
+      currentImage: this.state.currentImage - 1,
     })
   }
 
   gotoNext = () => {
     this.setState({
-      currentImage: this.state.currentImage + 1
+      currentImage: this.state.currentImage + 1,
     })
   }
 
-  onClickImage = e => {
+  onClickImage = (e) => {
     window.open(this.state.photos[this.state.currentImage].link, '_blank')
   }
 
-  lightboxCaption = photo => {
+  lightboxCaption = (photo) => {
     const unsplashButton = renderToString(
       <a
         className="unsplash-link"
@@ -90,7 +90,7 @@ class Photography extends Component {
       >
         <span
           style={{
-            display: 'inline-block'
+            display: 'inline-block',
           }}
         >
           <svg
@@ -112,7 +112,7 @@ class Photography extends Component {
 
     const downloadButton = renderToString(
       <a
-        onClick={e => {
+        onClick={(e) => {
           e.stopPropagtaion()
           // send request to unsplash download endpoint
           triggerUnsplashDownload(photo.download_location)
@@ -143,7 +143,7 @@ class Photography extends Component {
     return (
       <ScrollOverPack scale={0.5} always={false}>
         <Page
-          ref={el => (this.page = el)}
+          ref={(el) => (this.page = el)}
           title="PHOTOGRAPHY"
           shortTitle="PHOTO"
           quote="All photographs are accurate. None of them is the truth."
@@ -191,7 +191,7 @@ class Photography extends Component {
           <div className="photography-list" style={{ height: '100%' }}>
             <Measure
               bounds
-              onResize={contentRect =>
+              onResize={(contentRect) =>
                 this.setState({ width: contentRect.bounds.width })
               }
             >
@@ -204,7 +204,7 @@ class Photography extends Component {
                       loadMore={() => {
                         this.fetchPhotos(this.state.currentPage + 1)
                         this.setState({
-                          currentPage: this.state.currentPage + 1
+                          currentPage: this.state.currentPage + 1,
                         })
                       }}
                       hasMore={this.state.hasMorePhotos}

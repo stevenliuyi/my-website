@@ -23,7 +23,7 @@ const compactData = (data, n) => {
   // calculate sum of small values
   let sum = newData
     .slice(0, data.length - n + 1)
-    .map(d => d.bytes)
+    .map((d) => d.bytes)
     .reduce((sum, x) => sum + x)
   // exclude entries of small values and sort alphabetically
   newData = newData
@@ -50,12 +50,7 @@ const updateGithubD3Node = (width, height, delay = 0) => {
   height -= 2 * marginV
 
   let svg = d3.select('#github-chart')
-  svg
-    .selectAll('*')
-    .transition()
-    .duration(1000)
-    .style('opacity', 0)
-    .remove()
+  svg.selectAll('*').transition().duration(1000).style('opacity', 0).remove()
 
   svg = svg
     .append('g')
@@ -117,20 +112,17 @@ const updateGithubD3Node = (width, height, delay = 0) => {
   const x = d3
     .scaleBand()
     .range([0, width])
-    .domain(languagesData.map(d => d.language))
+    .domain(languagesData.map((d) => d.language))
     .paddingInner(0.2)
 
-  let yMin = d3.min(languagesData, d => d.bytes)
-  let yMax = d3.max(languagesData, d => d.bytes)
+  let yMin = d3.min(languagesData, (d) => d.bytes)
+  let yMax = d3.max(languagesData, (d) => d.bytes)
   yMin = Math.pow(
     10,
     Math.max(Math.floor(Math.log(yMin) / Math.log(10)) - 1, 1)
   )
 
-  const y = d3
-    .scaleLog()
-    .range([labelHeight, height])
-    .domain([yMax, yMin])
+  const y = d3.scaleLog().range([labelHeight, height]).domain([yMax, yMin])
 
   // add x-axis
   let xAxis = svg
@@ -163,9 +155,11 @@ const updateGithubD3Node = (width, height, delay = 0) => {
     .call(
       d3
         .axisRight(y)
-        .tickValues(d3.range(yMin_log, yMax_log + 1).map(d => Math.pow(10, d)))
+        .tickValues(
+          d3.range(yMin_log, yMax_log + 1).map((d) => Math.pow(10, d))
+        )
         .tickSize(width)
-        .tickFormat(d => `${d3.format('.0s')(d)}B`)
+        .tickFormat((d) => `${d3.format('.0s')(d)}B`)
     )
 
   yAxis.select('.domain').remove()
@@ -185,17 +179,13 @@ const updateGithubD3Node = (width, height, delay = 0) => {
     .style('opacity', 1)
 
   // add bars
-  let bars = svg
-    .selectAll('.bar')
-    .data(languagesData)
-    .enter()
-    .append('g')
+  let bars = svg.selectAll('.bar').data(languagesData).enter().append('g')
 
   bars
     .append('rect')
     .attr('class', 'github-bar')
     .attr('id', (d, i) => `github-bar${i}`)
-    .attr('x', d => x(d.language))
+    .attr('x', (d) => x(d.language))
     .attr('width', x.bandwidth())
     .attr('y', height - labelHeight)
     .attr('height', 0)
@@ -205,8 +195,8 @@ const updateGithubD3Node = (width, height, delay = 0) => {
     .transition()
     .duration(interval * 5)
     .delay((d, i) => delay + interval * (1 + i))
-    .attr('y', d => y(d.bytes))
-    .attr('height', d => height - labelHeight - y(d.bytes))
+    .attr('y', (d) => y(d.bytes))
+    .attr('height', (d) => height - labelHeight - y(d.bytes))
 
   function handleMouseEnter(d, i) {
     d3.select(`#github-name${i}`).attr('font-weight', 'bold')
@@ -238,12 +228,7 @@ const updateSkillD3Node = (data, width, height, delay = 0) => {
   height -= 2 * marginV
 
   let svg = d3.select('#skill-chart')
-  svg
-    .selectAll('*')
-    .transition()
-    .duration(1000)
-    .style('opacity', 0)
-    .remove()
+  svg.selectAll('*').transition().duration(1000).style('opacity', 0).remove()
 
   if (showGradient) {
     let defs = svg.append('defs')
@@ -254,7 +239,7 @@ const updateSkillD3Node = (data, width, height, delay = 0) => {
       .attr('gradientUnits', 'userSpaceOnUse')
       .attr('x1', 100)
       .attr('y1', 0)
-      .attr('x2', 100 + (width - 100) * d3.max(data, d => d.value))
+      .attr('x2', 100 + (width - 100) * d3.max(data, (d) => d.value))
       .attr('y2', 0)
 
     grad
@@ -275,7 +260,7 @@ const updateSkillD3Node = (data, width, height, delay = 0) => {
       .attr('gradientUnits', 'userSpaceOnUse')
       .attr('x1', 100)
       .attr('y1', 0)
-      .attr('x2', 100 + (width - 100) * d3.max(data, d => d.value))
+      .attr('x2', 100 + (width - 100) * d3.max(data, (d) => d.value))
       .attr('y2', 0)
 
     grad
@@ -305,19 +290,15 @@ const updateSkillD3Node = (data, width, height, delay = 0) => {
   const y = d3
     .scaleBand()
     .range([0, height])
-    .domain(data.map(d => d.skill))
+    .domain(data.map((d) => d.skill))
     .paddingInner(0.2)
 
-  let bars = svg
-    .selectAll('.bar')
-    .data(data)
-    .enter()
-    .append('g')
+  let bars = svg.selectAll('.bar').data(data).enter().append('g')
 
   bars
     .append('rect')
     .attr('class', 'skill-name-background')
-    .attr('y', d => y(d.skill))
+    .attr('y', (d) => y(d.skill))
     .attr('height', y.bandwidth())
     .attr('x', 0)
     .attr('width', 0)
@@ -326,13 +307,13 @@ const updateSkillD3Node = (data, width, height, delay = 0) => {
     .transition()
     .duration(interval)
     .delay((d, i) => delay + 250 + interval * i)
-    .attr('width', d => (d.value > 0 ? 100 : 0))
+    .attr('width', (d) => (d.value > 0 ? 100 : 0))
 
   bars
     .append('rect')
     .attr('class', 'skill-bar')
     .attr('id', (d, i) => `skill-bar${i}`)
-    .attr('y', d => y(d.skill))
+    .attr('y', (d) => y(d.skill))
     .attr('height', y.bandwidth())
     .attr('x', 100)
     .attr('width', 0)
@@ -342,21 +323,21 @@ const updateSkillD3Node = (data, width, height, delay = 0) => {
     .transition()
     .duration(interval * 5)
     .delay((d, i) => delay + 250 + interval * (1 + i))
-    .attr('width', d => x(d.value))
+    .attr('width', (d) => x(d.value))
 
   bars
     .append('rect')
     .attr('class', 'skill-bar-empty')
-    .attr('y', d => y(d.skill))
+    .attr('y', (d) => y(d.skill))
     .attr('height', y.bandwidth())
-    .attr('x', d => 100 + x(d.value))
+    .attr('x', (d) => 100 + x(d.value))
     .attr('width', 0)
     .on('mouseenter', handleMouseEnter)
     .on('mouseleave', handleMouseLeave)
     .transition()
     .duration(interval * 5)
     .delay((d, i) => delay + 250 + interval * (6 + i))
-    .attr('width', d =>
+    .attr('width', (d) =>
       !d.skill.startsWith('placeholder') ? width - 100 - x(d.value) : 0
     )
 
@@ -364,9 +345,9 @@ const updateSkillD3Node = (data, width, height, delay = 0) => {
     .append('text')
     .attr('class', 'skill-name noselect')
     .attr('id', (d, i) => `skill-name${i}`)
-    .attr('y', d => y(d.skill) + y.bandwidth() / 2)
-    .attr('x', d => 50)
-    .text(d => (!d.skill.startsWith('placeholder') ? d.skill : ''))
+    .attr('y', (d) => y(d.skill) + y.bandwidth() / 2)
+    .attr('x', (d) => 50)
+    .text((d) => (!d.skill.startsWith('placeholder') ? d.skill : ''))
     .style('opacity', 0)
     .style('pointer', 'default')
     .on('mouseenter', handleMouseEnter)
@@ -419,7 +400,7 @@ class Skills extends Component {
     activeCategory: 'Languages',
     width: 0,
     github: false,
-    showSwitchButton: false
+    showSwitchButton: false,
   }
 
   getWidth = () =>
@@ -455,12 +436,12 @@ class Skills extends Component {
     this.setState({ github: !this.state.github })
   }
 
-  handleScroll = e => {
+  handleScroll = (e) => {
     const scrollTop =
       document.documentElement.scrollTop || document.scrollingElement.scrollTop
     const offset = document.querySelector('.skill-page').offsetTop - scrollTop
     this.setState({
-      showSwitchButton: offset - 0.5 * window.innerHeight < 0 && offset > -200
+      showSwitchButton: offset - 0.5 * window.innerHeight < 0 && offset > -200,
     })
   }
 
@@ -516,83 +497,93 @@ class Skills extends Component {
           {!this.state.github && <GoOctoface size={30} color={'#eee'} />}
           {this.state.github && <FaLaptopCode size={30} color={'#eee'} />}
         </div>
-        {// Computer Skills
-        !this.state.github && (
-          <div className="skill-chart-wrap">
-            <div className="skill-categories">
-              {Object.keys(data).map((category, i) => (
-                <div key={`skill-category-${i}`}>
-                  <TweenOne
-                    paused={this.state.paused}
-                    style={{ opacity: 0, transform: 'translateY(100px)' }}
-                    animation={{
-                      opacity: 1,
-                      translateY: 0,
-                      delay: this.props.delay + 250 + i * 100
-                    }}
-                    onClick={() => {
-                      updateSkillD3Node(
-                        data[category],
-                        this.state.width,
-                        400,
-                        this.props.delay
-                      )
-                      this.setState({ activeCategory: category })
-                    }}
-                  >
-                    <div
-                      className={`skill-category noselect ${
-                        this.state.activeCategory === category
-                          ? 'skill-category-active'
-                          : ''
-                      }`}
+        {
+          // Computer Skills
+          !this.state.github && (
+            <div className="skill-chart-wrap">
+              <div className="skill-categories">
+                {Object.keys(data).map((category, i) => (
+                  <div key={`skill-category-${i}`}>
+                    <TweenOne
+                      paused={this.state.paused}
+                      style={{ opacity: 0, transform: 'translateY(100px)' }}
+                      animation={{
+                        opacity: 1,
+                        translateY: 0,
+                        delay: this.props.delay + 250 + i * 100,
+                      }}
+                      onClick={() => {
+                        updateSkillD3Node(
+                          data[category],
+                          this.state.width,
+                          400,
+                          this.props.delay
+                        )
+                        this.setState({ activeCategory: category })
+                      }}
                     >
-                      <span className="skill-category-bracket">{'<'}</span>
-                      {category}
-                      <span className="skill-category-bracket">{'/>'}</span>
-                    </div>
-                    {i !== Object.keys(data).length - 1 && (
-                      <div className="skill-category-line" />
-                    )}
-                  </TweenOne>
-                </div>
-              ))}
+                      <div
+                        className={`skill-category noselect ${
+                          this.state.activeCategory === category
+                            ? 'skill-category-active'
+                            : ''
+                        }`}
+                      >
+                        <span className="skill-category-bracket">{'<'}</span>
+                        {category}
+                        <span className="skill-category-bracket">{'/>'}</span>
+                      </div>
+                      {i !== Object.keys(data).length - 1 && (
+                        <div className="skill-category-line" />
+                      )}
+                    </TweenOne>
+                  </div>
+                ))}
+              </div>
+              <TweenOne
+                paused={this.state.paused}
+                className="skill-logo noselect"
+                animation={{
+                  opacity: 1,
+                  scale: 1,
+                  delay: this.props.delay + 250,
+                  duration: 1000,
+                  ease: 'easeOutBack',
+                }}
+              >
+                <img
+                  src="icons/safari-pinned-tab.svg"
+                  width={60}
+                  height={60}
+                  alt="skill logo"
+                />
+              </TweenOne>
+              <div>
+                <svg id="skill-chart" width={this.state.width} height={400} />
+              </div>
             </div>
-            <TweenOne
-              paused={this.state.paused}
-              className="skill-logo noselect"
-              animation={{
-                opacity: 1,
-                scale: 1,
-                delay: this.props.delay + 250,
-                duration: 1000,
-                ease: 'easeOutBack'
-              }}
-            >
-              <img
-                src="icons/safari-pinned-tab.svg"
-                width={60}
-                height={60}
-                alt="skill logo"
-              />
-            </TweenOne>
-            <div>
-              <svg id="skill-chart" width={this.state.width} height={400} />
-            </div>
-          </div>
-        )}
+          )
+        }
 
-        {// Github statistics
-        this.state.github && (
-          <div className="skill-chart-wrap">
-            <svg id="github-chart" width={this.state.width} height={400} />
-            <div className="github-cards">
-              <GithubCard description={'Repositories'} number={counts.github} />
-              <GithubCard description={'Languages'} number={languages.length} />
-              <GithubCard description={'Commits'} number={counts.commits} />
+        {
+          // Github statistics
+          this.state.github && (
+            <div className="skill-chart-wrap">
+              <svg id="github-chart" width={this.state.width} height={400} />
+              <div className="github-cards">
+                <GithubCard
+                  description={'Repositories'}
+                  number={counts.github}
+                />
+                <GithubCard
+                  description={'Languages'}
+                  number={languages.length}
+                />
+                <GithubCard description={'Commits'} number={counts.commits} />
+              </div>
             </div>
-          </div>
-        )}
+          )
+        }
         <ScrollOverPack
           id="skill-page"
           playScale={0.5}
@@ -636,7 +627,7 @@ class Skills extends Component {
               opacity: 1,
               translateX: 0,
               delay: this.props.delay + 250,
-              duration: 1000
+              duration: 1000,
             }}
           />
           {this.state.github && (

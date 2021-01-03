@@ -7,7 +7,7 @@ TweenOne.plugins.push(SvgDrawPlugin)
 
 class MoreItem extends Component {
   // open link until the animation is completed on touch devices
-  handleTouchEnd = e => {
+  handleTouchEnd = (e) => {
     e.preventDefault()
     this.circleElement.addEventListener('transitionend', this.openLink)
   }
@@ -40,7 +40,7 @@ class MoreItem extends Component {
             cy="130"
             r="125"
             className="more-circle-back"
-            ref={el => (this.circleElement = el)}
+            ref={(el) => (this.circleElement = el)}
           />
           <circle cx="130" cy="130" r="125" className="more-circle" />
           <TweenOne
@@ -48,7 +48,7 @@ class MoreItem extends Component {
             animation={{
               SVGDraw: 0,
               delay: this.props.delay + 200,
-              duration: 1000
+              duration: 1000,
             }}
             cx="130"
             cy="130"
@@ -66,7 +66,7 @@ class MoreItem extends Component {
             opacity: 0,
             type: 'from',
             delay: this.props.delay + 500,
-            duration: 1000
+            duration: 1000,
           }}
           className="more-item-title noselect"
         >
@@ -78,7 +78,7 @@ class MoreItem extends Component {
             opacity: 0,
             type: 'from',
             delay: this.props.delay + 500,
-            duration: 1000
+            duration: 1000,
           }}
           className="more-item-number noselect"
         >
@@ -90,7 +90,7 @@ class MoreItem extends Component {
             opacity: 0,
             type: 'from',
             delay: this.props.delay + 500,
-            duration: 1000
+            duration: 1000,
           }}
           className="more-item-description noselect"
         >
@@ -101,7 +101,7 @@ class MoreItem extends Component {
             opacity: 0,
             type: 'from',
             delay: this.props.delay + 500,
-            duration: 1000
+            duration: 1000,
           }}
           className="more-item-logo"
         >

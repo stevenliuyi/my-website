@@ -13,7 +13,7 @@ class Front extends Component {
   state = {
     linkShown: false,
     backgroundLoaded: false,
-    holidayEmoji: null
+    holidayEmoji: null,
   }
 
   // reference: https://codepen.io/tmrDevelops/pen/PPgjwz
@@ -91,7 +91,7 @@ class Front extends Component {
     }
 
     function flake() {
-      this.draw = function() {
+      this.draw = function () {
         this.g = ctx.createRadialGradient(
           this.x,
           this.y,
@@ -111,7 +111,7 @@ class Front extends Component {
     }
   }
 
-  handleScroll = e => {
+  handleScroll = (e) => {
     const ratio = 1
     const maxBlur = 20
     const scrollTop =
@@ -146,7 +146,7 @@ class Front extends Component {
 
   componentDidUpdate({ linkShown }) {
     if (!linkShown && this.state.linkShown) {
-      ;['main-links', 'more-text', 'arrow-down'].forEach(showClass => {
+      ;['main-links', 'more-text', 'arrow-down'].forEach((showClass) => {
         let elem = document.querySelector(`.${showClass}`)
         elem.style.opacity = 1
         elem.style.transform = 'translate(-50%, 0)'
@@ -186,7 +186,7 @@ class Front extends Component {
                     f: 'auto',
                     c: 'fill',
                     w: Math.min(window.innerWidth * 0.3, 800),
-                    h: Math.min(window.innerHeight * 0.3, 800)
+                    h: Math.min(window.innerHeight * 0.3, 800),
                   })
             }
             src={
@@ -196,7 +196,7 @@ class Front extends Component {
                     f: 'auto',
                     c: 'fill',
                     w: window.innerWidth * window.devicePixelRatio,
-                    h: window.innerHeight * window.devicePixelRatio
+                    h: window.innerHeight * window.devicePixelRatio,
                   })
             }
             render={(src, style) => (

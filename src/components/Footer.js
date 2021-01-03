@@ -15,7 +15,7 @@ const ScrollOverPack = ScrollAnim.OverPack
 class Footer extends Component {
   state = {
     wechatOpen: false,
-    pgpOpen: false
+    pgpOpen: false,
   }
 
   render() {
@@ -37,7 +37,7 @@ class Footer extends Component {
                 : `url(${getImageURL(
                     'ricardo-gomez-angel-298363-unsplash.jpg',
                     { f: 'auto', c: 'scale', h: 250 * window.devicePixelRatio }
-                  )})`
+                  )})`,
           }}
         />
         <Texty
@@ -54,7 +54,7 @@ class Footer extends Component {
             opacity: 1,
             translateX: 0,
             delay: this.props.delay + 100,
-            duration: 1000
+            duration: 1000,
           }}
         />
         <a href="mailto:me@yliu.io">
@@ -76,7 +76,7 @@ class Footer extends Component {
               animation={{
                 opacity: 0,
                 type: 'from',
-                delay: this.props.delay + 300
+                delay: this.props.delay + 300,
               }}
               className="footer-icon"
             >
@@ -94,7 +94,7 @@ class Footer extends Component {
               animation={{
                 opacity: 0,
                 type: 'from',
-                delay: this.props.delay + 300
+                delay: this.props.delay + 300,
               }}
               className="footer-icon"
             >
@@ -124,7 +124,7 @@ class Footer extends Component {
               animation={{
                 opacity: 0,
                 type: 'from',
-                delay: this.props.delay + 300
+                delay: this.props.delay + 300,
               }}
               className="footer-icon"
             >
@@ -181,7 +181,7 @@ class Footer extends Component {
                 scale: 0,
                 type: 'from',
                 delay: this.props.delay + 400 + 50 * leftText.length,
-                duration: 200
+                duration: 200,
               }}
             >
               <span>

@@ -9,17 +9,17 @@ class BookDetail extends Component {
     tooltips: {
       douban: false,
       goodreads: false,
-      wikidata: false
-    }
+      wikidata: false,
+    },
   }
 
-  tooltipToggle = link => {
+  tooltipToggle = (link) => {
     let tooltips = this.state.tooltips
     tooltips[link] = !tooltips[link]
     this.setState({ tooltips })
   }
 
-  handleScroll = e => {
+  handleScroll = (e) => {
     const quotes = document.querySelector('.book-quotes')
     const title = document.querySelector('.cover-title')
     if (quotes == null || title == null) return
@@ -54,7 +54,7 @@ class BookDetail extends Component {
       opacity: 0,
       scale: 0,
       type: 'from',
-      delay: this.props.delay + 300
+      delay: this.props.delay + 300,
     }
 
     return (
@@ -65,7 +65,7 @@ class BookDetail extends Component {
             animation={{
               translateY: 150,
               type: 'from',
-              delay: this.props.delay
+              delay: this.props.delay,
             }}
             className="book-detail-img"
           >
@@ -77,7 +77,7 @@ class BookDetail extends Component {
                       f: 'auto',
                       c: 'scale',
                       w: 143 * window.devicePixelRatio,
-                      h: 200 * window.devicePixelRatio
+                      h: 200 * window.devicePixelRatio,
                     })
               }
               src={
@@ -87,7 +87,7 @@ class BookDetail extends Component {
                       f: 'auto',
                       c: 'scale',
                       w: 285 * window.devicePixelRatio,
-                      h: 399 * window.devicePixelRatio
+                      h: 399 * window.devicePixelRatio,
                     })
               }
               initialBlur={0}
@@ -99,7 +99,7 @@ class BookDetail extends Component {
                   alt={this.props.name}
                   width={285}
                   height={399}
-                  onError={e => {
+                  onError={(e) => {
                     e.target.src =
                       'https://imgplaceholder.com/285x399/f5f5f5/757575/ion-ios-book-outline?font-size=64'
                   }}
@@ -113,7 +113,7 @@ class BookDetail extends Component {
                 opacity: 0,
                 translateX: 150,
                 type: 'from',
-                delay: this.props.delay
+                delay: this.props.delay,
               }}
               className="book-detail-title"
             >
@@ -124,7 +124,7 @@ class BookDetail extends Component {
                 opacity: 0,
                 translateX: 150,
                 type: 'from',
-                delay: this.props.delay + 100
+                delay: this.props.delay + 100,
               }}
               className="book-detail-author"
             >
@@ -135,7 +135,7 @@ class BookDetail extends Component {
                 opacity: 0,
                 translateX: 150,
                 type: 'from',
-                delay: this.props.delay + 200
+                delay: this.props.delay + 200,
               }}
               className="book-detail-tags"
             >

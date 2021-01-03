@@ -20,12 +20,12 @@ const portfolioLightboxTheme = {
   footer: {
     ...lightboxTheme.footer,
     fontWeight: 'bold',
-    fontVariant: 'small-caps'
+    fontVariant: 'small-caps',
   },
   footerCaption: {
     display: 'inline-flex',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 }
 
 class Portfolio extends Component {
@@ -34,40 +34,40 @@ class Portfolio extends Component {
     width: -1,
     currentImage: 0,
     lightboxIsOpen: false,
-    delay: 150
+    delay: 150,
   }
 
   openLightbox = (event, obj) => {
     this.setState({
       currentImage: obj.index,
-      lightboxIsOpen: true
+      lightboxIsOpen: true,
     })
   }
 
   closeLightbox = () => {
     this.setState({
       currentImage: 0,
-      lightboxIsOpen: false
+      lightboxIsOpen: false,
     })
   }
 
   gotoPrevious = () => {
     this.setState({
-      currentImage: this.state.currentImage - 1
+      currentImage: this.state.currentImage - 1,
     })
   }
 
   gotoNext = () => {
     this.setState({
-      currentImage: this.state.currentImage + 1
+      currentImage: this.state.currentImage + 1,
     })
   }
 
-  onClickImage = e => {
+  onClickImage = (e) => {
     window.open(e.target.src.replace('f_auto/', ''), '_blank')
   }
 
-  lightboxCaption = photo => {
+  lightboxCaption = (photo) => {
     const linkString =
       photo.link == null
         ? ''
@@ -88,19 +88,19 @@ class Portfolio extends Component {
   getPortfolio = () =>
     portfolio
       .sort((a, b) => a.name.localeCompare(b.name))
-      .map(p =>
+      .map((p) =>
         process.env.NODE_ENV === 'development'
           ? {
               src: `/images/portfolio/${p.filename}`,
               originalWidth: p.width,
               caption: this.lightboxCaption(p),
-              ...p
+              ...p,
             }
           : {
               src: getImageURL(`portfolio/${p.filename}`, { f: 'auto' }),
               originalWidth: p.width,
               caption: this.lightboxCaption(p),
-              ...p
+              ...p,
             }
       )
 
@@ -110,7 +110,7 @@ class Portfolio extends Component {
     return (
       <ScrollOverPack scale={0.5} always={false}>
         <Page
-          ref={el => (this.page = el)}
+          ref={(el) => (this.page = el)}
           title="PORTFOLIO"
           quote="Creativity takes courage."
           author="Henri Matisse"
@@ -128,7 +128,7 @@ class Portfolio extends Component {
           <div className="portfolio-list">
             <Measure
               bounds
-              onResize={contentRect =>
+              onResize={(contentRect) =>
                 this.setState({ width: contentRect.bounds.width })
               }
             >

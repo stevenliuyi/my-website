@@ -16,27 +16,27 @@ const projects = [
     desc: 'DNA admixture analysis tool',
     image: 'admix.jpg',
     tools: ['Python'],
-    link: 'https://github.com/stevenliuyi/admix'
+    link: 'https://github.com/stevenliuyi/admix',
   },
   {
     title: 'Wikidata Visualization',
     desc: 'visualization tools for Wikidata SPARQL queries',
     image: 'dataviz.png',
     tools: ['React', 'SPARQL', 'D3.js'],
-    link: 'https://tools.wmflabs.org/dataviz'
+    link: 'https://tools.wmflabs.org/dataviz',
   },
   {
     title: 'xkcd in Chinese',
     desc: 'Chinese translations of xkcd comics',
     image: 'xkcd-cn.png',
     tools: ['Python', 'Jinja2'],
-    link: 'https://app-xkcd-cn.appspot.com'
+    link: 'https://app-xkcd-cn.appspot.com',
   },
   {
     title: 'Yun',
     desc: 'iOS app for historical Chinese phonology',
     image: 'yun.png',
-    tools: ['Swift']
+    tools: ['Swift'],
   },
   {
     title: 'RHS for Google Search',
@@ -45,15 +45,15 @@ const projects = [
     image: 'google-rhs.jpg',
     tools: ['JavaScript'],
     link:
-      'https://chrome.google.com/webstore/detail/right-hand-side-for-googl/fmdnfbdnbcglagflegehgacalfmgejhe'
+      'https://chrome.google.com/webstore/detail/right-hand-side-for-googl/fmdnfbdnbcglagflegehgacalfmgejhe',
   },
   {
     title: 'LCS',
     desc: 'C++ library for Lagrangian coherent structure analysis',
     image: 'lcs.png',
     tools: ['C++', 'OpenMP'],
-    link: 'https://stevenliuyi.github.io/lcs'
-  }
+    link: 'https://stevenliuyi.github.io/lcs',
+  },
 ]
 
 const sliderSettings = {
@@ -65,23 +65,23 @@ const sliderSettings = {
   adapativeHeight: true,
   swipe: true,
   nextArrow: <TiChevronRight size={32} color={'#222'} />,
-  prevArrow: <TiChevronLeft size={32} color={'#222'} />
+  prevArrow: <TiChevronLeft size={32} color={'#222'} />,
 }
 
 class Projects extends Component {
   state = {
     cardExpanded: false,
-    projectsLoaded: false
+    projectsLoaded: false,
   }
 
-  expandCard = e => {
+  expandCard = (e) => {
     // if (!this.state.projectsLoaded) return
     const img = e.currentTarget.parentElement.querySelector('img')
     if (img != null) img.style.maxHeight = '0px'
     this.setState({ cardExpanded: true })
   }
 
-  collapseCard = e => {
+  collapseCard = (e) => {
     // if (!this.state.projectsLoaded) return
     const img = e.currentTarget.parentElement.querySelector('img')
     if (img != null) img.style.maxHeight = '200px'
@@ -115,7 +115,7 @@ class Projects extends Component {
             opacity: 1,
             translateX: 0,
             delay: this.props.delay + 100,
-            duration: 1000
+            duration: 1000,
           }}
         />
         {window.innerWidth > 645 ? (
@@ -126,9 +126,9 @@ class Projects extends Component {
               translateY: 0,
               delay: this.props.delay + 300,
               duration: 1500,
-              onComplete: e => {
+              onComplete: (e) => {
                 this.setState({ projectsLoaded: true })
-              }
+              },
             }}
           >
             {projectCards}
@@ -141,9 +141,9 @@ class Projects extends Component {
               translateY: 0,
               delay: this.props.delay + 300,
               duration: 1500,
-              onComplete: e => {
+              onComplete: (e) => {
                 this.setState({ projectsLoaded: true })
-              }
+              },
             }}
           >
             <Slider className="projects-slider" {...sliderSettings}>
