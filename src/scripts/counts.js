@@ -28,12 +28,16 @@ try {
   let githubCommitCount = 0
   let promises = []
   api.fetchGithub('user/repos').then((data) => {
+    const ignore_repos = ['void']
     data.forEach((repo) => {
-      promises.push(
-        api.fetchGithubCommitCount(repo.name).then((count) => {
-          if (count > 0) githubCommitCount += count
-        })
-      )
+      console.log(repo.name)
+      if (!ignore_repos.includes(repo.name)) {
+        promises.push(
+          api.fetchGithubCommitCount(repo.name).then((count) => {
+            if (count > 0) githubCommitCount += count
+          })
+        )
+      }
     })
 
     let githubRepoCount = 0
