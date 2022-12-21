@@ -13,7 +13,7 @@
 
 .strong {
   font-family: Lato, sans-serif;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .background-empty {
@@ -29,7 +29,7 @@
 }
 
 #snow {
-  position: absolute; 
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
@@ -226,7 +226,7 @@
 
 a {
   text-decoration: none !important;
-}  
+}
 
 .main-link {
   cursor: pointer;
@@ -1236,7 +1236,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .skill-category-bracket {
-  padding: 0 5px 0 5px; 
+  padding: 0 5px 0 5px;
   visibility: hidden;
 }
 
@@ -1282,7 +1282,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 @media (max-width: 750px) {
   .skill-logo {
-    display: none; 
+    display: none;
   }
 }
 
@@ -1348,7 +1348,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .keywords-wrap {
   width: 80%;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   margin: 0px auto 10px auto;
   flex-wrap: wrap;
@@ -2123,11 +2123,11 @@ a .footer-dotted-text:hover {
 .book-quote:hover .book-quote-right {
   opacity: 1;
   transition: opacity .5s;
-} 
+}
 
 .book-quote ol,
 .book-quote ul {
-  text-align: left; 
+  text-align: left;
 }
 
 .bold {
@@ -2182,7 +2182,7 @@ a .footer-dotted-text:hover {
 }
 
 .cv-nickname {
-  position: absolute; 
+  position: absolute;
   top: 0;
   margin: 10px auto;
   transform: translateY(30px);
@@ -2329,7 +2329,7 @@ a .footer-dotted-text:hover {
 }
 
 .cv-download-text {
-  position: absolute; 
+  position: absolute;
   font-size: 14px;
   color: #555;
   padding: 2px;
@@ -2358,7 +2358,7 @@ a .footer-dotted-text:hover {
   border-radius: 5px;
   transition: all .5s ease;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: flex-start;
   cursor: pointer;
 }
@@ -2373,7 +2373,7 @@ a .footer-dotted-text:hover {
   border-radius: 3px;
   height: 30px;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   padding: 5px 10px 5px 10px;
   transform: translateY(-8px);
@@ -2826,14 +2826,14 @@ a .footer-dotted-text:hover {
     padding-top: 0;
     padding-left: 50px;
     padding-right: 50px;
-  }  
+  }
 }
 
 @media (min-width: 600px) and (max-width: 1100px) {
   .book-quote {
     width: 80%;
   }
-} 
+}
 
 @media (max-height: 600px) {
   .cover-quote,
