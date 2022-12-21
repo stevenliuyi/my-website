@@ -1,2 +1,12 @@
 [build.environment]
   RUBY_VERSION = "2.7.4"
+
+[[redirects]]
+  from = "/images/*"
+  to = "https://res.cloudinary.com/yliu/image/upload/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200

@@ -46,8 +46,7 @@
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject",
     "preinstall": "cp cv/cv.yml src/data/resume.yml; cp cv/cv.pdf public/resume.pdf",
-    "postinstall": "patch-package; node src/scripts/counts.js; node src/scripts/languages.js; node src/scripts/flights.js",
-    "postbuild": "cp _redirects build"
+    "postinstall": "patch-package; node src/scripts/counts.js; node src/scripts/languages.js; node src/scripts/flights.js"
   },
   "devDependencies": {
     "eslint-config-prettier": "^7.1.0",
