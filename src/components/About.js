@@ -233,12 +233,12 @@ class About extends Component {
             >
               <div className="about-text-paragraph">
                 Hello! My name is Yi Liu, but I also go by Steven. Originally
-                from Shanghai, China, I'm a Ph.D. student in{' '}
+                from Shanghai, China, I'm currently pursing a Ph.D. in{' '}
                 <span className="strong">
                   Aerospace and Mechanical Engineering
                 </span>{' '}
                 at the <span className="strong">University of Notre Dame</span>,
-                where I have been studying fluid dynamics problems using high
+                where I have been exploring fluid dynamics problems with high
                 performance computing (HPC)-based high-fidelity numerical
                 simulations.
               </div>
@@ -253,10 +253,9 @@ class About extends Component {
               }}
             >
               <div className="about-text-paragraph">
-                In addition to my research, I am very passionate about{' '}
-                <span className="strong">computer programming</span> in general.
-                Acutally I have been obsessed with it since age of 10 when I
-                wrote my first program in{' '}
+                Aside from my research, I am quite passionate about computer
+                programming in general. Actually I have been obsessed with it
+                since age of 10 when I wrote my first program in{' '}
                 <a
                   href="https://en.wikipedia.org/wiki/Logo_(programming_language)"
                   target="_blank"
@@ -277,19 +276,19 @@ class About extends Component {
               }}
             >
               <div className="about-text-paragraph">
-                When out of the office, I really enjoy{' '}
-                <span className="strong">writting Wikipedia articles</span>. I
-                have been an active editor on Wikipedia (and Wikidata) since
-                2010. If you're interested,{' '}
+                Outside of the work, my favorite activity is to contribute to{' '}
+                <span className="strong">Wikipedia</span>. I have been an active
+                editor on Wikipedia (and Wikidata) since 2010. If you're
+                interested,{' '}
                 <a
-                  href="http://sh.eastday.com/m/20130712/u1a7515530.html"
+                  href="http://edu.sina.com.cn/a/2013-07-12/1349230537.shtml"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   here
                 </a>{' '}
-                is an article about my Wikipedia experience (in Chinese)
-                published several years ago in my hometown daily newspaper{' '}
+                is an article (in Chinese) about my Wikipedia experience that
+                was published few years ago in my hometown daily newspaper{' '}
                 <i>
                   <a
                     href="https://en.wikipedia.org/wiki/Wenhui_Bao"
@@ -299,7 +298,7 @@ class About extends Component {
                     Wenhui Bao
                   </a>
                 </i>
-                . Besides, in my spare time I also enjoy{' '}
+                . In addition, I also enjoy{' '}
                 <Link to={{ pathname: 'read', backId: 'about-page' }}>
                   <SimpleTooltip id="tt-read" text="visit my reading list">
                     reading
@@ -308,7 +307,7 @@ class About extends Component {
                 ,{' '}
                 <Link to={{ pathname: 'portfolio', backId: 'about-page' }}>
                   <SimpleTooltip id="tt-draw" text="visit my portfolio">
-                    drawing
+                    painting
                   </SimpleTooltip>
                 </Link>
                 ,{' '}
@@ -320,19 +319,20 @@ class About extends Component {
                 , stargazing,{' '}
                 <Link to={{ pathname: 'photos', backId: 'about-page' }}>
                   <SimpleTooltip id="tt-photos" text="check out my photographs">
-                    photographing
+                    photography
                   </SimpleTooltip>
                 </Link>
-                , playing contract bridge,{' '}
+                , playing tabletop games (particularly contract bridge and
+                chess),{' '}
                 <Link to={{ pathname: 'places', backId: 'about-page' }}>
                   <SimpleTooltip
                     id="tt-places"
                     text="see the places I've been to"
                   >
-                    travelling
+                    traveling
                   </SimpleTooltip>
                 </Link>
-                , playing Pokémon games and a little bit of wine tasting.
+                , and playing Pokémon games in my leisure time.
               </div>
             </TweenOne>
           </div>
