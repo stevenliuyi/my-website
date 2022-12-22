@@ -39,8 +39,14 @@ USA:
     coordinates: -84.5610, 33.7679
   - city: Baltimore
     coordinates: -76.6907, 39.2848
+  - city: Bangor
+    coordinates: -68.7712, 44.8016
+  - city: Birmingham
+    coordinates: -86.8104, 33.5186
   - city: Buffalo
     coordinates: -78.9291, 42.8932
+  - city: Burlington
+    coordinates: -73.2121, 44.4759
   - city: Boston
     coordinates: -71.1107, 42.3145
   - city: Chicago
@@ -63,6 +69,8 @@ USA:
     coordinates: -91.6096, 41.6472
   - city: Jackson
     coordinates: -110.8107, 43.4746
+  - city: Knoxville
+    coordinates: -83.9207, 35.9606
   - city: Lafayette
     coordinates: -86.7950, 40.2737
   - city: Las Vegas
@@ -87,6 +95,8 @@ USA:
     coordinates: -81.5125, 28.4907
   - city: Philadelphia
     coordinates: -75.2585, 40.0027
+  - city: Pittsburgh
+    coordinates: -79.9959, 40.4406
   - city: Rochester
     coordinates: -77.6866, 43.1863
   - city: Salt Lake City
@@ -99,6 +109,8 @@ USA:
     coordinates: -121.9578, 37.2972
   - city: Santa Maria
     coordinates: -120.5016, 34.9324
+  - city: Seattle
+    coordinates: -122.3321, 47.6062
   - city: Springfield
     coordinates: -72.6166, 42.1129
   - city: Syracuse

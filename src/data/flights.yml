@@ -172,7 +172,7 @@
   to: SYR
   from_region: USA
   to_region: USA
-  
+
 - date: 2015-12-11
   flight: DL2003
   from: SYR
@@ -445,7 +445,7 @@
   to: CLT
   from_region: USA
   to_region: USA
-  
+
 - date: 2019-01-04
   flight: AA561
   from: CLT
@@ -486,4 +486,88 @@
   from: PVG
   to: ORD
   from_region: CHN
+  to_region: USA
+
+- date: 2019-11-23
+  flight: AS1011
+  from: ORD
+  to: SEA
+  from_region: USA
+  to_region: USA
+
+- date: 2019-11-26
+  flight: UA670
+  from: SEA
+  to: ORD
+  from_region: USA
+  to_region: USA
+
+- date: 2021-09-21
+  flight: UA2080
+  from: SYR
+  to: ORD
+  from_region: USA
+  to_region: USA
+
+- date: 2021-09-21
+  flight: UA3848
+  from: ORD
+  to: SBN
+  from_region: USA
+  to_region: USA
+
+- date: 2022-03-01
+  flight: AA388
+  from: ORD
+  to: LAX
+  from_region: USA
+  to_region: USA
+
+- date: 2022-03-06
+  flight: AA1598
+  from: LAX
+  to: ORD
+  from_region: USA
+  to_region: USA
+
+- date: 2022-04-03
+  flight: DL5243
+  from: TYS
+  to: DTW
+  from_region: USA
+  to_region: USA
+
+- date: 2022-04-03
+  flight: DL3541
+  from: DTW
+  to: SBN
+  from_region: USA
+  to_region: USA
+
+- date: 2022-12-09
+  flight: AA5399
+  from: SBN
+  to: CLT
+  from_region: USA
+  to_region: USA
+
+- date: 2022-12-09
+  flight: AA2058
+  from: CLT
+  to: MCO
+  from_region: USA
+  to_region: USA
+
+- date: 2022-12-11
+  flight: AA2588
+  from: MCO
+  to: CLT
+  from_region: USA
+  to_region: USA
+
+- date: 2022-12-11
+  flight: AA5240
+  from: CLT
+  to: SBN
+  from_region: USA
   to_region: USA

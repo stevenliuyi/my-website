@@ -58,6 +58,7 @@ USA:
   name_key: NAME
   projection: equalAreaConic
   places:
+    - Alabama
     - Arizona
     - California
     - Colorado
@@ -69,12 +70,14 @@ USA:
     - Illinois
     - Indiana
     - Kentucky
+    - Maine
     - Massachusetts
     - Maryland
     - Michigan
     - Montana
     - North Carolina
     - Nebraska
+    - New Hampshire
     - New Jersey
     - Nevada
     - New York
@@ -84,6 +87,8 @@ USA:
     - Tennessee
     - Texas
     - Utah
+    - Vermont
     - Virginia
+    - Washington
     - Wisconsin
     - Wyoming
