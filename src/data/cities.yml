@@ -49,6 +49,8 @@ USA:
     coordinates: -73.2121, 44.4759
   - city: Boston
     coordinates: -71.1107, 42.3145
+  - city: Champaign
+    coordinates: -88.2434, 40.1164
   - city: Chicago
     coordinates: -88.0128, 41.8339
   - city: Cleveland
