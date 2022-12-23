@@ -2763,6 +2763,10 @@ a .footer-dotted-text:hover {
   margin-top: 10px;
 }
 
+.text-tooltip {
+  hyphens: none;
+}
+
 /* for small screens */
 @media (max-width: 964px) {
   .about-links {

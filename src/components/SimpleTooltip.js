@@ -10,7 +10,7 @@ class SimpleTooltip extends Component {
     const placement =
       this.props.placement != null ? this.props.placement : 'top'
     return (
-      <span>
+      <span className="text-tooltip">
         <span id={this.props.id}>{this.props.children}</span>
         <Tooltip
           placement={placement}

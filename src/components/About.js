@@ -287,8 +287,9 @@ class About extends Component {
                 >
                   here
                 </a>{' '}
-                is an article (in Chinese) about my Wikipedia experience that
-                was published few years ago in my hometown daily newspaper{' '}
+                is an article (in Chinese) about my previous Wikipedia
+                experience that was published few years ago in my hometown daily
+                newspaper{' '}
                 <i>
                   <a
                     href="https://en.wikipedia.org/wiki/Wenhui_Bao"
