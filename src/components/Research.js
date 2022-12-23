@@ -105,7 +105,7 @@ class Research extends Component {
               <div className="research-title">
                 Lagrangian coherent structures in the Gulf Stream
               </div>
-              <div className="research-detai">
+              <div className="research-detail">
                 The finite-time Lyapunov exponent (FTLE) is calculated from
                 satellite altimetry to identify Lagrangian coherent structures
                 (LCS) in the Gulf Stream region to reexamine a picture of the
@@ -149,7 +149,7 @@ class Research extends Component {
                 Wall pressure fluctuations in compressible turbulent channel
                 flows
               </div>
-              <div className="research-detai">
+              <div className="research-detail">
                 Direct numerical simulations (DNS) are performed using
                 high-order non-dissipative schemes to investigate spatiotemporal
                 characteristics of unsteady wall pressure in both subsonic and

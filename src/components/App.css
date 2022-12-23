@@ -1403,7 +1403,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 100%;
   min-height: 20vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
   opacity: 0;
@@ -1438,6 +1438,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 50vw;
   text-align: left;
   min-width: 300px;
+  max-width: 600px;
   padding: 5px;
 }
 
@@ -1447,7 +1448,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .research-detail {
-  font-size: 14px;
+  font-size: 16px;
+  margin-bottom: 15px;
 }
 
 .research-button {
