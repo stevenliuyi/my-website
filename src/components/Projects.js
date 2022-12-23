@@ -25,19 +25,19 @@ const projects = [
     tools: ['React', 'SPARQL', 'D3.js'],
     link: 'https://tools.wmflabs.org/dataviz',
   },
-  {
-    title: 'xkcd in Chinese',
-    desc: 'Chinese translations of xkcd comics',
-    image: 'xkcd-cn.png',
-    tools: ['Python', 'Jinja2'],
-    link: 'https://app-xkcd-cn.appspot.com',
-  },
-  {
-    title: 'Yun',
-    desc: 'iOS app for historical Chinese phonology',
-    image: 'yun.png',
-    tools: ['Swift'],
-  },
+  //{
+  //  title: 'xkcd in Chinese',
+  //  desc: 'Chinese translations of xkcd comics',
+  //  image: 'xkcd-cn.png',
+  //  tools: ['Python', 'Jinja2'],
+  //  link: 'https://app-xkcd-cn.appspot.com',
+  //},
+  //{
+  //  title: 'Yun',
+  //  desc: 'iOS app for historical Chinese phonology',
+  //  image: 'yun.png',
+  //  tools: ['Swift'],
+  //},
   {
     title: 'RHS for Google Search',
     desc:
@@ -107,7 +107,7 @@ class Projects extends Component {
         always={false}
       >
         <Texty className="section-title noselect" delay={this.props.delay}>
-          PROJECTS
+          PERSONAL PROJECTS
         </Texty>
         <TweenOne
           className="underline"
@@ -118,6 +118,28 @@ class Projects extends Component {
             duration: 1000,
           }}
         />
+        <div className="section-text-wrap">
+          <TweenOne
+            animation={{
+              opacity: 1,
+              translateX: 0,
+              delay: this.props.delay + 200,
+              duration: 1000,
+              ease: 'easeOutBack',
+            }}
+          >
+            <div className="section-text">
+              I love using my computer skills to create tools and gadgets for my
+              various interests, and I actually learn these skills by working on
+              these projects. As Aristotle wrote more than 2,000 years ago, “For
+              the things we have to learn before we can do them, we learn by
+              doing them.”{' '}
+              <span lang="grc" style={{ 'font-size': '80%' }}>
+                [ἃ γὰρ δεῖ μαθόντας ποιεῖν, ταῦτα ποιοῦντες μανθάνομεν]
+              </span>
+            </div>
+          </TweenOne>
+        </div>
         {window.innerWidth > 645 ? (
           <TweenOne
             className="projects"

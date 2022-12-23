@@ -501,7 +501,7 @@ class Skills extends Component {
           // Computer Skills
           !this.state.github && (
             <div className="skill-chart-wrap">
-              <div className="skill-text-wrap">
+              <div className="section-text-wrap">
                 <TweenOne
                   key="3"
                   paused={this.state.paused}
@@ -513,7 +513,7 @@ class Skills extends Component {
                     ease: 'easeOutBack',
                   }}
                 >
-                  <div className="skill-text">
+                  <div className="section-text">
                     I often find myself being addicted to learning new computer
                     skills; it's like discovering and exploring different new
                     worlds. As the “Father of the Internet” Vint Cerf once said,

@@ -1064,16 +1064,16 @@ Note: Beware of modifying this element as it can break the animations - you shou
   line-height: 1.2;
 }
 
-.skill-text-wrap {
+.section-text-wrap {
   margin: 0px;
   width: 100%;
 }
-.skill-text-wrap > div {
+.section-text-wrap > div {
   opacity: 0;
   transform: translateX(-100px);
 }
 
-.skill-text {
+.section-text {
   margin: 15px auto 40px auto;
   width: 600px;
   max-width: 80%;
@@ -2769,6 +2769,11 @@ a .footer-dotted-text:hover {
 
 .text-tooltip {
   hyphens: none;
+}
+
+span:lang(grc) {
+  font-family: 'Noto Sans', sans-serif !important;
+  font-weight: 200;
 }
 
 /* for small screens */
