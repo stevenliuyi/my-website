@@ -38,17 +38,20 @@ const compactData = (data, n) => {
 // update skill logo
 const updateSkillLogo = (logo_src = 'icons/safari-pinned-tab.svg') => {
   let img = d3.select('.skill-logo > img')
-  img
-    .transition()
-    .style('transform', 'scaleX(1)')
-    .duration(300)
-    .style('transform', 'scaleX(0)')
-    .transition()
-    .duration(300)
-    .attr('src', logo_src)
-    .transition()
-    .duration(300)
-    .style('transform', 'scaleX(1)')
+  const current_src = img.attr('src')
+  if (current_src !== logo_src) {
+    img
+      .transition()
+      .style('transform', 'scaleX(1)')
+      .duration(300)
+      .style('transform', 'scaleX(0)')
+      .transition()
+      .duration(300)
+      .attr('src', logo_src)
+      .transition()
+      .duration(300)
+      .style('transform', 'scaleX(1)')
+  }
 }
 
 const updateGithubD3Node = (width, height, delay = 0) => {
