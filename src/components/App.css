@@ -1068,6 +1068,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
   margin: 0px;
   width: 100%;
 }
+.skill-text-wrap > div {
+  opacity: 0;
+  transform: translateX(-100px);
+}
 
 .skill-text {
   margin: 15px auto 40px auto;

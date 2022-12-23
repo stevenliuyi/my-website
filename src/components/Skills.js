@@ -502,13 +502,26 @@ class Skills extends Component {
           !this.state.github && (
             <div className="skill-chart-wrap">
               <div className="skill-text-wrap">
-                <div className="skill-text">
-                  I often find myself being addicted to learning new computer
-                  skills; it's like discovering and exploring different new
-                  worlds. As the “Father of the Internet” Vint Cerf once said,
-                  “Programming computers was so fascinating. You create your own
-                  little universe, and then it does what you tell it to do.”
-                </div>
+                <TweenOne
+                  key="3"
+                  paused={this.state.paused}
+                  animation={{
+                    opacity: 1,
+                    translateX: 0,
+                    delay: this.props.delay + 350,
+                    duration: 1000,
+                    ease: 'easeOutBack',
+                  }}
+                >
+                  <div className="skill-text">
+                    I often find myself being addicted to learning new computer
+                    skills; it's like discovering and exploring different new
+                    worlds. As the “Father of the Internet” Vint Cerf once said,
+                    “Programming computers was so fascinating. You create your
+                    own little universe, and then it does what you tell it to
+                    do.”
+                  </div>
+                </TweenOne>
               </div>
               <div className="skill-categories">
                 {Object.keys(data).map((category, i) => (
