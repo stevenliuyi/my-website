@@ -151,33 +151,6 @@ Math/Engineering Softwares:
   - skill: placeholder10
     value: 0
 
-Databases:
-  - skill: MySQL
-    value: 0.5
-    logo: mysql.png
-  - skill: MongoDB
-    value: 0.3
-    logo: mongodb.png
-  - skill: SQLite
-    value: 0.5
-    logo: sqlite.svg
-  - skill: SPARQL
-    value: 0.8
-    logo: sparql.svg
-  - skill: placeholder5
-    value: 0
-  - skill: placeholder6
-    value: 0
-  - skill: placeholder7
-    value: 0
-  - skill: placeholder8
-    value: 0
-  - skill: placeholder9
-    value: 0
-  - skill: placeholder10
-    value: 0
-
-
 Design:
   - skill: Photoshop
     value: 0.8
@@ -222,10 +195,12 @@ Miscellaneous:
   - skill: Jupyter
     value: 0.75
     logo: jupyter.svg
-  - skill: placeholder6
-    value: 0
-  - skill: placeholder7
-    value: 0
+  - skill: SQL
+    value: 0.7
+    logo: mysql.png
+  - skill: SPARQL
+    value: 0.8
+    logo: sparql.svg
   - skill: placeholder8
     value: 0
   - skill: placeholder9
