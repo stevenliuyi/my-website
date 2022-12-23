@@ -130,10 +130,12 @@ class Projects extends Component {
           >
             <div className="section-text">
               I love using my computer skills to create tools and gadgets for my
-              various interests, and I actually learn these skills by working on
-              these projects. As Aristotle wrote more than 2,000 years ago, “For
-              the things we have to learn before we can do them, we learn by
-              doing them.”{' '}
+              various interests, from population genetics to knowledge graphs,
+              from home automation to astronomical calendars. Working on these
+              projects allows me to learn computer skills as well as those
+              domain knowledge. As Aristotle wrote more than 2,000 years ago,
+              “For the things we have to learn before we can do them, we learn
+              by doing them.”{' '}
               <span lang="grc" style={{ 'font-size': '80%' }}>
                 [ἃ γὰρ δεῖ μαθόντας ποιεῖν, ταῦτα ποιοῦντες μανθάνομεν]
               </span>
