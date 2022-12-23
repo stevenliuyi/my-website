@@ -34,7 +34,7 @@ const markers = [
   {
     name: 'South Bend',
     id: 'southbend',
-    info: 'where I currently live',
+    info: 'current location',
     coordinates: [-86.25023, 41.6764],
     markerOffsets: [5, 10],
   },
