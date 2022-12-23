@@ -35,6 +35,22 @@ const compactData = (data, n) => {
   return newData
 }
 
+// update skill logo
+const updateSkillLogo = (logo_src = 'icons/safari-pinned-tab.svg') => {
+  let img = d3.select('.skill-logo > img')
+  img
+    .transition()
+    .style('transform', 'scaleX(1)')
+    .duration(300)
+    .style('transform', 'scaleX(0)')
+    .transition()
+    .duration(300)
+    .attr('src', logo_src)
+    .transition()
+    .duration(300)
+    .style('transform', 'scaleX(1)')
+}
+
 const updateGithubD3Node = (width, height, delay = 0) => {
   // dynamically changed gradient not working on Safari,
   // perheps related to https://bugs.webkit.org/show_bug.cgi?id=41952
@@ -358,23 +374,9 @@ const updateSkillD3Node = (data, width, height, delay = 0) => {
     .style('opacity', 1)
 
   function handleMouseEnter(d, i) {
-    let img = d3.select('.skill-logo > img')
-    img
-      .transition()
-      .style('transform', 'scaleX(1)')
-      .duration(300)
-      .style('transform', 'scaleX(0)')
-      .transition()
-      .duration(300)
-      .attr(
-        'src',
-        d.logo != null
-          ? `images/skills/${d.logo}`
-          : 'icons/safari-pinned-tab.svg'
-      )
-      .transition()
-      .duration(300)
-      .style('transform', 'scaleX(1)')
+    updateSkillLogo(
+      d.logo != null ? `images/skills/${d.logo}` : 'icons/safari-pinned-tab.svg'
+    )
 
     d3.select(`#skill-name${i}`).attr('font-weight', 'bold')
     d3.select(`#skill-bar${i}`).attr(
@@ -541,6 +543,8 @@ class Skills extends Component {
                           400,
                           this.props.delay
                         )
+                        if (this.state.activeCategory !== category)
+                          updateSkillLogo()
                         this.setState({ activeCategory: category })
                       }}
                     >
