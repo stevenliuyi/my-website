@@ -501,6 +501,15 @@ class Skills extends Component {
           // Computer Skills
           !this.state.github && (
             <div className="skill-chart-wrap">
+              <div className="skill-text-wrap">
+                <div className="skill-text">
+                  I often find myself being addicted to learning new computer
+                  skills; it's like discovering and exploring different new
+                  worlds. As the “Father of the Internet” Vint Cerf once said,
+                  “Programming computers was so fascinating. You create your own
+                  little universe, and then it does what you tell it to do.”
+                </div>
+              </div>
               <div className="skill-categories">
                 {Object.keys(data).map((category, i) => (
                   <div key={`skill-category-${i}`}>

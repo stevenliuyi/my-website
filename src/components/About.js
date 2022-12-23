@@ -27,7 +27,7 @@ const numberCards = [
     key="number-card-1"
     description="number of Wikipedia articles I created"
     number="20,000"
-    detail="After 9 years as a volunteer of the Wikimedia movement, I've now made 1.5 million edits accoss Wikimedia projects."
+    detail="I've been a volunteer with the Wikimedia movement for more than ten years and have made over 2 million edits across Wikimedia projects."
   />,
   <NumberCard
     key="number-card-2"
@@ -308,12 +308,6 @@ class About extends Component {
                 <Link to={{ pathname: 'portfolio', backId: 'about-page' }}>
                   <SimpleTooltip id="tt-draw" text="visit my portfolio">
                     painting
-                  </SimpleTooltip>
-                </Link>
-                ,{' '}
-                <Link to={{ pathname: 'portfolio', backId: 'about-page' }}>
-                  <SimpleTooltip id="tt-design" text="visit my portfolio">
-                    designing
                   </SimpleTooltip>
                 </Link>
                 , stargazing,{' '}

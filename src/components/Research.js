@@ -73,6 +73,15 @@ class Research extends Component {
           >
             high performance computing
           </TweenOne>
+          <TweenOne
+            key="3"
+            animation={{ opacity: 1, delay: this.props.delay + 600 }}
+            component={Badge}
+            color="secondary"
+            className="keyword"
+          >
+            dynamical system
+          </TweenOne>
         </div>
         <div className="researches">
           <TweenOne

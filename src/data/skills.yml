@@ -37,6 +37,33 @@ Languages:
     value: 0.4
     logo: julia.svg
 
+Machine Learning:
+  - skill: Pytorch
+    value: 0.7
+    logo: pytorch.svg
+  - skill: scikit-learn
+    value: 0.5
+    logo: scikit.png
+  - skill: Tensorflow
+    value: 0.4
+    logo: tensorflow.svg
+  - skill: FastAI
+    value: 0.5
+    logo: fastai.png
+  - skill: R
+    value: 0.65
+    logo: r.svg
+  - skill: placeholder6
+    value: 0
+  - skill: placeholder7
+    value: 0
+  - skill: placeholder8
+    value: 0
+  - skill: placeholder9
+    value: 0
+  - skill: placeholder10
+    value: 0
+
 Web Development:
   - skill: CSS
     value: 0.65
@@ -67,6 +94,63 @@ Web Development:
   - skill: placeholder10
     value: 0
 
+Parallel Programming:
+  - skill: MPI
+    value: 0.75
+    logo: mpi.png
+  - skill: OpenMP
+    value: 0.5
+    logo: openmp.png
+  - skill: OpenCL
+    value: 0.5
+    logo: opencl.png
+  - skill: HTCondor
+    value: 0.75
+    logo: htcondor.png
+  - skill: CUDA
+    value: 0.4
+    logo: nvidia.svg
+  - skill: placeholder6
+    value: 0
+  - skill: placeholder7
+    value: 0
+  - skill: placeholder8
+    value: 0
+  - skill: placeholder9
+    value: 0
+  - skill: placeholder10
+    value: 0
+
+Math/Engineering Softwares:
+  - skill: MATLAB
+    value: 0.7
+    logo: matlab.png
+  - skill: Mathematica
+    value: 0.8
+    logo: mathematica.png
+  - skill: Maple
+    value: 0.35
+    logo: maple.png
+  - skill: Fluent
+    value: 0.7
+    logo: fluent.png
+  - skill: STAR-CCM+
+    value: 0.5
+    logo: starccm.png
+  - skill: AutoCAD
+    value: 0.5
+    logo: autocad.png
+  - skill: CATIA
+    value: 0.6
+    logo: catia.svg
+  - skill: Pointwise
+    value: 0.8
+    logo: pointwise.png
+  - skill: placeholder9
+    value: 0
+  - skill: placeholder10
+    value: 0
+
 Databases:
   - skill: MySQL
     value: 0.5
@@ -91,118 +175,8 @@ Databases:
   - skill: placeholder9
     value: 0
   - skill: placeholder10
-    value: 0 
+    value: 0
 
-CI/CD:
-  - skill: Git
-    value: 0.75
-    logo: git.svg
-  - skill: AWS
-    value: 0.4
-    logo: aws.svg
-  - skill: Google Cloud
-    value: 0.4
-    logo: gcloud.svg
-  - skill: Travis CI
-    value: 0.65
-    logo: travis.svg
-  - skill: Heroku
-    value: 0.5
-    logo: heroku.png
-  - skill: Docker
-    value: 0.2
-    logo: docker.svg
-  - skill: placeholder7
-    value: 0
-  - skill: placeholder8
-    value: 0
-  - skill: placeholder9
-    value: 0
-  - skill: placeholder10
-    value: 0 
-
-Data Mining:
-  - skill: R
-    value: 0.65
-    logo: r.svg
-  - skill: scikit-learn
-    value: 0.5
-    logo: scikit.png
-  - skill: Tensorflow
-    value: 0.5
-    logo: tensorflow.svg
-  - skill: Pytorch
-    value: 0.3
-    logo: pytorch.svg
-  - skill: FastAI
-    value: 0.5
-    logo: fastai.png
-  - skill: placeholder6
-    value: 0
-  - skill: placeholder7
-    value: 0
-  - skill: placeholder8
-    value: 0
-  - skill: placeholder9
-    value: 0
-  - skill: placeholder10
-    value: 0 
-
-Parallel Programming:
-  - skill: MPI
-    value: 0.75
-    logo: mpi.png
-  - skill: OpenMP
-    value: 0.5
-    logo: openmp.png
-  - skill: OpenCL
-    value: 0.5
-    logo: opencl.png
-  - skill: HTCondor
-    value: 0.75
-    logo: htcondor.png
-  - skill: placeholder5
-    value: 0
-  - skill: placeholder6
-    value: 0
-  - skill: placeholder7
-    value: 0
-  - skill: placeholder8
-    value: 0
-  - skill: placeholder9
-    value: 0
-  - skill: placeholder10
-    value: 0 
-
-Math/Engineering Softwares:
-  - skill: MATLAB
-    value: 0.65
-    logo: matlab.png
-  - skill: Mathematica
-    value: 0.75
-    logo: mathematica.png
-  - skill: Maple
-    value: 0.35
-    logo: maple.png
-  - skill: Fluent
-    value: 0.65
-    logo: fluent.png
-  - skill: STAR-CCM+
-    value: 0.5
-    logo: starccm.png
-  - skill: AutoCAD
-    value: 0.5
-    logo: autocad.png
-  - skill: CATIA
-    value: 0.6
-    logo: catia.svg
-  - skill: Pointwise
-    value: 0.65
-    logo: pointwise.png
-  - skill: placeholder9
-    value: 0
-  - skill: placeholder10
-    value: 0 
 
 Design:
   - skill: Photoshop
@@ -230,7 +204,7 @@ Design:
   - skill: placeholder9
     value: 0
   - skill: placeholder10
-    value: 0 
+    value: 0
 
 Miscellaneous:
   - skill: LaTeX
@@ -242,15 +216,14 @@ Miscellaneous:
   - skill: MediaWiki
     value: 0.6
     logo: mediawiki.svg
-  - skill: VBA
-    value: 0.6
-    logo: vba.png
-  - skill: Doxygen
-    value: 0.5
-    logo: doxygen.png
+  - skill: Docker
+    value: 0.4
+    logo: docker.svg
   - skill: Jupyter
     value: 0.75
     logo: jupyter.svg
+  - skill: placeholder6
+    value: 0
   - skill: placeholder7
     value: 0
   - skill: placeholder8
@@ -258,4 +231,4 @@ Miscellaneous:
   - skill: placeholder9
     value: 0
   - skill: placeholder10
-    value: 0 
+    value: 0

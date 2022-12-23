@@ -1064,6 +1064,20 @@ Note: Beware of modifying this element as it can break the animations - you shou
   line-height: 1.2;
 }
 
+.skill-text-wrap {
+  margin: 0px;
+  width: 100%;
+}
+
+.skill-text {
+  margin: 15px auto 40px auto;
+  width: 600px;
+  max-width: 80%;
+  text-align: left;
+  color: #222;
+  font-size: 16px;
+}
+
 .skill-chart-wrap {
   width: 80%;
   height: 500px;
