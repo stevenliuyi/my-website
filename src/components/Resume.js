@@ -28,7 +28,7 @@ class Resume extends Component {
     delay: 150,
     width: window.innerWidth,
     height: window.innerHeight,
-    tooltipOpen: false,
+    tooltipOpen: null,
   }
 
   removeUrlProtocol = (url) => url.replace(/(^\w+:|^)\/\//, '')
@@ -53,6 +53,26 @@ class Resume extends Component {
     if (img != null) img.width = img.height = newSize
     if (background != null)
       background.style.width = background.style.height = `${newSize}px`
+  }
+
+  initializeTooltip = () => {
+    // count the number of "corresponding-author" in publications
+    const caCount = data.publications
+      .map((publication) =>
+        publication.authors.includes('corresponding-author')
+      )
+      .reduce((sum, next) => sum + next, 0)
+    if (caCount === 0) return
+
+    // initialize tooltipOpen state
+    let tooltipOpen = {}
+    for (let i = 1; i <= caCount; i++) {
+      tooltipOpen[`corresponding-author-${i}`] = false
+    }
+
+    this.setState({
+      tooltipOpen: tooltipOpen,
+    })
   }
 
   handleScroll = (e) => {
@@ -83,6 +103,7 @@ class Resume extends Component {
     this.setPhotoSize()
     window.addEventListener('scroll', this.handleScroll)
     window.addEventListener('resize', this.updateSize)
+    this.initializeTooltip()
   }
 
   componentWillUnmount() {
@@ -461,19 +482,26 @@ class Resume extends Component {
                       </Row>
                     </div>
                   ))}
-                  <Tooltip
-                    placement="top"
-                    target="corresponding-author"
-                    isOpen={this.state.tooltipOpen}
-                    autohide={true}
-                    toggle={() =>
-                      this.setState({
-                        tooltipOpen: !this.state.tooltipOpen,
-                      })
-                    }
-                  >
-                    corresponding author
-                  </Tooltip>
+                  {this.state.tooltipOpen != null &&
+                    Object.keys(this.state.tooltipOpen).map((key) => (
+                      <Tooltip
+                        key={key}
+                        placement="top"
+                        target={key}
+                        isOpen={this.state.tooltipOpen[key]}
+                        autohide={true}
+                        toggle={() =>
+                          this.setState({
+                            tooltipOpen: {
+                              ...this.state.tooltipOpen,
+                              [key]: !this.state.tooltipOpen[key],
+                            },
+                          })
+                        }
+                      >
+                        corresponding author
+                      </Tooltip>
+                    ))}
                 </ResumeSection>
                 <ResumeSection
                   title="PEER REVIEW ACTIVITIES"
