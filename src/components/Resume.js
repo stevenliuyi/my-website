@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Page from './Page'
 import { Container, Row, Col, Badge, Tooltip } from 'reactstrap'
 import ScrollAnim from 'rc-scroll-anim'
-import { MdSchool, MdWork, MdPictureAsPdf } from 'react-icons/md'
+import { MdSchool, MdWork, MdPictureAsPdf, MdRateReview } from 'react-icons/md'
 import {
   FaGlobe,
   FaEnvelope,
@@ -474,6 +474,18 @@ class Resume extends Component {
                   >
                     corresponding author
                   </Tooltip>
+                </ResumeSection>
+                <ResumeSection
+                  title="PEER REVIEW ACTIVITIES"
+                  icon={<MdRateReview />}
+                >
+                  <Col xs={12} className="cv-review">
+                    {data.reviews.map((review, idx) => (
+                      <span key={idx}>
+                        <i>{review}</i>
+                      </span>
+                    ))}
+                  </Col>
                 </ResumeSection>
               </Col>
             </Row>

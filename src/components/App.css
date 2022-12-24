@@ -2328,7 +2328,8 @@ a .footer-dotted-text:hover {
   border-bottom: dashed 1px #000;
 }
 
-.cv-courses span:not(:first-child):not(:last-child)::after {
+.cv-courses span:not(:first-child):not(:last-child)::after,
+.cv-review span:not(:last-child)::after {
   content: ', ';
   padding-right: 3px;
 }
