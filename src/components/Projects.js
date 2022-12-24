@@ -133,10 +133,10 @@ class Projects extends Component {
               various interests, from population genetics to knowledge graphs,
               from home automation to astronomical calendars. Working on these
               projects allows me to learn computer skills as well as those
-              domain knowledge. As Aristotle wrote more than 2,000 years ago,
-              “For the things we have to learn before we can do them, we learn
-              by doing them.”{' '}
-              <span lang="grc" style={{ 'font-size': '80%' }}>
+              fascinating domain knowledge. As Aristotle wrote more than 2,000
+              years ago, “For the things we have to learn before we can do them,
+              we learn by doing them.”{' '}
+              <span lang="grc" style={{ fontSize: '80%' }}>
                 [ἃ γὰρ δεῖ μαθόντας ποιεῖν, ταῦτα ποιοῦντες μανθάνομεν]
               </span>
             </div>
