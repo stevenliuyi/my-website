@@ -1448,7 +1448,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .research-detail {
-  font-size: 16px;
+  font-size: 15px;
+  margin-top: 5px;
   margin-bottom: 15px;
 }
 

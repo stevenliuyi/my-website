@@ -97,8 +97,8 @@ class Research extends Component {
             <div className="research-image-wrap noselect">
               <img
                 className="research-image"
-                src="images/gulf_stream.png"
-                alt="gulf strem coherent structures"
+                src="images/research/gulf_stream.png"
+                alt="gulf stream coherent structures"
               />
             </div>
             <div className="research-text">
@@ -108,7 +108,7 @@ class Research extends Component {
               <div className="research-detail">
                 The finite-time Lyapunov exponent (FTLE) is calculated from
                 satellite altimetry to identify Lagrangian coherent structures
-                (LCS) in the Gulf Stream region to reexamine a picture of the
+                (LCS) in the Gulf Stream region to re-examine a picture of the
                 transport and mixing processes in this region.
               </div>
               <Button
@@ -140,20 +140,63 @@ class Research extends Component {
             <div className="research-image-wrap noselect">
               <img
                 className="research-image"
-                src="images/channel_flow_q.png"
+                src="images/research/channel_flow_q.png"
                 alt="channel flow q criterion"
               />
             </div>
             <div className="research-text">
               <div className="research-title">
-                Wall pressure fluctuations in compressible turbulent channel
-                flows
+                Wall pressure fluctuations in compressible turbulent
+                wall-bounded flows
               </div>
               <div className="research-detail">
-                Direct numerical simulations (DNS) are performed using
-                high-order non-dissipative schemes to investigate spatiotemporal
-                characteristics of unsteady wall pressure in both subsonic and
-                supersonic compressible channel flows.
+                Direct numerical simulations (DNS) with high-order
+                non-dissipative scheme are performed to investigate
+                spatiotemporal characteristics of unsteady wall pressure in
+                low-Mach-number compressible turbulent channel flows and
+                boundary layers.
+              </div>
+              <Button
+                outline
+                color="secondary"
+                size="sm"
+                className="research-button"
+                onClick={() => {
+                  window.open('https://doi.org/10.2514/6.2021-2142', '_blank')
+                }}
+              >
+                Conference Paper
+              </Button>
+            </div>
+          </TweenOne>
+          <TweenOne
+            key="4"
+            className="research"
+            animation={{
+              opacity: 1,
+              translateX: 0,
+              delay: this.props.delay + 800,
+              duration: 1000,
+            }}
+          >
+            <div className="research-image-wrap noselect">
+              <img
+                className="research-image"
+                src="images/research/step_flow.png"
+                alt="step flow"
+              />
+            </div>
+            <div className="research-text">
+              <div className="research-title">
+                High-Reynolds-number turbulent boundary layer flow over a
+                forward step
+              </div>
+              <div className="research-detail">
+                Wall-modeled large-eddy simulations (WMLES) are conducted to
+                investigate the turbulent boundary-layer flow over a small
+                forward-facing step at momentum-thickness Reynolds number of
+                15,500, with a focus on the effect of the step on wall-pressure
+                fluctuations.
               </div>
             </div>
           </TweenOne>
