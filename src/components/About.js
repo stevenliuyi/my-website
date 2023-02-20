@@ -27,7 +27,7 @@ const numberCards = [
     key="number-card-1"
     description="number of Wikipedia articles I created"
     number="20,000"
-    detail="I've been a volunteer with the Wikimedia movement for more than ten years and have made over 2 million edits across Wikimedia projects."
+    detail="I've been a volunteer with the Wikimedia movement for more than ten years and have made over 4 million edits across Wikimedia projects."
   />,
   <NumberCard
     key="number-card-2"
@@ -277,9 +277,8 @@ class About extends Component {
             >
               <div className="about-text-paragraph">
                 Outside of the work, my favorite activity is to contribute to{' '}
-                <span className="strong">Wikipedia</span>. I have been an active
-                editor on Wikipedia (and Wikidata) since 2010. If you're
-                interested,{' '}
+                Wikipedia. I have been an active editor on Wikipedia (and
+                Wikidata) since 2010. If you're interested,{' '}
                 <a
                   href="http://edu.sina.com.cn/a/2013-07-12/1349230537.shtml"
                   target="_blank"
