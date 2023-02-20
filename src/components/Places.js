@@ -50,7 +50,7 @@ class Places extends Component {
 
   isVisited = (abbr) => {
     // Chinese political correctness
-    if (['HKG', 'TWN'].includes(abbr)) return true
+    // if (['HKG', 'TWN'].includes(abbr)) return true
 
     return places[this.state.currentMap].places.includes(abbr)
   }
@@ -62,10 +62,10 @@ class Places extends Component {
         this.markersHoverEffect(abbr, false)
       }
       // Chinese political correctness
-      if (['HKG', 'TWN'].includes(abbr)) {
-        this.setState({ currentMap: 'CHN', resetSpring: true })
-        this.markersHoverEffect(abbr, false)
-      }
+      // if (['HKG', 'TWN'].includes(abbr)) {
+      //   this.setState({ currentMap: 'CHN', resetSpring: true })
+      //   this.markersHoverEffect(abbr, false)
+      // }
     } else {
       this.setState({ currentMap: 'world', resetSpring: true })
       this.markersHoverEffect(abbr, false)
@@ -115,23 +115,23 @@ class Places extends Component {
 
   handleMouseEnter = (abbr) => {
     // Chinese political correctness
-    if (['CHN', 'HKG', 'TWN'].includes(abbr)) {
-      ;['China', 'Hong Kong', 'Taiwan'].forEach((pl) => {
-        const el = document.getElementById(`world-${pl}`)
-        if (el != null) el.classList.add('places-geo-hover')
-      })
-    }
+    // if (['CHN', 'HKG', 'TWN'].includes(abbr)) {
+    //   ;['China', 'Hong Kong', 'Taiwan'].forEach((pl) => {
+    //     const el = document.getElementById(`world-${pl}`)
+    //     if (el != null) el.classList.add('places-geo-hover')
+    //   })
+    // }
 
     this.markersHoverEffect(abbr, true)
   }
 
   handleMouseLeave = (abbr) => {
-    if (['CHN', 'HKG', 'TWN'].includes(abbr)) {
-      ;['China', 'Hong Kong', 'Taiwan'].forEach((pl) => {
-        const el = document.getElementById(`world-${pl}`)
-        if (el != null) el.classList.remove('places-geo-hover')
-      })
-    }
+    // if (['CHN', 'HKG', 'TWN'].includes(abbr)) {
+    //   ;['China', 'Hong Kong', 'Taiwan'].forEach((pl) => {
+    //     const el = document.getElementById(`world-${pl}`)
+    //     if (el != null) el.classList.remove('places-geo-hover')
+    //   })
+    // }
 
     this.markersHoverEffect(abbr, false)
   }
@@ -191,7 +191,7 @@ class Places extends Component {
           delay={this.state.delay}
           {...this.props}
         >
-          <div className="cover-text">
+          {/* <div className="cover-text">
             <span>
               This is a map marking all the places I've been on Earth. Beyond
               Earth? I also{' '}
@@ -219,7 +219,7 @@ class Places extends Component {
               three times .{' '}
               <span style={{ whiteSpace: 'nowrap' }}>ᕕ( ᐛ )ᕗ</span>
             </span>
-          </div>
+          </div> */}
           <div className="places-map-wrap">
             <Spring
               from={{ zoom: currentMap === 'world' ? 2 : 0.5 }}
@@ -292,11 +292,12 @@ class Places extends Component {
                               id={`${currentMap}-${name}`}
                               cacheId={`${currentMap}-${name}`}
                               data-tip={
+                                name
                                 // Chinese political correctness
-                                currentMap === 'world' &&
-                                ['Hong Kong', 'Taiwan'].includes(name)
-                                  ? 'China'
-                                  : name
+                                // currentMap === 'world' &&
+                                // ['Hong Kong', 'Taiwan'].includes(name)
+                                //   ? 'China'
+                                //   : name
                               }
                               geography={geography}
                               projection={projection}
